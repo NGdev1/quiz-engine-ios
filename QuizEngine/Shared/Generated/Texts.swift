@@ -21,11 +21,21 @@ internal enum Text {
   internal enum Common {
     /// Готово
     internal static let done = Text.tr("Localizable", "Common.Done")
+    /// Заполните поля
+    internal static let fillInTheFields = Text.tr("Localizable", "Common.FillInTheFields")
   }
 
   internal enum Errors {
+    /// Доступ запрещен
+    internal static let authError = Text.tr("Localizable", "Errors.AuthError")
+    /// Ошибка сети
+    internal static let networkError = Text.tr("Localizable", "Errors.NetworkError")
+    /// Ошибка сервера
+    internal static let remoteError = Text.tr("Localizable", "Errors.RemoteError")
     /// Ошибка запроса
     internal static let requestError = Text.tr("Localizable", "Errors.RequestError")
+    /// Неизвестная ошибка
+    internal static let unknownError = Text.tr("Localizable", "Errors.UnknownError")
   }
 
   internal enum Onboarding {
@@ -61,6 +71,8 @@ internal enum Text {
     internal static let fullName = Text.tr("Localizable", "SignUp.FullName")
     /// Пароль
     internal static let password = Text.tr("Localizable", "SignUp.Password")
+    /// Пароли не совпадают
+    internal static let passwordsNotMatch = Text.tr("Localizable", "SignUp.PasswordsNotMatch")
     /// Зарегистрироваться
     internal static let submit = Text.tr("Localizable", "SignUp.Submit")
     /// Регистрация

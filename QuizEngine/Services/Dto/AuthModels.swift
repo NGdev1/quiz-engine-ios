@@ -9,13 +9,17 @@ import Foundation
 
 enum Auth {
     struct SignInForm: Encodable {
-        var email: String
-        var password: String
+        let email: String
+        let password: String
     }
 
-    struct TokenDto {
+    struct TokenDto: Decodable {
         let token: String
     }
 
-    struct SignUpForm: Encodable {}
+    struct SignUpForm: Encodable {
+        let fullName: String
+        let email: String
+        let password: String
+    }
 }

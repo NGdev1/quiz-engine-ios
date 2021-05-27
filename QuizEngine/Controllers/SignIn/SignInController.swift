@@ -70,7 +70,17 @@ class SignInController: UIViewController, SignInControllerLogic {
 
     @objc
     private func signIn() {
+        guard let email = customView?.emailTextField.text,
+              let password = customView?.passwordTextField.text
+        else { return }
+        guard email.isEmpty == false, password.isEmpty == false
+        else {
+            presentError(message: Text.Common.fillInTheFields)
+            return
+        }
+        let request = Auth.SignInForm(email: email, password: password)
         customView?.startShowingLoading()
+        interactor?.signIn(form: request)
     }
 
     // MARK: - SignInControllerLogic

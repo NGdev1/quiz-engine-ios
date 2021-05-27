@@ -7,6 +7,7 @@
 */
 
 Common.Done = "Готово";
+Common.FillInTheFields = "Заполните поля";
 
 Onboarding.Description = "Создание и прохождения тестов или викторин.";
 Onboarding.ContinueWithEmail = "Продолжить с Email";
@@ -25,8 +26,13 @@ SignUp.FullName = "ФИО";
 SignUp.Email = "Email";
 SignUp.Password = "Пароль";
 SignUp.ConfirmPassword = "Подтверждение пароля";
+SignUp.PasswordsNotMatch = "Пароли не совпадают";
 
 Alert.Error = "Ошибка";
 Alert.Cancel = "Отмена";
 
 Errors.RequestError = "Ошибка запроса";
+Errors.RemoteError = "Ошибка сервера";
+Errors.UnknownError = "Неизвестная ошибка";
+Errors.NetworkError = "Ошибка сети";
+Errors.AuthError = "Доступ запрещен";

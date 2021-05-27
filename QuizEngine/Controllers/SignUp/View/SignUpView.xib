@@ -31,7 +31,7 @@
                                         <constraint firstAttribute="height" constant="50" id="H6F-kY-Vjv"/>
                                     </constraints>
                                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
-                                    <textInputTraits key="textInputTraits" keyboardType="emailAddress" textContentType="email"/>
+                                    <textInputTraits key="textInputTraits" autocapitalizationType="words" textContentType="name"/>
                                     <userDefinedRuntimeAttributes>
                                         <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Full name"/>
                                         <userDefinedRuntimeAttribute type="boolean" keyPath="isFloatingPlaceholder" value="YES"/>
@@ -43,7 +43,7 @@
                                         <constraint firstAttribute="height" constant="50" id="zQl-hQ-b78"/>
                                     </constraints>
                                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
-                                    <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="email"/>
+                                    <textInputTraits key="textInputTraits" keyboardType="emailAddress" secureTextEntry="YES" textContentType="email"/>
                                     <userDefinedRuntimeAttributes>
                                         <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Email"/>
                                         <userDefinedRuntimeAttribute type="boolean" keyPath="isFloatingPlaceholder" value="YES"/>

@@ -6,5 +6,5 @@
 //
 
 internal enum AuthServiceFactory {
-    static let service: AuthServiceProtocol = AuthServiceMock()
+    static let service: AuthServiceProtocol = AuthService()
 }

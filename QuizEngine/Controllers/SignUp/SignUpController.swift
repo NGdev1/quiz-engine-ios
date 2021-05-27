@@ -62,7 +62,26 @@ class SignUpController: UIViewController, SignUpControllerLogic {
 
     @objc
     private func signUp() {
+        guard let fullName = customView?.fullNameTextField.text,
+              let email = customView?.emailTextField.text,
+              let password = customView?.passwordTextField.text,
+              let confirmPassword = customView?.confirmPasswordTextField.text
+        else { return }
+        guard fullName.isEmpty == false,
+              email.isEmpty == false,
+              password.isEmpty == false,
+              confirmPassword.isEmpty == false
+        else {
+            presentError(message: Text.Common.fillInTheFields)
+            return
+        }
+        guard password == confirmPassword else {
+            presentError(message: Text.SignUp.passwordsNotMatch)
+            return
+        }
+        let request = Auth.SignUpForm(fullName: fullName, email: email, password: password)
         customView?.startShowingLoading()
+        interactor?.signUp(form: request)
     }
 
     // MARK: - SignUpControllerLogic

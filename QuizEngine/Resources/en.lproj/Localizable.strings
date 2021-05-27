@@ -7,6 +7,7 @@
 */
 
 Common.Done = "Done";
+Common.FillInTheFields = "Fill in the fields";
 
 Onboarding.Description = "Creating and passing tests or quizzes.";
 Onboarding.ContinueWithEmail = "Continue with Email";
@@ -25,8 +26,13 @@ SignUp.FullName = "Full name";
 SignUp.Email = "Email";
 SignUp.Password = "Password";
 SignUp.ConfirmPassword = "Confirm password";
+SignUp.PasswordsNotMatch = "Passwords not match";
 
 Alert.Error = "Error";
 Alert.Cancel = "Cancel";
 
 Errors.RequestError = "Request error";
+Errors.RemoteError = "Remote Server error";
+Errors.UnknownError = "Unknown error";
+Errors.NetworkError = "Network error";
+Errors.AuthError = "Authentication required again";
