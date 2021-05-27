@@ -16,6 +16,7 @@ end
 def vendor
   pod 'Moya', '13.0.1'
   pod 'Kingfisher', '5.15.0'
+  pod 'SnapKit', '5.0.1'
 end
 
 target 'QuizEngine' do

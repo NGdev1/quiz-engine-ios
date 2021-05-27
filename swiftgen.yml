@@ -1,0 +1,24 @@
+strings:
+    inputs: ./QuizEngine/Resources/ru.lproj/Localizable.strings
+    outputs:
+        templatePath: ./scripts/strings.stencil
+        output: ./QuizEngine/Shared/Generated/Texts.swift
+        params:
+            publicAccess: false
+            enumName: Text
+xcassets:
+    inputs: ./QuizEngine/Resources/Assets.xcassets
+    outputs:
+        templatePath: ./scripts/xcassets.stencil
+        output: ./QuizEngine/Shared/Generated/Assets.swift
+        params:
+          publicAccess: false
+          enumName: Assets
+fonts:
+    inputs: ./QuizEngine/Resources/Fonts
+    outputs:
+        templatePath: ./scripts/fonts.stencil
+        output: ./QuizEngine/Shared/Generated/Fonts.swift
+        params:
+            publicAccess: false
+            enumName: Fonts

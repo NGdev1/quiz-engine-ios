@@ -43,8 +43,7 @@ ptional_rules:
 excluded:
   - Pods
   - Carthage
-  - "*/Classes/BusinessLogic/NetworkLayer/*"
-  - "*/Resources/Generated/*"
+  - "**/Generated"
 
 function_body_length:
   warning: 60

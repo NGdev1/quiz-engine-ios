@@ -15,12 +15,14 @@ PODS:
     - Alamofire (~> 4.1)
     - Result (~> 4.1)
   - Result (4.1.0)
+  - SnapKit (5.0.1)
 
 DEPENDENCIES:
   - Kingfisher (= 5.15.0)
   - MDCoordinator (from `https://github.com/NGdev1/MDCoordinator.git`, tag `v1.0.0`)
   - MDFoundation (from `https://github.com/NGdev1/MDFoundation.git`, tag `v1.0.0`)
   - Moya (= 13.0.1)
+  - SnapKit (= 5.0.1)
 
 SPEC REPOS:
   trunk:
@@ -28,6 +30,7 @@ SPEC REPOS:
     - Kingfisher
     - Moya
     - Result
+    - SnapKit
 
 EXTERNAL SOURCES:
   MDCoordinator:
@@ -52,7 +55,8 @@ SPEC CHECKSUMS:
   MDFoundation: b86ead9f37bc74ee278063ed2127b6cdb10a823e
   Moya: f4a4b80ff2f8a4ffc208dfb31cd91636622fee6e
   Result: bd966fac789cc6c1563440b348ab2598cc24d5c7
+  SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
 
-PODFILE CHECKSUM: f765363f45e290fab3615fe60df67f40b6e0debd
+PODFILE CHECKSUM: 564301c1a2898ae21d8d125e08b353c48013a413
 
 COCOAPODS: 1.10.1

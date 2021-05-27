@@ -1,0 +1,14 @@
+/* 
+  Localizable.strings
+  QuizEngine
+
+  Created by Admin on 27.05.2021.
+  
+*/
+
+Onboarding.Description = "Создание и прохождения тестов или викторин.";
+Onboarding.ContinueWithEmail = "Продолжить с Email";
+Onboarding.Registration = "Регистрация";
+
+Alert.error = "Ошибка";
+Alert.cancel = "Отмена";
