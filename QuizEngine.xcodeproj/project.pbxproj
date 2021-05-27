@@ -26,6 +26,15 @@
 		8471F4AB265FA03D007A7876 /* ResourcesBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8471F4AA265FA03D007A7876 /* ResourcesBundle.swift */; };
 		8471F4AF265FA0BD007A7876 /* MDTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8471F4AD265FA0BD007A7876 /* MDTextField.swift */; };
 		8471F4B0265FA0BD007A7876 /* MDTextArea.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8471F4AE265FA0BD007A7876 /* MDTextArea.swift */; };
+		8471F4B4265FB3F6007A7876 /* MDScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8471F4B3265FB3F6007A7876 /* MDScrollView.swift */; };
+		8471F4B9265FB685007A7876 /* SignInController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8471F4B5265FB685007A7876 /* SignInController.swift */; };
+		8471F4BA265FB685007A7876 /* SignInInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8471F4B6265FB685007A7876 /* SignInInteractor.swift */; };
+		8471F4BB265FB685007A7876 /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8471F4B7265FB685007A7876 /* SignInView.swift */; };
+		8471F4BC265FB685007A7876 /* SignInView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8471F4B8265FB685007A7876 /* SignInView.xib */; };
+		8471F4C2265FB6E5007A7876 /* AuthServiceFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8471F4BF265FB6E5007A7876 /* AuthServiceFactory.swift */; };
+		8471F4C3265FB6E5007A7876 /* AuthServiceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8471F4C0265FB6E5007A7876 /* AuthServiceMock.swift */; };
+		8471F4C4265FB6E5007A7876 /* AuthServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8471F4C1265FB6E5007A7876 /* AuthServiceProtocol.swift */; };
+		8471F4CA265FB789007A7876 /* AuthModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8471F4C9265FB789007A7876 /* AuthModels.swift */; };
 		9F1CEE51664DBCBFF0663BB3 /* Pods_QuizEngine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 297D1F10F2E6BB1D95805BF8 /* Pods_QuizEngine.framework */; };
 /* End PBXBuildFile section */
 
@@ -54,6 +63,15 @@
 		8471F4AA265FA03D007A7876 /* ResourcesBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourcesBundle.swift; sourceTree = "<group>"; };
 		8471F4AD265FA0BD007A7876 /* MDTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDTextField.swift; sourceTree = "<group>"; };
 		8471F4AE265FA0BD007A7876 /* MDTextArea.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDTextArea.swift; sourceTree = "<group>"; };
+		8471F4B3265FB3F6007A7876 /* MDScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDScrollView.swift; sourceTree = "<group>"; };
+		8471F4B5265FB685007A7876 /* SignInController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInController.swift; sourceTree = "<group>"; };
+		8471F4B6265FB685007A7876 /* SignInInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInInteractor.swift; sourceTree = "<group>"; };
+		8471F4B7265FB685007A7876 /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
+		8471F4B8265FB685007A7876 /* SignInView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SignInView.xib; sourceTree = "<group>"; };
+		8471F4BF265FB6E5007A7876 /* AuthServiceFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthServiceFactory.swift; sourceTree = "<group>"; };
+		8471F4C0265FB6E5007A7876 /* AuthServiceMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthServiceMock.swift; sourceTree = "<group>"; };
+		8471F4C1265FB6E5007A7876 /* AuthServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthServiceProtocol.swift; sourceTree = "<group>"; };
+		8471F4C9265FB789007A7876 /* AuthModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthModels.swift; sourceTree = "<group>"; };
 		BDAEF4AAC22F56F1A80725AC /* Pods-QuizEngine.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QuizEngine.release.xcconfig"; path = "Target Support Files/Pods-QuizEngine/Pods-QuizEngine.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -99,6 +117,7 @@
 			isa = PBXGroup;
 			children = (
 				6B1755AA2624A85500DA7E84 /* MainFiles */,
+				8471F4BE265FB696007A7876 /* Services */,
 				6B1755AC2624A9BD00DA7E84 /* Controllers */,
 				8471F47D265F9747007A7876 /* Shared */,
 				6B1755AB2624A9B100DA7E84 /* Resources */,
@@ -176,6 +195,7 @@
 		8471F487265F9FAB007A7876 /* Molecules */ = {
 			isa = PBXGroup;
 			children = (
+				8471F4B2265FB3F6007A7876 /* MDScrollView */,
 				8471F4AC265FA0BD007A7876 /* MDTextField */,
 			);
 			path = Molecules;
@@ -222,8 +242,55 @@
 		8471F4B1265FB2B7007A7876 /* SignIn */ = {
 			isa = PBXGroup;
 			children = (
+				8471F4B5265FB685007A7876 /* SignInController.swift */,
+				8471F4B6265FB685007A7876 /* SignInInteractor.swift */,
+				8471F4BD265FB689007A7876 /* View */,
 			);
 			path = SignIn;
+			sourceTree = "<group>";
+		};
+		8471F4B2265FB3F6007A7876 /* MDScrollView */ = {
+			isa = PBXGroup;
+			children = (
+				8471F4B3265FB3F6007A7876 /* MDScrollView.swift */,
+			);
+			path = MDScrollView;
+			sourceTree = "<group>";
+		};
+		8471F4BD265FB689007A7876 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				8471F4B7265FB685007A7876 /* SignInView.swift */,
+				8471F4B8265FB685007A7876 /* SignInView.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		8471F4BE265FB696007A7876 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				8471F4C6265FB70A007A7876 /* Dto */,
+				8471F4C5265FB703007A7876 /* Auth */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		8471F4C5265FB703007A7876 /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				8471F4BF265FB6E5007A7876 /* AuthServiceFactory.swift */,
+				8471F4C0265FB6E5007A7876 /* AuthServiceMock.swift */,
+				8471F4C1265FB6E5007A7876 /* AuthServiceProtocol.swift */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		8471F4C6265FB70A007A7876 /* Dto */ = {
+			isa = PBXGroup;
+			children = (
+				8471F4C9265FB789007A7876 /* AuthModels.swift */,
+			);
+			path = Dto;
 			sourceTree = "<group>";
 		};
 		92ED8E02F8BCD69A96E6B040 /* Pods */ = {
@@ -301,6 +368,7 @@
 				8471F480265F992D007A7876 /* Localizable.strings in Resources */,
 				6B17559D2624A7E300DA7E84 /* Assets.xcassets in Resources */,
 				8471F47B265F95E5007A7876 /* OnboardingView.xib in Resources */,
+				8471F4BC265FB685007A7876 /* SignInView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -389,6 +457,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8471F4C3265FB6E5007A7876 /* AuthServiceMock.swift in Sources */,
+				8471F4CA265FB789007A7876 /* AuthModels.swift in Sources */,
 				8471F49C265F9FAB007A7876 /* StyleUtils.swift in Sources */,
 				8471F4A5265F9FAB007A7876 /* ExtensionFloat.swift in Sources */,
 				8471F478265F95E5007A7876 /* OnboardingController.swift in Sources */,
@@ -396,13 +466,19 @@
 				8471F4AB265FA03D007A7876 /* ResourcesBundle.swift in Sources */,
 				8471F4A9265F9FAB007A7876 /* UIView+LoadingView.swift in Sources */,
 				8471F49B265F9FAB007A7876 /* DataManager.swift in Sources */,
+				8471F4B9265FB685007A7876 /* SignInController.swift in Sources */,
+				8471F4BA265FB685007A7876 /* SignInInteractor.swift in Sources */,
 				8471F47A265F95E5007A7876 /* OnboardingView.swift in Sources */,
+				8471F4BB265FB685007A7876 /* SignInView.swift in Sources */,
+				8471F4B4265FB3F6007A7876 /* MDScrollView.swift in Sources */,
+				8471F4C4265FB6E5007A7876 /* AuthServiceProtocol.swift in Sources */,
 				8471F4A4265F9FAB007A7876 /* Texts.swift in Sources */,
 				8471F4B0265FA0BD007A7876 /* MDTextArea.swift in Sources */,
 				8471F4A7265F9FAB007A7876 /* ExtensionUIView.swift in Sources */,
 				8471F4A3265F9FAB007A7876 /* Fonts.swift in Sources */,
 				8471F4A2265F9FAB007A7876 /* Assets.swift in Sources */,
 				6B1755942624A7E000DA7E84 /* AppDelegate.swift in Sources */,
+				8471F4C2265FB6E5007A7876 /* AuthServiceFactory.swift in Sources */,
 				8471F4A8265F9FAB007A7876 /* ExtensionUIImage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

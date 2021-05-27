@@ -8,11 +8,11 @@
 
 import SnapKit
 
-public protocol MDTextAreaDelegate: AnyObject {
+protocol MDTextAreaDelegate: AnyObject {
     func textDidChange(textArea: MDTextArea, text: String)
 }
 
-public final class MDTextArea: UIView {
+final class MDTextArea: UIView {
     private enum Appearance {
         static let animationDuration: TimeInterval = 0.3
         static let lineViewHeight: CGFloat = 1
@@ -49,45 +49,45 @@ public final class MDTextArea: UIView {
 
     private lazy var lineView = UIView()
 
-    public weak var delegate: MDTextAreaDelegate?
+    weak var delegate: MDTextAreaDelegate?
 
-    public var isFloatingPlaceholder: Bool = true
+    var isFloatingPlaceholder: Bool = true
 
-    public var isScrollEnabled: Bool {
-        set {
-            textView.isScrollEnabled = newValue
-        }
+    var isScrollEnabled: Bool {
         get {
             return textView.isScrollEnabled
         }
+        set {
+            textView.isScrollEnabled = newValue
+        }
     }
 
-    public var placeholder: String {
+    var placeholder: String {
+        get {
+            return placeholderLabel.text ?? .empty
+        }
         set {
             placeholderLabel.text = newValue
             handleTextChanged()
         }
-        get {
-            return placeholderLabel.text ?? .empty
-        }
     }
 
-    public var customInputAccessoryView: UIView? {
-        set {
-            textView.inputAccessoryView = newValue
-        }
+    var customInputAccessoryView: UIView? {
         get {
             return textView.inputAccessoryView
         }
+        set {
+            textView.inputAccessoryView = newValue
+        }
     }
 
-    public var text: String {
+    var text: String {
+        get {
+            return textView.text
+        }
         set {
             textView.text = newValue
             handleTextChanged()
-        }
-        get {
-            return textView.text
         }
     }
 
@@ -95,7 +95,7 @@ public final class MDTextArea: UIView {
 
     // MARK: - Init
 
-    public init() {
+    init() {
         super.init(frame: .zero)
         commonInit()
     }
@@ -141,19 +141,19 @@ public final class MDTextArea: UIView {
         }
     }
 
-    // MARK: - Public methods
+    // MARK: - Internal methods
 
-    public func setTag(_ tag: Int) {
+    func setTag(_ tag: Int) {
         textView.tag = tag
     }
 
-    public func showError(_ text: String) {
+    func showError(_ text: String) {
         errorLabel.text = text
         errorLabel.fadeIn(duration: Appearance.animationDuration)
         lineView.backgroundColor = Assets.error.color
     }
 
-    public func resetError() {
+    func resetError() {
         errorLabel.fadeOut(duration: Appearance.animationDuration)
         if textView.isFirstResponder {
             lineView.backgroundColor = Assets.baseTint1.color
@@ -210,16 +210,16 @@ public final class MDTextArea: UIView {
 // MARK: - UITextViewDelegate
 
 extension MDTextArea: UITextViewDelegate {
-    public func textViewDidChange(_ textView: UITextView) {
+    func textViewDidChange(_ textView: UITextView) {
         delegate?.textDidChange(textArea: self, text: textView.text)
         handleTextChanged()
     }
 
-    public func textViewDidBeginEditing(_ textView: UITextView) {
+    func textViewDidBeginEditing(_ textView: UITextView) {
         resetError()
     }
 
-    public func textViewDidEndEditing(_ textView: UITextView) {
+    func textViewDidEndEditing(_ textView: UITextView) {
         resetError()
     }
 }

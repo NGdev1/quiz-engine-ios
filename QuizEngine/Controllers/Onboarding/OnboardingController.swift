@@ -5,7 +5,6 @@
 //  Created by Admin on 27.05.2021.
 //
 
-import MDCoordinator
 import MDFoundation
 import UIKit
 
@@ -19,7 +18,7 @@ class OnboardingController: UIViewController {
     init() {
         super.init(
             nibName: Utils.getClassName(OnboardingView.self),
-            bundle: Bundle(for: OnboardingView.self)
+            bundle: resourcesBundle
         )
         addActionHandlers()
     }
@@ -27,6 +26,18 @@ class OnboardingController: UIViewController {
     @available(*, unavailable)
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+
+    // MARK: - Life cycle
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(true, animated: animated)
+    }
+
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        navigationController?.setNavigationBarHidden(false, animated: animated)
     }
 
     // MARK: - Action handlers

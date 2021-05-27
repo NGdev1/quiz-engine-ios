@@ -44,11 +44,12 @@ final class MDTextField: UITextField {
 
     @IBInspectable
     override var placeholder: String? {
+        get {
+            return placeholderLabel.text
+        }
         set {
             placeholderLabel.text = newValue
             handleTextChanged()
-        } get {
-            return placeholderLabel.text
         }
     }
 
@@ -81,11 +82,12 @@ final class MDTextField: UITextField {
     }
 
     override var text: String? {
+        get {
+            return super.text
+        }
         set {
             super.text = newValue
             handleTextChanged()
-        } get {
-            return super.text
         }
     }
 
@@ -138,7 +140,7 @@ final class MDTextField: UITextField {
         }
     }
 
-    // MARK: - Public methods
+    // MARK: - Internal methods
 
     func showError(_ text: String?) {
         guard let text = text else { return }

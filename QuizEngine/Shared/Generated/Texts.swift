@@ -13,15 +13,20 @@ internal enum Text {
 
   internal enum Alert {
     /// Отмена
-    internal static let cancel = Text.tr("Localizable", "Alert.cancel")
+    internal static let cancel = Text.tr("Localizable", "Alert.Cancel")
     /// Ошибка
-    internal static let error = Text.tr("Localizable", "Alert.error")
+    internal static let error = Text.tr("Localizable", "Alert.Error")
+  }
+
+  internal enum Errors {
+    /// Ошибка запроса
+    internal static let requestError = Text.tr("Localizable", "Errors.RequestError")
   }
 
   internal enum Onboarding {
     /// Продолжить с Email
     internal static let continueWithEmail = Text.tr("Localizable", "Onboarding.ContinueWithEmail")
-    /// Создания и прохождения тестов или викторин.
+    /// Создание и прохождения тестов или викторин.
     internal static let description = Text.tr("Localizable", "Onboarding.Description")
     /// Регистрация
     internal static let registration = Text.tr("Localizable", "Onboarding.Registration")

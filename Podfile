@@ -8,9 +8,6 @@ def md_pods
   pod 'MDFoundation',
     :tag => 'v1.0.0',
     :git => 'https://github.com/NGdev1/MDFoundation.git'
-  pod 'MDCoordinator',
-    :tag => 'v1.0.0',
-    :git => 'https://github.com/NGdev1/MDCoordinator.git'
 end
 
 def vendor

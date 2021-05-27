@@ -10,5 +10,7 @@ Onboarding.Description = "Создание и прохождения тесто�
 Onboarding.ContinueWithEmail = "Продолжить с Email";
 Onboarding.Registration = "Регистрация";
 
-Alert.error = "Ошибка";
-Alert.cancel = "Отмена";
+Alert.Error = "Ошибка";
+Alert.Cancel = "Отмена";
+
+Errors.RequestError = "Ошибка запроса";

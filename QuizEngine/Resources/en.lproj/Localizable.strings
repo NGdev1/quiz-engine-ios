@@ -10,5 +10,7 @@ Onboarding.Description = "Creating and passing tests or quizzes.";
 Onboarding.ContinueWithEmail = "Continue with Email";
 Onboarding.Registration = "Registration";
 
-Alert.error = "Error";
-Alert.cancel = "Cancel";
+Alert.Error = "Error";
+Alert.Cancel = "Cancel";
+
+Errors.RequestError = "Request error";
