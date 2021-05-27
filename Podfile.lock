@@ -1,0 +1,58 @@
+PODS:
+  - Alamofire (4.9.1)
+  - Kingfisher (5.15.0):
+    - Kingfisher/Core (= 5.15.0)
+  - Kingfisher/Core (5.15.0)
+  - MDCoordinator (1.0.0):
+    - MDCoordinator/Source (= 1.0.0)
+  - MDCoordinator/Source (1.0.0)
+  - MDFoundation (1.0.0):
+    - MDFoundation/Source (= 1.0.0)
+  - MDFoundation/Source (1.0.0)
+  - Moya (13.0.1):
+    - Moya/Core (= 13.0.1)
+  - Moya/Core (13.0.1):
+    - Alamofire (~> 4.1)
+    - Result (~> 4.1)
+  - Result (4.1.0)
+
+DEPENDENCIES:
+  - Kingfisher (= 5.15.0)
+  - MDCoordinator (from `https://github.com/NGdev1/MDCoordinator.git`, tag `v1.0.0`)
+  - MDFoundation (from `https://github.com/NGdev1/MDFoundation.git`, tag `v1.0.0`)
+  - Moya (= 13.0.1)
+
+SPEC REPOS:
+  trunk:
+    - Alamofire
+    - Kingfisher
+    - Moya
+    - Result
+
+EXTERNAL SOURCES:
+  MDCoordinator:
+    :git: https://github.com/NGdev1/MDCoordinator.git
+    :tag: v1.0.0
+  MDFoundation:
+    :git: https://github.com/NGdev1/MDFoundation.git
+    :tag: v1.0.0
+
+CHECKOUT OPTIONS:
+  MDCoordinator:
+    :git: https://github.com/NGdev1/MDCoordinator.git
+    :tag: v1.0.0
+  MDFoundation:
+    :git: https://github.com/NGdev1/MDFoundation.git
+    :tag: v1.0.0
+
+SPEC CHECKSUMS:
+  Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
+  Kingfisher: 1acb67597a520c2d0310677e66d6e0af455ef757
+  MDCoordinator: 30d29a65d46154704ee3abdb50bc3d94caec61ec
+  MDFoundation: b86ead9f37bc74ee278063ed2127b6cdb10a823e
+  Moya: f4a4b80ff2f8a4ffc208dfb31cd91636622fee6e
+  Result: bd966fac789cc6c1563440b348ab2598cc24d5c7
+
+PODFILE CHECKSUM: f765363f45e290fab3615fe60df67f40b6e0debd
+
+COCOAPODS: 1.10.1
