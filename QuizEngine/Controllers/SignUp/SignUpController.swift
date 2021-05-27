@@ -6,6 +6,7 @@
 //
 
 import MDFoundation
+import Storable
 
 protocol SignUpControllerLogic: AnyObject {
     func didFinishSignUp(response: Auth.TokenDto)
@@ -68,6 +69,7 @@ class SignUpController: UIViewController, SignUpControllerLogic {
 
     func didFinishSignUp(response: Auth.TokenDto) {
         customView?.stopShowingLoading()
+        AppService.shared.app.accessToken = response.token
     }
 
     func presentError(message: String) {

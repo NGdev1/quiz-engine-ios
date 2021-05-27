@@ -19,4 +19,5 @@ end
 target 'QuizEngine' do
   md_pods
   vendor
+  pod 'Storable', path: './Storable'
 end
