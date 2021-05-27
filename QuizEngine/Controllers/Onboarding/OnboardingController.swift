@@ -46,11 +46,19 @@ class OnboardingController: UIViewController {
         customView?.loginWithEmailButton.addTarget(
             self, action: #selector(loginWithEmail), for: .touchUpInside
         )
+        customView?.registrationButton.addTarget(
+            self, action: #selector(registerButtonTapped), for: .touchUpInside
+        )
     }
 
     @objc
     private func loginWithEmail() {
         navigationController?.pushViewController(SignInController())
+    }
+
+    @objc
+    private func registerButtonTapped() {
+        navigationController?.pushViewController(SignUpController())
     }
 
     // MARK: - OnboardingControllerLogic

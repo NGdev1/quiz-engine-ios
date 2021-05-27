@@ -26,10 +26,10 @@ final class MDTextField: UITextField {
 
     private lazy var placeholderLabel: UILabel = {
         let label = UILabel()
-        label.textColor = Assets.text.color
+        label.textColor = Assets.gray.color
         label.textAlignment = .left
         label.center = .zero
-        label.font = Fonts.SFUIDisplay.semibold.font(size: 14)
+        label.font = Fonts.SFUIDisplay.regular.font(size: 18)
         return label
     }()
 
@@ -60,7 +60,7 @@ final class MDTextField: UITextField {
         }
     }
 
-    var placeholderColor: UIColor = Assets.text.color {
+    var placeholderColor: UIColor = Assets.gray.color {
         didSet {
             guard !isUpper else { return }
             placeholderLabel.textColor = placeholderColor
@@ -74,7 +74,7 @@ final class MDTextField: UITextField {
         }
     }
 
-    var placeholderFont: UIFont = Fonts.SFUIDisplay.semibold.font(size: 14) {
+    var placeholderFont: UIFont = Fonts.SFUIDisplay.regular.font(size: 18) {
         didSet {
             guard !isUpper else { return }
             placeholderLabel.font = placeholderFont
@@ -115,7 +115,7 @@ final class MDTextField: UITextField {
     }
 
     private func setupStyle() {
-        font = Fonts.SFUIDisplay.semibold.font(size: 14)
+        font = Fonts.SFUIDisplay.regular.font(size: 18)
         lineView.backgroundColor = Assets.divider.color
     }
 
@@ -245,7 +245,7 @@ final class MDTextField: UITextField {
             make.centerY.equalToSuperview()
         }
         placeholderLabel.textColor = placeholderColor // Assets.text.color
-        placeholderLabel.font = placeholderLabel.font // Fonts.SFUIDisplay.semibold.font(size: 14)
+        placeholderLabel.font = placeholderFont // Fonts.SFUIDisplay.semibold.font(size: 14)
         isUpper = false
     }
 
@@ -282,7 +282,9 @@ extension MDTextField {
         doneToolbar.barStyle = .default
 
         let flexSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
-        let done: UIBarButtonItem = UIBarButtonItem(title: "Done", style: .done, target: self, action: #selector(doneButtonAction))
+        let done: UIBarButtonItem = UIBarButtonItem(
+            title: Text.Common.done, style: .done, target: self, action: #selector(doneButtonAction)
+        )
 
         let items = [flexSpace, done]
         doneToolbar.items = items

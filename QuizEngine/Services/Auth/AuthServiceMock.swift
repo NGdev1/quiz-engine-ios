@@ -13,4 +13,10 @@ class AuthServiceMock: AuthServiceProtocol {
             completion(Auth.TokenDto(token: "123"), nil)
         }
     }
+
+    func signUp(_ form: Auth.SignUpForm, completion: @escaping (Auth.TokenDto?, Error?) -> Void) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            completion(Auth.TokenDto(token: "123"), nil)
+        }
+    }
 }

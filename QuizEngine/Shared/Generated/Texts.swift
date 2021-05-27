@@ -18,6 +18,11 @@ internal enum Text {
     internal static let error = Text.tr("Localizable", "Alert.Error")
   }
 
+  internal enum Common {
+    /// Готово
+    internal static let done = Text.tr("Localizable", "Common.Done")
+  }
+
   internal enum Errors {
     /// Ошибка запроса
     internal static let requestError = Text.tr("Localizable", "Errors.RequestError")
@@ -33,10 +38,33 @@ internal enum Text {
   }
 
   internal enum SignIn {
+    /// Email
+    internal static let email = Text.tr("Localizable", "SignIn.Email")
+    /// Пароль
+    internal static let password = Text.tr("Localizable", "SignIn.Password")
+    /// Восстановление пароля
+    internal static let passwordRecovery = Text.tr("Localizable", "SignIn.PasswordRecovery")
+    /// Регистрация
+    internal static let registration = Text.tr("Localizable", "SignIn.Registration")
     /// Войти
     internal static let submit = Text.tr("Localizable", "SignIn.Submit")
     /// Вход
     internal static let title = Text.tr("Localizable", "SignIn.Title")
+  }
+
+  internal enum SignUp {
+    /// Подтверждение пароля
+    internal static let confirmPassword = Text.tr("Localizable", "SignUp.ConfirmPassword")
+    /// Email
+    internal static let email = Text.tr("Localizable", "SignUp.Email")
+    /// ФИО
+    internal static let fullName = Text.tr("Localizable", "SignUp.FullName")
+    /// Пароль
+    internal static let password = Text.tr("Localizable", "SignUp.Password")
+    /// Зарегистрироваться
+    internal static let submit = Text.tr("Localizable", "SignUp.Submit")
+    /// Регистрация
+    internal static let title = Text.tr("Localizable", "SignUp.Title")
   }
 }
 // swiftlint:enable explicit_type_interface function_parameter_count identifier_name line_length

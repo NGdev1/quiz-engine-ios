@@ -1,5 +1,5 @@
 //
-//  SignInController.swift
+//  SignUpController.swift
 //  QuizEngine
 //
 //  Created by Admin on 27.05.2021.
@@ -7,17 +7,17 @@
 
 import MDFoundation
 
-protocol SignInControllerLogic: AnyObject {
-    func didFinishSignIn(response: Auth.TokenDto)
+protocol SignUpControllerLogic: AnyObject {
+    func didFinishSignUp(response: Auth.TokenDto)
     func presentError(message: String)
 }
 
-class SignInController: UIViewController, SignInControllerLogic {
+class SignUpController: UIViewController, SignUpControllerLogic {
     // MARK: - Properties
 
-    var interactor: SignInInteractor?
+    var interactor: SignUpInteractor?
 
-    lazy var customView: SignInView? = view as? SignInView
+    lazy var customView: SignUpView? = view as? SignUpView
 
     override var canBecomeFirstResponder: Bool { true }
     override var inputAccessoryView: UIView? { customView?.bottomView }
@@ -26,7 +26,7 @@ class SignInController: UIViewController, SignInControllerLogic {
 
     init() {
         super.init(
-            nibName: Utils.getClassName(SignInView.self),
+            nibName: Utils.getClassName(SignUpView.self),
             bundle: resourcesBundle
         )
         setup()
@@ -40,41 +40,33 @@ class SignInController: UIViewController, SignInControllerLogic {
     }
 
     private func setup() {
-        interactor = SignInInteractor()
+        interactor = SignUpInteractor()
         interactor?.controller = self
     }
 
     private func setupAppearance() {
-        title = Text.SignIn.title
+        title = Text.SignUp.title
     }
 
     // MARK: - Action handlers
 
     private func addActionHandlers() {
-        customView?.signUpButton.addTarget(
-            self, action: #selector(registerButtonTapped), for: .touchUpInside
-        )
         customView?.bottomView.actionButton.addTarget(
-            self, action: #selector(signIn), for: .touchUpInside
+            self, action: #selector(signUp), for: .touchUpInside
         )
-        customView?.signInAction = { [weak self] in
-            self?.signIn()
+        customView?.signUpAction = { [weak self] in
+            self?.signUp()
         }
     }
 
     @objc
-    private func registerButtonTapped() {
-        navigationController?.pushViewController(SignUpController())
-    }
-
-    @objc
-    private func signIn() {
+    private func signUp() {
         customView?.startShowingLoading()
     }
 
-    // MARK: - SignInControllerLogic
+    // MARK: - SignUpControllerLogic
 
-    func didFinishSignIn(response: Auth.TokenDto) {
+    func didFinishSignUp(response: Auth.TokenDto) {
         customView?.stopShowingLoading()
     }
 

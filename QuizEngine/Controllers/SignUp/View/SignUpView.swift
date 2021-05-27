@@ -1,5 +1,5 @@
 //
-//  SignInView.swift
+//  SignUpView.swift
 //  QuizEngine
 //
 //  Created by Admin on 27.05.2021.
@@ -7,17 +7,17 @@
 
 import MDFoundation
 
-final class SignInView: UIView {
+final class SignUpView: UIView {
     // MARK: - Properties
 
-    lazy var bottomView: FixedBottomView = FixedBottomView(buttonText: Text.SignIn.submit)
+    lazy var bottomView: FixedBottomView = FixedBottomView(buttonText: Text.SignUp.submit)
 
+    @IBOutlet var fullNameTextField: MDTextField!
     @IBOutlet var emailTextField: MDTextField!
     @IBOutlet var passwordTextField: MDTextField!
-    @IBOutlet var signUpButton: UIButton!
-    @IBOutlet var restorePasswordButton: UIButton!
+    @IBOutlet var confirmPasswordTextField: MDTextField!
 
-    var signInAction: (() -> Void)?
+    var signUpAction: (() -> Void)?
 
     // MARK: - Xib Init
 
@@ -34,12 +34,14 @@ final class SignInView: UIView {
     }
 
     private func setupStyle() {
+        fullNameTextField.delegate = self
+        fullNameTextField.placeholder = Text.SignUp.fullName
         emailTextField.delegate = self
-        emailTextField.placeholder = Text.SignIn.email
+        emailTextField.placeholder = Text.SignUp.email
         passwordTextField.delegate = self
-        passwordTextField.placeholder = Text.SignIn.password
-        signUpButton.setTitle(Text.SignIn.registration, for: .normal)
-        restorePasswordButton.setTitle(Text.SignIn.passwordRecovery, for: .normal)
+        passwordTextField.placeholder = Text.SignUp.password
+        confirmPasswordTextField.delegate = self
+        confirmPasswordTextField.placeholder = Text.SignUp.confirmPassword
     }
 
     // MARK: - Action handlers
@@ -72,12 +74,16 @@ final class SignInView: UIView {
 
 // MARK: - UITextFieldDelegate
 
-extension SignInView: UITextFieldDelegate {
+extension SignUpView: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        if textField == emailTextField {
+        if textField == fullNameTextField {
+            _ = emailTextField.becomeFirstResponder()
+        } else if textField == emailTextField {
             _ = passwordTextField.becomeFirstResponder()
         } else if textField == passwordTextField {
-            signInAction?()
+            _ = confirmPasswordTextField.becomeFirstResponder()
+        } else {
+            signUpAction?()
         }
         return true
     }

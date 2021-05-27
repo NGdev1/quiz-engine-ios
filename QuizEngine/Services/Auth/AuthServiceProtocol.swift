@@ -7,4 +7,5 @@
 
 protocol AuthServiceProtocol {
     func signIn(_ form: Auth.SignInForm, completion: @escaping (Auth.TokenDto?, Error?) -> Void)
+    func signUp(_ form: Auth.SignUpForm, completion: @escaping (Auth.TokenDto?, Error?) -> Void)
 }

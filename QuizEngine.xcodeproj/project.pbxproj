@@ -36,6 +36,10 @@
 		8471F4C4265FB6E5007A7876 /* AuthServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8471F4C1265FB6E5007A7876 /* AuthServiceProtocol.swift */; };
 		8471F4CA265FB789007A7876 /* AuthModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8471F4C9265FB789007A7876 /* AuthModels.swift */; };
 		8471F4CD265FF235007A7876 /* FixedBottomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8471F4CC265FF235007A7876 /* FixedBottomView.swift */; };
+		8471F4D4265FF90B007A7876 /* SignUpController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8471F4CF265FF90B007A7876 /* SignUpController.swift */; };
+		8471F4D5265FF90B007A7876 /* SignUpInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8471F4D0265FF90B007A7876 /* SignUpInteractor.swift */; };
+		8471F4D6265FF90B007A7876 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8471F4D2265FF90B007A7876 /* SignUpView.swift */; };
+		8471F4D7265FF90B007A7876 /* SignUpView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8471F4D3265FF90B007A7876 /* SignUpView.xib */; };
 		9F1CEE51664DBCBFF0663BB3 /* Pods_QuizEngine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 297D1F10F2E6BB1D95805BF8 /* Pods_QuizEngine.framework */; };
 /* End PBXBuildFile section */
 
@@ -74,6 +78,10 @@
 		8471F4C1265FB6E5007A7876 /* AuthServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthServiceProtocol.swift; sourceTree = "<group>"; };
 		8471F4C9265FB789007A7876 /* AuthModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthModels.swift; sourceTree = "<group>"; };
 		8471F4CC265FF235007A7876 /* FixedBottomView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FixedBottomView.swift; sourceTree = "<group>"; };
+		8471F4CF265FF90B007A7876 /* SignUpController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpController.swift; sourceTree = "<group>"; };
+		8471F4D0265FF90B007A7876 /* SignUpInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpInteractor.swift; sourceTree = "<group>"; };
+		8471F4D2265FF90B007A7876 /* SignUpView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
+		8471F4D3265FF90B007A7876 /* SignUpView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SignUpView.xib; sourceTree = "<group>"; };
 		BDAEF4AAC22F56F1A80725AC /* Pods-QuizEngine.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QuizEngine.release.xcconfig"; path = "Target Support Files/Pods-QuizEngine/Pods-QuizEngine.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -149,6 +157,7 @@
 		6B1755AC2624A9BD00DA7E84 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				8471F4CE265FF90B007A7876 /* SignUp */,
 				8471F4B1265FB2B7007A7876 /* SignIn */,
 				6B1755AD2624A9C400DA7E84 /* Onboarding */,
 			);
@@ -304,6 +313,25 @@
 			path = FixedBottomView;
 			sourceTree = "<group>";
 		};
+		8471F4CE265FF90B007A7876 /* SignUp */ = {
+			isa = PBXGroup;
+			children = (
+				8471F4CF265FF90B007A7876 /* SignUpController.swift */,
+				8471F4D0265FF90B007A7876 /* SignUpInteractor.swift */,
+				8471F4D1265FF90B007A7876 /* View */,
+			);
+			path = SignUp;
+			sourceTree = "<group>";
+		};
+		8471F4D1265FF90B007A7876 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				8471F4D2265FF90B007A7876 /* SignUpView.swift */,
+				8471F4D3265FF90B007A7876 /* SignUpView.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		92ED8E02F8BCD69A96E6B040 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -375,6 +403,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8471F4D7265FF90B007A7876 /* SignUpView.xib in Resources */,
 				6B1755A02624A7E300DA7E84 /* LaunchScreen.storyboard in Resources */,
 				8471F480265F992D007A7876 /* Localizable.strings in Resources */,
 				6B17559D2624A7E300DA7E84 /* Assets.xcassets in Resources */,
@@ -468,6 +497,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8471F4D5265FF90B007A7876 /* SignUpInteractor.swift in Sources */,
+				8471F4D4265FF90B007A7876 /* SignUpController.swift in Sources */,
 				8471F4CD265FF235007A7876 /* FixedBottomView.swift in Sources */,
 				8471F4C3265FB6E5007A7876 /* AuthServiceMock.swift in Sources */,
 				8471F4CA265FB789007A7876 /* AuthModels.swift in Sources */,
@@ -482,6 +513,7 @@
 				8471F4BA265FB685007A7876 /* SignInInteractor.swift in Sources */,
 				8471F47A265F95E5007A7876 /* OnboardingView.swift in Sources */,
 				8471F4BB265FB685007A7876 /* SignInView.swift in Sources */,
+				8471F4D6265FF90B007A7876 /* SignUpView.swift in Sources */,
 				8471F4B4265FB3F6007A7876 /* MDScrollView.swift in Sources */,
 				8471F4C4265FB6E5007A7876 /* AuthServiceProtocol.swift in Sources */,
 				8471F4A4265F9FAB007A7876 /* Texts.swift in Sources */,

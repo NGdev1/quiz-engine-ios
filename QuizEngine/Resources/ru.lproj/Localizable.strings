@@ -6,12 +6,25 @@
   
 */
 
+Common.Done = "Готово";
+
 Onboarding.Description = "Создание и прохождения тестов или викторин.";
 Onboarding.ContinueWithEmail = "Продолжить с Email";
 Onboarding.Registration = "Регистрация";
 
 SignIn.Title = "Вход";
 SignIn.Submit = "Войти";
+SignIn.Email = "Email";
+SignIn.Password = "Пароль";
+SignIn.PasswordRecovery = "Восстановление пароля";
+SignIn.Registration = "Регистрация";
+
+SignUp.Title = "Регистрация";
+SignUp.Submit = "Зарегистрироваться";
+SignUp.FullName = "ФИО";
+SignUp.Email = "Email";
+SignUp.Password = "Пароль";
+SignUp.ConfirmPassword = "Подтверждение пароля";
 
 Alert.Error = "Ошибка";
 Alert.Cancel = "Отмена";

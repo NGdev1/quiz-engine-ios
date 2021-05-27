@@ -6,12 +6,25 @@
   
 */
 
+Common.Done = "Done";
+
 Onboarding.Description = "Creating and passing tests or quizzes.";
 Onboarding.ContinueWithEmail = "Continue with Email";
 Onboarding.Registration = "Registration";
 
 SignIn.Title = "Sign In";
 SignIn.Submit = "Sign In";
+SignIn.Email = "Email";
+SignIn.Password = "Password";
+SignIn.PasswordRecovery = "Password recovery";
+SignIn.Registration = "Registration";
+
+SignUp.Title = "Registration";
+SignUp.Submit = "Register";
+SignUp.FullName = "Full name";
+SignUp.Email = "Email";
+SignUp.Password = "Password";
+SignUp.ConfirmPassword = "Confirm password";
 
 Alert.Error = "Error";
 Alert.Cancel = "Cancel";
