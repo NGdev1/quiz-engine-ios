@@ -27,6 +27,7 @@ internal enum Assets {
   internal static let divider = ColorAsset(name: "Divider")
   internal static let error = ColorAsset(name: "Error")
   internal static let gray = ColorAsset(name: "Gray")
+  internal static let shadow = ColorAsset(name: "Shadow")
   internal static let text = ColorAsset(name: "Text")
   internal static let logo = ImageAsset(name: "Logo")
 }

@@ -12,16 +12,19 @@ protocol SignInControllerLogic: AnyObject {
     func presentError(message: String)
 }
 
-public class SignInController: UIViewController, SignInControllerLogic {
+class SignInController: UIViewController, SignInControllerLogic {
     // MARK: - Properties
 
     var interactor: SignInInteractor?
 
     lazy var customView: SignInView? = view as? SignInView
 
+    override var canBecomeFirstResponder: Bool { true }
+    override var inputAccessoryView: UIView? { customView?.bottomView }
+
     // MARK: - Init
 
-    public init() {
+    init() {
         super.init(
             nibName: Utils.getClassName(SignInView.self),
             bundle: resourcesBundle
@@ -42,7 +45,7 @@ public class SignInController: UIViewController, SignInControllerLogic {
     }
 
     private func setupAppearance() {
-        // title = Text.SignIn.title
+        title = Text.SignIn.title
     }
 
     // MARK: - Action handlers

@@ -35,6 +35,7 @@
 		8471F4C3265FB6E5007A7876 /* AuthServiceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8471F4C0265FB6E5007A7876 /* AuthServiceMock.swift */; };
 		8471F4C4265FB6E5007A7876 /* AuthServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8471F4C1265FB6E5007A7876 /* AuthServiceProtocol.swift */; };
 		8471F4CA265FB789007A7876 /* AuthModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8471F4C9265FB789007A7876 /* AuthModels.swift */; };
+		8471F4CD265FF235007A7876 /* FixedBottomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8471F4CC265FF235007A7876 /* FixedBottomView.swift */; };
 		9F1CEE51664DBCBFF0663BB3 /* Pods_QuizEngine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 297D1F10F2E6BB1D95805BF8 /* Pods_QuizEngine.framework */; };
 /* End PBXBuildFile section */
 
@@ -72,6 +73,7 @@
 		8471F4C0265FB6E5007A7876 /* AuthServiceMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthServiceMock.swift; sourceTree = "<group>"; };
 		8471F4C1265FB6E5007A7876 /* AuthServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthServiceProtocol.swift; sourceTree = "<group>"; };
 		8471F4C9265FB789007A7876 /* AuthModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthModels.swift; sourceTree = "<group>"; };
+		8471F4CC265FF235007A7876 /* FixedBottomView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FixedBottomView.swift; sourceTree = "<group>"; };
 		BDAEF4AAC22F56F1A80725AC /* Pods-QuizEngine.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QuizEngine.release.xcconfig"; path = "Target Support Files/Pods-QuizEngine/Pods-QuizEngine.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -195,6 +197,7 @@
 		8471F487265F9FAB007A7876 /* Molecules */ = {
 			isa = PBXGroup;
 			children = (
+				8471F4CB265FF235007A7876 /* FixedBottomView */,
 				8471F4B2265FB3F6007A7876 /* MDScrollView */,
 				8471F4AC265FA0BD007A7876 /* MDTextField */,
 			);
@@ -291,6 +294,14 @@
 				8471F4C9265FB789007A7876 /* AuthModels.swift */,
 			);
 			path = Dto;
+			sourceTree = "<group>";
+		};
+		8471F4CB265FF235007A7876 /* FixedBottomView */ = {
+			isa = PBXGroup;
+			children = (
+				8471F4CC265FF235007A7876 /* FixedBottomView.swift */,
+			);
+			path = FixedBottomView;
 			sourceTree = "<group>";
 		};
 		92ED8E02F8BCD69A96E6B040 /* Pods */ = {
@@ -457,6 +468,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8471F4CD265FF235007A7876 /* FixedBottomView.swift in Sources */,
 				8471F4C3265FB6E5007A7876 /* AuthServiceMock.swift in Sources */,
 				8471F4CA265FB789007A7876 /* AuthModels.swift in Sources */,
 				8471F49C265F9FAB007A7876 /* StyleUtils.swift in Sources */,

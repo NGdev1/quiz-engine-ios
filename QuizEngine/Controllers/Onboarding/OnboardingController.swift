@@ -49,7 +49,9 @@ class OnboardingController: UIViewController {
     }
 
     @objc
-    private func loginWithEmail() {}
+    private func loginWithEmail() {
+        navigationController?.pushViewController(SignInController())
+    }
 
     // MARK: - OnboardingControllerLogic
 

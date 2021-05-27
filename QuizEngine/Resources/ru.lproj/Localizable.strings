@@ -10,6 +10,9 @@ Onboarding.Description = "Создание и прохождения тесто�
 Onboarding.ContinueWithEmail = "Продолжить с Email";
 Onboarding.Registration = "Регистрация";
 
+SignIn.Title = "Вход";
+SignIn.Submit = "Войти";
+
 Alert.Error = "Ошибка";
 Alert.Cancel = "Отмена";
 

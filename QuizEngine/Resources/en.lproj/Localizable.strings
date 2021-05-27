@@ -10,6 +10,9 @@ Onboarding.Description = "Creating and passing tests or quizzes.";
 Onboarding.ContinueWithEmail = "Continue with Email";
 Onboarding.Registration = "Registration";
 
+SignIn.Title = "Sign In";
+SignIn.Submit = "Sign In";
+
 Alert.Error = "Error";
 Alert.Cancel = "Cancel";
 

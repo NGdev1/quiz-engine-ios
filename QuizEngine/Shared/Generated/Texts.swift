@@ -31,6 +31,13 @@ internal enum Text {
     /// Регистрация
     internal static let registration = Text.tr("Localizable", "Onboarding.Registration")
   }
+
+  internal enum SignIn {
+    /// Войти
+    internal static let submit = Text.tr("Localizable", "SignIn.Submit")
+    /// Вход
+    internal static let title = Text.tr("Localizable", "SignIn.Title")
+  }
 }
 // swiftlint:enable explicit_type_interface function_parameter_count identifier_name line_length
 // swiftlint:enable nesting type_body_length type_name vertical_whitespace_opening_braces

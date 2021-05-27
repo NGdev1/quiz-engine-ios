@@ -5,7 +5,7 @@
 //  Created by Михаил Андреичев on 03.03.2020.
 //
 
-import Resources
+import SnapKit
 import UIKit
 
 final class FixedBottomView: UIView {
@@ -14,10 +14,10 @@ final class FixedBottomView: UIView {
     lazy var actionButton: UIButton = {
         let button = UIButton()
         button.snp.contentHuggingVerticalPriority += 100
-        button.backgroundColor = Assets.text.color
+        button.backgroundColor = Assets.baseTint1.color
         button.setTitleColor(Assets.background1.color, for: .normal)
-        button.titleLabel?.font = Fonts.SFUIDisplay.semibold.font(size: 14)
-        button.cornerRadius = 20
+        button.titleLabel?.font = Fonts.SFUIDisplay.semibold.font(size: 18)
+        button.cornerRadius = 12
         return button
     }()
 
@@ -49,11 +49,9 @@ final class FixedBottomView: UIView {
 
     private func makeConstraints() {
         actionButton.snp.makeConstraints { make in
-            make.top.equalToSuperview().inset(20)
-            make.bottom.equalTo(safeAreaLayoutGuide).inset(20)
-            make.height.equalTo(40)
-            make.width.equalTo(183)
-            make.centerX.equalToSuperview()
+            make.bottom.equalTo(safeAreaLayoutGuide).inset(16)
+            make.leading.top.trailing.equalToSuperview().inset(16)
+            make.height.equalTo(44)
         }
     }
 

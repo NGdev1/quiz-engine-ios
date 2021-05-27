@@ -10,6 +10,8 @@ import MDFoundation
 final class SignInView: UIView {
     // MARK: - Properties
 
+    lazy var bottomView: FixedBottomView = FixedBottomView(buttonText: Text.SignIn.submit)
+
     // MARK: - Xib Init
 
     override func awakeFromNib() {
