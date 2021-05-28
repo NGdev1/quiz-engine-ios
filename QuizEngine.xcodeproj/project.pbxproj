@@ -10,6 +10,10 @@
 		6B1755942624A7E000DA7E84 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B1755932624A7E000DA7E84 /* AppDelegate.swift */; };
 		6B17559D2624A7E300DA7E84 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6B17559C2624A7E300DA7E84 /* Assets.xcassets */; };
 		6B1755A02624A7E300DA7E84 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6B17559E2624A7E300DA7E84 /* LaunchScreen.storyboard */; };
+		842970C1266140270093305D /* ProfileService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842970C0266140270093305D /* ProfileService.swift */; };
+		842970C3266140530093305D /* ProfileApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842970C2266140530093305D /* ProfileApi.swift */; };
+		842970C5266142FB0093305D /* QuizApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842970C4266142FB0093305D /* QuizApi.swift */; };
+		842970C726614A430093305D /* QuizService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842970C626614A430093305D /* QuizService.swift */; };
 		843B8C2C2660C82F00E6A999 /* ProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843B8C282660C82F00E6A999 /* ProfileController.swift */; };
 		843B8C2D2660C82F00E6A999 /* ProfileInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843B8C292660C82F00E6A999 /* ProfileInteractor.swift */; };
 		843B8C2E2660C82F00E6A999 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843B8C2A2660C82F00E6A999 /* ProfileView.swift */; };
@@ -76,6 +80,10 @@
 		6B17559C2624A7E300DA7E84 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6B17559F2624A7E300DA7E84 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6B1755A12624A7E300DA7E84 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		842970C0266140270093305D /* ProfileService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileService.swift; sourceTree = "<group>"; };
+		842970C2266140530093305D /* ProfileApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileApi.swift; sourceTree = "<group>"; };
+		842970C4266142FB0093305D /* QuizApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizApi.swift; sourceTree = "<group>"; };
+		842970C626614A430093305D /* QuizService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizService.swift; sourceTree = "<group>"; };
 		843B8C282660C82F00E6A999 /* ProfileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileController.swift; sourceTree = "<group>"; };
 		843B8C292660C82F00E6A999 /* ProfileInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileInteractor.swift; sourceTree = "<group>"; };
 		843B8C2A2660C82F00E6A999 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
@@ -246,6 +254,8 @@
 		843B8C312660C84100E6A999 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
+				842970C2266140530093305D /* ProfileApi.swift */,
+				842970C0266140270093305D /* ProfileService.swift */,
 				843B8C332660C84F00E6A999 /* ProfileServiceMock.swift */,
 				843B8C342660C84F00E6A999 /* ProfileServiceProtocol.swift */,
 			);
@@ -291,6 +301,8 @@
 		843B8C4E2660F6C000E6A999 /* Quiz */ = {
 			isa = PBXGroup;
 			children = (
+				842970C4266142FB0093305D /* QuizApi.swift */,
+				842970C626614A430093305D /* QuizService.swift */,
 				843B8C502660F6D000E6A999 /* QuizServiceMock.swift */,
 				843B8C512660F6D000E6A999 /* QuizServiceProtocol.swift */,
 			);
@@ -704,6 +716,7 @@
 				8471F4CA265FB789007A7876 /* AuthModels.swift in Sources */,
 				843B8C4A2660F4B900E6A999 /* QuizListView.swift in Sources */,
 				843B8C472660F4B900E6A999 /* QuizDataSource.swift in Sources */,
+				842970C1266140270093305D /* ProfileService.swift in Sources */,
 				8471F49C265F9FAB007A7876 /* StyleUtils.swift in Sources */,
 				843B8C372660C84F00E6A999 /* ProfileServiceProtocol.swift in Sources */,
 				843B8C2C2660C82F00E6A999 /* ProfileController.swift in Sources */,
@@ -715,6 +728,7 @@
 				8471F4A9265F9FAB007A7876 /* UIView+LoadingView.swift in Sources */,
 				843B8C4D2660F54800E6A999 /* Quiz.swift in Sources */,
 				843B8C542660F6D000E6A999 /* QuizServiceProtocol.swift in Sources */,
+				842970C726614A430093305D /* QuizService.swift in Sources */,
 				84C1ACD026603D4F00412B31 /* AuthService.swift in Sources */,
 				843B8C392660C8A800E6A999 /* Profile.swift in Sources */,
 				8471F49B265F9FAB007A7876 /* DataManager.swift in Sources */,
@@ -724,6 +738,7 @@
 				8471F47A265F95E5007A7876 /* OnboardingView.swift in Sources */,
 				8471F4BB265FB685007A7876 /* SignInView.swift in Sources */,
 				8471F4D6265FF90B007A7876 /* SignUpView.swift in Sources */,
+				842970C3266140530093305D /* ProfileApi.swift in Sources */,
 				84C1ACD326603DC500412B31 /* GeneralErrors.swift in Sources */,
 				843B8C362660C84F00E6A999 /* ProfileServiceMock.swift in Sources */,
 				8471F4B4265FB3F6007A7876 /* MDScrollView.swift in Sources */,
@@ -740,6 +755,7 @@
 				843B8C3B2660C99B00E6A999 /* Image.swift in Sources */,
 				843B8C632660F8D400E6A999 /* LoadingCell.swift in Sources */,
 				8471F4A2265F9FAB007A7876 /* Assets.swift in Sources */,
+				842970C5266142FB0093305D /* QuizApi.swift in Sources */,
 				6B1755942624A7E000DA7E84 /* AppDelegate.swift in Sources */,
 				843B8C2D2660C82F00E6A999 /* ProfileInteractor.swift in Sources */,
 				843B8C2E2660C82F00E6A999 /* ProfileView.swift in Sources */,

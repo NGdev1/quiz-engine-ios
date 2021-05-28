@@ -6,7 +6,7 @@
 //
 
 internal enum ServiceFactory {
-    static let quizService: QuizServiceProtocol = QuizServiceMock()
-    static let profileService: ProfileServiceProtocol = ProfileServiceMock()
+    static let quizService: QuizServiceProtocol = QuizService()
+    static let profileService: ProfileServiceProtocol = ProfileService()
     static let authService: AuthServiceProtocol = AuthService()
 }

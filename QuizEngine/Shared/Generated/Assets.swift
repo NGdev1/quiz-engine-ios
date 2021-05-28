@@ -28,8 +28,10 @@ internal enum Assets {
   internal static let error = ColorAsset(name: "Error")
   internal static let gray = ColorAsset(name: "Gray")
   internal static let shadow = ColorAsset(name: "Shadow")
+  internal static let subtitle = ColorAsset(name: "Subtitle")
   internal static let text = ColorAsset(name: "Text")
   internal static let logo = ImageAsset(name: "Logo")
+  internal static let noPhoto = ImageAsset(name: "NoPhoto")
   internal static let tabBarIconProfile = ImageAsset(name: "TabBarIconProfile")
   internal static let tabBarIconQuizList = ImageAsset(name: "TabBarIconQuizList")
 }
