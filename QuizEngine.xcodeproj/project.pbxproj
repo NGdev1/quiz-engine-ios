@@ -134,7 +134,7 @@
 			children = (
 				6B1755AA2624A85500DA7E84 /* MainFiles */,
 				8471F4BE265FB696007A7876 /* Services */,
-				6B1755AC2624A9BD00DA7E84 /* Controllers */,
+				6B1755AC2624A9BD00DA7E84 /* Modules */,
 				8471F47D265F9747007A7876 /* Shared */,
 				6B1755AB2624A9B100DA7E84 /* Resources */,
 			);
@@ -160,14 +160,13 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
-		6B1755AC2624A9BD00DA7E84 /* Controllers */ = {
+		6B1755AC2624A9BD00DA7E84 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
-				8471F4CE265FF90B007A7876 /* SignUp */,
-				8471F4B1265FB2B7007A7876 /* SignIn */,
-				6B1755AD2624A9C400DA7E84 /* Onboarding */,
+				84C1ACD42660C67500412B31 /* Auth */,
+				84C1ACD52660C68800412B31 /* Profile */,
 			);
-			path = Controllers;
+			path = Modules;
 			sourceTree = "<group>";
 		};
 		6B1755AD2624A9C400DA7E84 /* Onboarding */ = {
@@ -347,6 +346,23 @@
 				84C1ACD226603DC500412B31 /* GeneralErrors.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		84C1ACD42660C67500412B31 /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				8471F4CE265FF90B007A7876 /* SignUp */,
+				8471F4B1265FB2B7007A7876 /* SignIn */,
+				6B1755AD2624A9C400DA7E84 /* Onboarding */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		84C1ACD52660C68800412B31 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Profile;
 			sourceTree = "<group>";
 		};
 		92ED8E02F8BCD69A96E6B040 /* Pods */ = {
