@@ -29,6 +29,10 @@ SignUp.ConfirmPassword = "Подтверждение пароля";
 SignUp.PasswordsNotMatch = "Пароли не совпадают";
 
 Profile.Title = "Профиль";
+Profile.LogOut = "Выйти";
+
+CreateQuiz.Title = "Новый тест";
+EditQuiz.Title = "Редактирование";
 
 QuizList.Title = "Мои тесты";
 QuizList.NoContent = "Ни одного теста не создано";

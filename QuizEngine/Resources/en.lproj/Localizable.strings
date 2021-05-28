@@ -29,6 +29,10 @@ SignUp.ConfirmPassword = "Confirm password";
 SignUp.PasswordsNotMatch = "Passwords not match";
 
 Profile.Title = "Profile";
+Profile.LogOut = "Log out";
+
+CreateQuiz.Title = "New test";
+EditQuiz.Title = "Editing";
 
 QuizList.Title = "My tests";
 QuizList.NoContent = "No quiz created";

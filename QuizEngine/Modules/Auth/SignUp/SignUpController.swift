@@ -89,6 +89,7 @@ class SignUpController: UIViewController, SignUpControllerLogic {
     func didFinishSignUp(response: Auth.TokenDto) {
         customView?.stopShowingLoading()
         AppService.shared.app.accessToken = response.token
+        view.window?.rootViewController = TabBarController()
     }
 
     func presentError(message: String) {

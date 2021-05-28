@@ -25,6 +25,16 @@ internal enum Text {
     internal static let fillInTheFields = Text.tr("Localizable", "Common.FillInTheFields")
   }
 
+  internal enum CreateQuiz {
+    /// Новый тест
+    internal static let title = Text.tr("Localizable", "CreateQuiz.Title")
+  }
+
+  internal enum EditQuiz {
+    /// Редактирование
+    internal static let title = Text.tr("Localizable", "EditQuiz.Title")
+  }
+
   internal enum Errors {
     /// Доступ запрещен
     internal static let authError = Text.tr("Localizable", "Errors.AuthError")
@@ -50,6 +60,8 @@ internal enum Text {
   }
 
   internal enum Profile {
+    /// Выйти
+    internal static let logOut = Text.tr("Localizable", "Profile.LogOut")
     /// Профиль
     internal static let title = Text.tr("Localizable", "Profile.Title")
   }

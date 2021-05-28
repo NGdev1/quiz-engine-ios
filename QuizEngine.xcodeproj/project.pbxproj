@@ -25,6 +25,11 @@
 		842970DE266168290093305D /* GenericTableViewSectionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842970D9266168290093305D /* GenericTableViewSectionModel.swift */; };
 		842970E226616D700093305D /* ProfileHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842970E026616D700093305D /* ProfileHeaderCell.swift */; };
 		842970E326616D700093305D /* ProfileHeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 842970E126616D700093305D /* ProfileHeaderCell.xib */; };
+		842970EA266179CB0093305D /* CreateQuizCellSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842970E5266179CB0093305D /* CreateQuizCellSetup.swift */; };
+		842970EB266179CB0093305D /* CreateQuizTableBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842970E6266179CB0093305D /* CreateQuizTableBuilder.swift */; };
+		842970EC266179CB0093305D /* CreateQuizController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842970E7266179CB0093305D /* CreateQuizController.swift */; };
+		842970ED266179CB0093305D /* CreateQuizInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842970E8266179CB0093305D /* CreateQuizInteractor.swift */; };
+		842970EE266179CB0093305D /* CreateQuizView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842970E9266179CB0093305D /* CreateQuizView.swift */; };
 		843B8C2D2660C82F00E6A999 /* ProfileInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843B8C292660C82F00E6A999 /* ProfileInteractor.swift */; };
 		843B8C352660C84F00E6A999 /* ServiceFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843B8C322660C84F00E6A999 /* ServiceFactory.swift */; };
 		843B8C362660C84F00E6A999 /* ProfileServiceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843B8C332660C84F00E6A999 /* ProfileServiceMock.swift */; };
@@ -103,6 +108,11 @@
 		842970D9266168290093305D /* GenericTableViewSectionModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenericTableViewSectionModel.swift; sourceTree = "<group>"; };
 		842970E026616D700093305D /* ProfileHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeaderCell.swift; sourceTree = "<group>"; };
 		842970E126616D700093305D /* ProfileHeaderCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileHeaderCell.xib; sourceTree = "<group>"; };
+		842970E5266179CB0093305D /* CreateQuizCellSetup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateQuizCellSetup.swift; sourceTree = "<group>"; };
+		842970E6266179CB0093305D /* CreateQuizTableBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateQuizTableBuilder.swift; sourceTree = "<group>"; };
+		842970E7266179CB0093305D /* CreateQuizController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateQuizController.swift; sourceTree = "<group>"; };
+		842970E8266179CB0093305D /* CreateQuizInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateQuizInteractor.swift; sourceTree = "<group>"; };
+		842970E9266179CB0093305D /* CreateQuizView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateQuizView.swift; sourceTree = "<group>"; };
 		843B8C292660C82F00E6A999 /* ProfileInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileInteractor.swift; sourceTree = "<group>"; };
 		843B8C322660C84F00E6A999 /* ServiceFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceFactory.swift; sourceTree = "<group>"; };
 		843B8C332660C84F00E6A999 /* ProfileServiceMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileServiceMock.swift; sourceTree = "<group>"; };
@@ -290,6 +300,26 @@
 			path = ProfileHeaderCell;
 			sourceTree = "<group>";
 		};
+		842970E4266178530093305D /* CreateQuiz */ = {
+			isa = PBXGroup;
+			children = (
+				842970E7266179CB0093305D /* CreateQuizController.swift */,
+				842970E8266179CB0093305D /* CreateQuizInteractor.swift */,
+				842970EF266179CE0093305D /* View */,
+			);
+			path = CreateQuiz;
+			sourceTree = "<group>";
+		};
+		842970EF266179CE0093305D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				842970E5266179CB0093305D /* CreateQuizCellSetup.swift */,
+				842970E6266179CB0093305D /* CreateQuizTableBuilder.swift */,
+				842970E9266179CB0093305D /* CreateQuizView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		843B8C312660C84100E6A999 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
@@ -312,6 +342,7 @@
 		843B8C3F2660F47A00E6A999 /* Quiz */ = {
 			isa = PBXGroup;
 			children = (
+				842970E4266178530093305D /* CreateQuiz */,
 				843B8C402660F48300E6A999 /* QuizList */,
 			);
 			path = Quiz;
@@ -749,8 +780,10 @@
 			files = (
 				8471F4D5265FF90B007A7876 /* SignUpInteractor.swift in Sources */,
 				8471F4D4265FF90B007A7876 /* SignUpController.swift in Sources */,
+				842970ED266179CB0093305D /* CreateQuizInteractor.swift in Sources */,
 				842970E226616D700093305D /* ProfileHeaderCell.swift in Sources */,
 				843B8C532660F6D000E6A999 /* QuizServiceMock.swift in Sources */,
+				842970EE266179CB0093305D /* CreateQuizView.swift in Sources */,
 				843B8C352660C84F00E6A999 /* ServiceFactory.swift in Sources */,
 				8471F4CD265FF235007A7876 /* FixedBottomView.swift in Sources */,
 				8471F4C3265FB6E5007A7876 /* AuthServiceMock.swift in Sources */,
@@ -769,6 +802,7 @@
 				8471F4AB265FA03D007A7876 /* ResourcesBundle.swift in Sources */,
 				8471F4A9265F9FAB007A7876 /* UIView+LoadingView.swift in Sources */,
 				843B8C4D2660F54800E6A999 /* Quiz.swift in Sources */,
+				842970EC266179CB0093305D /* CreateQuizController.swift in Sources */,
 				843B8C542660F6D000E6A999 /* QuizServiceProtocol.swift in Sources */,
 				842970C726614A430093305D /* QuizService.swift in Sources */,
 				84C1ACD026603D4F00412B31 /* AuthService.swift in Sources */,
@@ -791,6 +825,7 @@
 				843B8C482660F4B900E6A999 /* QuizListController.swift in Sources */,
 				843B8C582660F87A00E6A999 /* QuizCell.swift in Sources */,
 				842970D2266166E70093305D /* ProfileView.swift in Sources */,
+				842970EA266179CB0093305D /* CreateQuizCellSetup.swift in Sources */,
 				842970CF266166E70093305D /* ProfileTableBuilder.swift in Sources */,
 				842970CE266166E70093305D /* ProfileCellSetup.swift in Sources */,
 				842970D0266166E70093305D /* ProfileController.swift in Sources */,
@@ -803,6 +838,7 @@
 				843B8C3B2660C99B00E6A999 /* Image.swift in Sources */,
 				843B8C632660F8D400E6A999 /* LoadingCell.swift in Sources */,
 				8471F4A2265F9FAB007A7876 /* Assets.swift in Sources */,
+				842970EB266179CB0093305D /* CreateQuizTableBuilder.swift in Sources */,
 				842970C5266142FB0093305D /* QuizApi.swift in Sources */,
 				842970DC266168290093305D /* GenericTableViewDelegate.swift in Sources */,
 				6B1755942624A7E000DA7E84 /* AppDelegate.swift in Sources */,

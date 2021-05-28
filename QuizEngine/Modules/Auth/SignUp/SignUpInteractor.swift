@@ -18,6 +18,7 @@ class SignUpInteractor: SignUpBusinessLogic {
             guard let self = self else { return }
             if let error = error {
                 self.controller?.presentError(message: error.localizedDescription)
+                return
             }
             if let response = response {
                 self.controller?.didFinishSignUp(response: response)

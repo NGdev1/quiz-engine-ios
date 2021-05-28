@@ -1,21 +1,55 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="default" indentationWidth="10" rowHeight="96" id="KGk-i7-Jjw" customClass="QuizCell" customModuleProvider="target">
+        <tableViewCell contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" rowHeight="96" id="KGk-i7-Jjw" customClass="QuizCell" customModule="QuizEngine" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="402" height="96"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="402" height="96"/>
+                <rect key="frame" x="0.0" y="0.0" width="372.5" height="96"/>
                 <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XnQ-Fo-2Sf">
+                        <rect key="frame" x="16" y="13" width="340.5" height="20.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Questions count" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B4i-XW-BXJ">
+                        <rect key="frame" x="16" y="40.5" width="340.5" height="42.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <color key="textColor" name="Subtitle"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="B4i-XW-BXJ" firstAttribute="trailing" secondItem="XnQ-Fo-2Sf" secondAttribute="trailing" id="2Vg-kH-csp"/>
+                    <constraint firstItem="XnQ-Fo-2Sf" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="6a8-Kq-gCz"/>
+                    <constraint firstItem="B4i-XW-BXJ" firstAttribute="top" secondItem="XnQ-Fo-2Sf" secondAttribute="bottom" constant="7" id="A50-47-19w"/>
+                    <constraint firstAttribute="bottom" secondItem="B4i-XW-BXJ" secondAttribute="bottom" constant="13" id="BH7-lI-xIJ"/>
+                    <constraint firstItem="B4i-XW-BXJ" firstAttribute="leading" secondItem="XnQ-Fo-2Sf" secondAttribute="leading" id="F9a-LC-crK"/>
+                    <constraint firstItem="XnQ-Fo-2Sf" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="13" id="PxA-SI-zfi"/>
+                    <constraint firstAttribute="trailing" secondItem="XnQ-Fo-2Sf" secondAttribute="trailing" constant="16" id="xRw-DN-CZZ"/>
+                </constraints>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="nameLabel" destination="XnQ-Fo-2Sf" id="8wu-jR-ZqY"/>
+                <outlet property="questionsCountLabel" destination="B4i-XW-BXJ" id="owi-cY-L7r"/>
+            </connections>
+            <point key="canvasLocation" x="125" y="146"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <namedColor name="Subtitle">
+            <color red="0.50196078431372548" green="0.50196078431372548" blue="0.50196078431372548" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
 </document>

@@ -19,4 +19,16 @@ class QuizServiceMock: QuizServiceProtocol {
             completion([], nil)
         }
     }
+
+    func create(quiz: Quiz, completion: @escaping (Quiz?, Error?) -> Void) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            completion(quiz, nil)
+        }
+    }
+
+    func update(id: String, quiz: Quiz, completion: @escaping (Quiz?, Error?) -> Void) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            completion(quiz, nil)
+        }
+    }
 }

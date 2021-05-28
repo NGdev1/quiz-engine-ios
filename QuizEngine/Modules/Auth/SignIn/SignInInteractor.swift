@@ -18,6 +18,7 @@ class SignInInteractor: SignInBusinessLogic {
             guard let self = self else { return }
             if let error = error {
                 self.controller?.presentError(message: error.localizedDescription)
+                return
             }
             if let response = response {
                 self.controller?.didFinishSignIn(response: response)

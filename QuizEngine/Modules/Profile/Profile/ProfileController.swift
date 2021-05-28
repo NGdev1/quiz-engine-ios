@@ -6,6 +6,7 @@
 //
 
 import MDFoundation
+import Storable
 
 protocol ProfileControllerLogic: AnyObject {
     func presentProfile(_ entity: Profile)
@@ -31,6 +32,7 @@ class ProfileController: UIViewController, ProfileControllerLogic {
         setup()
         setupAppearance()
         loadProfile()
+        addActionHandlers()
     }
 
     private func setup() {
@@ -49,6 +51,21 @@ class ProfileController: UIViewController, ProfileControllerLogic {
     private func loadProfile() {
         customView.showLoading()
         interactor?.loadProfile()
+    }
+
+    // MARK: - Action handlers
+
+    private func addActionHandlers() {
+        navigationItem.rightBarButtonItem = UIBarButtonItem(
+            title: Text.Profile.logOut, style: .plain,
+            target: self, action: #selector(logOut)
+        )
+    }
+
+    @objc
+    private func logOut() {
+        AppService.shared.app.accessToken = nil
+        view.window?.rootViewController = UINavigationController(rootViewController: OnboardingController())
     }
 
     // MARK: - ProfileControllerLogic
