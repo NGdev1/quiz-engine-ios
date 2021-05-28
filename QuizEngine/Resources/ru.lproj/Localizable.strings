@@ -28,9 +28,15 @@ SignUp.Password = "Пароль";
 SignUp.ConfirmPassword = "Подтверждение пароля";
 SignUp.PasswordsNotMatch = "Пароли не совпадают";
 
+Profile.Title = "Профиль";
+
+QuizList.Title = "Мои тесты";
+QuizList.NoContent = "Ни одного теста не создано";
+
 Alert.Error = "Ошибка";
 Alert.Cancel = "Отмена";
 
+Errors.TryAgain = "Перезагрузить";
 Errors.RequestError = "Ошибка запроса";
 Errors.RemoteError = "Ошибка сервера";
 Errors.UnknownError = "Неизвестная ошибка";

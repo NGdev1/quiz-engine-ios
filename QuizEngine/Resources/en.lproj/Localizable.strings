@@ -28,9 +28,15 @@ SignUp.Password = "Password";
 SignUp.ConfirmPassword = "Confirm password";
 SignUp.PasswordsNotMatch = "Passwords not match";
 
+Profile.Title = "Profile";
+
+QuizList.Title = "My tests";
+QuizList.NoContent = "No quiz created";
+
 Alert.Error = "Error";
 Alert.Cancel = "Cancel";
 
+Errors.TryAgain = "Try Again";
 Errors.RequestError = "Request error";
 Errors.RemoteError = "Remote Server error";
 Errors.UnknownError = "Unknown error";

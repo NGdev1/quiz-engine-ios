@@ -30,6 +30,8 @@ internal enum Assets {
   internal static let shadow = ColorAsset(name: "Shadow")
   internal static let text = ColorAsset(name: "Text")
   internal static let logo = ImageAsset(name: "Logo")
+  internal static let tabBarIconProfile = ImageAsset(name: "TabBarIconProfile")
+  internal static let tabBarIconQuizList = ImageAsset(name: "TabBarIconQuizList")
 }
 // swiftlint:enable identifier_name line_length nesting type_body_length type_name
 

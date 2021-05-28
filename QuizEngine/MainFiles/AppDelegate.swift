@@ -30,9 +30,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     // MARK: - Setup
 
     private func setupRootController() {
-        // if AppService.shared.app.accessToken == nil
-        let navigationController = UINavigationController(rootViewController: OnboardingController())
-        window?.rootViewController = navigationController
+        if AppService.shared.app.accessToken == nil {
+            let navigationController = UINavigationController(rootViewController: OnboardingController())
+            window?.rootViewController = navigationController
+        } else {
+            let tabBarController = TabBarController()
+            window?.rootViewController = tabBarController
+        }
         window?.makeKeyAndVisible()
     }
 

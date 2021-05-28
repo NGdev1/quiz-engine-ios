@@ -11,7 +11,7 @@ protocol SignUpBusinessLogic: AnyObject {
 
 class SignUpInteractor: SignUpBusinessLogic {
     weak var controller: SignUpControllerLogic?
-    let service: AuthServiceProtocol = AuthServiceFactory.service
+    let service: AuthServiceProtocol = ServiceFactory.authService
 
     func signUp(form: Auth.SignUpForm) {
         service.signUp(form) { [weak self] response, error in

@@ -34,6 +34,8 @@ internal enum Text {
     internal static let remoteError = Text.tr("Localizable", "Errors.RemoteError")
     /// Ошибка запроса
     internal static let requestError = Text.tr("Localizable", "Errors.RequestError")
+    /// Перезагрузить
+    internal static let tryAgain = Text.tr("Localizable", "Errors.TryAgain")
     /// Неизвестная ошибка
     internal static let unknownError = Text.tr("Localizable", "Errors.UnknownError")
   }
@@ -45,6 +47,18 @@ internal enum Text {
     internal static let description = Text.tr("Localizable", "Onboarding.Description")
     /// Регистрация
     internal static let registration = Text.tr("Localizable", "Onboarding.Registration")
+  }
+
+  internal enum Profile {
+    /// Профиль
+    internal static let title = Text.tr("Localizable", "Profile.Title")
+  }
+
+  internal enum QuizList {
+    /// Ни одного теста не создано
+    internal static let noContent = Text.tr("Localizable", "QuizList.NoContent")
+    /// Мои тесты
+    internal static let title = Text.tr("Localizable", "QuizList.Title")
   }
 
   internal enum SignIn {
