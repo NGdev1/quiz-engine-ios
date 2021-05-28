@@ -20,7 +20,7 @@ class ProfileInteractor: ProfileBusinessLogic {
                 self.controller?.presentError(message: error.localizedDescription)
             }
             if let response = response {
-                self.controller?.didFinishLoadingProfile(response)
+                self.controller?.presentProfile(response)
             } else {
                 self.controller?.presentError(message: Text.Errors.requestError)
             }

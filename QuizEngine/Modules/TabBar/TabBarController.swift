@@ -11,7 +11,11 @@ class TabBarController: UITabBarController {
     init() {
         super.init(nibName: nil, bundle: nil)
         let quizList = UINavigationController(rootViewController: QuizListController())
+        quizList.tabBarItem.image = Assets.tabBarIconQuizList.image
+        quizList.tabBarItem.title = Text.QuizList.title
         let profile = UINavigationController(rootViewController: ProfileController())
+        profile.tabBarItem.image = Assets.tabBarIconProfile.image
+        profile.tabBarItem.title = Text.Profile.title
         viewControllers = [quizList, profile]
     }
 

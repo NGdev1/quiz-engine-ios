@@ -14,10 +14,18 @@
 		842970C3266140530093305D /* ProfileApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842970C2266140530093305D /* ProfileApi.swift */; };
 		842970C5266142FB0093305D /* QuizApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842970C4266142FB0093305D /* QuizApi.swift */; };
 		842970C726614A430093305D /* QuizService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842970C626614A430093305D /* QuizService.swift */; };
-		843B8C2C2660C82F00E6A999 /* ProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843B8C282660C82F00E6A999 /* ProfileController.swift */; };
+		842970CE266166E70093305D /* ProfileCellSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842970C9266166E70093305D /* ProfileCellSetup.swift */; };
+		842970CF266166E70093305D /* ProfileTableBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842970CA266166E70093305D /* ProfileTableBuilder.swift */; };
+		842970D0266166E70093305D /* ProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842970CB266166E70093305D /* ProfileController.swift */; };
+		842970D2266166E70093305D /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842970CD266166E70093305D /* ProfileView.swift */; };
+		842970DA266168290093305D /* GenericTableViewRowModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842970D5266168290093305D /* GenericTableViewRowModel.swift */; };
+		842970DB266168290093305D /* GenericTableViewDataStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842970D6266168290093305D /* GenericTableViewDataStorage.swift */; };
+		842970DC266168290093305D /* GenericTableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842970D7266168290093305D /* GenericTableViewDelegate.swift */; };
+		842970DD266168290093305D /* GenericTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842970D8266168290093305D /* GenericTableViewDataSource.swift */; };
+		842970DE266168290093305D /* GenericTableViewSectionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842970D9266168290093305D /* GenericTableViewSectionModel.swift */; };
+		842970E226616D700093305D /* ProfileHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842970E026616D700093305D /* ProfileHeaderCell.swift */; };
+		842970E326616D700093305D /* ProfileHeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 842970E126616D700093305D /* ProfileHeaderCell.xib */; };
 		843B8C2D2660C82F00E6A999 /* ProfileInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843B8C292660C82F00E6A999 /* ProfileInteractor.swift */; };
-		843B8C2E2660C82F00E6A999 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843B8C2A2660C82F00E6A999 /* ProfileView.swift */; };
-		843B8C2F2660C82F00E6A999 /* ProfileView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 843B8C2B2660C82F00E6A999 /* ProfileView.xib */; };
 		843B8C352660C84F00E6A999 /* ServiceFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843B8C322660C84F00E6A999 /* ServiceFactory.swift */; };
 		843B8C362660C84F00E6A999 /* ProfileServiceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843B8C332660C84F00E6A999 /* ProfileServiceMock.swift */; };
 		843B8C372660C84F00E6A999 /* ProfileServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843B8C342660C84F00E6A999 /* ProfileServiceProtocol.swift */; };
@@ -84,10 +92,18 @@
 		842970C2266140530093305D /* ProfileApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileApi.swift; sourceTree = "<group>"; };
 		842970C4266142FB0093305D /* QuizApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizApi.swift; sourceTree = "<group>"; };
 		842970C626614A430093305D /* QuizService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizService.swift; sourceTree = "<group>"; };
-		843B8C282660C82F00E6A999 /* ProfileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileController.swift; sourceTree = "<group>"; };
+		842970C9266166E70093305D /* ProfileCellSetup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCellSetup.swift; sourceTree = "<group>"; };
+		842970CA266166E70093305D /* ProfileTableBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableBuilder.swift; sourceTree = "<group>"; };
+		842970CB266166E70093305D /* ProfileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileController.swift; sourceTree = "<group>"; };
+		842970CD266166E70093305D /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		842970D5266168290093305D /* GenericTableViewRowModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenericTableViewRowModel.swift; sourceTree = "<group>"; };
+		842970D6266168290093305D /* GenericTableViewDataStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenericTableViewDataStorage.swift; sourceTree = "<group>"; };
+		842970D7266168290093305D /* GenericTableViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenericTableViewDelegate.swift; sourceTree = "<group>"; };
+		842970D8266168290093305D /* GenericTableViewDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenericTableViewDataSource.swift; sourceTree = "<group>"; };
+		842970D9266168290093305D /* GenericTableViewSectionModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenericTableViewSectionModel.swift; sourceTree = "<group>"; };
+		842970E026616D700093305D /* ProfileHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeaderCell.swift; sourceTree = "<group>"; };
+		842970E126616D700093305D /* ProfileHeaderCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileHeaderCell.xib; sourceTree = "<group>"; };
 		843B8C292660C82F00E6A999 /* ProfileInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileInteractor.swift; sourceTree = "<group>"; };
-		843B8C2A2660C82F00E6A999 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
-		843B8C2B2660C82F00E6A999 /* ProfileView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileView.xib; sourceTree = "<group>"; };
 		843B8C322660C84F00E6A999 /* ServiceFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceFactory.swift; sourceTree = "<group>"; };
 		843B8C332660C84F00E6A999 /* ProfileServiceMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileServiceMock.swift; sourceTree = "<group>"; };
 		843B8C342660C84F00E6A999 /* ProfileServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileServiceProtocol.swift; sourceTree = "<group>"; };
@@ -232,23 +248,46 @@
 			path = Onboarding;
 			sourceTree = "<group>";
 		};
-		843B8C272660C80D00E6A999 /* Profile */ = {
+		842970C8266163A90093305D /* Profile */ = {
 			isa = PBXGroup;
 			children = (
-				843B8C282660C82F00E6A999 /* ProfileController.swift */,
+				842970CB266166E70093305D /* ProfileController.swift */,
 				843B8C292660C82F00E6A999 /* ProfileInteractor.swift */,
-				843B8C302660C83200E6A999 /* View */,
+				842970D3266166EB0093305D /* View */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
 		};
-		843B8C302660C83200E6A999 /* View */ = {
+		842970D3266166EB0093305D /* View */ = {
 			isa = PBXGroup;
 			children = (
-				843B8C2A2660C82F00E6A999 /* ProfileView.swift */,
-				843B8C2B2660C82F00E6A999 /* ProfileView.xib */,
+				842970C9266166E70093305D /* ProfileCellSetup.swift */,
+				842970CA266166E70093305D /* ProfileTableBuilder.swift */,
+				842970CD266166E70093305D /* ProfileView.swift */,
+				842970DF26616D390093305D /* ProfileHeaderCell */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		842970D4266168290093305D /* GenericTableView */ = {
+			isa = PBXGroup;
+			children = (
+				842970D5266168290093305D /* GenericTableViewRowModel.swift */,
+				842970D6266168290093305D /* GenericTableViewDataStorage.swift */,
+				842970D7266168290093305D /* GenericTableViewDelegate.swift */,
+				842970D8266168290093305D /* GenericTableViewDataSource.swift */,
+				842970D9266168290093305D /* GenericTableViewSectionModel.swift */,
+			);
+			path = GenericTableView;
+			sourceTree = "<group>";
+		};
+		842970DF26616D390093305D /* ProfileHeaderCell */ = {
+			isa = PBXGroup;
+			children = (
+				842970E026616D700093305D /* ProfileHeaderCell.swift */,
+				842970E126616D700093305D /* ProfileHeaderCell.xib */,
+			);
+			path = ProfileHeaderCell;
 			sourceTree = "<group>";
 		};
 		843B8C312660C84100E6A999 /* Profile */ = {
@@ -368,6 +407,7 @@
 				8471F4AA265FA03D007A7876 /* ResourcesBundle.swift */,
 				8471F484265F9FAB007A7876 /* Classes */,
 				8471F494265F9FAB007A7876 /* Extensions */,
+				842970D4266168290093305D /* GenericTableView */,
 				8471F490265F9FAB007A7876 /* Generated */,
 				8471F487265F9FAB007A7876 /* Molecules */,
 			);
@@ -534,7 +574,7 @@
 		84C1ACD52660C68800412B31 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
-				843B8C272660C80D00E6A999 /* Profile */,
+				842970C8266163A90093305D /* Profile */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -612,8 +652,8 @@
 			files = (
 				8471F4D7265FF90B007A7876 /* SignUpView.xib in Resources */,
 				6B1755A02624A7E300DA7E84 /* LaunchScreen.storyboard in Resources */,
-				843B8C2F2660C82F00E6A999 /* ProfileView.xib in Resources */,
 				8471F480265F992D007A7876 /* Localizable.strings in Resources */,
+				842970E326616D700093305D /* ProfileHeaderCell.xib in Resources */,
 				6B17559D2624A7E300DA7E84 /* Assets.xcassets in Resources */,
 				8471F47B265F95E5007A7876 /* OnboardingView.xib in Resources */,
 				843B8C592660F87A00E6A999 /* QuizCell.xib in Resources */,
@@ -709,6 +749,7 @@
 			files = (
 				8471F4D5265FF90B007A7876 /* SignUpInteractor.swift in Sources */,
 				8471F4D4265FF90B007A7876 /* SignUpController.swift in Sources */,
+				842970E226616D700093305D /* ProfileHeaderCell.swift in Sources */,
 				843B8C532660F6D000E6A999 /* QuizServiceMock.swift in Sources */,
 				843B8C352660C84F00E6A999 /* ServiceFactory.swift in Sources */,
 				8471F4CD265FF235007A7876 /* FixedBottomView.swift in Sources */,
@@ -716,10 +757,11 @@
 				8471F4CA265FB789007A7876 /* AuthModels.swift in Sources */,
 				843B8C4A2660F4B900E6A999 /* QuizListView.swift in Sources */,
 				843B8C472660F4B900E6A999 /* QuizDataSource.swift in Sources */,
+				842970DB266168290093305D /* GenericTableViewDataStorage.swift in Sources */,
 				842970C1266140270093305D /* ProfileService.swift in Sources */,
+				842970DA266168290093305D /* GenericTableViewRowModel.swift in Sources */,
 				8471F49C265F9FAB007A7876 /* StyleUtils.swift in Sources */,
 				843B8C372660C84F00E6A999 /* ProfileServiceProtocol.swift in Sources */,
-				843B8C2C2660C82F00E6A999 /* ProfileController.swift in Sources */,
 				8471F4A5265F9FAB007A7876 /* ExtensionFloat.swift in Sources */,
 				8471F478265F95E5007A7876 /* OnboardingController.swift in Sources */,
 				843B8C492660F4B900E6A999 /* QuizListInteractor.swift in Sources */,
@@ -730,6 +772,7 @@
 				843B8C542660F6D000E6A999 /* QuizServiceProtocol.swift in Sources */,
 				842970C726614A430093305D /* QuizService.swift in Sources */,
 				84C1ACD026603D4F00412B31 /* AuthService.swift in Sources */,
+				842970DD266168290093305D /* GenericTableViewDataSource.swift in Sources */,
 				843B8C392660C8A800E6A999 /* Profile.swift in Sources */,
 				8471F49B265F9FAB007A7876 /* DataManager.swift in Sources */,
 				84C1ACCE26603C8700412B31 /* AuthApi.swift in Sources */,
@@ -747,7 +790,12 @@
 				8471F4B0265FA0BD007A7876 /* MDTextArea.swift in Sources */,
 				843B8C482660F4B900E6A999 /* QuizListController.swift in Sources */,
 				843B8C582660F87A00E6A999 /* QuizCell.swift in Sources */,
+				842970D2266166E70093305D /* ProfileView.swift in Sources */,
+				842970CF266166E70093305D /* ProfileTableBuilder.swift in Sources */,
+				842970CE266166E70093305D /* ProfileCellSetup.swift in Sources */,
+				842970D0266166E70093305D /* ProfileController.swift in Sources */,
 				843B8C652660F8D400E6A999 /* ErrorCell.swift in Sources */,
+				842970DE266168290093305D /* GenericTableViewSectionModel.swift in Sources */,
 				843B8C3E2660F23C00E6A999 /* TabBarController.swift in Sources */,
 				8471F4A7265F9FAB007A7876 /* ExtensionUIView.swift in Sources */,
 				8471F4A3265F9FAB007A7876 /* Fonts.swift in Sources */,
@@ -756,9 +804,9 @@
 				843B8C632660F8D400E6A999 /* LoadingCell.swift in Sources */,
 				8471F4A2265F9FAB007A7876 /* Assets.swift in Sources */,
 				842970C5266142FB0093305D /* QuizApi.swift in Sources */,
+				842970DC266168290093305D /* GenericTableViewDelegate.swift in Sources */,
 				6B1755942624A7E000DA7E84 /* AppDelegate.swift in Sources */,
 				843B8C2D2660C82F00E6A999 /* ProfileInteractor.swift in Sources */,
-				843B8C2E2660C82F00E6A999 /* ProfileView.swift in Sources */,
 				8471F4A8265F9FAB007A7876 /* ExtensionUIImage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

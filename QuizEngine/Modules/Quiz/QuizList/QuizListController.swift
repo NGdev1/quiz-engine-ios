@@ -55,7 +55,6 @@ class QuizListController: UIViewController, QuizListControllerLogic {
     }
 
     private func setupAppearance() {
-        tabBarItem.image = Assets.tabBarIconQuizList.image
         title = Text.QuizList.title
         extendedLayoutIncludesOpaqueBars = true
     }

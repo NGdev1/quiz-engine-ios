@@ -8,32 +8,29 @@
 import MDFoundation
 
 protocol ProfileControllerLogic: AnyObject {
-    func didFinishLoadingProfile(_ response: Profile)
+    func presentProfile(_ entity: Profile)
     func presentError(message: String)
 }
 
 class ProfileController: UIViewController, ProfileControllerLogic {
     // MARK: - Properties
 
+    lazy var customView = ProfileView()
     var interactor: ProfileInteractor?
 
-    lazy var customView: ProfileView? = view as? ProfileView
+    let generator = UINotificationFeedbackGenerator()
 
-    // MARK: - Init
+    // MARK: - Life cycle
 
-    init() {
-        super.init(
-            nibName: Utils.getClassName(ProfileView.self),
-            bundle: resourcesBundle
-        )
-        setup()
-        setupAppearance()
-        addActionHandlers()
+    override func loadView() {
+        view = customView
     }
 
-    @available(*, unavailable)
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        setup()
+        setupAppearance()
+        loadProfile()
     }
 
     private func setup() {
@@ -42,44 +39,34 @@ class ProfileController: UIViewController, ProfileControllerLogic {
     }
 
     private func setupAppearance() {
-        tabBarItem.image = Assets.tabBarIconProfile.image
+        extendedLayoutIncludesOpaqueBars = true
         title = Text.Profile.title
+        customView.tableBuilder?.delegate = self
     }
 
-    // MARK: - Life cycle
+    // MARK: - Network requests
 
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        loadData()
-    }
-
-    // MARK: - Networking
-
-    private func loadData() {
-        customView?.startShowingActivityIndicator(needToDimBackground: true)
+    private func loadProfile() {
+        customView.showLoading()
         interactor?.loadProfile()
     }
 
-    // MARK: - Action handlers
-
-    private func addActionHandlers() {}
-
     // MARK: - ProfileControllerLogic
 
-    func didFinishLoadingProfile(_ response: Profile) {
-        customView?.stopShowingActivityIndicator()
-        customView?.displayProfile(response)
+    func presentProfile(_ entity: Profile) {
+        customView.updateAppearance(with: entity)
     }
 
     func presentError(message: String) {
-        customView?.stopShowingActivityIndicator()
-        guard message != .empty else { return }
-        let alert = AlertsFactory.plain(
-            title: Text.Alert.error,
-            message: message,
-            tintColor: Assets.baseTint1.color,
-            cancelText: Text.Alert.cancel
-        )
-        present(alert, animated: true, completion: nil)
+        generator.notificationOccurred(.error)
+        customView.showError(message: message)
+    }
+}
+
+// MARK: - ProfileCellSetupDelegate
+
+extension ProfileController: ProfileCellSetupDelegate {
+    func reloadAction() {
+        loadProfile()
     }
 }
