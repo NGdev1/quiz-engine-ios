@@ -1,5 +1,5 @@
 //
-//  CreateQuizController.swift
+//  EditQuizController.swift
 //  QuizEngine
 //
 //  Created by Admin on 28.05.2021.
@@ -7,16 +7,16 @@
 
 import MDFoundation
 
-protocol CreateQuizControllerLogic: AnyObject {
+protocol EditQuizControllerLogic: AnyObject {
     func presentQuiz(_ entity: Quiz)
     func presentError(message: String)
 }
 
-class CreateQuizController: UIViewController, CreateQuizControllerLogic {
+class EditQuizController: UIViewController, EditQuizControllerLogic {
     // MARK: - Properties
 
-    private lazy var customView = CreateQuizView()
-    private var interactor: CreateQuizInteractor?
+    private lazy var customView = EditQuizView()
+    private var interactor: EditQuizInteractor?
 
     private let generator = UINotificationFeedbackGenerator()
     private let quiz: Quiz
@@ -47,7 +47,7 @@ class CreateQuizController: UIViewController, CreateQuizControllerLogic {
     }
 
     private func setup() {
-        interactor = CreateQuizInteractor()
+        interactor = EditQuizInteractor()
         interactor?.controller = self
     }
 
@@ -78,7 +78,7 @@ class CreateQuizController: UIViewController, CreateQuizControllerLogic {
 
     // MARK: - Network requests
 
-    // MARK: - CreateQuizControllerLogic
+    // MARK: - EditQuizControllerLogic
 
     func presentQuiz(_ entity: Quiz) {
         customView.updateAppearance(with: entity)
@@ -90,8 +90,8 @@ class CreateQuizController: UIViewController, CreateQuizControllerLogic {
     }
 }
 
-// MARK: - CreateQuizCellSetupDelegate
+// MARK: - EditQuizCellSetupDelegate
 
-extension CreateQuizController: CreateQuizCellSetupDelegate {
+extension EditQuizController: EditQuizCellSetupDelegate {
     func reloadAction() {}
 }

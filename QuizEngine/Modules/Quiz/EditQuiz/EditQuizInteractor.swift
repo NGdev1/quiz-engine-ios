@@ -1,17 +1,17 @@
 //
-//  CreateQuizInteractor.swift
+//  EditQuizInteractor.swift
 //  QuizEngine
 //
 //  Created by Admin on 28.05.2021.
 //
 
-protocol CreateQuizBusinessLogic: AnyObject {
+protocol EditQuizBusinessLogic: AnyObject {
     func createQuiz(_ quiz: Quiz)
     func updateQuiz(id: String, quiz: Quiz)
 }
 
-class CreateQuizInteractor: CreateQuizBusinessLogic {
-    weak var controller: CreateQuizControllerLogic?
+class EditQuizInteractor: EditQuizBusinessLogic {
+    weak var controller: EditQuizControllerLogic?
     let service: QuizServiceProtocol = ServiceFactory.quizService
 
     func createQuiz(_ quiz: Quiz) {

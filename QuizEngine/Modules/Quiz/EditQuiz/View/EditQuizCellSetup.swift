@@ -1,5 +1,5 @@
 //
-//  CreateQuizCellSetup.swift
+//  EditQuizCellSetup.swift
 //  QuizEngine
 //
 //  Created by Admin on 28.05.2021.
@@ -7,14 +7,14 @@
 
 import UIKit
 
-protocol CreateQuizCellSetupDelegate: AnyObject {
+protocol EditQuizCellSetupDelegate: AnyObject {
     func reloadAction()
 }
 
-final class CreateQuizCellSetup: NSObject {
+final class EditQuizCellSetup: NSObject {
     private var entity: Quiz?
     var messageAboutError: String = .empty
-    weak var delegate: CreateQuizCellSetupDelegate?
+    weak var delegate: EditQuizCellSetupDelegate?
 
     private var tableView: UITableView
     private let isPublicSwitchTag: Int = 0x12
@@ -70,7 +70,7 @@ final class CreateQuizCellSetup: NSObject {
 
 // MARK: - Action handlers
 
-extension CreateQuizCellSetup: ErrorCellDelegate, UITextFieldDelegate,
+extension EditQuizCellSetup: ErrorCellDelegate, UITextFieldDelegate,
     SwitchCellDelegate, QuestionCellDelegate
 {
     func switchValueChanged(tag: Int, value: Bool) {

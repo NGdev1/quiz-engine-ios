@@ -1,5 +1,5 @@
 //
-//  CreateQuizView.swift
+//  EditQuizView.swift
 //  QuizEngine
 //
 //  Created by Admin on 28.05.2021.
@@ -7,7 +7,7 @@
 
 import MDFoundation
 
-final class CreateQuizView: UIView {
+final class EditQuizView: UIView {
     // MARK: - Properties
 
     private var tableView: UITableView = {
@@ -23,7 +23,7 @@ final class CreateQuizView: UIView {
         return tableView
     }()
 
-    private var tableBuilder: CreateQuizTableBuilder?
+    private var tableBuilder: EditQuizTableBuilder?
 
     // MARK: - Init
 
@@ -57,7 +57,7 @@ final class CreateQuizView: UIView {
     }
 
     private func initData(with entity: Quiz? = nil) {
-        tableBuilder = CreateQuizTableBuilder(
+        tableBuilder = EditQuizTableBuilder(
             tableView: tableView,
             entity: entity
         )
@@ -65,7 +65,7 @@ final class CreateQuizView: UIView {
 
     // MARK: - Internal methods
 
-    func setDelegate(_ delegate: CreateQuizCellSetupDelegate) {
+    func setDelegate(_ delegate: EditQuizCellSetupDelegate) {
         tableBuilder?.setDelegate(delegate)
     }
 

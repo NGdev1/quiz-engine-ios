@@ -10,7 +10,7 @@ import UIKit
 class TabBarController: UITabBarController {
     init() {
         super.init(nibName: nil, bundle: nil)
-        let create = UINavigationController(rootViewController: CreateQuizController(quiz: Quiz()))
+        let create = UINavigationController(rootViewController: EditQuizController(quiz: Quiz()))
         create.tabBarItem.image = Assets.tabBarIconAdd.image
         create.tabBarItem.title = Text.EditQuiz.tabBarTitle
         let quizList = UINavigationController(rootViewController: QuizListController())
