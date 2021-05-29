@@ -32,6 +32,7 @@ internal enum Assets {
   internal static let text = ColorAsset(name: "Text")
   internal static let logo = ImageAsset(name: "Logo")
   internal static let noPhoto = ImageAsset(name: "NoPhoto")
+  internal static let tabBarIconAdd = ImageAsset(name: "TabBarIconAdd")
   internal static let tabBarIconProfile = ImageAsset(name: "TabBarIconProfile")
   internal static let tabBarIconQuizList = ImageAsset(name: "TabBarIconQuizList")
 }

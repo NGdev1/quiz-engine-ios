@@ -8,6 +8,7 @@
 import UIKit
 
 protocol ProfileCellSetupDelegate: AnyObject {
+    func editProfile()
     func reloadAction()
 }
 
@@ -17,6 +18,8 @@ final class ProfileCellSetup {
     weak var delegate: ProfileCellSetupDelegate?
 
     private var tableView: UITableView
+
+    private let buttonEditProfileIndex: Int = 0
 
     // MARK: - Init
 
@@ -38,6 +41,13 @@ final class ProfileCellSetup {
         cell.configure(profile: profile, delegate: self)
     }
 
+    func editCell(_ cell: ButtonCell, for indexPath: IndexPath) {
+        cell.configure(
+            text: Text.Profile.edit, index: buttonEditProfileIndex,
+            isEnabled: true, delegate: self
+        )
+    }
+
     func errorCell(_ cell: ErrorCell, for indexPath: IndexPath) {
         cell.configure(with: messageAboutError)
         cell.delegate = self
@@ -46,7 +56,13 @@ final class ProfileCellSetup {
 
 // MARK: - Action handlers
 
-extension ProfileCellSetup: ErrorCellDelegate, ProfileHeaderCellDelegate {
+extension ProfileCellSetup: ErrorCellDelegate, ProfileHeaderCellDelegate, ButtonCellDelegate {
+    func buttonClicked(index: Int) {
+        if index == buttonEditProfileIndex {
+            delegate?.editProfile()
+        }
+    }
+
     func reloadData() {
         delegate?.reloadAction()
     }

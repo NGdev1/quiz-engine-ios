@@ -15,10 +15,23 @@ protocol CreateQuizControllerLogic: AnyObject {
 class CreateQuizController: UIViewController, CreateQuizControllerLogic {
     // MARK: - Properties
 
-    lazy var customView = CreateQuizView()
-    var interactor: CreateQuizInteractor?
+    private lazy var customView = CreateQuizView()
+    private var interactor: CreateQuizInteractor?
 
-    let generator = UINotificationFeedbackGenerator()
+    private let generator = UINotificationFeedbackGenerator()
+    private let quiz: Quiz
+
+    // MARK: - Init
+
+    init(quiz: Quiz) {
+        self.quiz = quiz
+        super.init(nibName: nil, bundle: nil)
+    }
+
+    @available(*, unavailable)
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
 
     // MARK: - Life cycle
 
@@ -30,6 +43,7 @@ class CreateQuizController: UIViewController, CreateQuizControllerLogic {
         super.viewDidLoad()
         setup()
         setupAppearance()
+        addActionHandlers()
     }
 
     private func setup() {
@@ -39,8 +53,27 @@ class CreateQuizController: UIViewController, CreateQuizControllerLogic {
 
     private func setupAppearance() {
         extendedLayoutIncludesOpaqueBars = true
-        title = Text.CreateQuiz.title
+        if quiz.id == nil {
+            navigationItem.title = Text.EditQuiz.createTitle
+        } else {
+            navigationItem.title = Text.EditQuiz.editTitle
+        }
         customView.setDelegate(self)
+        customView.updateAppearance(with: quiz)
+    }
+
+    // MARK: - Action handlers
+
+    private func addActionHandlers() {
+        navigationItem.rightBarButtonItem = UIBarButtonItem(
+            title: Text.Common.save, style: .plain,
+            target: self, action: #selector(save)
+        )
+    }
+
+    @objc
+    private func save() {
+        print(quiz.title ?? 1)
     }
 
     // MARK: - Network requests

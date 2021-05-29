@@ -18,6 +18,8 @@ final class CreateQuizView: UIView {
         tableView.rowHeight = UITableView.automaticDimension
         tableView.showsVerticalScrollIndicator = false
         tableView.contentInset = tableView.contentInset.with(bottom: 50)
+        tableView.keyboardDismissMode = .interactive
+        tableView.separatorStyle = .none
         return tableView
     }()
 

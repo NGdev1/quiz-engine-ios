@@ -92,10 +92,15 @@ final class CreateQuizTableBuilder {
     }
 
     private func buildFullTableStructure() {
-        let rowsSequence: [Row] = [
-            Row(cellsSetup.someCell(_:for:)),
-            Row(cellsSetup.otherCell(_:for:)),
+        var rowsSequence: [Row] = [
+            Row(cellsSetup.nameCell(_:for:)),
+            Row(cellsSetup.isPublicQuizCell(_:for:), fromNib: true, bundle: resourcesBundle),
+            Row(cellsSetup.questionsTitle(_:for:), fromNib: true, bundle: resourcesBundle),
         ]
+        cellsSetup.firstQuestionIndexPath = rowsSequence.count
+        for _ in entity?.questions ?? [] {
+            rowsSequence.append(Row(cellsSetup.questionCell(_:for:), fromNib: true, bundle: resourcesBundle))
+        }
         setRowsSequenceToDataStorage(rowsSequence: rowsSequence)
     }
 

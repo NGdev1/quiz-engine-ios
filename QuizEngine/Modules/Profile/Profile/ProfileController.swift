@@ -83,6 +83,8 @@ class ProfileController: UIViewController, ProfileControllerLogic {
 // MARK: - ProfileCellSetupDelegate
 
 extension ProfileController: ProfileCellSetupDelegate {
+    func editProfile() {}
+
     func reloadAction() {
         loadProfile()
     }

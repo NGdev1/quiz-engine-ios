@@ -8,6 +8,7 @@
 
 Common.Done = "Done";
 Common.Hide = "Hide";
+Common.Save = "Save";
 Common.FillInTheFields = "Fill in the fields";
 
 Onboarding.Description = "Creating and passing tests or quizzes.";
@@ -30,10 +31,17 @@ SignUp.ConfirmPassword = "Confirm password";
 SignUp.PasswordsNotMatch = "Passwords not match";
 
 Profile.Title = "Profile";
+Profile.Edit = "Edit";
 Profile.LogOut = "Log out";
 
-CreateQuiz.Title = "New test";
-EditQuiz.Title = "Editing";
+EditQuiz.CreateTitle = "New test";
+EditQuiz.EditTitle = "Editing";
+EditQuiz.TabBarTitle = "Create";
+EditQuiz.QuestionsHeader = "Questions";
+EditQuiz.NamePlaceholder = "Title";
+EditQuiz.IsPublic = "Public test";
+
+Question.OptionsCount = "Options count: %d";
 
 QuizList.Title = "My tests";
 QuizList.NoContent = "No quiz created";

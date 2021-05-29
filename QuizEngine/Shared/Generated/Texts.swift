@@ -25,16 +25,23 @@ internal enum Text {
     internal static let fillInTheFields = Text.tr("Localizable", "Common.FillInTheFields")
     /// Скрыть
     internal static let hide = Text.tr("Localizable", "Common.Hide")
-  }
-
-  internal enum CreateQuiz {
-    /// Новый тест
-    internal static let title = Text.tr("Localizable", "CreateQuiz.Title")
+    /// Сохранить
+    internal static let save = Text.tr("Localizable", "Common.Save")
   }
 
   internal enum EditQuiz {
+    /// Новый тест
+    internal static let createTitle = Text.tr("Localizable", "EditQuiz.CreateTitle")
     /// Редактирование
-    internal static let title = Text.tr("Localizable", "EditQuiz.Title")
+    internal static let editTitle = Text.tr("Localizable", "EditQuiz.EditTitle")
+    /// Публичный тест
+    internal static let isPublic = Text.tr("Localizable", "EditQuiz.IsPublic")
+    /// Название теста
+    internal static let namePlaceholder = Text.tr("Localizable", "EditQuiz.NamePlaceholder")
+    /// Вопросы
+    internal static let questionsHeader = Text.tr("Localizable", "EditQuiz.QuestionsHeader")
+    /// Создать
+    internal static let tabBarTitle = Text.tr("Localizable", "EditQuiz.TabBarTitle")
   }
 
   internal enum Errors {
@@ -62,10 +69,19 @@ internal enum Text {
   }
 
   internal enum Profile {
+    /// Редактировать
+    internal static let edit = Text.tr("Localizable", "Profile.Edit")
     /// Выйти
     internal static let logOut = Text.tr("Localizable", "Profile.LogOut")
     /// Профиль
     internal static let title = Text.tr("Localizable", "Profile.Title")
+  }
+
+  internal enum Question {
+    /// Кол-во вариантов: %d
+    internal static func optionsCount(_ p1: Int) -> String {
+      return Text.tr("Localizable", "Question.OptionsCount", p1)
+    }
   }
 
   internal enum QuizList {

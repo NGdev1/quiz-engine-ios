@@ -11,12 +11,16 @@ protocol CreateQuizCellSetupDelegate: AnyObject {
     func reloadAction()
 }
 
-final class CreateQuizCellSetup {
+final class CreateQuizCellSetup: NSObject {
     private var entity: Quiz?
     var messageAboutError: String = .empty
     weak var delegate: CreateQuizCellSetupDelegate?
 
     private var tableView: UITableView
+    private let isPublicSwitchTag: Int = 0x12
+    private let nameTag: Int = 100
+
+    var firstQuestionIndexPath: Int = 0
 
     // MARK: - Init
 
@@ -33,14 +37,29 @@ final class CreateQuizCellSetup {
 
     // MARK: - Cells setup
 
-    func someCell(_ cell: UITableViewCell, for indexPath: IndexPath) {
-        cell.accessoryType = .disclosureIndicator
-        cell.textLabel?.text = "Some cell"
+    func nameCell(_ cell: TextFieldCell, for indexPath: IndexPath) {
+        cell.configure(
+            delegate: self, text: entity?.title,
+            placeholder: Text.EditQuiz.namePlaceholder, tag: nameTag
+        )
     }
 
-    func otherCell(_ cell: UITableViewCell, for indexPath: IndexPath) {
-        cell.accessoryType = .disclosureIndicator
-        cell.textLabel?.text = "Other cell"
+    func isPublicQuizCell(_ cell: SwitchCell, for indexPath: IndexPath) {
+        cell.configure(
+            isOn: entity?.isPublic ?? true,
+            tag: isPublicSwitchTag, text: Text.EditQuiz.isPublic,
+            delegate: self
+        )
+    }
+
+    func questionsTitle(_ cell: HeaderCell, for indexPath: IndexPath) {
+        cell.configure(title: Text.EditQuiz.questionsHeader)
+    }
+
+    func questionCell(_ cell: QuestionCell, for indexPath: IndexPath) {
+        let index = indexPath.row - firstQuestionIndexPath
+        guard let question = entity?.questions?[index] else { return }
+        cell.configure(delegate: self, question: question)
     }
 
     func errorCell(_ cell: ErrorCell, for indexPath: IndexPath) {
@@ -51,7 +70,35 @@ final class CreateQuizCellSetup {
 
 // MARK: - Action handlers
 
-extension CreateQuizCellSetup: ErrorCellDelegate {
+extension CreateQuizCellSetup: ErrorCellDelegate, UITextFieldDelegate,
+    SwitchCellDelegate, QuestionCellDelegate
+{
+    func switchValueChanged(tag: Int, value: Bool) {
+        if tag == isPublicSwitchTag {
+            entity?.isPublic = value
+        }
+    }
+
+    func textField(
+        _ textField: UITextField, shouldChangeCharactersIn range: NSRange,
+        replacementString string: String
+    ) -> Bool {
+        let text: String = (textField.text as NSString?)?.replacingCharacters(in: range, with: string) ?? .empty
+        if textField.tag == nameTag {
+            entity?.title = text
+        }
+        return true
+    }
+
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if let nextField = tableView.viewWithTag(textField.tag + 1) {
+            nextField.becomeFirstResponder()
+        } else {
+            textField.resignFirstResponder()
+        }
+        return true
+    }
+
     func reloadData() {
         delegate?.reloadAction()
     }

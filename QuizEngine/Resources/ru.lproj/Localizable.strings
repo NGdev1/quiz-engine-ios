@@ -8,6 +8,7 @@
 
 Common.Done = "Готово";
 Common.Hide = "Скрыть";
+Common.Save = "Сохранить";
 Common.FillInTheFields = "Заполните поля";
 
 Onboarding.Description = "Создание и прохождения тестов или викторин.";
@@ -30,10 +31,17 @@ SignUp.ConfirmPassword = "Подтверждение пароля";
 SignUp.PasswordsNotMatch = "Пароли не совпадают";
 
 Profile.Title = "Профиль";
+Profile.Edit = "Редактировать";
 Profile.LogOut = "Выйти";
 
-CreateQuiz.Title = "Новый тест";
-EditQuiz.Title = "Редактирование";
+EditQuiz.CreateTitle = "Новый тест";
+EditQuiz.EditTitle = "Редактирование";
+EditQuiz.TabBarTitle = "Создать";
+EditQuiz.QuestionsHeader = "Вопросы";
+EditQuiz.NamePlaceholder = "Название теста";
+EditQuiz.IsPublic = "Публичный тест";
+
+Question.OptionsCount = "Кол-во вариантов: %d";
 
 QuizList.Title = "Мои тесты";
 QuizList.NoContent = "Ни одного теста не создано";

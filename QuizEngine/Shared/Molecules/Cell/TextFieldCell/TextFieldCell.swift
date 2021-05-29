@@ -41,7 +41,8 @@ final class TextFieldCell: UITableViewCell {
 
     private func makeConstraints() {
         textField.snp.makeConstraints { make in
-            make.top.bottom.equalToSuperview()
+            make.top.bottom.equalToSuperview().inset(16)
+            make.height.equalTo(50)
             make.leading.trailing.equalToSuperview().inset(16)
         }
     }
@@ -54,8 +55,9 @@ final class TextFieldCell: UITableViewCell {
 
     func configure(
         delegate: UITextFieldDelegate,
-        text: String,
+        text: String?,
         placeholder: String,
+        tag: Int,
         keyboardType: UIKeyboardType = .default,
         errorMessage: String? = nil
     ) {
@@ -63,6 +65,7 @@ final class TextFieldCell: UITableViewCell {
         textField.placeholder = placeholder
         textField.text = text
         textField.delegate = delegate
+        textField.tag = tag
         if let errorMessage = errorMessage {
             textField.showError(errorMessage)
         } else {
