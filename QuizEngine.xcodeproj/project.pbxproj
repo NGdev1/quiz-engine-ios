@@ -50,6 +50,12 @@
 		843B8C632660F8D400E6A999 /* LoadingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843B8C5E2660F8D400E6A999 /* LoadingCell.swift */; };
 		843B8C642660F8D400E6A999 /* ErrorCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 843B8C602660F8D400E6A999 /* ErrorCell.xib */; };
 		843B8C652660F8D400E6A999 /* ErrorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843B8C612660F8D400E6A999 /* ErrorCell.swift */; };
+		84414D5E26625698006F2DAF /* ButtonCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84414D5526625697006F2DAF /* ButtonCell.xib */; };
+		84414D5F26625698006F2DAF /* ButtonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84414D5626625697006F2DAF /* ButtonCell.swift */; };
+		84414D6026625698006F2DAF /* TextFieldCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84414D5826625697006F2DAF /* TextFieldCell.swift */; };
+		84414D6126625698006F2DAF /* SwitchCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84414D5A26625698006F2DAF /* SwitchCell.xib */; };
+		84414D6226625698006F2DAF /* SwitchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84414D5B26625698006F2DAF /* SwitchCell.swift */; };
+		84414D6326625698006F2DAF /* TextAreaCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84414D5D26625698006F2DAF /* TextAreaCell.swift */; };
 		8471F478265F95E5007A7876 /* OnboardingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8471F474265F95E5007A7876 /* OnboardingController.swift */; };
 		8471F47A265F95E5007A7876 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8471F476265F95E5007A7876 /* OnboardingView.swift */; };
 		8471F47B265F95E5007A7876 /* OnboardingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8471F477265F95E5007A7876 /* OnboardingView.xib */; };
@@ -133,6 +139,12 @@
 		843B8C5E2660F8D400E6A999 /* LoadingCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingCell.swift; sourceTree = "<group>"; };
 		843B8C602660F8D400E6A999 /* ErrorCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ErrorCell.xib; sourceTree = "<group>"; };
 		843B8C612660F8D400E6A999 /* ErrorCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorCell.swift; sourceTree = "<group>"; };
+		84414D5526625697006F2DAF /* ButtonCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ButtonCell.xib; sourceTree = "<group>"; };
+		84414D5626625697006F2DAF /* ButtonCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonCell.swift; sourceTree = "<group>"; };
+		84414D5826625697006F2DAF /* TextFieldCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldCell.swift; sourceTree = "<group>"; };
+		84414D5A26625698006F2DAF /* SwitchCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SwitchCell.xib; sourceTree = "<group>"; };
+		84414D5B26625698006F2DAF /* SwitchCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwitchCell.swift; sourceTree = "<group>"; };
+		84414D5D26625698006F2DAF /* TextAreaCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextAreaCell.swift; sourceTree = "<group>"; };
 		8471F474265F95E5007A7876 /* OnboardingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingController.swift; sourceTree = "<group>"; };
 		8471F476265F95E5007A7876 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		8471F477265F95E5007A7876 /* OnboardingView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OnboardingView.xib; sourceTree = "<group>"; };
@@ -391,6 +403,10 @@
 		843B8C5A2660F8D400E6A999 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
+				84414D5426625697006F2DAF /* ButtonCell */,
+				84414D5926625698006F2DAF /* SwitchCell */,
+				84414D5C26625698006F2DAF /* TextAreaCell */,
+				84414D5726625697006F2DAF /* TextFieldCell */,
 				843B8C5B2660F8D400E6A999 /* NoContentCell */,
 				843B8C5D2660F8D400E6A999 /* LoadingCell */,
 				843B8C5F2660F8D400E6A999 /* ErrorCell */,
@@ -421,6 +437,40 @@
 				843B8C612660F8D400E6A999 /* ErrorCell.swift */,
 			);
 			path = ErrorCell;
+			sourceTree = "<group>";
+		};
+		84414D5426625697006F2DAF /* ButtonCell */ = {
+			isa = PBXGroup;
+			children = (
+				84414D5526625697006F2DAF /* ButtonCell.xib */,
+				84414D5626625697006F2DAF /* ButtonCell.swift */,
+			);
+			path = ButtonCell;
+			sourceTree = "<group>";
+		};
+		84414D5726625697006F2DAF /* TextFieldCell */ = {
+			isa = PBXGroup;
+			children = (
+				84414D5826625697006F2DAF /* TextFieldCell.swift */,
+			);
+			path = TextFieldCell;
+			sourceTree = "<group>";
+		};
+		84414D5926625698006F2DAF /* SwitchCell */ = {
+			isa = PBXGroup;
+			children = (
+				84414D5A26625698006F2DAF /* SwitchCell.xib */,
+				84414D5B26625698006F2DAF /* SwitchCell.swift */,
+			);
+			path = SwitchCell;
+			sourceTree = "<group>";
+		};
+		84414D5C26625698006F2DAF /* TextAreaCell */ = {
+			isa = PBXGroup;
+			children = (
+				84414D5D26625698006F2DAF /* TextAreaCell.swift */,
+			);
+			path = TextAreaCell;
 			sourceTree = "<group>";
 		};
 		8471F47C265F95EC007A7876 /* View */ = {
@@ -685,9 +735,11 @@
 				6B1755A02624A7E300DA7E84 /* LaunchScreen.storyboard in Resources */,
 				8471F480265F992D007A7876 /* Localizable.strings in Resources */,
 				842970E326616D700093305D /* ProfileHeaderCell.xib in Resources */,
+				84414D6126625698006F2DAF /* SwitchCell.xib in Resources */,
 				6B17559D2624A7E300DA7E84 /* Assets.xcassets in Resources */,
 				8471F47B265F95E5007A7876 /* OnboardingView.xib in Resources */,
 				843B8C592660F87A00E6A999 /* QuizCell.xib in Resources */,
+				84414D5E26625698006F2DAF /* ButtonCell.xib in Resources */,
 				843B8C642660F8D400E6A999 /* ErrorCell.xib in Resources */,
 				8471F4BC265FB685007A7876 /* SignInView.xib in Resources */,
 			);
@@ -790,6 +842,7 @@
 				8471F4CA265FB789007A7876 /* AuthModels.swift in Sources */,
 				843B8C4A2660F4B900E6A999 /* QuizListView.swift in Sources */,
 				843B8C472660F4B900E6A999 /* QuizDataSource.swift in Sources */,
+				84414D5F26625698006F2DAF /* ButtonCell.swift in Sources */,
 				842970DB266168290093305D /* GenericTableViewDataStorage.swift in Sources */,
 				842970C1266140270093305D /* ProfileService.swift in Sources */,
 				842970DA266168290093305D /* GenericTableViewRowModel.swift in Sources */,
@@ -815,6 +868,7 @@
 				8471F47A265F95E5007A7876 /* OnboardingView.swift in Sources */,
 				8471F4BB265FB685007A7876 /* SignInView.swift in Sources */,
 				8471F4D6265FF90B007A7876 /* SignUpView.swift in Sources */,
+				84414D6226625698006F2DAF /* SwitchCell.swift in Sources */,
 				842970C3266140530093305D /* ProfileApi.swift in Sources */,
 				84C1ACD326603DC500412B31 /* GeneralErrors.swift in Sources */,
 				843B8C362660C84F00E6A999 /* ProfileServiceMock.swift in Sources */,
@@ -839,7 +893,9 @@
 				843B8C632660F8D400E6A999 /* LoadingCell.swift in Sources */,
 				8471F4A2265F9FAB007A7876 /* Assets.swift in Sources */,
 				842970EB266179CB0093305D /* CreateQuizTableBuilder.swift in Sources */,
+				84414D6326625698006F2DAF /* TextAreaCell.swift in Sources */,
 				842970C5266142FB0093305D /* QuizApi.swift in Sources */,
+				84414D6026625698006F2DAF /* TextFieldCell.swift in Sources */,
 				842970DC266168290093305D /* GenericTableViewDelegate.swift in Sources */,
 				6B1755942624A7E000DA7E84 /* AppDelegate.swift in Sources */,
 				843B8C2D2660C82F00E6A999 /* ProfileInteractor.swift in Sources */,

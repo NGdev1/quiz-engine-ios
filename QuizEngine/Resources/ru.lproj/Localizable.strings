@@ -7,6 +7,7 @@
 */
 
 Common.Done = "Готово";
+Common.Hide = "Скрыть";
 Common.FillInTheFields = "Заполните поля";
 
 Onboarding.Description = "Создание и прохождения тестов или викторин.";

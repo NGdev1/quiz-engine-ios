@@ -40,7 +40,7 @@ class CreateQuizController: UIViewController, CreateQuizControllerLogic {
     private func setupAppearance() {
         extendedLayoutIncludesOpaqueBars = true
         title = Text.CreateQuiz.title
-        customView.tableBuilder?.delegate = self
+        customView.setDelegate(self)
     }
 
     // MARK: - Network requests

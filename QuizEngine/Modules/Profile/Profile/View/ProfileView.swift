@@ -10,7 +10,7 @@ import MDFoundation
 final class ProfileView: UIView {
     // MARK: - Properties
 
-    var tableView: UITableView = {
+    private var tableView: UITableView = {
         let tableView = UITableView(frame: UIScreen.main.bounds)
         tableView.tableFooterView = UIView()
         tableView.allowsSelection = false
@@ -21,7 +21,7 @@ final class ProfileView: UIView {
         return tableView
     }()
 
-    var tableBuilder: ProfileTableBuilder?
+    private var tableBuilder: ProfileTableBuilder?
 
     // MARK: - Init
 
@@ -63,6 +63,10 @@ final class ProfileView: UIView {
 
     // MARK: - Internal methods
 
+    func setDelegate(_ delegate: ProfileCellSetupDelegate) {
+        tableBuilder?.setDelegate(delegate)
+    }
+
     func showLoading() {
         tableBuilder?.showLoading()
     }
@@ -72,7 +76,6 @@ final class ProfileView: UIView {
     }
 
     func showError(message: String) {
-        tableBuilder?.messageAboutError = message
-        tableBuilder?.showError()
+        tableBuilder?.showError(message: message)
     }
 }

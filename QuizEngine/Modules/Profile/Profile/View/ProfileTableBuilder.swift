@@ -18,26 +18,7 @@ final class ProfileTableBuilder {
     private var dataStorage: GenericTableViewDataStorage = GenericTableViewDataStorage()
     private var tableView: UITableView
     private var cellsSetup: ProfileCellSetup
-    var entity: Profile?
-
-    // Action handlers properties
-    var delegate: ProfileCellSetupDelegate? {
-        get {
-            return cellsSetup.delegate
-        }
-        set {
-            cellsSetup.delegate = newValue
-        }
-    }
-
-    var messageAboutError: String {
-        get {
-            return cellsSetup.messageAboutError
-        }
-        set {
-            cellsSetup.messageAboutError = newValue
-        }
-    }
+    private var entity: Profile?
 
     // MARK: - Init
 
@@ -49,22 +30,27 @@ final class ProfileTableBuilder {
         tableView.dataSource = genericDataSource
         tableView.delegate = genericTableViewDelegate
         self.cellsSetup = ProfileCellSetup(entity: entity, tableView: tableView)
-        buildLoadingTableStructure()
     }
 
     // MARK: - Internal methods
+
+    func setDelegate(_ delegate: ProfileCellSetupDelegate) {
+        cellsSetup.delegate = delegate
+    }
 
     func showLoading() {
         buildLoadingTableStructure()
         reloadData(animated: true)
     }
 
-    func showError() {
+    func showError(message: String) {
+        cellsSetup.messageAboutError = message
         buildErrorCellTableStructure()
         reloadData(animated: false)
     }
 
     func updateProfile(_ entity: Profile, animated: Bool) {
+        self.entity = entity
         cellsSetup.updateProfile(entity)
         buildFullTableStructure()
         reloadData(animated: animated)

@@ -10,7 +10,7 @@ import MDFoundation
 final class CreateQuizView: UIView {
     // MARK: - Properties
 
-    var tableView: UITableView = {
+    private var tableView: UITableView = {
         let tableView = UITableView(frame: UIScreen.main.bounds)
         tableView.tableFooterView = UIView()
         tableView.allowsSelection = false
@@ -21,7 +21,7 @@ final class CreateQuizView: UIView {
         return tableView
     }()
 
-    var tableBuilder: CreateQuizTableBuilder?
+    private var tableBuilder: CreateQuizTableBuilder?
 
     // MARK: - Init
 
@@ -63,12 +63,19 @@ final class CreateQuizView: UIView {
 
     // MARK: - Internal methods
 
+    func setDelegate(_ delegate: CreateQuizCellSetupDelegate) {
+        tableBuilder?.setDelegate(delegate)
+    }
+
+    func showLoading() {
+        tableBuilder?.showLoading()
+    }
+
     func updateAppearance(with entity: Quiz, animated: Bool = true) {
         tableBuilder?.updateQuiz(entity, animated: animated)
     }
 
     func showError(message: String) {
-        tableBuilder?.messageAboutError = message
-        tableBuilder?.showError()
+        tableBuilder?.showError(message: message)
     }
 }

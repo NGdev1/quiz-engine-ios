@@ -18,26 +18,7 @@ final class CreateQuizTableBuilder {
     private var dataStorage: GenericTableViewDataStorage = GenericTableViewDataStorage()
     private var tableView: UITableView
     private var cellsSetup: CreateQuizCellSetup
-    var entity: Quiz?
-
-    // Action handlers properties
-    var delegate: CreateQuizCellSetupDelegate? {
-        set {
-            cellsSetup.delegate = newValue
-        }
-        get {
-            return cellsSetup.delegate
-        }
-    }
-
-    var messageAboutError: String {
-        set {
-            cellsSetup.messageAboutError = newValue
-        }
-        get {
-            return cellsSetup.messageAboutError
-        }
-    }
+    private var entity: Quiz?
 
     // MARK: - Init
 
@@ -49,23 +30,35 @@ final class CreateQuizTableBuilder {
         tableView.dataSource = genericDataSource
         tableView.delegate = genericTableViewDelegate
         self.cellsSetup = CreateQuizCellSetup(entity: entity, tableView: tableView)
-        buildMinimalTableStructure()
     }
 
     // MARK: - Internal methods
 
-    func showError() {
+    func setDelegate(_ delegate: CreateQuizCellSetupDelegate) {
+        cellsSetup.delegate = delegate
+    }
+
+    func showLoading() {
+        buildLoadingTableStructure()
+        reloadData(animated: true)
+    }
+
+    func showError(message: String) {
+        cellsSetup.messageAboutError = message
         buildErrorCellTableStructure()
         reloadData(animated: false)
     }
 
     func updateQuiz(_ entity: Quiz, animated: Bool) {
+        self.entity = entity
         cellsSetup.updateQuiz(entity)
         buildFullTableStructure()
         reloadData(animated: animated)
     }
 
-    func reloadData(animated: Bool) {
+    // MARK: - Private methods
+
+    private func reloadData(animated: Bool) {
         if animated == false { tableView.reloadData(); return }
         if genericDataSource.numberOfSections(in: tableView) == tableView.numberOfSections {
             let range = NSRange(location: 0, length: tableView.numberOfSections)
@@ -84,8 +77,6 @@ final class CreateQuizTableBuilder {
         }
     }
 
-    // MARK: - Private methods
-
     private func buildErrorCellTableStructure() {
         let rowsSequence: [Row] = [
             Row(cellsSetup.errorCell(_:for:), fromNib: true),
@@ -93,7 +84,7 @@ final class CreateQuizTableBuilder {
         setRowsSequenceToDataStorage(rowsSequence: rowsSequence)
     }
 
-    private func buildMinimalTableStructure() {
+    private func buildLoadingTableStructure() {
         let rowsSequence: [Row] = [
             Row(LoadingCell.loadingCell(_:for:)),
         ]

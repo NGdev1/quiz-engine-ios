@@ -23,6 +23,8 @@ internal enum Text {
     internal static let done = Text.tr("Localizable", "Common.Done")
     /// Заполните поля
     internal static let fillInTheFields = Text.tr("Localizable", "Common.FillInTheFields")
+    /// Скрыть
+    internal static let hide = Text.tr("Localizable", "Common.Hide")
   }
 
   internal enum CreateQuiz {
