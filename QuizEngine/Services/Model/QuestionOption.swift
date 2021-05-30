@@ -7,14 +7,14 @@
 
 import Foundation
 
-struct QuestionOption: Codable {
-    init(id: String?) {
+class QuestionOption: Codable {
+    init(id: Int?) {
         self.id = id
         self.text = nil
         self.isCorrect = false
     }
 
-    var id: String?
+    var id: Int?
     var text: String?
     var isCorrect: Bool
 }

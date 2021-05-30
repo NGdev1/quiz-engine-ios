@@ -1,5 +1,5 @@
 //
-//  EditQuizView.swift
+//  EditQuestionOptionView.swift
 //  QuizEngine
 //
 //  Created by Admin on 28.05.2021.
@@ -7,7 +7,7 @@
 
 import MDFoundation
 
-final class EditQuizView: UIView {
+final class EditQuestionOptionView: UIView {
     // MARK: - Properties
 
     private var tableView: UITableView = {
@@ -23,9 +23,7 @@ final class EditQuizView: UIView {
         return tableView
     }()
 
-    private var tableBuilder: EditQuizTableBuilder?
-
-    static let textTag: Int = 100
+    private var tableBuilder: EditQuestionOptionTableBuilder?
 
     // MARK: - Init
 
@@ -59,8 +57,8 @@ final class EditQuizView: UIView {
         tableView.makeEdgesEqualToSuperview()
     }
 
-    private func initData(with entity: Quiz? = nil) {
-        tableBuilder = EditQuizTableBuilder(
+    private func initData(with entity: QuestionOption? = nil) {
+        tableBuilder = EditQuestionOptionTableBuilder(
             tableView: tableView,
             entity: entity
         )
@@ -80,7 +78,7 @@ final class EditQuizView: UIView {
 
     // MARK: - Internal methods
 
-    func setDelegate(_ delegate: EditQuizCellSetupDelegate) {
+    func setDelegate(_ delegate: EditQuestionOptionCellSetupDelegate) {
         tableBuilder?.setDelegate(delegate)
     }
 
@@ -88,8 +86,8 @@ final class EditQuizView: UIView {
         tableBuilder?.showLoading()
     }
 
-    func updateAppearance(with entity: Quiz, animated: Bool = true) {
-        tableBuilder?.updateQuiz(entity, animated: animated)
+    func updateAppearance(with entity: QuestionOption, animated: Bool = true) {
+        tableBuilder?.updateQuestionOption(entity, animated: animated)
     }
 
     func showError(message: String) {

@@ -40,8 +40,18 @@ EditQuiz.TabBarTitle = "Создать";
 EditQuiz.QuestionsHeader = "Вопросы";
 EditQuiz.NamePlaceholder = "Название теста";
 EditQuiz.IsPublic = "Публичный тест";
+EditQuiz.AddQuestion = "Добавить вопрос";
 
 Question.OptionsCount = "Кол-во вариантов: %d";
+
+EditQuestionOption.IsCorrect = "Верный ответ";
+EditQuestionOption.Title = "Вариант ответа";
+EditQuestionOption.TextPlaceholder = "Teкст";
+
+EditQuestion.Title = "Вопрос";
+EditQuestion.TextPlaceholder = "Вопрос";
+EditQuestion.OptionsTitle = "Варианты ответов";
+EditQuestion.AddOption = "Добавить вариант";
 
 QuizList.Title = "Мои тесты";
 QuizList.NoContent = "Ни одного теста не создано";
@@ -50,6 +60,7 @@ Alert.Error = "Ошибка";
 Alert.Cancel = "Отмена";
 
 Errors.TryAgain = "Перезагрузить";
+Errors.FillInTheField = "Заполните поле";
 Errors.RequestError = "Ошибка запроса";
 Errors.RemoteError = "Ошибка сервера";
 Errors.UnknownError = "Неизвестная ошибка";

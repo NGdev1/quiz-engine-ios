@@ -7,14 +7,14 @@
 
 import Foundation
 
-struct Question: Codable {
-    init(id: String?) {
+class Question: Codable {
+    init(id: Int?) {
         self.id = id
         self.text = nil
         self.options = []
     }
 
-    var id: String?
+    var id: Int?
     var text: String?
     var options: [QuestionOption]?
 }

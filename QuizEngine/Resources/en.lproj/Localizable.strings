@@ -40,8 +40,18 @@ EditQuiz.TabBarTitle = "Create";
 EditQuiz.QuestionsHeader = "Questions";
 EditQuiz.NamePlaceholder = "Title";
 EditQuiz.IsPublic = "Public test";
+EditQuiz.AddQuestion = "Add question";
 
 Question.OptionsCount = "Options count: %d";
+
+EditQuestionOption.IsCorrect = "Is correct";
+EditQuestionOption.Title = "Variant";
+EditQuestionOption.TextPlaceholder = "Text";
+
+EditQuestion.Title = "Question";
+EditQuestion.TextPlaceholder = "Question";
+EditQuestion.OptionsTitle = "Options";
+EditQuestion.AddOption = "Add option";
 
 QuizList.Title = "My tests";
 QuizList.NoContent = "No quiz created";
@@ -50,6 +60,7 @@ Alert.Error = "Error";
 Alert.Cancel = "Cancel";
 
 Errors.TryAgain = "Try Again";
+Errors.FillInTheField = "Fill in the field";
 Errors.RequestError = "Request error";
 Errors.RemoteError = "Remote Server error";
 Errors.UnknownError = "Unknown error";

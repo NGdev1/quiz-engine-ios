@@ -10,4 +10,5 @@ protocol QuizServiceProtocol {
     func getOwnList(completion: @escaping ([Quiz]?, Error?) -> Void)
     func create(quiz: Quiz, completion: @escaping (Quiz?, Error?) -> Void)
     func update(id: String, quiz: Quiz, completion: @escaping (Quiz?, Error?) -> Void)
+    func delete(id: String, completion: @escaping (Bool?, Error?) -> Void)
 }

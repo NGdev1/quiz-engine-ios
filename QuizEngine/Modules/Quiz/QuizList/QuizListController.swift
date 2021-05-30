@@ -22,10 +22,6 @@ class QuizListController: UIViewController, QuizListControllerLogic {
 
     // MARK: - Init
 
-    deinit {
-        NotificationCenter.default.removeObserver(self)
-    }
-
     init() {
         super.init(nibName: nil, bundle: nil)
         setup()
@@ -95,7 +91,7 @@ class QuizListController: UIViewController, QuizListControllerLogic {
 
 extension QuizListController: QuizDataSourceDelegate {
     func didSelectQuiz(_ item: Quiz) {
-        // router?.trigger(.openItem(delegate: self, item: item))
+        navigationController?.pushViewController(EditQuizController(quiz: item))
     }
 
     func actionButtonTapped() {

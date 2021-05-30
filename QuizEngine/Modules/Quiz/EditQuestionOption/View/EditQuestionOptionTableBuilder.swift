@@ -1,5 +1,5 @@
 //
-//  EditQuizTableBuilder.swift
+//  EditQuestionOptionTableBuilder.swift
 //  QuizEngine
 //
 //  Created by Admin on 28.05.2021.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class EditQuizTableBuilder {
+final class EditQuestionOptionTableBuilder {
     typealias Row = GenericTableViewRowModel
 
     // MARK: - Properties
@@ -17,24 +17,24 @@ final class EditQuizTableBuilder {
     private var genericTableViewDelegate: GenericTableViewDelegate?
     private var dataStorage: GenericTableViewDataStorage = GenericTableViewDataStorage()
     private var tableView: UITableView
-    private var cellsSetup: EditQuizCellSetup
-    private var entity: Quiz?
+    private var cellsSetup: EditQuestionOptionCellSetup
+    private var entity: QuestionOption?
 
     // MARK: - Init
 
-    init(tableView: UITableView, entity: Quiz?) {
+    init(tableView: UITableView, entity: QuestionOption?) {
         self.entity = entity
         self.tableView = tableView
         self.genericDataSource = GenericTableViewDataSource(with: dataStorage)
         self.genericTableViewDelegate = GenericTableViewDelegate(with: dataStorage)
         tableView.dataSource = genericDataSource
         tableView.delegate = genericTableViewDelegate
-        self.cellsSetup = EditQuizCellSetup(entity: entity, tableView: tableView)
+        self.cellsSetup = EditQuestionOptionCellSetup(entity: entity, tableView: tableView)
     }
 
     // MARK: - Internal methods
 
-    func setDelegate(_ delegate: EditQuizCellSetupDelegate) {
+    func setDelegate(_ delegate: EditQuestionOptionCellSetupDelegate) {
         cellsSetup.delegate = delegate
     }
 
@@ -49,9 +49,9 @@ final class EditQuizTableBuilder {
         reloadData(animated: false)
     }
 
-    func updateQuiz(_ entity: Quiz, animated: Bool) {
+    func updateQuestionOption(_ entity: QuestionOption, animated: Bool) {
         self.entity = entity
-        cellsSetup.updateQuiz(entity)
+        cellsSetup.updateQuestionOption(entity)
         buildFullTableStructure()
         reloadData(animated: animated)
     }
@@ -92,16 +92,10 @@ final class EditQuizTableBuilder {
     }
 
     private func buildFullTableStructure() {
-        var rowsSequence: [Row] = [
-            Row(cellsSetup.nameCell(_:for:)),
-            Row(cellsSetup.isPublicQuizCell(_:for:), fromNib: true, bundle: resourcesBundle),
-            Row(cellsSetup.questionsTitle(_:for:), fromNib: true, bundle: resourcesBundle),
+        let rowsSequence: [Row] = [
+            Row(cellsSetup.textCell(_:for:)),
+            Row(cellsSetup.isCorrectCell(_:for:), fromNib: true, bundle: resourcesBundle),
         ]
-        cellsSetup.firstQuestionIndexPath = rowsSequence.count
-        for _ in entity?.questions ?? [] {
-            rowsSequence.append(Row(cellsSetup.questionCell(_:for:), fromNib: true, bundle: resourcesBundle))
-        }
-        rowsSequence.append(Row(cellsSetup.addQuestonCell(_:for:), fromNib: true, bundle: resourcesBundle))
         setRowsSequenceToDataStorage(rowsSequence: rowsSequence)
     }
 

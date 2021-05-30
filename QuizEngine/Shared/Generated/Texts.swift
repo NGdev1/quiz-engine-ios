@@ -29,7 +29,29 @@ internal enum Text {
     internal static let save = Text.tr("Localizable", "Common.Save")
   }
 
+  internal enum EditQuestion {
+    /// Добавить вариант
+    internal static let addOption = Text.tr("Localizable", "EditQuestion.AddOption")
+    /// Варианты ответов
+    internal static let optionsTitle = Text.tr("Localizable", "EditQuestion.OptionsTitle")
+    /// Вопрос
+    internal static let textPlaceholder = Text.tr("Localizable", "EditQuestion.TextPlaceholder")
+    /// Вопрос
+    internal static let title = Text.tr("Localizable", "EditQuestion.Title")
+  }
+
+  internal enum EditQuestionOption {
+    /// Верный ответ
+    internal static let isCorrect = Text.tr("Localizable", "EditQuestionOption.IsCorrect")
+    /// Teкст
+    internal static let textPlaceholder = Text.tr("Localizable", "EditQuestionOption.TextPlaceholder")
+    /// Вариант ответа
+    internal static let title = Text.tr("Localizable", "EditQuestionOption.Title")
+  }
+
   internal enum EditQuiz {
+    /// Добавить вопрос
+    internal static let addQuestion = Text.tr("Localizable", "EditQuiz.AddQuestion")
     /// Новый тест
     internal static let createTitle = Text.tr("Localizable", "EditQuiz.CreateTitle")
     /// Редактирование
@@ -47,6 +69,8 @@ internal enum Text {
   internal enum Errors {
     /// Доступ запрещен
     internal static let authError = Text.tr("Localizable", "Errors.AuthError")
+    /// Заполните поле
+    internal static let fillInTheField = Text.tr("Localizable", "Errors.FillInTheField")
     /// Ошибка сети
     internal static let networkError = Text.tr("Localizable", "Errors.NetworkError")
     /// Ошибка сервера

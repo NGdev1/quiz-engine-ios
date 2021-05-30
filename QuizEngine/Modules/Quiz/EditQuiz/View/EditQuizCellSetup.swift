@@ -8,6 +8,7 @@
 import UIKit
 
 protocol EditQuizCellSetupDelegate: AnyObject {
+    func addQuestion()
     func reloadAction()
 }
 
@@ -18,7 +19,6 @@ final class EditQuizCellSetup: NSObject {
 
     private var tableView: UITableView
     private let isPublicSwitchTag: Int = 0x12
-    private let nameTag: Int = 100
 
     var firstQuestionIndexPath: Int = 0
 
@@ -40,7 +40,7 @@ final class EditQuizCellSetup: NSObject {
     func nameCell(_ cell: TextFieldCell, for indexPath: IndexPath) {
         cell.configure(
             delegate: self, text: entity?.title,
-            placeholder: Text.EditQuiz.namePlaceholder, tag: nameTag
+            placeholder: Text.EditQuiz.namePlaceholder, tag: EditQuizView.textTag
         )
     }
 
@@ -62,6 +62,10 @@ final class EditQuizCellSetup: NSObject {
         cell.configure(delegate: self, question: question)
     }
 
+    func addQuestonCell(_ cell: AddItemCell, for indexPath: IndexPath) {
+        cell.configure(title: Text.EditQuiz.addQuestion, delegate: self)
+    }
+
     func errorCell(_ cell: ErrorCell, for indexPath: IndexPath) {
         cell.configure(with: messageAboutError)
         cell.delegate = self
@@ -71,8 +75,12 @@ final class EditQuizCellSetup: NSObject {
 // MARK: - Action handlers
 
 extension EditQuizCellSetup: ErrorCellDelegate, UITextFieldDelegate,
-    SwitchCellDelegate, QuestionCellDelegate
+    SwitchCellDelegate, QuestionCellDelegate, AddItemCellDelegate
 {
+    func addItem() {
+        delegate?.addQuestion()
+    }
+
     func switchValueChanged(tag: Int, value: Bool) {
         if tag == isPublicSwitchTag {
             entity?.isPublic = value
@@ -84,7 +92,7 @@ extension EditQuizCellSetup: ErrorCellDelegate, UITextFieldDelegate,
         replacementString string: String
     ) -> Bool {
         let text: String = (textField.text as NSString?)?.replacingCharacters(in: range, with: string) ?? .empty
-        if textField.tag == nameTag {
+        if textField.tag == EditQuizView.textTag {
             entity?.title = text
         }
         return true
