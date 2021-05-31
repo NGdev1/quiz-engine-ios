@@ -113,6 +113,7 @@
 		84EA0F122663D8F60051A1CF /* QuestionOptionApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EA0F0F2663D8F60051A1CF /* QuestionOptionApi.swift */; };
 		84EA0F132663D8F60051A1CF /* QuestionOptionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EA0F102663D8F60051A1CF /* QuestionOptionService.swift */; };
 		84EA0F142663D8F60051A1CF /* QuestionOptionServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EA0F112663D8F60051A1CF /* QuestionOptionServiceProtocol.swift */; };
+		84EDEF9D26642DC8008B6054 /* NotificationNames.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EDEF9C26642DC8008B6054 /* NotificationNames.swift */; };
 		9F1CEE51664DBCBFF0663BB3 /* Pods_QuizEngine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 297D1F10F2E6BB1D95805BF8 /* Pods_QuizEngine.framework */; };
 /* End PBXBuildFile section */
 
@@ -228,6 +229,7 @@
 		84EA0F0F2663D8F60051A1CF /* QuestionOptionApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionOptionApi.swift; sourceTree = "<group>"; };
 		84EA0F102663D8F60051A1CF /* QuestionOptionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionOptionService.swift; sourceTree = "<group>"; };
 		84EA0F112663D8F60051A1CF /* QuestionOptionServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionOptionServiceProtocol.swift; sourceTree = "<group>"; };
+		84EDEF9C26642DC8008B6054 /* NotificationNames.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationNames.swift; sourceTree = "<group>"; };
 		BDAEF4AAC22F56F1A80725AC /* Pods-QuizEngine.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QuizEngine.release.xcconfig"; path = "Target Support Files/Pods-QuizEngine/Pods-QuizEngine.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -656,6 +658,7 @@
 			isa = PBXGroup;
 			children = (
 				843B8C322660C84F00E6A999 /* ServiceFactory.swift */,
+				84EDEF9C26642DC8008B6054 /* NotificationNames.swift */,
 				84C1ACD126603DA200412B31 /* Model */,
 				8471F4C5265FB703007A7876 /* AuthService */,
 				843B8C312660C84100E6A999 /* ProfileService */,
@@ -1079,6 +1082,7 @@
 				843B8C632660F8D400E6A999 /* LoadingCell.swift in Sources */,
 				8471F4A2265F9FAB007A7876 /* Assets.swift in Sources */,
 				842970EB266179CB0093305D /* EditQuizTableBuilder.swift in Sources */,
+				84EDEF9D26642DC8008B6054 /* NotificationNames.swift in Sources */,
 				84414D6326625698006F2DAF /* TextAreaCell.swift in Sources */,
 				84D755692662C9C700428E70 /* EditQuestionOptionController.swift in Sources */,
 				842970C5266142FB0093305D /* QuizApi.swift in Sources */,

@@ -54,6 +54,8 @@ internal enum Text {
     internal static let addQuestion = Text.tr("Localizable", "EditQuiz.AddQuestion")
     /// Новый тест
     internal static let createTitle = Text.tr("Localizable", "EditQuiz.CreateTitle")
+    /// Описание
+    internal static let descriptionPlaceholder = Text.tr("Localizable", "EditQuiz.DescriptionPlaceholder")
     /// Редактирование
     internal static let editTitle = Text.tr("Localizable", "EditQuiz.EditTitle")
     /// Публичный тест

@@ -10,7 +10,7 @@ import Foundation
 class QuestionOption: Codable {
     init(id: Int?) {
         self.id = id
-        self.text = nil
+        self.text = .empty
         self.isCorrect = false
     }
 

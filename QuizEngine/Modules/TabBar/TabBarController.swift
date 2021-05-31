@@ -8,6 +8,10 @@
 import UIKit
 
 class TabBarController: UITabBarController {
+    static let createTabIndex: Int = 0
+    static let quizListTabIndex: Int = 1
+    static let profileTabIndex: Int = 2
+
     init() {
         super.init(nibName: nil, bundle: nil)
         let create = UINavigationController(rootViewController: EditQuizController(quiz: Quiz()))

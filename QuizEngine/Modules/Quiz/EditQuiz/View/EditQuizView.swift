@@ -17,7 +17,7 @@ final class EditQuizView: UIView {
         tableView.estimatedRowHeight = 50
         tableView.rowHeight = UITableView.automaticDimension
         tableView.showsVerticalScrollIndicator = false
-        tableView.contentInset = tableView.contentInset.with(bottom: 50)
+        tableView.contentInset = UIEdgeInsets(top: 10, left: 0, bottom: 50, right: 0)
         tableView.keyboardDismissMode = .interactive
         tableView.separatorStyle = .none
         return tableView
@@ -25,7 +25,8 @@ final class EditQuizView: UIView {
 
     private var tableBuilder: EditQuizTableBuilder?
 
-    static let textTag: Int = 100
+    static let titleTextFieldTag: Int = 100
+    static let descriptionTextAreaTag: Int = 101
 
     // MARK: - Init
 

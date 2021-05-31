@@ -21,8 +21,8 @@ extension QuestionOptionApi: TargetType {
 
     var path: String {
         switch self {
-        case .create:
-            return "/question"
+        case let .create(questinoId, _):
+            return "/question/\(questinoId)"
         case let .update(questinoId, optionId, _):
             return "/question/\(questinoId)/option/\(optionId)"
         case let .delete(questinoId, optionId):
@@ -32,8 +32,10 @@ extension QuestionOptionApi: TargetType {
 
     var method: Moya.Method {
         switch self {
-        case .create, .update:
+        case .create:
             return .post
+        case .update:
+            return .put
         case .delete:
             return .delete
         }

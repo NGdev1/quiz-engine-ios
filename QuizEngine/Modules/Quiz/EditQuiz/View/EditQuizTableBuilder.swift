@@ -94,6 +94,7 @@ final class EditQuizTableBuilder {
     private func buildFullTableStructure() {
         var rowsSequence: [Row] = [
             Row(cellsSetup.nameCell(_:for:)),
+            Row(cellsSetup.descriptionCell(_:for:)),
             Row(cellsSetup.isPublicQuizCell(_:for:), fromNib: true, bundle: resourcesBundle),
             Row(cellsSetup.questionsTitle(_:for:), fromNib: true, bundle: resourcesBundle),
         ]

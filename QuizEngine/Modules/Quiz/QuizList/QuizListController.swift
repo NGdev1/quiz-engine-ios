@@ -22,6 +22,10 @@ class QuizListController: UIViewController, QuizListControllerLogic {
 
     // MARK: - Init
 
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
+
     init() {
         super.init(nibName: nil, bundle: nil)
         setup()
@@ -70,7 +74,16 @@ class QuizListController: UIViewController, QuizListControllerLogic {
             action: #selector(loadQuizList),
             for: .valueChanged
         )
+        NotificationCenter.default.addObserver(
+            self, selector: #selector(userChangedQuizList(notification:)),
+            name: .userChangedQuizList, object: nil
+        )
         customView.setDelegate(self)
+    }
+
+    @objc
+    private func userChangedQuizList(notification: NSNotification) {
+        loadQuizList()
     }
 
     // MARK: - QuizListControllerLogic

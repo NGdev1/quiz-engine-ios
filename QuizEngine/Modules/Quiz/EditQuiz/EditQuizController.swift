@@ -81,7 +81,15 @@ class EditQuizController: UIViewController, EditQuizControllerLogic {
 
     @objc
     private func save() {
-        print(quiz.title ?? 1)
+        if validateAndShowError() == false {
+            return
+        }
+        customView.showLoading()
+        if let quizId = quiz.id {
+            interactor?.updateQuiz(id: quizId, quiz: quiz)
+        } else {
+            interactor?.createQuiz(quiz)
+        }
     }
 
     // MARK: - EditQuizControllerLogic
@@ -92,12 +100,20 @@ class EditQuizController: UIViewController, EditQuizControllerLogic {
         customView.updateAppearance(with: quiz)
     }
 
-    func didFinishSavingQuiz(_ quiz: Quiz) {}
+    func didFinishSavingQuiz(_ quiz: Quiz) {
+        NotificationCenter.default.post(name: .userChangedQuizList, object: quiz)
+        self.quiz = Quiz()
+        customView.updateAppearance(with: self.quiz)
+        tabBarController?.selectedIndex = TabBarController.quizListTabIndex
+        navigationController?.popViewController()
+    }
 
-    func didFinishUpdatingQuiz(_ quiz: Quiz) {}
-
-    func presentQuiz(_ entity: Quiz) {
-        customView.updateAppearance(with: entity)
+    func didFinishUpdatingQuiz(_ quiz: Quiz) {
+        NotificationCenter.default.post(name: .userChangedQuizList, object: quiz)
+        self.quiz = Quiz()
+        customView.updateAppearance(with: self.quiz)
+        tabBarController?.selectedIndex = TabBarController.quizListTabIndex
+        navigationController?.popViewController()
     }
 
     func presentError(message: String) {
@@ -108,8 +124,15 @@ class EditQuizController: UIViewController, EditQuizControllerLogic {
     // MARK: - Private methods
 
     private func validateAndShowError() -> Bool {
-        if quiz.id == nil || quiz.id?.isEmpty == true {
-            if let textField: MDTextField = customView.viewWithTag(EditQuizView.textTag) as? MDTextField {
+        if quiz.title == nil || quiz.title?.isEmpty == true {
+            if let textField: MDTextField = customView.viewWithTag(EditQuizView.titleTextFieldTag) as? MDTextField {
+                textField.shake()
+                textField.showError(Text.Errors.fillInTheField)
+            }
+            return false
+        }
+        if quiz.description == nil || quiz.description?.isEmpty == true {
+            if let textField: MDTextArea = customView.viewWithTag(EditQuizView.descriptionTextAreaTag) as? MDTextArea {
                 textField.shake()
                 textField.showError(Text.Errors.fillInTheField)
             }

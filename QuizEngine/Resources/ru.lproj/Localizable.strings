@@ -39,6 +39,7 @@ EditQuiz.EditTitle = "Редактирование";
 EditQuiz.TabBarTitle = "Создать";
 EditQuiz.QuestionsHeader = "Вопросы";
 EditQuiz.NamePlaceholder = "Название теста";
+EditQuiz.DescriptionPlaceholder = "Описание";
 EditQuiz.IsPublic = "Публичный тест";
 EditQuiz.AddQuestion = "Добавить вопрос";
 

@@ -41,8 +41,10 @@ extension QuizApi: TargetType {
         switch self {
         case .get, .ownList:
             return .get
-        case .create, .update:
+        case .create:
             return .post
+        case .update:
+            return .put
         case .delete:
             return .delete
         }

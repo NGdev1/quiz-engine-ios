@@ -41,7 +41,8 @@ final class TextFieldCell: UITableViewCell {
 
     private func makeConstraints() {
         textField.snp.makeConstraints { make in
-            make.top.bottom.equalToSuperview().inset(16)
+            make.top.equalToSuperview().inset(8)
+            make.bottom.equalToSuperview().inset(16)
             make.height.equalTo(50)
             make.leading.trailing.equalToSuperview().inset(16)
         }

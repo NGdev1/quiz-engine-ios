@@ -40,7 +40,14 @@ final class EditQuizCellSetup: NSObject {
     func nameCell(_ cell: TextFieldCell, for indexPath: IndexPath) {
         cell.configure(
             delegate: self, text: entity?.title,
-            placeholder: Text.EditQuiz.namePlaceholder, tag: EditQuizView.textTag
+            placeholder: Text.EditQuiz.namePlaceholder, tag: EditQuizView.titleTextFieldTag
+        )
+    }
+
+    func descriptionCell(_ cell: TextAreaCell, for indexPath: IndexPath) {
+        cell.configure(
+            delegate: self, text: entity?.description, tag: EditQuizView.descriptionTextAreaTag,
+            placeholder: Text.EditQuiz.descriptionPlaceholder
         )
     }
 
@@ -75,8 +82,18 @@ final class EditQuizCellSetup: NSObject {
 // MARK: - Action handlers
 
 extension EditQuizCellSetup: ErrorCellDelegate, UITextFieldDelegate,
-    SwitchCellDelegate, QuestionCellDelegate, AddItemCellDelegate
+    SwitchCellDelegate, QuestionCellDelegate, AddItemCellDelegate, MDTextAreaDelegate
 {
+    func textDidChange(textArea: MDTextArea, text: String) {
+        if textArea.tag == EditQuizView.descriptionTextAreaTag {
+            entity?.description = text
+        }
+        DispatchQueue.main.async { [weak tableView] in
+            tableView?.beginUpdates()
+            tableView?.endUpdates()
+        }
+    }
+
     func addItem() {
         delegate?.addQuestion()
     }
@@ -92,7 +109,7 @@ extension EditQuizCellSetup: ErrorCellDelegate, UITextFieldDelegate,
         replacementString string: String
     ) -> Bool {
         let text: String = (textField.text as NSString?)?.replacingCharacters(in: range, with: string) ?? .empty
-        if textField.tag == EditQuizView.textTag {
+        if textField.tag == EditQuizView.titleTextFieldTag {
             entity?.title = text
         }
         return true

@@ -97,8 +97,6 @@ class EditQuestionController: UIViewController, EditQuestionControllerLogic {
         }
     }
 
-    // MARK: - Network requests
-
     // MARK: - EditQuestionControllerLogic
 
     func didFinishSavingQuestion(_ question: Question) {

@@ -30,16 +30,16 @@ final class MDTextArea: UIView {
 
     private lazy var placeholderLabel: UILabel = {
         let label = UILabel()
-        label.textColor = Assets.text.color
+        label.textColor = Assets.gray.color
         label.textAlignment = .left
         label.center = .zero
-        label.font = Fonts.SFUIDisplay.semibold.font(size: 14)
+        label.font = Fonts.SFUIDisplay.regular.font(size: 18)
         return label
     }()
 
     private lazy var textView: UITextView = {
         let textView = UITextView()
-        textView.font = Fonts.SFUIDisplay.semibold.font(size: 14)
+        textView.font = Fonts.SFUIDisplay.regular.font(size: 18)
         textView.isScrollEnabled = false
         textView.backgroundColor = .clear
         textView.delegate = self
@@ -81,7 +81,7 @@ final class MDTextArea: UIView {
         }
     }
 
-    var text: String {
+    var text: String? {
         get {
             return textView.text
         }
@@ -143,10 +143,6 @@ final class MDTextArea: UIView {
 
     // MARK: - Internal methods
 
-    func setTag(_ tag: Int) {
-        textView.tag = tag
-    }
-
     func showError(_ text: String) {
         errorLabel.text = text
         errorLabel.fadeIn(duration: Appearance.animationDuration)
@@ -176,8 +172,8 @@ final class MDTextArea: UIView {
         placeholderLabel.snp.updateConstraints { make in
             make.top.equalTo(textView).inset(8)
         }
-        placeholderLabel.textColor = Assets.text.color
-        placeholderLabel.font = Fonts.SFUIDisplay.semibold.font(size: 14)
+        placeholderLabel.textColor = Assets.gray.color
+        placeholderLabel.font = Fonts.SFUIDisplay.regular.font(size: 18)
     }
 
     private func textAreaBecameEmpty() {
@@ -204,6 +200,16 @@ final class MDTextArea: UIView {
             isEmpty = false
             textAreaBecameFilled()
         }
+    }
+
+    // MARK: - Overriden methods
+
+    override func becomeFirstResponder() -> Bool {
+        return textView.becomeFirstResponder()
+    }
+
+    override func resignFirstResponder() -> Bool {
+        return textView.resignFirstResponder()
     }
 }
 

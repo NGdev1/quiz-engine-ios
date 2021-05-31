@@ -60,10 +60,6 @@ final class TextAreaCell: UITableViewCell {
     private func setupStyle() {
         textArea.isScrollEnabled = false
         textArea.customInputAccessoryView = textInputAccessoryView
-        separatorInset = UIEdgeInsets(
-            top: 0, left: UIScreen.main.bounds.width,
-            bottom: 0, right: 0
-        )
     }
 
     private func addSubviews() {
@@ -73,8 +69,8 @@ final class TextAreaCell: UITableViewCell {
     private func makeConstraints() {
         textArea.snp.makeConstraints { make in
             make.top.equalToSuperview().inset(8)
-            make.bottom.equalToSuperview()
-            make.leading.trailing.equalToSuperview().inset(12)
+            make.bottom.equalToSuperview().inset(16)
+            make.leading.trailing.equalToSuperview().inset(16)
         }
     }
 
@@ -90,11 +86,12 @@ final class TextAreaCell: UITableViewCell {
 
     func configure(
         delegate: MDTextAreaDelegate,
-        text: String,
+        text: String?, tag: Int,
         placeholder: String
     ) {
         textArea.placeholder = placeholder
         textArea.text = text
+        textArea.tag = tag
         textArea.delegate = delegate
     }
 }

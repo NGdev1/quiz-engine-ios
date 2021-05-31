@@ -10,10 +10,10 @@ import Foundation
 class Quiz: Codable {
     init() {
         self.id = nil
-        self.title = nil
+        self.title = .empty
         self.author = nil
-        self.description = nil
-        self.startDate = nil
+        self.description = .empty
+        // self.startDate = nil
         self.isAnyOrder = true
         self.isPublic = true
         self.questions = []
@@ -23,7 +23,7 @@ class Quiz: Codable {
     var title: String?
     var author: Profile?
     var description: String?
-    var startDate: Date?
+    // var startDate: Date?
     var isAnyOrder: Bool?
     var isPublic: Bool?
     var questions: [Question]?
