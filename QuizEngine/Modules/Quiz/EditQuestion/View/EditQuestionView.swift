@@ -20,6 +20,7 @@ final class EditQuestionView: UIView {
         tableView.contentInset = tableView.contentInset.with(bottom: 50)
         tableView.keyboardDismissMode = .interactive
         tableView.separatorStyle = .none
+        tableView.contentInset = UIEdgeInsets(top: 10, left: 0, bottom: 50, right: 0)
         return tableView
     }()
 

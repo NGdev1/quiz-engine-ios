@@ -8,6 +8,7 @@
 import UIKit
 
 protocol QuizDataSourceDelegate: AnyObject {
+    func deleteQuiz(_ item: Quiz)
     func didSelectQuiz(_ item: Quiz)
     func actionButtonTapped()
 }
@@ -64,6 +65,15 @@ final class QuizDataSource: NSObject {
             state = .noContent
         } else {
             state = .presentingList
+        }
+    }
+
+    func removeQuizWithId(_ id: String) {
+        for (index, item) in data.enumerated() where item.id == id {
+            data.remove(at: index)
+            let indexPath = IndexPath(row: index, section: 0)
+            tableView?.deleteRows(at: [indexPath], with: .automatic)
+            return
         }
     }
 
@@ -141,6 +151,24 @@ extension QuizDataSource: UITableViewDataSource {
 // MARK: - UITableViewDelegate
 
 extension QuizDataSource: UITableViewDelegate {
+    func tableView(
+        _ tableView: UITableView,
+        editingStyleForRowAt indexPath: IndexPath
+    ) -> UITableViewCell.EditingStyle {
+        return .delete
+    }
+
+    func tableView(
+        _ tableView: UITableView,
+        commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath
+    ) {
+        delegate?.deleteQuiz(data[indexPath.row])
+    }
+
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         if state == .presentingList, indexPath.row < data.count {

@@ -8,6 +8,7 @@
 import UIKit
 
 protocol EditQuestionCellSetupDelegate: AnyObject {
+    func didSelectOption(_ option: QuestionOption)
     func addOption()
     func reloadAction()
 }
@@ -68,6 +69,10 @@ final class EditQuestionCellSetup: NSObject {
 extension EditQuestionCellSetup: ErrorCellDelegate, UITextFieldDelegate,
     QuestionOptionCellDelegate, AddItemCellDelegate
 {
+    func didSelectOption(_ option: QuestionOption) {
+        delegate?.didSelectOption(option)
+    }
+
     func addItem() {
         delegate?.addOption()
     }

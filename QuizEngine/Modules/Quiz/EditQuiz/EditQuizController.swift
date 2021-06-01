@@ -145,6 +145,13 @@ class EditQuizController: UIViewController, EditQuizControllerLogic {
 // MARK: - EditQuizCellSetupDelegate
 
 extension EditQuizController: EditQuizCellSetupDelegate {
+    func didSelectQuestion(_ question: Question) {
+        customView.endEditing(true)
+        navigationController?.pushViewController(
+            EditQuestionController(quizId: quiz.id, delegate: self, question: question)
+        )
+    }
+
     func addQuestion() {
         customView.endEditing(true)
         navigationController?.pushViewController(
@@ -170,7 +177,13 @@ extension EditQuizController: EditQuizCellSetupDelegate {
 
 extension EditQuizController: EditQuestionControllerDelegate {
     func didFinishEditingQuestion(_ question: Question) {
-        quiz.questions?.append(question)
+        if let questionId = question.id,
+           let index = quiz.questions?.firstIndex(where: { item in item.id == questionId })
+        {
+            quiz.questions?[index] = question
+        } else {
+            quiz.questions?.append(question)
+        }
         customView.updateAppearance(with: quiz)
     }
 }

@@ -38,6 +38,10 @@ final class QuizListView: UITableView {
 
     // MARK: - Internal methods
 
+    func removeQuizWithId(_ id: String) {
+        customDataSource.removeQuizWithId(id)
+    }
+
     func setDelegate(_ delegate: QuizDataSourceDelegate) {
         customDataSource.delegate = delegate
     }

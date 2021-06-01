@@ -9,6 +9,7 @@ import MDFoundation
 
 protocol QuizListControllerLogic: AnyObject {
     func displayList(response: [Quiz])
+    func didFinishDeletingQuiz(id: String)
     func presentError(message: String)
 }
 
@@ -93,6 +94,10 @@ class QuizListController: UIViewController, QuizListControllerLogic {
         customView.updateQuizs(response)
     }
 
+    func didFinishDeletingQuiz(id: String) {
+        customView.removeQuizWithId(id)
+    }
+
     func presentError(message: String) {
         customView.endRefreshing()
         notificationFeedbackGenerator.notificationOccurred(.error)
@@ -103,6 +108,11 @@ class QuizListController: UIViewController, QuizListControllerLogic {
 // MARK: - QuizsDataSourceDelegate
 
 extension QuizListController: QuizDataSourceDelegate {
+    func deleteQuiz(_ item: Quiz) {
+        guard let quizId = item.id else { return }
+        interactor?.deleteQuiz(id: quizId)
+    }
+
     func didSelectQuiz(_ item: Quiz) {
         navigationController?.pushViewController(EditQuizController(quiz: item))
     }

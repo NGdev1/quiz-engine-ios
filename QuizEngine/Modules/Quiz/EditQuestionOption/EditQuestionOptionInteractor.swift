@@ -22,7 +22,7 @@ class EditQuestionOptionInteractor: EditQuestionOptionBusinessLogic {
                 return
             }
             if let response = response {
-                self.controller?.presentQuestionOption(response)
+                self.controller?.didFinishSavingOption(response)
             } else {
                 self.controller?.presentError(message: Text.Errors.requestError)
             }
@@ -37,7 +37,7 @@ class EditQuestionOptionInteractor: EditQuestionOptionBusinessLogic {
                 return
             }
             if let response = response {
-                self.controller?.presentQuestionOption(response)
+                self.controller?.didFinishUpdatingOption(response)
             } else {
                 self.controller?.presentError(message: Text.Errors.requestError)
             }

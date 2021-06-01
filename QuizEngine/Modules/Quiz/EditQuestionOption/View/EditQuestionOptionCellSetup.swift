@@ -8,7 +8,6 @@
 import UIKit
 
 protocol EditQuestionOptionCellSetupDelegate: AnyObject {
-    func addQuestion()
     func reloadAction()
 }
 
@@ -19,7 +18,6 @@ final class EditQuestionOptionCellSetup: NSObject {
 
     private var tableView: UITableView
     private let isCorrectSwitchTag: Int = 0x12
-    private let textTag: Int = 100
 
     // MARK: - Init
 
@@ -39,7 +37,7 @@ final class EditQuestionOptionCellSetup: NSObject {
     func textCell(_ cell: TextFieldCell, for indexPath: IndexPath) {
         cell.configure(
             delegate: self, text: entity?.text,
-            placeholder: Text.EditQuestionOption.textPlaceholder, tag: textTag
+            placeholder: Text.EditQuestionOption.textPlaceholder, tag: EditQuestionOptionView.textTag
         )
     }
 
@@ -60,12 +58,8 @@ final class EditQuestionOptionCellSetup: NSObject {
 // MARK: - Action handlers
 
 extension EditQuestionOptionCellSetup: ErrorCellDelegate, UITextFieldDelegate,
-    SwitchCellDelegate, QuestionCellDelegate, AddItemCellDelegate
+    SwitchCellDelegate
 {
-    func addItem() {
-        delegate?.addQuestion()
-    }
-
     func switchValueChanged(tag: Int, value: Bool) {
         if tag == isCorrectSwitchTag {
             entity?.isCorrect = value
@@ -77,7 +71,7 @@ extension EditQuestionOptionCellSetup: ErrorCellDelegate, UITextFieldDelegate,
         replacementString string: String
     ) -> Bool {
         let text: String = (textField.text as NSString?)?.replacingCharacters(in: range, with: string) ?? .empty
-        if textField.tag == textTag {
+        if textField.tag == EditQuestionOptionView.textTag {
             entity?.text = text
         }
         return true

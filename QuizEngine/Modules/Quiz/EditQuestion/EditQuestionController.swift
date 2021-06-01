@@ -139,16 +139,36 @@ class EditQuestionController: UIViewController, EditQuestionControllerLogic {
 // MARK: - EditQuestionCellSetupDelegate
 
 extension EditQuestionController: EditQuestionCellSetupDelegate {
-    func addOption() {
+    func didSelectOption(_ option: QuestionOption) {
         customView.endEditing(true)
         navigationController?.pushViewController(
-            EditQuestionOptionController(delegate: self, option: QuestionOption(id: nil))
+            EditQuestionOptionController(questionId: question.id, delegate: self, option: option)
         )
     }
 
-    func reloadAction() {}
+    func addOption() {
+        customView.endEditing(true)
+        navigationController?.pushViewController(
+            EditQuestionOptionController(questionId: question.id, delegate: self, option: QuestionOption(id: nil))
+        )
+    }
+
+    func reloadAction() {
+        customView.updateAppearance(with: question)
+    }
 }
 
 // MARK: - EditQuestionCellSetupDelegate
 
-extension EditQuestionController: EditQuestionOptionControllerDelegate {}
+extension EditQuestionController: EditQuestionOptionControllerDelegate {
+    func didFinishEditingOption(_ option: QuestionOption) {
+        if let optionId = option.id,
+           let index = question.options?.firstIndex(where: { item in item.id == optionId })
+        {
+            question.options?[index] = option
+        } else {
+            question.options?.append(option)
+        }
+        customView.updateAppearance(with: question)
+    }
+}

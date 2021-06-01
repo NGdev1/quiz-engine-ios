@@ -49,6 +49,7 @@ class QuestionService: QuestionServiceProtocol {
         dataProvider.request(.update(quizId: quizId, questinoId: questionId, question: question)) { result in
             switch result {
             case let .success(moyaResponse):
+                // print(String(data: moyaResponse.data, encoding: .utf8) ?? "")
                 if (500 ... 599).contains(moyaResponse.statusCode) {
                     completion(nil, GeneralError.remoteError)
                     return

@@ -25,6 +25,8 @@ final class EditQuestionOptionView: UIView {
 
     private var tableBuilder: EditQuestionOptionTableBuilder?
 
+    static let textTag: Int = 200
+
     // MARK: - Init
 
     override init(frame: CGRect = UIScreen.main.bounds) {

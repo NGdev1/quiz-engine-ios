@@ -8,6 +8,7 @@
 import UIKit
 
 protocol EditQuizCellSetupDelegate: AnyObject {
+    func didSelectQuestion(_ question: Question)
     func addQuestion()
     func reloadAction()
 }
@@ -84,6 +85,10 @@ final class EditQuizCellSetup: NSObject {
 extension EditQuizCellSetup: ErrorCellDelegate, UITextFieldDelegate,
     SwitchCellDelegate, QuestionCellDelegate, AddItemCellDelegate, MDTextAreaDelegate
 {
+    func didSelectQuestion(_ question: Question) {
+        delegate?.didSelectQuestion(question)
+    }
+
     func textDidChange(textArea: MDTextArea, text: String) {
         if textArea.tag == EditQuizView.descriptionTextAreaTag {
             entity?.description = text

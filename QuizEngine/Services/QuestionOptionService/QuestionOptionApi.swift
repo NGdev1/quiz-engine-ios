@@ -22,11 +22,11 @@ extension QuestionOptionApi: TargetType {
     var path: String {
         switch self {
         case let .create(questinoId, _):
-            return "/question/\(questinoId)"
+            return "/question/\(questinoId)/option"
         case let .update(questinoId, optionId, _):
             return "/question/\(questinoId)/option/\(optionId)"
         case let .delete(questinoId, optionId):
-            return "/question/\(questinoId)/question/\(optionId)"
+            return "/question/\(questinoId)/option/\(optionId)"
         }
     }
 

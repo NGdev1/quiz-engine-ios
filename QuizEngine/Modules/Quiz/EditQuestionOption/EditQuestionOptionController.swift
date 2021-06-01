@@ -7,10 +7,13 @@
 
 import MDFoundation
 
-protocol EditQuestionOptionControllerDelegate: AnyObject {}
+protocol EditQuestionOptionControllerDelegate: AnyObject {
+    func didFinishEditingOption(_ option: QuestionOption)
+}
 
 protocol EditQuestionOptionControllerLogic: AnyObject {
-    func presentQuestionOption(_ entity: QuestionOption)
+    func didFinishSavingOption(_ option: QuestionOption)
+    func didFinishUpdatingOption(_ option: QuestionOption)
     func presentError(message: String)
 }
 
@@ -21,13 +24,15 @@ class EditQuestionOptionController: UIViewController, EditQuestionOptionControll
     private var interactor: EditQuestionOptionInteractor?
 
     private let generator = UINotificationFeedbackGenerator()
+    private let questionId: Int?
     private let option: QuestionOption
 
     weak var delegate: EditQuestionOptionControllerDelegate?
 
     // MARK: - Init
 
-    init(delegate: EditQuestionOptionControllerDelegate, option: QuestionOption) {
+    init(questionId: Int?, delegate: EditQuestionOptionControllerDelegate, option: QuestionOption) {
+        self.questionId = questionId
         self.delegate = delegate
         self.option = option
         super.init(nibName: nil, bundle: nil)
@@ -74,27 +79,59 @@ class EditQuestionOptionController: UIViewController, EditQuestionOptionControll
 
     @objc
     private func save() {
-        print(option.text ?? 1)
+        if validateAndShowError() == false {
+            return
+        }
+        if let questionId = questionId {
+            customView.showLoading()
+            if let optionId = option.id {
+                interactor?.updateOption(questionId: questionId, optionId: optionId, option: option)
+            } else {
+                interactor?.createOption(questionId: questionId, option: option)
+            }
+            return
+        } else {
+            delegate?.didFinishEditingOption(option)
+            navigationController?.popViewController()
+            return
+        }
     }
-
-    // MARK: - Network requests
 
     // MARK: - EditQuestionOptionControllerLogic
 
-    func presentQuestionOption(_ entity: QuestionOption) {
-        customView.updateAppearance(with: entity)
+    func didFinishSavingOption(_ option: QuestionOption) {
+        delegate?.didFinishEditingOption(option)
+        navigationController?.popViewController()
+    }
+
+    func didFinishUpdatingOption(_ option: QuestionOption) {
+        delegate?.didFinishEditingOption(option)
+        navigationController?.popViewController()
     }
 
     func presentError(message: String) {
         generator.notificationOccurred(.error)
         customView.showError(message: message)
     }
+
+    // MARK: - Private methods
+
+    private func validateAndShowError() -> Bool {
+        if option.text == nil || option.text?.isEmpty == true {
+            if let textField: MDTextField = customView.viewWithTag(EditQuestionOptionView.textTag) as? MDTextField {
+                textField.shake()
+                textField.showError(Text.Errors.fillInTheField)
+            }
+            return false
+        }
+        return true
+    }
 }
 
 // MARK: - EditQuestionOptionCellSetupDelegate
 
 extension EditQuestionOptionController: EditQuestionOptionCellSetupDelegate {
-    func addQuestion() {}
-
-    func reloadAction() {}
+    func reloadAction() {
+        customView.updateAppearance(with: option)
+    }
 }

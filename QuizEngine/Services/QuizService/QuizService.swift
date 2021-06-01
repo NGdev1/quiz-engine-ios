@@ -71,6 +71,9 @@ class QuizService: QuizServiceProtocol {
         dataProvider.request(.create(quiz: quiz)) { result in
             switch result {
             case let .success(moyaResponse):
+                // print(String(data: moyaResponse.request?.httpBody ?? Data(), encoding: .utf8) ?? "")
+                // print("\n")
+                // print(String(data: moyaResponse.data, encoding: .utf8) ?? "")
                 if (500 ... 599).contains(moyaResponse.statusCode) {
                     completion(nil, GeneralError.remoteError)
                     return

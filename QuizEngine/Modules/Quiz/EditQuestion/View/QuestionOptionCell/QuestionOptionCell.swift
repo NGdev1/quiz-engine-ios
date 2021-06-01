@@ -7,7 +7,9 @@
 
 import UIKit
 
-protocol QuestionOptionCellDelegate: AnyObject {}
+protocol QuestionOptionCellDelegate: AnyObject {
+    func didSelectOption(_ option: QuestionOption)
+}
 
 final class QuestionOptionCell: UITableViewCell {
     // MARK: - Properties
@@ -16,6 +18,7 @@ final class QuestionOptionCell: UITableViewCell {
     @IBOutlet var subtitleLabel: UILabel!
 
     weak var delegate: QuestionOptionCellDelegate?
+    var option: QuestionOption?
 
     // MARK: - Xib init
 
@@ -29,7 +32,16 @@ final class QuestionOptionCell: UITableViewCell {
 
     // MARK: - Action handlers
 
-    private func addActionHandlers() {}
+    private func addActionHandlers() {
+        let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(cellTapped))
+        addGestureRecognizer(tapRecognizer)
+    }
+
+    @objc
+    private func cellTapped() {
+        guard let option = option else { return }
+        delegate?.didSelectOption(option)
+    }
 
     // MARK: - Internal methods
 
@@ -38,6 +50,7 @@ final class QuestionOptionCell: UITableViewCell {
         option: QuestionOption
     ) {
         self.delegate = delegate
+        self.option = option
         titleLabel.text = option.text
         subtitleLabel.text = Text.EditQuestionOption.isCorrect
     }
