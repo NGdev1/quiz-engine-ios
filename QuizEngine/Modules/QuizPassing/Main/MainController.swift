@@ -80,7 +80,8 @@ class MainController: UIViewController, MainControllerLogic {
 
 extension MainController: HomePageDataSourceDelegate {
     func didSelectQuiz(_ item: Quiz) {
-        // router?.trigger(.openItem(delegate: self, item: item))
+        guard let id = item.id else { return }
+        navigationController?.pushViewController(QuizController(id: id, quiz: item))
     }
 
     func actionButtonTapped() {

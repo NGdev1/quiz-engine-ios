@@ -115,6 +115,11 @@ internal enum Text {
     }
   }
 
+  internal enum Quiz {
+    /// Тест
+    internal static let title = Text.tr("Localizable", "Quiz.Title")
+  }
+
   internal enum QuizList {
     /// Ни одного теста не создано
     internal static let noContent = Text.tr("Localizable", "QuizList.NoContent")

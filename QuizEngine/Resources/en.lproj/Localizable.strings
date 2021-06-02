@@ -59,6 +59,8 @@ QuizList.NoContent = "No quiz created";
 
 Main.Title = "Public";
 
+Quiz.Title = "Test";
+
 Alert.Error = "Error";
 Alert.Cancel = "Cancel";
 

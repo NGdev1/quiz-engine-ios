@@ -59,6 +59,8 @@ QuizList.NoContent = "Ни одного теста не создано";
 
 Main.Title = "Главная";
 
+Quiz.Title = "Тест";
+
 Alert.Error = "Ошибка";
 Alert.Cancel = "Отмена";
 
