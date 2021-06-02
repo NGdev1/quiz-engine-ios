@@ -60,6 +60,9 @@ QuizList.NoContent = "No quiz created";
 Main.Title = "Public";
 
 Quiz.Title = "Test";
+Quiz.QuestionsCount = "Number of questions: %d";
+Quiz.Start = "Start";
+Quiz.Author = "Author";
 
 Alert.Error = "Error";
 Alert.Cancel = "Cancel";

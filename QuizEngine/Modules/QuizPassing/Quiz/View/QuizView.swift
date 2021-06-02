@@ -17,6 +17,7 @@ final class QuizView: UIView {
         tableView.estimatedRowHeight = 50
         tableView.rowHeight = UITableView.automaticDimension
         tableView.showsVerticalScrollIndicator = false
+        tableView.separatorStyle = .none
         tableView.contentInset = tableView.contentInset.with(bottom: 50)
         return tableView
     }()
@@ -67,8 +68,8 @@ final class QuizView: UIView {
         tableBuilder?.setDelegate(delegate)
     }
 
-    func showLoading() {
-        tableBuilder?.showLoading()
+    func showLoading(entity: Quiz) {
+        tableBuilder?.showLoading(entity: entity)
     }
 
     func updateAppearance(with entity: Quiz, animated: Bool = true) {

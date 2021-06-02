@@ -38,7 +38,9 @@ final class QuizTableBuilder {
         cellsSetup.delegate = delegate
     }
 
-    func showLoading() {
+    func showLoading(entity: Quiz) {
+        self.entity = entity
+        cellsSetup.updateQuiz(entity)
         buildLoadingTableStructure()
         reloadData(animated: true)
     }
@@ -86,6 +88,7 @@ final class QuizTableBuilder {
 
     private func buildLoadingTableStructure() {
         let rowsSequence: [Row] = [
+            Row(cellsSetup.quizHeaderCell(_:for:), fromNib: true, bundle: resourcesBundle),
             Row(LoadingCell.loadingCell(_:for:)),
         ]
         setRowsSequenceToDataStorage(rowsSequence: rowsSequence)
@@ -93,8 +96,10 @@ final class QuizTableBuilder {
 
     private func buildFullTableStructure() {
         let rowsSequence: [Row] = [
-            Row(cellsSetup.someCell(_:for:)),
-            Row(cellsSetup.otherCell(_:for:)),
+            Row(cellsSetup.quizHeaderCell(_:for:), fromNib: true, bundle: resourcesBundle),
+            Row(cellsSetup.startCell(_:for:), fromNib: true, bundle: resourcesBundle),
+            Row(cellsSetup.authorHeaderCell(_:for:), fromNib: true, bundle: resourcesBundle),
+            Row(cellsSetup.authorCell(_:for:), fromNib: true, bundle: resourcesBundle),
         ]
         setRowsSequenceToDataStorage(rowsSequence: rowsSequence)
     }

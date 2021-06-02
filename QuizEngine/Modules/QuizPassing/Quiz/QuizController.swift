@@ -20,7 +20,7 @@ class QuizController: UIViewController, QuizControllerLogic {
 
     let generator = UINotificationFeedbackGenerator()
     let id: String
-    let quiz: Quiz?
+    let quiz: Quiz
 
     // MARK: - Init
 
@@ -62,7 +62,7 @@ class QuizController: UIViewController, QuizControllerLogic {
     // MARK: - Network requests
 
     private func loadQuiz() {
-        customView.showLoading()
+        customView.showLoading(entity: quiz)
         interactor?.loadQuiz(id: id)
     }
 
@@ -81,6 +81,8 @@ class QuizController: UIViewController, QuizControllerLogic {
 // MARK: - QuizCellSetupDelegate
 
 extension QuizController: QuizCellSetupDelegate {
+    func startQuiz() {}
+
     func reloadAction() {
         loadQuiz()
     }

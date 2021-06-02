@@ -116,6 +116,14 @@ internal enum Text {
   }
 
   internal enum Quiz {
+    /// Автор
+    internal static let author = Text.tr("Localizable", "Quiz.Author")
+    /// Кол-во вопросов: %d
+    internal static func questionsCount(_ p1: Int) -> String {
+      return Text.tr("Localizable", "Quiz.QuestionsCount", p1)
+    }
+    /// Начать
+    internal static let start = Text.tr("Localizable", "Quiz.Start")
     /// Тест
     internal static let title = Text.tr("Localizable", "Quiz.Title")
   }

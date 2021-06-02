@@ -60,6 +60,9 @@ QuizList.NoContent = "Ни одного теста не создано";
 Main.Title = "Главная";
 
 Quiz.Title = "Тест";
+Quiz.QuestionsCount = "Кол-во вопросов: %d";
+Quiz.Start = "Начать";
+Quiz.Author = "Автор";
 
 Alert.Error = "Ошибка";
 Alert.Cancel = "Отмена";
