@@ -11,17 +11,10 @@ protocol EditQuestionControllerDelegate: AnyObject {
     func didFinishEditingQuestion(_ question: Question)
 }
 
-protocol EditQuestionControllerLogic: AnyObject {
-    func didFinishSavingQuestion(_ question: Question)
-    func didFinishUpdatingQuestion(_ question: Question)
-    func presentError(message: String)
-}
-
-class EditQuestionController: UIViewController, EditQuestionControllerLogic {
+class EditQuestionController: UIViewController {
     // MARK: - Properties
 
     private lazy var customView = EditQuestionView()
-    private var interactor: EditQuestionInteractor?
 
     private let generator = UINotificationFeedbackGenerator()
     private let quizId: String?
@@ -51,14 +44,8 @@ class EditQuestionController: UIViewController, EditQuestionControllerLogic {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        setup()
         setupAppearance()
         addActionHandlers()
-    }
-
-    private func setup() {
-        interactor = EditQuestionInteractor()
-        interactor?.controller = self
     }
 
     private func setupAppearance() {
@@ -72,7 +59,7 @@ class EditQuestionController: UIViewController, EditQuestionControllerLogic {
 
     private func addActionHandlers() {
         navigationItem.rightBarButtonItem = UIBarButtonItem(
-            title: Text.Common.save, style: .plain,
+            title: Text.Common.done, style: .plain,
             target: self, action: #selector(save)
         )
     }
@@ -82,44 +69,8 @@ class EditQuestionController: UIViewController, EditQuestionControllerLogic {
         if validateAndShowError() == false {
             return
         }
-        if let quizId = quizId {
-            customView.showLoading()
-            if let questionId = question.id {
-                interactor?.updateQuestion(quizId: quizId, questionId: questionId, question: question)
-            } else {
-                interactor?.createQuestion(quizId: quizId, question: question)
-            }
-            return
-        } else {
-            delegate?.didFinishEditingQuestion(question)
-            navigationController?.popViewController()
-            return
-        }
-    }
-
-    // MARK: - EditQuestionControllerLogic
-
-    func didFinishSavingQuestion(_ question: Question) {
         delegate?.didFinishEditingQuestion(question)
         navigationController?.popViewController()
-    }
-
-    func didFinishUpdatingQuestion(_ question: Question) {
-        delegate?.didFinishEditingQuestion(question)
-        navigationController?.popViewController()
-    }
-
-    func presentError(message: String) {
-        generator.notificationOccurred(.error)
-        customView.updateAppearance(with: question)
-        guard message != .empty else { return }
-        let alert = AlertsFactory.plain(
-            title: Text.Alert.error,
-            message: message,
-            tintColor: Assets.baseTint1.color,
-            cancelText: Text.Alert.cancel
-        )
-        present(alert, animated: true, completion: nil)
     }
 
     // MARK: - Private methods
@@ -149,7 +100,7 @@ extension EditQuestionController: EditQuestionCellSetupDelegate {
     func addOption() {
         customView.endEditing(true)
         navigationController?.pushViewController(
-            EditQuestionOptionController(questionId: question.id, delegate: self, option: QuestionOption(id: nil))
+            EditQuestionOptionController(questionId: question.id, delegate: self, option: QuestionOption())
         )
     }
 
@@ -162,12 +113,12 @@ extension EditQuestionController: EditQuestionCellSetupDelegate {
 
 extension EditQuestionController: EditQuestionOptionControllerDelegate {
     func didFinishEditingOption(_ option: QuestionOption) {
-        if let optionId = option.id,
-           let index = question.options?.firstIndex(where: { item in item.id == optionId })
+        if let optionTempId = option.tempId,
+           let index = question.options.firstIndex(where: { item in item.tempId == optionTempId })
         {
-            question.options?[index] = option
+            question.options[index] = option
         } else {
-            question.options?.append(option)
+            question.options.append(option)
         }
         customView.updateAppearance(with: question)
     }

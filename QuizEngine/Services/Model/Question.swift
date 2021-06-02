@@ -8,13 +8,21 @@
 import Foundation
 
 class Question: Codable {
-    init(id: Int?) {
-        self.id = id
+    init() {
+        self.id = nil
         self.text = .empty
         self.options = []
     }
 
     var id: Int?
     var text: String?
-    var options: [QuestionOption]?
+    var tempId: Int? = Int.random(in: Int.min ... Int.max)
+    var options: [QuestionOption]
+
+    required init(from decoder: Decoder) throws {
+        let map = try decoder.container(keyedBy: CodingKeys.self)
+        self.id = try? map.decode(Int.self, forKey: .id)
+        self.text = try? map.decode(String.self, forKey: .text)
+        self.options = (try? map.decode([QuestionOption].self, forKey: .options)) ?? []
+    }
 }

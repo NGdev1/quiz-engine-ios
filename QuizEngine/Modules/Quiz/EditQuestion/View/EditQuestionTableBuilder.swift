@@ -30,6 +30,7 @@ final class EditQuestionTableBuilder {
         tableView.dataSource = genericDataSource
         tableView.delegate = genericTableViewDelegate
         self.cellsSetup = EditQuestionCellSetup(entity: entity, tableView: tableView)
+        genericDataSource.delegate = self
     }
 
     // MARK: - Internal methods
@@ -98,7 +99,7 @@ final class EditQuestionTableBuilder {
         ]
         cellsSetup.firstOptionIndexPath = rowsSequence.count
         for _ in entity?.options ?? [] {
-            rowsSequence.append(Row(cellsSetup.questionOptionCell(_:for:), fromNib: true, bundle: resourcesBundle))
+            rowsSequence.append(Row(cellsSetup.questionOptionCell(_:for:), fromNib: true, canDelete: true, bundle: resourcesBundle))
         }
         rowsSequence.append(Row(cellsSetup.addOptionCell(_:for:), fromNib: true, bundle: resourcesBundle))
         setRowsSequenceToDataStorage(rowsSequence: rowsSequence)
@@ -108,5 +109,17 @@ final class EditQuestionTableBuilder {
         let section = GenericTableViewSectionModel(with: rowsSequence)
         dataStorage.update(withOneSection: section)
         dataStorage.registerFor(tableView)
+    }
+}
+
+// MARK: - GenericTableViewDataSourceDelegate
+
+extension EditQuestionTableBuilder: GenericTableViewDataSourceDelegate {
+    func moveRowAt(sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {}
+
+    func deleteRowAt(indexPath: IndexPath) {
+        let index = indexPath.row - cellsSetup.firstOptionIndexPath
+        entity?.options.remove(at: index)
+        buildFullTableStructure()
     }
 }

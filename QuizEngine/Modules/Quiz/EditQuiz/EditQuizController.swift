@@ -155,7 +155,7 @@ extension EditQuizController: EditQuizCellSetupDelegate {
     func addQuestion() {
         customView.endEditing(true)
         navigationController?.pushViewController(
-            EditQuestionController(quizId: quiz.id, delegate: self, question: Question(id: nil))
+            EditQuestionController(quizId: quiz.id, delegate: self, question: Question())
         )
     }
 
@@ -177,12 +177,12 @@ extension EditQuizController: EditQuizCellSetupDelegate {
 
 extension EditQuizController: EditQuestionControllerDelegate {
     func didFinishEditingQuestion(_ question: Question) {
-        if let questionId = question.id,
-           let index = quiz.questions?.firstIndex(where: { item in item.id == questionId })
+        if let questionTempId = question.tempId,
+           let index = quiz.questions.firstIndex(where: { item in item.tempId == questionTempId })
         {
-            quiz.questions?[index] = question
+            quiz.questions[index] = question
         } else {
-            quiz.questions?.append(question)
+            quiz.questions.append(question)
         }
         customView.updateAppearance(with: quiz)
     }

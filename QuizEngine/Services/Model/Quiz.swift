@@ -26,6 +26,17 @@ class Quiz: Codable {
     // var startDate: Date?
     var isAnyOrder: Bool?
     var isPublic: Bool?
-    var questions: [Question]?
+    var questions: [Question]
     // TODO: Add passings
+
+    required init(from decoder: Decoder) throws {
+        let map = try decoder.container(keyedBy: CodingKeys.self)
+        self.id = try? map.decode(String.self, forKey: .id)
+        self.title = try? map.decode(String.self, forKey: .title)
+        self.author = try? map.decode(Profile.self, forKey: .author)
+        self.description = try? map.decode(String.self, forKey: .description)
+        self.isAnyOrder = try? map.decode(Bool.self, forKey: .isAnyOrder)
+        self.isPublic = try? map.decode(Bool.self, forKey: .isPublic)
+        self.questions = (try? map.decode([Question].self, forKey: .questions)) ?? []
+    }
 }

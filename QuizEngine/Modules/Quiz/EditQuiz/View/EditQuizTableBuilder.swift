@@ -30,6 +30,7 @@ final class EditQuizTableBuilder {
         tableView.dataSource = genericDataSource
         tableView.delegate = genericTableViewDelegate
         self.cellsSetup = EditQuizCellSetup(entity: entity, tableView: tableView)
+        genericDataSource.delegate = self
     }
 
     // MARK: - Internal methods
@@ -100,7 +101,7 @@ final class EditQuizTableBuilder {
         ]
         cellsSetup.firstQuestionIndexPath = rowsSequence.count
         for _ in entity?.questions ?? [] {
-            rowsSequence.append(Row(cellsSetup.questionCell(_:for:), fromNib: true, bundle: resourcesBundle))
+            rowsSequence.append(Row(cellsSetup.questionCell(_:for:), fromNib: true, canDelete: true, bundle: resourcesBundle))
         }
         rowsSequence.append(Row(cellsSetup.addQuestonCell(_:for:), fromNib: true, bundle: resourcesBundle))
         setRowsSequenceToDataStorage(rowsSequence: rowsSequence)
@@ -110,5 +111,17 @@ final class EditQuizTableBuilder {
         let section = GenericTableViewSectionModel(with: rowsSequence)
         dataStorage.update(withOneSection: section)
         dataStorage.registerFor(tableView)
+    }
+}
+
+// MARK: - GenericTableViewDataSourceDelegate
+
+extension EditQuizTableBuilder: GenericTableViewDataSourceDelegate {
+    func moveRowAt(sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {}
+
+    func deleteRowAt(indexPath: IndexPath) {
+        let index = indexPath.row - cellsSetup.firstQuestionIndexPath
+        entity?.questions.remove(at: index)
+        buildFullTableStructure()
     }
 }

@@ -49,6 +49,6 @@ final class QuestionCell: UITableViewCell {
         self.delegate = delegate
         self.question = question
         titleLabel.text = question.text
-        subtitleLabel.text = Text.Question.optionsCount(question.options?.count ?? 0)
+        subtitleLabel.text = Text.Question.optionsCount(question.options.count)
     }
 }

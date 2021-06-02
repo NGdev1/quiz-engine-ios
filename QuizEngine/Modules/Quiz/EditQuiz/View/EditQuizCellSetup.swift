@@ -66,7 +66,7 @@ final class EditQuizCellSetup: NSObject {
 
     func questionCell(_ cell: QuestionCell, for indexPath: IndexPath) {
         let index = indexPath.row - firstQuestionIndexPath
-        guard let question = entity?.questions?[index] else { return }
+        guard let question = entity?.questions[index] else { return }
         cell.configure(delegate: self, question: question)
     }
 

@@ -50,7 +50,7 @@ final class EditQuestionCellSetup: NSObject {
 
     func questionOptionCell(_ cell: QuestionOptionCell, for indexPath: IndexPath) {
         let index = indexPath.row - firstOptionIndexPath
-        guard let option = entity?.options?[index] else { return }
+        guard let option = entity?.options[index] else { return }
         cell.configure(delegate: self, option: option)
     }
 
