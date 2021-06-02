@@ -85,6 +85,11 @@ internal enum Text {
     internal static let unknownError = Text.tr("Localizable", "Errors.UnknownError")
   }
 
+  internal enum Main {
+    /// Главная
+    internal static let title = Text.tr("Localizable", "Main.Title")
+  }
+
   internal enum Onboarding {
     /// Продолжить с Email
     internal static let continueWithEmail = Text.tr("Localizable", "Onboarding.ContinueWithEmail")

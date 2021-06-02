@@ -57,6 +57,8 @@ EditQuestion.AddOption = "Добавить вариант";
 QuizList.Title = "Мои тесты";
 QuizList.NoContent = "Ни одного теста не создано";
 
+Main.Title = "Главная";
+
 Alert.Error = "Ошибка";
 Alert.Cancel = "Отмена";
 

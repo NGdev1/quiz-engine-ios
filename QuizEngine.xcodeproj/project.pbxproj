@@ -58,6 +58,10 @@
 		84414D6326625698006F2DAF /* TextAreaCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84414D5D26625698006F2DAF /* TextAreaCell.swift */; };
 		84414D7226629472006F2DAF /* HeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84414D7026629472006F2DAF /* HeaderCell.swift */; };
 		84414D7326629472006F2DAF /* HeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84414D7126629472006F2DAF /* HeaderCell.xib */; };
+		846027FF2668162F00A01F33 /* MainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846027FA2668162F00A01F33 /* MainController.swift */; };
+		846028002668162F00A01F33 /* MainInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846027FB2668162F00A01F33 /* MainInteractor.swift */; };
+		846028012668162F00A01F33 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846027FC2668162F00A01F33 /* MainView.swift */; };
+		84602804266819EA00A01F33 /* HomePageDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84602803266819EA00A01F33 /* HomePageDataSource.swift */; };
 		8471F478265F95E5007A7876 /* OnboardingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8471F474265F95E5007A7876 /* OnboardingController.swift */; };
 		8471F47A265F95E5007A7876 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8471F476265F95E5007A7876 /* OnboardingView.swift */; };
 		8471F47B265F95E5007A7876 /* OnboardingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8471F477265F95E5007A7876 /* OnboardingView.xib */; };
@@ -165,6 +169,10 @@
 		84414D5D26625698006F2DAF /* TextAreaCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextAreaCell.swift; sourceTree = "<group>"; };
 		84414D7026629472006F2DAF /* HeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderCell.swift; sourceTree = "<group>"; };
 		84414D7126629472006F2DAF /* HeaderCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeaderCell.xib; sourceTree = "<group>"; };
+		846027FA2668162F00A01F33 /* MainController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainController.swift; sourceTree = "<group>"; };
+		846027FB2668162F00A01F33 /* MainInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainInteractor.swift; sourceTree = "<group>"; };
+		846027FC2668162F00A01F33 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		84602803266819EA00A01F33 /* HomePageDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageDataSource.swift; sourceTree = "<group>"; };
 		8471F474265F95E5007A7876 /* OnboardingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingController.swift; sourceTree = "<group>"; };
 		8471F476265F95E5007A7876 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		8471F477265F95E5007A7876 /* OnboardingView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OnboardingView.xib; sourceTree = "<group>"; };
@@ -291,6 +299,7 @@
 			children = (
 				843B8C3C2660F22D00E6A999 /* TabBar */,
 				843B8C3F2660F47A00E6A999 /* Quiz */,
+				846027F62668161100A01F33 /* QuizPassing */,
 				84C1ACD42660C67500412B31 /* Auth */,
 				84C1ACD52660C68800412B31 /* Profile */,
 			);
@@ -529,6 +538,33 @@
 				84414D7126629472006F2DAF /* HeaderCell.xib */,
 			);
 			path = HeaderCell;
+			sourceTree = "<group>";
+		};
+		846027F62668161100A01F33 /* QuizPassing */ = {
+			isa = PBXGroup;
+			children = (
+				846027F72668161E00A01F33 /* Main */,
+			);
+			path = QuizPassing;
+			sourceTree = "<group>";
+		};
+		846027F72668161E00A01F33 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				846027FA2668162F00A01F33 /* MainController.swift */,
+				846027FB2668162F00A01F33 /* MainInteractor.swift */,
+				846028022668164100A01F33 /* View */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		846028022668164100A01F33 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				846027FC2668162F00A01F33 /* MainView.swift */,
+				84602803266819EA00A01F33 /* HomePageDataSource.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		8471F47C265F95EC007A7876 /* View */ = {
@@ -969,6 +1005,7 @@
 				849E000A2662977C004EA4DB /* QuestionOption.swift in Sources */,
 				842970E226616D700093305D /* ProfileHeaderCell.swift in Sources */,
 				84D7557C2662CAD900428E70 /* EditQuestionTableBuilder.swift in Sources */,
+				846027FF2668162F00A01F33 /* MainController.swift in Sources */,
 				842970EE266179CB0093305D /* EditQuizView.swift in Sources */,
 				843B8C352660C84F00E6A999 /* ServiceFactory.swift in Sources */,
 				84D7555D2662C06100428E70 /* AddItemCell.swift in Sources */,
@@ -1007,6 +1044,7 @@
 				8471F4D6265FF90B007A7876 /* SignUpView.swift in Sources */,
 				84414D6226625698006F2DAF /* SwitchCell.swift in Sources */,
 				842970C3266140530093305D /* ProfileApi.swift in Sources */,
+				846028002668162F00A01F33 /* MainInteractor.swift in Sources */,
 				84D7556F2662C9C700428E70 /* EditQuestionOptionCellSetup.swift in Sources */,
 				84C1ACD326603DC500412B31 /* GeneralErrors.swift in Sources */,
 				8471F4B4265FB3F6007A7876 /* MDScrollView.swift in Sources */,
@@ -1030,8 +1068,10 @@
 				8471F4A3265F9FAB007A7876 /* Fonts.swift in Sources */,
 				843B8C622660F8D400E6A999 /* NoContentCell.swift in Sources */,
 				84414D7226629472006F2DAF /* HeaderCell.swift in Sources */,
+				846028012668162F00A01F33 /* MainView.swift in Sources */,
 				843B8C3B2660C99B00E6A999 /* Image.swift in Sources */,
 				843B8C632660F8D400E6A999 /* LoadingCell.swift in Sources */,
+				84602804266819EA00A01F33 /* HomePageDataSource.swift in Sources */,
 				8471F4A2265F9FAB007A7876 /* Assets.swift in Sources */,
 				842970EB266179CB0093305D /* EditQuizTableBuilder.swift in Sources */,
 				84EDEF9D26642DC8008B6054 /* NotificationNames.swift in Sources */,

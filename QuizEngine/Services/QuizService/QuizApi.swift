@@ -12,6 +12,7 @@ enum QuizApi {
     case get(id: String)
     /// Список собственных викторин
     case ownList
+    case publicList
     case create(quiz: Quiz)
     case update(id: String, quiz: Quiz)
     case delete(id: String)
@@ -28,6 +29,8 @@ extension QuizApi: TargetType {
             return "/quiz/\(id)"
         case .ownList:
             return "/quiz/own-list"
+        case .publicList:
+            return "/quiz/public-quiz-list"
         case .create:
             return "/quiz"
         case let .update(id, _):
@@ -39,7 +42,7 @@ extension QuizApi: TargetType {
 
     var method: Moya.Method {
         switch self {
-        case .get, .ownList:
+        case .get, .ownList, .publicList:
             return .get
         case .create:
             return .post
@@ -59,6 +62,8 @@ extension QuizApi: TargetType {
         case .get:
             return .requestPlain
         case .ownList:
+            return .requestPlain
+        case .publicList:
             return .requestPlain
         case let .create(quiz):
             return .requestJSONEncodable(quiz)

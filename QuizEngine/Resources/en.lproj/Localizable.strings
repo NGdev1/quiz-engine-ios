@@ -57,6 +57,8 @@ EditQuestion.AddOption = "Add option";
 QuizList.Title = "My tests";
 QuizList.NoContent = "No quiz created";
 
+Main.Title = "Public";
+
 Alert.Error = "Error";
 Alert.Cancel = "Cancel";
 

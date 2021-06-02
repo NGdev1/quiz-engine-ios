@@ -14,6 +14,9 @@ class TabBarController: UITabBarController {
 
     init() {
         super.init(nibName: nil, bundle: nil)
+        let home = UINavigationController(rootViewController: MainController())
+        home.tabBarItem.image = Assets.tabBarIconHome.image
+        home.tabBarItem.title = Text.Main.title
         let create = UINavigationController(rootViewController: EditQuizController(quiz: Quiz()))
         create.tabBarItem.image = Assets.tabBarIconAdd.image
         create.tabBarItem.title = Text.EditQuiz.tabBarTitle
@@ -23,7 +26,7 @@ class TabBarController: UITabBarController {
         let profile = UINavigationController(rootViewController: ProfileController())
         profile.tabBarItem.image = Assets.tabBarIconProfile.image
         profile.tabBarItem.title = Text.Profile.title
-        viewControllers = [create, quizList, profile]
+        viewControllers = [home, create, quizList, profile]
     }
 
     @available(*, unavailable)
