@@ -25,6 +25,8 @@ internal enum Text {
     internal static let fillInTheFields = Text.tr("Localizable", "Common.FillInTheFields")
     /// Скрыть
     internal static let hide = Text.tr("Localizable", "Common.Hide")
+    /// Далее
+    internal static let next = Text.tr("Localizable", "Common.Next")
     /// Сохранить
     internal static let save = Text.tr("Localizable", "Common.Save")
   }
@@ -113,6 +115,10 @@ internal enum Text {
     internal static func optionsCount(_ p1: Int) -> String {
       return Text.tr("Localizable", "Question.OptionsCount", p1)
     }
+    /// Пропустить
+    internal static let skip = Text.tr("Localizable", "Question.Skip")
+    /// Вопрос
+    internal static let title = Text.tr("Localizable", "Question.Title")
   }
 
   internal enum QuestionOption {
@@ -147,6 +153,10 @@ internal enum Text {
     internal static func answeredCount(_ p1: Int) -> String {
       return Text.tr("Localizable", "QuizPassing.AnsweredCount", p1)
     }
+    /// Ответ дан
+    internal static let hasAnswer = Text.tr("Localizable", "QuizPassing.HasAnswer")
+    /// Ответ не дан
+    internal static let hasNoAnswer = Text.tr("Localizable", "QuizPassing.HasNoAnswer")
     /// Вопросы
     internal static let questions = Text.tr("Localizable", "QuizPassing.Questions")
     /// Выполнение

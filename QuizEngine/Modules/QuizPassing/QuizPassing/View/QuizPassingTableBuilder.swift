@@ -92,10 +92,16 @@ final class QuizPassingTableBuilder {
     }
 
     private func buildFullTableStructure() {
-        let rowsSequence: [Row] = [
+        var rowsSequence: [Row] = [
             Row(cellsSetup.passingHeaderCell(_:for:), fromNib: true, bundle: resourcesBundle),
             Row(cellsSetup.questionsHeaderCell(_:for:), fromNib: true, bundle: resourcesBundle),
         ]
+        cellsSetup.firstQuestionIndex = rowsSequence.count
+        for _ in entity?.questions ?? [] {
+            rowsSequence.append(
+                Row(cellsSetup.questionPassingCell(_:for:), fromNib: true, bundle: resourcesBundle)
+            )
+        }
         setRowsSequenceToDataStorage(rowsSequence: rowsSequence)
     }
 

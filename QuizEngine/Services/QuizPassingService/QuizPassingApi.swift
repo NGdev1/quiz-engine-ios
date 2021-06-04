@@ -23,7 +23,7 @@ extension QuizPassingApi: TargetType {
         case let .create(quizId):
             return "/quiz/\(quizId)/passing"
         case let .giveAnswer(quizId, passingId, _):
-            return "/quiz/\(quizId)/passing/\(passingId)"
+            return "/quiz/\(quizId)/passing/\(passingId)/answer"
         }
     }
 

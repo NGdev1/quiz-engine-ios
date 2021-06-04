@@ -37,7 +37,7 @@ final class PassingHeaderCell: UITableViewCell {
     func configure(passing: QuizPassing, delegate: PassingHeaderCellDelegate) {
         self.delegate = delegate
         titleLabel.text = passing.quiz?.title
-        questionsCountLabel.text = Text.Quiz.questionsCount(passing.quiz?.questions.count ?? 0)
+        questionsCountLabel.text = Text.Quiz.questionsCount(passing.questions.count)
         answeredCountLabel.text = Text.QuizPassing.answeredCount(passing.answers.count)
     }
 }

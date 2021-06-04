@@ -132,6 +132,14 @@
 		84D7557E2662CAD900428E70 /* QuestionOptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D755772662CAD900428E70 /* QuestionOptionCell.swift */; };
 		84D7557F2662CAD900428E70 /* QuestionOptionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84D755782662CAD900428E70 /* QuestionOptionCell.xib */; };
 		84D755802662CAD900428E70 /* EditQuestionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D755792662CAD900428E70 /* EditQuestionView.swift */; };
+		84D8B7C2266AC830002C9CF4 /* QuestionPassingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D8B7C0266AC830002C9CF4 /* QuestionPassingCell.swift */; };
+		84D8B7C3266AC830002C9CF4 /* QuestionPassingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84D8B7C1266AC830002C9CF4 /* QuestionPassingCell.xib */; };
+		84D8B7CB266AD8EF002C9CF4 /* QuestionOptionsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D8B7C6266AD8EF002C9CF4 /* QuestionOptionsDataSource.swift */; };
+		84D8B7CC266AD8EF002C9CF4 /* QuestionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D8B7C7266AD8EF002C9CF4 /* QuestionController.swift */; };
+		84D8B7CD266AD8EF002C9CF4 /* QuestionInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D8B7C8266AD8EF002C9CF4 /* QuestionInteractor.swift */; };
+		84D8B7CE266AD8EF002C9CF4 /* QuestionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D8B7C9266AD8EF002C9CF4 /* QuestionView.swift */; };
+		84D8B7D3266ADDBE002C9CF4 /* OptionRadioCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D8B7D1266ADDBE002C9CF4 /* OptionRadioCell.swift */; };
+		84D8B7D4266ADDBE002C9CF4 /* OptionRadioCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84D8B7D2266ADDBE002C9CF4 /* OptionRadioCell.xib */; };
 		84EDEF9D26642DC8008B6054 /* NotificationNames.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EDEF9C26642DC8008B6054 /* NotificationNames.swift */; };
 		9F1CEE51664DBCBFF0663BB3 /* Pods_QuizEngine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 297D1F10F2E6BB1D95805BF8 /* Pods_QuizEngine.framework */; };
 /* End PBXBuildFile section */
@@ -267,6 +275,14 @@
 		84D755772662CAD900428E70 /* QuestionOptionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionOptionCell.swift; sourceTree = "<group>"; };
 		84D755782662CAD900428E70 /* QuestionOptionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QuestionOptionCell.xib; sourceTree = "<group>"; };
 		84D755792662CAD900428E70 /* EditQuestionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditQuestionView.swift; sourceTree = "<group>"; };
+		84D8B7C0266AC830002C9CF4 /* QuestionPassingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionPassingCell.swift; sourceTree = "<group>"; };
+		84D8B7C1266AC830002C9CF4 /* QuestionPassingCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QuestionPassingCell.xib; sourceTree = "<group>"; };
+		84D8B7C6266AD8EF002C9CF4 /* QuestionOptionsDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionOptionsDataSource.swift; sourceTree = "<group>"; };
+		84D8B7C7266AD8EF002C9CF4 /* QuestionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionController.swift; sourceTree = "<group>"; };
+		84D8B7C8266AD8EF002C9CF4 /* QuestionInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionInteractor.swift; sourceTree = "<group>"; };
+		84D8B7C9266AD8EF002C9CF4 /* QuestionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionView.swift; sourceTree = "<group>"; };
+		84D8B7D1266ADDBE002C9CF4 /* OptionRadioCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionRadioCell.swift; sourceTree = "<group>"; };
+		84D8B7D2266ADDBE002C9CF4 /* OptionRadioCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OptionRadioCell.xib; sourceTree = "<group>"; };
 		84EDEF9C26642DC8008B6054 /* NotificationNames.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationNames.swift; sourceTree = "<group>"; };
 		BDAEF4AAC22F56F1A80725AC /* Pods-QuizEngine.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QuizEngine.release.xcconfig"; path = "Target Support Files/Pods-QuizEngine/Pods-QuizEngine.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -593,6 +609,7 @@
 				846028202668CA1D00A01F33 /* QuizPassing */,
 				8460280526681AA000A01F33 /* Quiz */,
 				846027F72668161E00A01F33 /* Main */,
+				84D8B7C4266AD89D002C9CF4 /* Question */,
 			);
 			path = QuizPassing;
 			sourceTree = "<group>";
@@ -682,6 +699,7 @@
 				846028222668CC1800A01F33 /* QuizPassingTableBuilder.swift */,
 				846028252668CC1800A01F33 /* QuizPassingView.swift */,
 				8460282C2668FF0E00A01F33 /* PassingHeaderCell */,
+				84D8B7BF266AC457002C9CF4 /* QuestionPassingCell */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -963,6 +981,44 @@
 			path = QuestionOptionCell;
 			sourceTree = "<group>";
 		};
+		84D8B7BF266AC457002C9CF4 /* QuestionPassingCell */ = {
+			isa = PBXGroup;
+			children = (
+				84D8B7C0266AC830002C9CF4 /* QuestionPassingCell.swift */,
+				84D8B7C1266AC830002C9CF4 /* QuestionPassingCell.xib */,
+			);
+			path = QuestionPassingCell;
+			sourceTree = "<group>";
+		};
+		84D8B7C4266AD89D002C9CF4 /* Question */ = {
+			isa = PBXGroup;
+			children = (
+				84D8B7C7266AD8EF002C9CF4 /* QuestionController.swift */,
+				84D8B7C8266AD8EF002C9CF4 /* QuestionInteractor.swift */,
+				84D8B7CF266AD8F2002C9CF4 /* View */,
+			);
+			path = Question;
+			sourceTree = "<group>";
+		};
+		84D8B7CF266AD8F2002C9CF4 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				84D8B7C6266AD8EF002C9CF4 /* QuestionOptionsDataSource.swift */,
+				84D8B7C9266AD8EF002C9CF4 /* QuestionView.swift */,
+				84D8B7D0266ADD97002C9CF4 /* OptionRadioCell */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		84D8B7D0266ADD97002C9CF4 /* OptionRadioCell */ = {
+			isa = PBXGroup;
+			children = (
+				84D8B7D1266ADDBE002C9CF4 /* OptionRadioCell.swift */,
+				84D8B7D2266ADDBE002C9CF4 /* OptionRadioCell.xib */,
+			);
+			path = OptionRadioCell;
+			sourceTree = "<group>";
+		};
 		92ED8E02F8BCD69A96E6B040 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -1037,12 +1093,14 @@
 				846028302668FF2400A01F33 /* PassingHeaderCell.xib in Resources */,
 				8471F4D7265FF90B007A7876 /* SignUpView.xib in Resources */,
 				841E4DC826629C99006EA814 /* QuestionCell.xib in Resources */,
+				84D8B7C3266AC830002C9CF4 /* QuestionPassingCell.xib in Resources */,
 				6B1755A02624A7E300DA7E84 /* LaunchScreen.storyboard in Resources */,
 				849E000E2662992D004EA4DB /* TitleValueCell.xib in Resources */,
 				84D7555E2662C06100428E70 /* AddItemCell.xib in Resources */,
 				8460281526681F0E00A01F33 /* QuizHeaderCell.xib in Resources */,
 				8471F480265F992D007A7876 /* Localizable.strings in Resources */,
 				842970E326616D700093305D /* ProfileHeaderCell.xib in Resources */,
+				84D8B7D4266ADDBE002C9CF4 /* OptionRadioCell.xib in Resources */,
 				84414D7326629472006F2DAF /* HeaderCell.xib in Resources */,
 				84414D6126625698006F2DAF /* SwitchCell.xib in Resources */,
 				8460281F266822F200A01F33 /* ProfileCell.xib in Resources */,
@@ -1166,6 +1224,7 @@
 				842970C1266140270093305D /* ProfileService.swift in Sources */,
 				842970DA266168290093305D /* GenericTableViewRowModel.swift in Sources */,
 				8471F49C265F9FAB007A7876 /* StyleUtils.swift in Sources */,
+				84D8B7CC266AD8EF002C9CF4 /* QuestionController.swift in Sources */,
 				843B8C372660C84F00E6A999 /* ProfileServiceProtocol.swift in Sources */,
 				84D7557E2662CAD900428E70 /* QuestionOptionCell.swift in Sources */,
 				8471F4A5265F9FAB007A7876 /* ExtensionFloat.swift in Sources */,
@@ -1188,6 +1247,7 @@
 				843B8C542660F6D000E6A999 /* QuizServiceProtocol.swift in Sources */,
 				842970C726614A430093305D /* QuizService.swift in Sources */,
 				84C1ACD026603D4F00412B31 /* AuthService.swift in Sources */,
+				84D8B7CB266AD8EF002C9CF4 /* QuestionOptionsDataSource.swift in Sources */,
 				842970DD266168290093305D /* GenericTableViewDataSource.swift in Sources */,
 				843B8C392660C8A800E6A999 /* Profile.swift in Sources */,
 				8471F49B265F9FAB007A7876 /* DataManager.swift in Sources */,
@@ -1212,6 +1272,7 @@
 				843B8C482660F4B900E6A999 /* QuizListController.swift in Sources */,
 				843B8C582660F87A00E6A999 /* QuizCell.swift in Sources */,
 				849E000D2662992D004EA4DB /* TitleValueCell.swift in Sources */,
+				84D8B7D3266ADDBE002C9CF4 /* OptionRadioCell.swift in Sources */,
 				84D7557B2662CAD900428E70 /* EditQuestionController.swift in Sources */,
 				842970D2266166E70093305D /* ProfileView.swift in Sources */,
 				842970EA266179CB0093305D /* EditQuizCellSetup.swift in Sources */,
@@ -1219,6 +1280,7 @@
 				842970CE266166E70093305D /* ProfileCellSetup.swift in Sources */,
 				8460281426681F0E00A01F33 /* QuizHeaderCell.swift in Sources */,
 				842970D0266166E70093305D /* ProfileController.swift in Sources */,
+				84D8B7CE266AD8EF002C9CF4 /* QuestionView.swift in Sources */,
 				843B8C652660F8D400E6A999 /* ErrorCell.swift in Sources */,
 				842970DE266168290093305D /* GenericTableViewSectionModel.swift in Sources */,
 				843B8C3E2660F23C00E6A999 /* TabBarController.swift in Sources */,
@@ -1233,6 +1295,7 @@
 				843B8C632660F8D400E6A999 /* LoadingCell.swift in Sources */,
 				84602804266819EA00A01F33 /* HomePageDataSource.swift in Sources */,
 				8471F4A2265F9FAB007A7876 /* Assets.swift in Sources */,
+				84D8B7C2266AC830002C9CF4 /* QuestionPassingCell.swift in Sources */,
 				842970EB266179CB0093305D /* EditQuizTableBuilder.swift in Sources */,
 				84EDEF9D26642DC8008B6054 /* NotificationNames.swift in Sources */,
 				84414D6326625698006F2DAF /* TextAreaCell.swift in Sources */,
@@ -1246,6 +1309,7 @@
 				6B1755942624A7E000DA7E84 /* AppDelegate.swift in Sources */,
 				843B8C2D2660C82F00E6A999 /* ProfileInteractor.swift in Sources */,
 				8460280C26681B0800A01F33 /* QuizTableBuilder.swift in Sources */,
+				84D8B7CD266AD8EF002C9CF4 /* QuestionInteractor.swift in Sources */,
 				8460281A2668213C00A01F33 /* PrimaryButtonCell.swift in Sources */,
 				8471F4A8265F9FAB007A7876 /* ExtensionUIImage.swift in Sources */,
 			);

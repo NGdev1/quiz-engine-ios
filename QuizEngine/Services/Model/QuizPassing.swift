@@ -8,23 +8,18 @@
 import Foundation
 
 class QuizPassing: Codable {
-    init() {
-        self.id = nil
-        self.user = nil
-        self.quiz = nil
-        self.answers = []
-    }
-
-    var id: String?
+    var id: Int
     var user: Profile?
     var quiz: Quiz?
+    var questions: [Question]
     var answers: [QuestionAnswer]
 
     required init(from decoder: Decoder) throws {
         let map = try decoder.container(keyedBy: CodingKeys.self)
-        self.id = try? map.decode(String.self, forKey: .id)
+        self.id = try map.decode(Int.self, forKey: .id)
         self.user = try? map.decode(Profile.self, forKey: .user)
         self.quiz = try? map.decode(Quiz.self, forKey: .quiz)
+        self.questions = (try? map.decode([Question].self, forKey: .questions)) ?? []
         self.answers = (try? map.decode([QuestionAnswer].self, forKey: .answers)) ?? []
     }
 }

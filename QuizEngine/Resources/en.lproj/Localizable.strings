@@ -9,6 +9,7 @@
 Common.Done = "Done";
 Common.Hide = "Hide";
 Common.Save = "Save";
+Common.Next = "Next";
 Common.FillInTheFields = "Fill in the fields";
 
 Onboarding.Description = "Creating and passing tests or quizzes.";
@@ -43,7 +44,9 @@ EditQuiz.DescriptionPlaceholder = "Description";
 EditQuiz.IsPublic = "Public test";
 EditQuiz.AddQuestion = "Add question";
 
+Question.Title = "Question";
 Question.OptionsCount = "Options count: %d";
+Question.Skip = "Skip";
 
 QuestionOption.Correct = "Correct";
 QuestionOption.NotCorrect = "Not correct";
@@ -70,6 +73,8 @@ Quiz.Author = "Author";
 QuizPassing.Title = "Execution";
 QuizPassing.AnsweredCount = "Answered: %d";
 QuizPassing.Questions = "Questions";
+QuizPassing.HasAnswer = "Has answer";
+QuizPassing.HasNoAnswer = "Has no answer";
 
 Alert.Error = "Error";
 Alert.Cancel = "Cancel";

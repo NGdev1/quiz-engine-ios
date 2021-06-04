@@ -8,14 +8,14 @@
 import Foundation
 
 class QuestionAnswer: Codable {
-    init() {
+    init(question: Question, option: QuestionOption) {
         self.id = nil
-        self.question = nil
-        self.option = nil
+        self.question = question
+        self.option = option
         self.passing = nil
     }
 
-    var id: String?
+    var id: Int?
     var question: Question?
     var option: QuestionOption?
     var passing: QuizPassing?

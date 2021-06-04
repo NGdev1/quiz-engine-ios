@@ -9,6 +9,7 @@
 Common.Done = "Готово";
 Common.Hide = "Скрыть";
 Common.Save = "Сохранить";
+Common.Next = "Далее";
 Common.FillInTheFields = "Заполните поля";
 
 Onboarding.Description = "Создание и прохождения тестов или викторин.";
@@ -43,7 +44,9 @@ EditQuiz.DescriptionPlaceholder = "Описание";
 EditQuiz.IsPublic = "Публичный тест";
 EditQuiz.AddQuestion = "Добавить вопрос";
 
+Question.Title = "Вопрос";
 Question.OptionsCount = "Кол-во вариантов: %d";
+Question.Skip = "Пропустить";
 
 QuestionOption.Correct = "Верный ответ";
 QuestionOption.NotCorrect = "Не верный ответ";
@@ -70,6 +73,8 @@ Quiz.Author = "Автор";
 QuizPassing.Title = "Выполнение";
 QuizPassing.AnsweredCount = "Отвечено: %d";
 QuizPassing.Questions = "Вопросы";
+QuizPassing.HasAnswer = "Ответ дан";
+QuizPassing.HasNoAnswer = "Ответ не дан";
 
 Alert.Error = "Ошибка";
 Alert.Cancel = "Отмена";
