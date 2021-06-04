@@ -42,6 +42,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     private func setupConfiguration() {
         // AppService.shared.app.baseURL = URL(string: "http://192.168.1.14:8080")!
+        // AppService.shared.app.baseURL = URL(string: "http://10.17.33.131:8080")!
         AppService.shared.app.baseURL = URL(string: "http://192.168.0.186:8080")!
         if let token = AppService.shared.app.accessToken {
             print("Token \(token)")

@@ -9,4 +9,5 @@ internal enum ServiceFactory {
     static let quizService: QuizServiceProtocol = QuizService()
     static let profileService: ProfileServiceProtocol = ProfileService()
     static let authService: AuthServiceProtocol = AuthService()
+    static let quizPassingService: QuizPassingServiceProtocol = QuizPassingService()
 }

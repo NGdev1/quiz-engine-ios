@@ -115,6 +115,13 @@ internal enum Text {
     }
   }
 
+  internal enum QuestionOption {
+    /// Верный ответ
+    internal static let correct = Text.tr("Localizable", "QuestionOption.Correct")
+    /// Не верный ответ
+    internal static let notCorrect = Text.tr("Localizable", "QuestionOption.NotCorrect")
+  }
+
   internal enum Quiz {
     /// Автор
     internal static let author = Text.tr("Localizable", "Quiz.Author")
@@ -133,6 +140,17 @@ internal enum Text {
     internal static let noContent = Text.tr("Localizable", "QuizList.NoContent")
     /// Мои тесты
     internal static let title = Text.tr("Localizable", "QuizList.Title")
+  }
+
+  internal enum QuizPassing {
+    /// Отвечено: %d
+    internal static func answeredCount(_ p1: Int) -> String {
+      return Text.tr("Localizable", "QuizPassing.AnsweredCount", p1)
+    }
+    /// Вопросы
+    internal static let questions = Text.tr("Localizable", "QuizPassing.Questions")
+    /// Выполнение
+    internal static let title = Text.tr("Localizable", "QuizPassing.Title")
   }
 
   internal enum SignIn {

@@ -45,6 +45,9 @@ EditQuiz.AddQuestion = "Добавить вопрос";
 
 Question.OptionsCount = "Кол-во вариантов: %d";
 
+QuestionOption.Correct = "Верный ответ";
+QuestionOption.NotCorrect = "Не верный ответ";
+
 EditQuestionOption.IsCorrect = "Верный ответ";
 EditQuestionOption.Title = "Вариант ответа";
 EditQuestionOption.TextPlaceholder = "Teкст";
@@ -63,6 +66,10 @@ Quiz.Title = "Тест";
 Quiz.QuestionsCount = "Кол-во вопросов: %d";
 Quiz.Start = "Начать";
 Quiz.Author = "Автор";
+
+QuizPassing.Title = "Выполнение";
+QuizPassing.AnsweredCount = "Отвечено: %d";
+QuizPassing.Questions = "Вопросы";
 
 Alert.Error = "Ошибка";
 Alert.Cancel = "Отмена";

@@ -45,6 +45,9 @@ EditQuiz.AddQuestion = "Add question";
 
 Question.OptionsCount = "Options count: %d";
 
+QuestionOption.Correct = "Correct";
+QuestionOption.NotCorrect = "Not correct";
+
 EditQuestionOption.IsCorrect = "Is correct";
 EditQuestionOption.Title = "Variant";
 EditQuestionOption.TextPlaceholder = "Text";
@@ -63,6 +66,10 @@ Quiz.Title = "Test";
 Quiz.QuestionsCount = "Number of questions: %d";
 Quiz.Start = "Start";
 Quiz.Author = "Author";
+
+QuizPassing.Title = "Execution";
+QuizPassing.AnsweredCount = "Answered: %d";
+QuizPassing.Questions = "Questions";
 
 Alert.Error = "Error";
 Alert.Cancel = "Cancel";

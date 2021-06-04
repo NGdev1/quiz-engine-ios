@@ -1,13 +1,13 @@
 //
-//  EditQuestionView.swift
+//  QuizPassingView.swift
 //  QuizEngine
 //
-//  Created by Admin on 28.05.2021.
+//  Created by Admin on 03.06.2021.
 //
 
 import MDFoundation
 
-final class EditQuestionView: UIView {
+final class QuizPassingView: UIView {
     // MARK: - Properties
 
     private var tableView: UITableView = {
@@ -17,15 +17,12 @@ final class EditQuestionView: UIView {
         tableView.estimatedRowHeight = 50
         tableView.rowHeight = UITableView.automaticDimension
         tableView.showsVerticalScrollIndicator = false
-        tableView.keyboardDismissMode = .interactive
+        tableView.contentInset = tableView.contentInset.with(bottom: 50)
         tableView.separatorStyle = .none
-        tableView.contentInset = UIEdgeInsets(top: 10, left: 0, bottom: 50, right: 0)
         return tableView
     }()
 
-    private var tableBuilder: EditQuestionTableBuilder?
-
-    static let textTag: Int = 100
+    private var tableBuilder: QuizPassingTableBuilder?
 
     // MARK: - Init
 
@@ -44,7 +41,6 @@ final class EditQuestionView: UIView {
         addSubviews()
         makeConstraints()
         initData()
-        addActionHandlers()
     }
 
     private func setupStyle() {
@@ -59,28 +55,16 @@ final class EditQuestionView: UIView {
         tableView.makeEdgesEqualToSuperview()
     }
 
-    private func initData(with entity: Question? = nil) {
-        tableBuilder = EditQuestionTableBuilder(
+    private func initData(with entity: QuizPassing? = nil) {
+        tableBuilder = QuizPassingTableBuilder(
             tableView: tableView,
             entity: entity
         )
     }
 
-    // MARK: - Action handlers
-
-    private func addActionHandlers() {
-        let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(viewDidTap))
-        addGestureRecognizer(tapRecognizer)
-    }
-
-    @objc
-    private func viewDidTap() {
-        endEditing(true)
-    }
-
     // MARK: - Internal methods
 
-    func setDelegate(_ delegate: EditQuestionCellSetupDelegate) {
+    func setDelegate(_ delegate: QuizPassingCellSetupDelegate) {
         tableBuilder?.setDelegate(delegate)
     }
 
@@ -88,8 +72,8 @@ final class EditQuestionView: UIView {
         tableBuilder?.showLoading()
     }
 
-    func updateAppearance(with entity: Question, animated: Bool = true) {
-        tableBuilder?.updateQuestion(entity, animated: animated)
+    func updateAppearance(with entity: QuizPassing, animated: Bool = true) {
+        tableBuilder?.updateQuiz(entity, animated: animated)
     }
 
     func showError(message: String) {

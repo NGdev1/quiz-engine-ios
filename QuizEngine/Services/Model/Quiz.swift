@@ -17,6 +17,7 @@ class Quiz: Codable {
         self.isAnyOrder = true
         self.isPublic = true
         self.questions = []
+        self.participants = []
     }
 
     var id: String?
@@ -27,7 +28,7 @@ class Quiz: Codable {
     var isAnyOrder: Bool?
     var isPublic: Bool?
     var questions: [Question]
-    // TODO: Add passings
+    var participants: [Profile]
 
     required init(from decoder: Decoder) throws {
         let map = try decoder.container(keyedBy: CodingKeys.self)
@@ -38,5 +39,6 @@ class Quiz: Codable {
         self.isAnyOrder = try? map.decode(Bool.self, forKey: .isAnyOrder)
         self.isPublic = try? map.decode(Bool.self, forKey: .isPublic)
         self.questions = (try? map.decode([Question].self, forKey: .questions)) ?? []
+        self.participants = (try? map.decode([Profile].self, forKey: .participants)) ?? []
     }
 }

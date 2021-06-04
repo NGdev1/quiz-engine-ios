@@ -52,6 +52,6 @@ final class QuestionOptionCell: UITableViewCell {
         self.delegate = delegate
         self.option = option
         titleLabel.text = option.text
-        subtitleLabel.text = Text.EditQuestionOption.isCorrect
+        subtitleLabel.text = option.isCorrect ? Text.QuestionOption.correct : Text.QuestionOption.notCorrect
     }
 }

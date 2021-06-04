@@ -1,32 +1,31 @@
 //
-//  QuizController.swift
+//  QuizPassingController.swift
 //  QuizEngine
 //
-//  Created by Admin on 02.06.2021.
+//  Created by Admin on 03.06.2021.
 //
 
 import MDFoundation
 
-protocol QuizControllerLogic: AnyObject {
-    func presentQuiz(_ entity: Quiz)
+protocol QuizPassingControllerLogic: AnyObject {
+    func didFinishCreatingPassing(_ quizPassing: QuizPassing)
     func presentError(message: String)
 }
 
-class QuizController: UIViewController, QuizControllerLogic {
+class QuizPassingController: UIViewController, QuizPassingControllerLogic {
     // MARK: - Properties
 
-    lazy var customView = QuizView()
-    var interactor: QuizInteractor?
+    lazy var customView = QuizPassingView()
+    var interactor: QuizPassingInteractor?
 
     let generator = UINotificationFeedbackGenerator()
-    let id: String
-    let quiz: Quiz
+    let quizId: String
+    var quizPassing: QuizPassing?
 
     // MARK: - Init
 
-    init(id: String, quiz: Quiz) {
-        self.id = id
-        self.quiz = quiz
+    init(quizId: String) {
+        self.quizId = quizId
         super.init(nibName: nil, bundle: nil)
     }
 
@@ -49,27 +48,28 @@ class QuizController: UIViewController, QuizControllerLogic {
     }
 
     private func setup() {
-        interactor = QuizInteractor()
+        interactor = QuizPassingInteractor()
         interactor?.controller = self
     }
 
     private func setupAppearance() {
         extendedLayoutIncludesOpaqueBars = true
-        title = Text.Quiz.title
+        title = Text.QuizPassing.title
         customView.setDelegate(self)
     }
 
     // MARK: - Network requests
 
     private func loadQuiz() {
-        customView.showLoading(entity: quiz)
-        interactor?.loadQuiz(id: id)
+        customView.showLoading()
+        interactor?.createPassing(quizId: quizId)
     }
 
-    // MARK: - QuizControllerLogic
+    // MARK: - QuizPassingControllerLogic
 
-    func presentQuiz(_ entity: Quiz) {
-        customView.updateAppearance(with: entity)
+    func didFinishCreatingPassing(_ quizPassing: QuizPassing) {
+        self.quizPassing = quizPassing
+        customView.updateAppearance(with: quizPassing)
     }
 
     func presentError(message: String) {
@@ -78,16 +78,9 @@ class QuizController: UIViewController, QuizControllerLogic {
     }
 }
 
-// MARK: - QuizCellSetupDelegate
+// MARK: - QuizPassingCellSetupDelegate
 
-extension QuizController: QuizCellSetupDelegate {
-    func startQuiz() {
-        let quizPassingController = QuizPassingController(quizId: id)
-        let navigationController = UINavigationController(rootViewController: quizPassingController)
-        navigationController.modalPresentationStyle = .fullScreen
-        present(navigationController, animated: true)
-    }
-
+extension QuizPassingController: QuizPassingCellSetupDelegate {
     func reloadAction() {
         loadQuiz()
     }
