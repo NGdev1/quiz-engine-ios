@@ -8,6 +8,7 @@
 import UIKit
 
 protocol QuestionOptionsDataSourceDelegate: AnyObject {
+    func didSelectOption()
     func actionButtonTapped()
 }
 
@@ -139,6 +140,7 @@ extension QuestionOptionsDataSource: UITableViewDelegate {
             }
             selectedIndex = indexPath.row
             tableView.reloadRows(at: indexPaths, with: .automatic)
+            delegate?.didSelectOption()
         }
     }
 }

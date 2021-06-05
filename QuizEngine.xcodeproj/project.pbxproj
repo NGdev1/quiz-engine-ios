@@ -140,6 +140,7 @@
 		84D8B7CE266AD8EF002C9CF4 /* QuestionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D8B7C9266AD8EF002C9CF4 /* QuestionView.swift */; };
 		84D8B7D3266ADDBE002C9CF4 /* OptionRadioCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D8B7D1266ADDBE002C9CF4 /* OptionRadioCell.swift */; };
 		84D8B7D4266ADDBE002C9CF4 /* OptionRadioCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84D8B7D2266ADDBE002C9CF4 /* OptionRadioCell.xib */; };
+		84D8B7D6266B78C1002C9CF4 /* QuestionContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D8B7D5266B78C1002C9CF4 /* QuestionContentView.swift */; };
 		84EDEF9D26642DC8008B6054 /* NotificationNames.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EDEF9C26642DC8008B6054 /* NotificationNames.swift */; };
 		9F1CEE51664DBCBFF0663BB3 /* Pods_QuizEngine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 297D1F10F2E6BB1D95805BF8 /* Pods_QuizEngine.framework */; };
 /* End PBXBuildFile section */
@@ -283,6 +284,7 @@
 		84D8B7C9266AD8EF002C9CF4 /* QuestionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionView.swift; sourceTree = "<group>"; };
 		84D8B7D1266ADDBE002C9CF4 /* OptionRadioCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionRadioCell.swift; sourceTree = "<group>"; };
 		84D8B7D2266ADDBE002C9CF4 /* OptionRadioCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OptionRadioCell.xib; sourceTree = "<group>"; };
+		84D8B7D5266B78C1002C9CF4 /* QuestionContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionContentView.swift; sourceTree = "<group>"; };
 		84EDEF9C26642DC8008B6054 /* NotificationNames.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationNames.swift; sourceTree = "<group>"; };
 		BDAEF4AAC22F56F1A80725AC /* Pods-QuizEngine.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QuizEngine.release.xcconfig"; path = "Target Support Files/Pods-QuizEngine/Pods-QuizEngine.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -1004,6 +1006,7 @@
 			isa = PBXGroup;
 			children = (
 				84D8B7C6266AD8EF002C9CF4 /* QuestionOptionsDataSource.swift */,
+				84D8B7D5266B78C1002C9CF4 /* QuestionContentView.swift */,
 				84D8B7C9266AD8EF002C9CF4 /* QuestionView.swift */,
 				84D8B7D0266ADD97002C9CF4 /* OptionRadioCell */,
 			);
@@ -1260,6 +1263,7 @@
 				8471F4BB265FB685007A7876 /* SignInView.swift in Sources */,
 				8471F4D6265FF90B007A7876 /* SignUpView.swift in Sources */,
 				84414D6226625698006F2DAF /* SwitchCell.swift in Sources */,
+				84D8B7D6266B78C1002C9CF4 /* QuestionContentView.swift in Sources */,
 				842970C3266140530093305D /* ProfileApi.swift in Sources */,
 				846028002668162F00A01F33 /* MainInteractor.swift in Sources */,
 				84D7556F2662C9C700428E70 /* EditQuestionOptionCellSetup.swift in Sources */,

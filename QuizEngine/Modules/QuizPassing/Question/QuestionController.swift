@@ -108,6 +108,10 @@ class QuestionController: UIViewController, QuestionControllerLogic {
 // MARK: - QuestionsDataSourceDelegate
 
 extension QuestionController: QuestionOptionsDataSourceDelegate {
+    func didSelectOption() {
+        customView.bottomView.setEnabled(true)
+    }
+
     func actionButtonTapped() {
         customView.showLoading()
     }

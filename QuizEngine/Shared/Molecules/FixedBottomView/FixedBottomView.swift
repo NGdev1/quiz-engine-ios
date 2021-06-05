@@ -55,6 +55,13 @@ final class FixedBottomView: UIView {
         }
     }
 
+    // MARK: - Internal methods
+
+    func setEnabled(_ enabled: Bool) {
+        actionButton.backgroundColor = enabled ? Assets.baseTint1.color : Assets.gray.color
+        actionButton.isEnabled = enabled
+    }
+
     // MARK: - Overriden properties
 
     override var intrinsicContentSize: CGSize { .zero }

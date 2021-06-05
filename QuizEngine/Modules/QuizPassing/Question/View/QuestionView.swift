@@ -12,6 +12,7 @@ final class QuestionView: UITableView {
 
     private var customDataSource: QuestionOptionsDataSource = QuestionOptionsDataSource()
     lazy var bottomView: FixedBottomView = FixedBottomView(buttonText: Text.Common.next)
+    lazy var questionContentView: QuestionContentView = QuestionContentView()
 
     // MARK: - Init
 
@@ -35,6 +36,7 @@ final class QuestionView: UITableView {
         estimatedRowHeight = 125
         contentInset.bottom = 100
         contentInsetAdjustmentBehavior = .always
+        tableHeaderView = questionContentView
     }
 
     // MARK: - Internal methods
@@ -61,10 +63,12 @@ final class QuestionView: UITableView {
     }
 
     func showQuestion(_ question: Question, answer: QuestionAnswer?) {
+        questionContentView.configure(text: question.text)
         customDataSource.selectedIndex = question.options.firstIndex(where: { item in
             guard item.id != nil else { return false }
             return item.id == answer?.option?.id
         })
+        bottomView.setEnabled(customDataSource.selectedIndex != nil)
         customDataSource.updateData(question.options)
     }
 
