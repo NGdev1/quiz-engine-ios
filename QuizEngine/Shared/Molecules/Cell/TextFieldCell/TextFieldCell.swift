@@ -55,7 +55,7 @@ final class TextFieldCell: UITableViewCell {
     // MARK: - Internal methods
 
     func configure(
-        delegate: UITextFieldDelegate,
+        delegate: MDTextFieldDelegate,
         text: String?,
         placeholder: String,
         tag: Int,

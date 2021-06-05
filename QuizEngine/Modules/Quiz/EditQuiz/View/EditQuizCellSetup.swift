@@ -82,7 +82,7 @@ final class EditQuizCellSetup: NSObject {
 
 // MARK: - Action handlers
 
-extension EditQuizCellSetup: ErrorCellDelegate, UITextFieldDelegate,
+extension EditQuizCellSetup: ErrorCellDelegate, MDTextFieldDelegate,
     SwitchCellDelegate, QuestionCellDelegate, AddItemCellDelegate, MDTextAreaDelegate
 {
     func didSelectQuestion(_ question: Question) {
@@ -109,18 +109,13 @@ extension EditQuizCellSetup: ErrorCellDelegate, UITextFieldDelegate,
         }
     }
 
-    func textField(
-        _ textField: UITextField, shouldChangeCharactersIn range: NSRange,
-        replacementString string: String
-    ) -> Bool {
-        let text: String = (textField.text as NSString?)?.replacingCharacters(in: range, with: string) ?? .empty
+    func textDidChange(_ textField: MDTextField, text: String?) {
         if textField.tag == EditQuizView.titleTextFieldTag {
             entity?.title = text
         }
-        return true
     }
 
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+    func textFieldShouldReturn(_ textField: MDTextField) -> Bool {
         if let nextField = tableView.viewWithTag(textField.tag + 1) {
             nextField.becomeFirstResponder()
         } else {

@@ -22,7 +22,7 @@ final class QuestionOptionsDataSource: NSObject {
     }
 
     var selectedIndex: Int?
-    private var data: [QuestionOption] = []
+    private var question: Question?
     private var tableView: UITableView?
 
     weak var delegate: QuestionOptionsDataSourceDelegate?
@@ -39,6 +39,10 @@ final class QuestionOptionsDataSource: NSObject {
     func setTableView(_ tableView: UITableView) {
         self.tableView = tableView
         tableView.register(
+            QuestionContentView.self,
+            forHeaderFooterViewReuseIdentifier: QuestionContentView.identifier
+        )
+        tableView.register(
             OptionRadioCell.nib,
             forCellReuseIdentifier: OptionRadioCell.identifier
         )
@@ -54,14 +58,14 @@ final class QuestionOptionsDataSource: NSObject {
         tableView.delegate = self
     }
 
-    func updateData(_ data: [QuestionOption]) {
-        self.data = data
+    func updateData(_ question: Question?) {
+        self.question = question
         state = .presentingList
     }
 
     func getSelectedOption() -> QuestionOption? {
         guard let selectedIndex = selectedIndex else { return nil }
-        return data[selectedIndex]
+        return question?.options[selectedIndex]
     }
 
     // MARK: - Private methods
@@ -82,10 +86,18 @@ final class QuestionOptionsDataSource: NSObject {
 extension QuestionOptionsDataSource: UITableViewDataSource {
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if state == .presentingList {
-            return data.count
+            return question?.options.count ?? 0
         } else {
             return 1
         }
+    }
+
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        guard let view = tableView.dequeueReusableHeaderFooterView(
+            withIdentifier: QuestionContentView.identifier
+        ) as? QuestionContentView else { return nil }
+        view.configure(text: question?.text)
+        return view
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -95,7 +107,6 @@ extension QuestionOptionsDataSource: UITableViewDataSource {
                 withIdentifier: LoadingCell.identifier,
                 for: indexPath
             ) as? LoadingCell
-
             cell?.configure()
             return cell ?? UITableViewCell()
         case .error:
@@ -107,23 +118,14 @@ extension QuestionOptionsDataSource: UITableViewDataSource {
             cell?.configure(with: errorMessage ?? .empty)
             return cell ?? UITableViewCell()
         case .presentingList:
-            if indexPath.row < data.count {
-                let cell = tableView.dequeueReusableCell(
-                    withIdentifier: OptionRadioCell.identifier,
-                    for: indexPath
-                ) as? OptionRadioCell
-                let item = data[indexPath.row]
+            let cell = tableView.dequeueReusableCell(
+                withIdentifier: OptionRadioCell.identifier,
+                for: indexPath
+            ) as? OptionRadioCell
+            if let item = question?.options[indexPath.row] {
                 cell?.configure(option: item, isSelected: indexPath.row == selectedIndex)
-                return cell ?? UITableViewCell()
-            } else {
-                let cell = tableView.dequeueReusableCell(
-                    withIdentifier: LoadingCell.identifier,
-                    for: indexPath
-                ) as? LoadingCell
-
-                cell?.configure(height: 50)
-                return cell ?? UITableViewCell()
             }
+            return cell ?? UITableViewCell()
         }
     }
 }

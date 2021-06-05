@@ -25,54 +25,30 @@
                         <view contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uz5-Ll-fcr">
                             <rect key="frame" x="0.0" y="0.0" width="414" height="350"/>
                             <subviews>
-                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BrF-eO-blF" customClass="MDTextField" customModule="QuizEngine" customModuleProvider="target">
+                                <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BrF-eO-blF" customClass="MDTextField" customModule="QuizEngine" customModuleProvider="target">
                                     <rect key="frame" x="16" y="20" width="382" height="50"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="50" id="H6F-kY-Vjv"/>
                                     </constraints>
-                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
-                                    <textInputTraits key="textInputTraits" autocapitalizationType="words" textContentType="name"/>
-                                    <userDefinedRuntimeAttributes>
-                                        <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Full name"/>
-                                        <userDefinedRuntimeAttribute type="boolean" keyPath="isFloatingPlaceholder" value="YES"/>
-                                    </userDefinedRuntimeAttributes>
-                                </textField>
-                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mwe-Il-qcx" customClass="MDTextField" customModule="QuizEngine" customModuleProvider="target">
+                                </view>
+                                <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mwe-Il-qcx" customClass="MDTextField" customModule="QuizEngine" customModuleProvider="target">
                                     <rect key="frame" x="16" y="100" width="382" height="50"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="50" id="zQl-hQ-b78"/>
                                     </constraints>
-                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
-                                    <textInputTraits key="textInputTraits" keyboardType="emailAddress" secureTextEntry="YES" textContentType="email"/>
-                                    <userDefinedRuntimeAttributes>
-                                        <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Email"/>
-                                        <userDefinedRuntimeAttribute type="boolean" keyPath="isFloatingPlaceholder" value="YES"/>
-                                    </userDefinedRuntimeAttributes>
-                                </textField>
-                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1gI-GL-USL" customClass="MDTextField" customModule="QuizEngine" customModuleProvider="target">
+                                </view>
+                                <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1gI-GL-USL" customClass="MDTextField" customModule="QuizEngine" customModuleProvider="target">
                                     <rect key="frame" x="16" y="180" width="382" height="50"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="50" id="lno-yA-wQH"/>
                                     </constraints>
-                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
-                                    <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
-                                    <userDefinedRuntimeAttributes>
-                                        <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Password"/>
-                                        <userDefinedRuntimeAttribute type="boolean" keyPath="isFloatingPlaceholder" value="YES"/>
-                                    </userDefinedRuntimeAttributes>
-                                </textField>
-                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FYh-Vv-Svo" customClass="MDTextField" customModule="QuizEngine" customModuleProvider="target">
+                                </view>
+                                <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FYh-Vv-Svo" customClass="MDTextField" customModule="QuizEngine" customModuleProvider="target">
                                     <rect key="frame" x="16" y="260" width="382" height="50"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="50" id="Vuh-6j-wfD"/>
                                     </constraints>
-                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
-                                    <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
-                                    <userDefinedRuntimeAttributes>
-                                        <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Confirm password"/>
-                                        <userDefinedRuntimeAttribute type="boolean" keyPath="isFloatingPlaceholder" value="YES"/>
-                                    </userDefinedRuntimeAttributes>
-                                </textField>
+                                </view>
                             </subviews>
                             <viewLayoutGuide key="safeArea" id="BFR-x1-ama"/>
                             <constraints>

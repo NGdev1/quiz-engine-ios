@@ -37,10 +37,10 @@ final class EditQuestionCellSetup: NSObject {
 
     // MARK: - Cells setup
 
-    func textCell(_ cell: TextFieldCell, for indexPath: IndexPath) {
+    func textCell(_ cell: TextAreaCell, for indexPath: IndexPath) {
         cell.configure(
             delegate: self, text: entity?.text,
-            placeholder: Text.EditQuestion.textPlaceholder, tag: EditQuestionView.textTag
+            tag: EditQuestionView.textTag, placeholder: Text.EditQuestion.textPlaceholder
         )
     }
 
@@ -66,7 +66,7 @@ final class EditQuestionCellSetup: NSObject {
 
 // MARK: - Action handlers
 
-extension EditQuestionCellSetup: ErrorCellDelegate, UITextFieldDelegate,
+extension EditQuestionCellSetup: ErrorCellDelegate, MDTextAreaDelegate,
     QuestionOptionCellDelegate, AddItemCellDelegate
 {
     func didSelectOption(_ option: QuestionOption) {
@@ -77,24 +77,14 @@ extension EditQuestionCellSetup: ErrorCellDelegate, UITextFieldDelegate,
         delegate?.addOption()
     }
 
-    func textField(
-        _ textField: UITextField, shouldChangeCharactersIn range: NSRange,
-        replacementString string: String
-    ) -> Bool {
-        let text: String = (textField.text as NSString?)?.replacingCharacters(in: range, with: string) ?? .empty
-        if textField.tag == EditQuestionView.textTag {
+    func textDidChange(textArea: MDTextArea, text: String) {
+        if textArea.tag == EditQuestionView.textTag {
             entity?.text = text
         }
-        return true
-    }
-
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        if let nextField = tableView.viewWithTag(textField.tag + 1) {
-            nextField.becomeFirstResponder()
-        } else {
-            textField.resignFirstResponder()
+        DispatchQueue.main.async { [weak tableView] in
+            tableView?.beginUpdates()
+            tableView?.endUpdates()
         }
-        return true
     }
 
     func reloadData() {

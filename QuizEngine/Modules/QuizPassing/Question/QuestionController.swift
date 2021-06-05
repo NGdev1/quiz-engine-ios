@@ -99,7 +99,6 @@ class QuestionController: UIViewController, QuestionControllerLogic {
     }
 
     func presentError(message: String) {
-        customView.endRefreshing()
         notificationFeedbackGenerator.notificationOccurred(.error)
         customView.showError(message: message)
     }

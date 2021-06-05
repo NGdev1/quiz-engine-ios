@@ -12,7 +12,6 @@ final class QuestionView: UITableView {
 
     private var customDataSource: QuestionOptionsDataSource = QuestionOptionsDataSource()
     lazy var bottomView: FixedBottomView = FixedBottomView(buttonText: Text.Common.next)
-    lazy var questionContentView: QuestionContentView = QuestionContentView()
 
     // MARK: - Init
 
@@ -29,14 +28,12 @@ final class QuestionView: UITableView {
     private func setupStyle() {
         customDataSource.setTableView(self)
         backgroundColor = Assets.background1.color
-        refreshControl = UIRefreshControl()
         tableFooterView = UIView()
         rowHeight = UITableView.automaticDimension
         separatorInset = .zero
         estimatedRowHeight = 125
         contentInset.bottom = 100
         contentInsetAdjustmentBehavior = .always
-        tableHeaderView = questionContentView
     }
 
     // MARK: - Internal methods
@@ -49,10 +46,6 @@ final class QuestionView: UITableView {
         customDataSource.delegate = delegate
     }
 
-    func endRefreshing() {
-        refreshControl?.endRefreshing()
-    }
-
     func showError(message: String) {
         customDataSource.errorMessage = message
         customDataSource.state = .error
@@ -63,16 +56,11 @@ final class QuestionView: UITableView {
     }
 
     func showQuestion(_ question: Question, answer: QuestionAnswer?) {
-        questionContentView.configure(text: question.text)
         customDataSource.selectedIndex = question.options.firstIndex(where: { item in
             guard item.id != nil else { return false }
             return item.id == answer?.option?.id
         })
         bottomView.setEnabled(customDataSource.selectedIndex != nil)
-        customDataSource.updateData(question.options)
-    }
-
-    func updateQuestions(_ data: [QuestionOption]) {
-        customDataSource.updateData(data)
+        customDataSource.updateData(question)
     }
 }

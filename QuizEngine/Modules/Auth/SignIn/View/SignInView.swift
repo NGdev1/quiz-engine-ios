@@ -36,8 +36,16 @@ final class SignInView: UIView {
     private func setupStyle() {
         emailTextField.delegate = self
         emailTextField.placeholder = Text.SignIn.email
+        emailTextField.isFloatingPlaceholder = true
+        emailTextField.textContentType = .emailAddress
+        emailTextField.keyboardType = .emailAddress
+        emailTextField.autocapitalizationType = .none
         passwordTextField.delegate = self
         passwordTextField.placeholder = Text.SignIn.password
+        passwordTextField.isFloatingPlaceholder = true
+        passwordTextField.textContentType = .password
+        passwordTextField.isSecureTextEntry = true
+        passwordTextField.autocapitalizationType = .none
         signUpButton.setTitle(Text.SignIn.registration, for: .normal)
         restorePasswordButton.setTitle(Text.SignIn.passwordRecovery, for: .normal)
     }
@@ -70,10 +78,10 @@ final class SignInView: UIView {
     }
 }
 
-// MARK: - UITextFieldDelegate
+// MARK: - MDTextFieldDelegate
 
-extension SignInView: UITextFieldDelegate {
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+extension SignInView: MDTextFieldDelegate {
+    func textFieldShouldReturn(_ textField: MDTextField) -> Bool {
         if textField == emailTextField {
             _ = passwordTextField.becomeFirstResponder()
         } else if textField == passwordTextField {
@@ -81,4 +89,6 @@ extension SignInView: UITextFieldDelegate {
         }
         return true
     }
+
+    func textDidChange(_ textField: MDTextField, text: String?) {}
 }

@@ -12,12 +12,13 @@ protocol EditQuestionOptionCellSetupDelegate: AnyObject {
 }
 
 final class EditQuestionOptionCellSetup: NSObject {
-    private var entity: QuestionOption?
     var messageAboutError: String = .empty
-    weak var delegate: EditQuestionOptionCellSetupDelegate?
 
+    private var entity: QuestionOption?
     private var tableView: UITableView
     private let isCorrectSwitchTag: Int = 0x12
+
+    weak var delegate: EditQuestionOptionCellSetupDelegate?
 
     // MARK: - Init
 
@@ -34,10 +35,10 @@ final class EditQuestionOptionCellSetup: NSObject {
 
     // MARK: - Cells setup
 
-    func textCell(_ cell: TextFieldCell, for indexPath: IndexPath) {
+    func textCell(_ cell: TextAreaCell, for indexPath: IndexPath) {
         cell.configure(
             delegate: self, text: entity?.text,
-            placeholder: Text.EditQuestionOption.textPlaceholder, tag: EditQuestionOptionView.textTag
+            tag: EditQuestionOptionView.textTag, placeholder: Text.EditQuestionOption.textPlaceholder
         )
     }
 
@@ -57,7 +58,7 @@ final class EditQuestionOptionCellSetup: NSObject {
 
 // MARK: - Action handlers
 
-extension EditQuestionOptionCellSetup: ErrorCellDelegate, UITextFieldDelegate,
+extension EditQuestionOptionCellSetup: ErrorCellDelegate, MDTextAreaDelegate,
     SwitchCellDelegate
 {
     func switchValueChanged(tag: Int, value: Bool) {
@@ -66,24 +67,14 @@ extension EditQuestionOptionCellSetup: ErrorCellDelegate, UITextFieldDelegate,
         }
     }
 
-    func textField(
-        _ textField: UITextField, shouldChangeCharactersIn range: NSRange,
-        replacementString string: String
-    ) -> Bool {
-        let text: String = (textField.text as NSString?)?.replacingCharacters(in: range, with: string) ?? .empty
-        if textField.tag == EditQuestionOptionView.textTag {
+    func textDidChange(textArea: MDTextArea, text: String) {
+        if textArea.tag == EditQuestionOptionView.textTag {
             entity?.text = text
         }
-        return true
-    }
-
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        if let nextField = tableView.viewWithTag(textField.tag + 1) {
-            nextField.becomeFirstResponder()
-        } else {
-            textField.resignFirstResponder()
+        DispatchQueue.main.async { [weak tableView] in
+            tableView?.beginUpdates()
+            tableView?.endUpdates()
         }
-        return true
     }
 
     func reloadData() {

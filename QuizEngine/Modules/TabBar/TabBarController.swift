@@ -8,9 +8,9 @@
 import UIKit
 
 class TabBarController: UITabBarController {
-    static let createTabIndex: Int = 0
-    static let quizListTabIndex: Int = 1
-    static let profileTabIndex: Int = 2
+    static let createTabIndex: Int = 1
+    static let quizListTabIndex: Int = 2
+    static let profileTabIndex: Int = 3
 
     init() {
         super.init(nibName: nil, bundle: nil)

@@ -36,12 +36,31 @@ final class SignUpView: UIView {
     private func setupStyle() {
         fullNameTextField.delegate = self
         fullNameTextField.placeholder = Text.SignUp.fullName
+        fullNameTextField.isFloatingPlaceholder = true
+        fullNameTextField.textContentType = .givenName
+        fullNameTextField.keyboardType = .default
+        fullNameTextField.autocapitalizationType = .words
+
         emailTextField.delegate = self
         emailTextField.placeholder = Text.SignUp.email
+        emailTextField.isFloatingPlaceholder = true
+        emailTextField.textContentType = .emailAddress
+        emailTextField.keyboardType = .emailAddress
+        emailTextField.autocapitalizationType = .none
+
         passwordTextField.delegate = self
         passwordTextField.placeholder = Text.SignUp.password
+        passwordTextField.isFloatingPlaceholder = true
+        passwordTextField.textContentType = .password
+        passwordTextField.isSecureTextEntry = true
+        passwordTextField.autocapitalizationType = .none
+
         confirmPasswordTextField.delegate = self
         confirmPasswordTextField.placeholder = Text.SignUp.confirmPassword
+        confirmPasswordTextField.isFloatingPlaceholder = true
+        confirmPasswordTextField.textContentType = .password
+        confirmPasswordTextField.isSecureTextEntry = true
+        confirmPasswordTextField.autocapitalizationType = .none
     }
 
     // MARK: - Action handlers
@@ -74,8 +93,8 @@ final class SignUpView: UIView {
 
 // MARK: - UITextFieldDelegate
 
-extension SignUpView: UITextFieldDelegate {
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+extension SignUpView: MDTextFieldDelegate {
+    func textFieldShouldReturn(_ textField: MDTextField) -> Bool {
         if textField == fullNameTextField {
             _ = emailTextField.becomeFirstResponder()
         } else if textField == emailTextField {
@@ -87,4 +106,6 @@ extension SignUpView: UITextFieldDelegate {
         }
         return true
     }
+
+    func textDidChange(_ textField: MDTextField, text: String?) {}
 }

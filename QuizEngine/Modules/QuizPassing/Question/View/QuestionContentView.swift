@@ -7,10 +7,10 @@
 
 import UIKit
 
-final class QuestionContentView: UIView {
+final class QuestionContentView: UITableViewHeaderFooterView {
     // MARK: - Properties
 
-    private lazy var textLabel: UILabel = {
+    private lazy var questionTextLabel: UILabel = {
         let label = UILabel()
         label.font = Fonts.SFUIDisplay.regular.font(size: 18)
         label.numberOfLines = 0
@@ -19,10 +19,12 @@ final class QuestionContentView: UIView {
         return label
     }()
 
+    static let identifier: String = "QuestionContentView"
+
     // MARK: - Init
 
-    override init(frame: CGRect) {
-        super.init(frame: frame)
+    override init(reuseIdentifier: String?) {
+        super.init(reuseIdentifier: reuseIdentifier)
         commonInit()
     }
 
@@ -32,27 +34,32 @@ final class QuestionContentView: UIView {
     }
 
     private func commonInit() {
+        setupStyle()
         addSubviews()
         makeConstraints()
     }
 
+    private func setupStyle() {
+        backgroundColor = Assets.background1.color
+        contentView.backgroundColor = Assets.background1.color
+    }
+
     private func addSubviews() {
-        addSubview(textLabel)
+        addSubview(questionTextLabel)
     }
 
     private func makeConstraints() {
         addConstraints([
-            textLabel.topAnchor.constraint(equalTo: topAnchor, constant: 16),
-            textLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
-            textLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: 16),
-            textLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -16),
+            questionTextLabel.topAnchor.constraint(equalTo: topAnchor, constant: 16),
+            questionTextLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
+            questionTextLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
+            questionTextLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -16),
         ])
     }
 
     // MARK: - Internal methods
 
     func configure(text: String?) {
-        textLabel.text = text
-        height = systemLayoutSizeFitting(UIView.layoutFittingCompressedSize).height
+        questionTextLabel.text = text
     }
 }
