@@ -1,16 +1,16 @@
 //
-//  QuizInteractor.swift
+//  PublicQuizInteractor.swift
 //  QuizEngine
 //
 //  Created by Admin on 02.06.2021.
 //
 
-protocol QuizBusinessLogic: AnyObject {
+protocol PublicQuizBusinessLogic: AnyObject {
     func loadQuiz(id: String)
 }
 
-class QuizInteractor: QuizBusinessLogic {
-    weak var controller: QuizControllerLogic?
+class PublicQuizInteractor: PublicQuizBusinessLogic {
+    weak var controller: PublicQuizControllerLogic?
     let service: QuizServiceProtocol = ServiceFactory.quizService
 
     func loadQuiz(id: String) {

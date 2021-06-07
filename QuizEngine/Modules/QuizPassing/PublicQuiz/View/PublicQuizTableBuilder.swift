@@ -1,5 +1,5 @@
 //
-//  QuizTableBuilder.swift
+//  PublicQuizTableBuilder.swift
 //  QuizEngine
 //
 //  Created by Admin on 02.06.2021.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class QuizTableBuilder {
+final class PublicQuizTableBuilder {
     typealias Row = GenericTableViewRowModel
 
     // MARK: - Properties
@@ -17,7 +17,7 @@ final class QuizTableBuilder {
     private var genericTableViewDelegate: GenericTableViewDelegate?
     private var dataStorage: GenericTableViewDataStorage = GenericTableViewDataStorage()
     private var tableView: UITableView
-    private var cellsSetup: QuizCellSetup
+    private var cellsSetup: PublicQuizCellSetup
     private var entity: Quiz?
 
     // MARK: - Init
@@ -29,12 +29,12 @@ final class QuizTableBuilder {
         self.genericTableViewDelegate = GenericTableViewDelegate(with: dataStorage)
         tableView.dataSource = genericDataSource
         tableView.delegate = genericTableViewDelegate
-        self.cellsSetup = QuizCellSetup(entity: entity, tableView: tableView)
+        self.cellsSetup = PublicQuizCellSetup(entity: entity, tableView: tableView)
     }
 
     // MARK: - Internal methods
 
-    func setDelegate(_ delegate: QuizCellSetupDelegate) {
+    func setDelegate(_ delegate: PublicQuizCellSetupDelegate) {
         cellsSetup.delegate = delegate
     }
 

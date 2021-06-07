@@ -1,5 +1,5 @@
 //
-//  QuizController.swift
+//  PublicQuizController.swift
 //  QuizEngine
 //
 //  Created by Admin on 02.06.2021.
@@ -7,16 +7,16 @@
 
 import MDFoundation
 
-protocol QuizControllerLogic: AnyObject {
+protocol PublicQuizControllerLogic: AnyObject {
     func presentQuiz(_ entity: Quiz)
     func presentError(message: String)
 }
 
-class QuizController: UIViewController, QuizControllerLogic {
+class PublicQuizController: UIViewController, PublicQuizControllerLogic {
     // MARK: - Properties
 
-    lazy var customView = QuizView()
-    var interactor: QuizInteractor?
+    lazy var customView = PublicQuizView()
+    var interactor: PublicQuizInteractor?
 
     let generator = UINotificationFeedbackGenerator()
     let id: String
@@ -54,7 +54,7 @@ class QuizController: UIViewController, QuizControllerLogic {
     }
 
     private func setup() {
-        interactor = QuizInteractor()
+        interactor = PublicQuizInteractor()
         interactor?.controller = self
     }
 
@@ -89,7 +89,7 @@ class QuizController: UIViewController, QuizControllerLogic {
         interactor?.loadQuiz(id: id)
     }
 
-    // MARK: - QuizControllerLogic
+    // MARK: - PublicQuizControllerLogic
 
     func presentQuiz(_ entity: Quiz) {
         customView.updateAppearance(with: entity)
@@ -101,9 +101,9 @@ class QuizController: UIViewController, QuizControllerLogic {
     }
 }
 
-// MARK: - QuizCellSetupDelegate
+// MARK: - PublicQuizCellSetupDelegate
 
-extension QuizController: QuizCellSetupDelegate {
+extension PublicQuizController: PublicQuizCellSetupDelegate {
     func startQuiz() {
         let quizPassingController = QuizPassingController(quizId: id)
         let navigationController = UINavigationController(rootViewController: quizPassingController)

@@ -81,7 +81,7 @@ class MainController: UIViewController, MainControllerLogic {
 extension MainController: HomePageDataSourceDelegate {
     func didSelectQuiz(_ item: Quiz) {
         guard let id = item.id else { return }
-        navigationController?.pushViewController(QuizController(id: id, quiz: item))
+        navigationController?.pushViewController(PublicQuizController(id: id, quiz: item))
     }
 
     func actionButtonTapped() {

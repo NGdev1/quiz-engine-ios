@@ -1,5 +1,5 @@
 //
-//  QuizCellSetup.swift
+//  PublicQuizCellSetup.swift
 //  QuizEngine
 //
 //  Created by Admin on 02.06.2021.
@@ -7,15 +7,15 @@
 
 import UIKit
 
-protocol QuizCellSetupDelegate: AnyObject {
+protocol PublicQuizCellSetupDelegate: AnyObject {
     func startQuiz()
     func reloadAction()
 }
 
-final class QuizCellSetup {
+final class PublicQuizCellSetup {
     private var entity: Quiz?
     var messageAboutError: String = .empty
-    weak var delegate: QuizCellSetupDelegate?
+    weak var delegate: PublicQuizCellSetupDelegate?
 
     private var tableView: UITableView
     private let startButtonIndex: Int = 1
@@ -61,7 +61,7 @@ final class QuizCellSetup {
 
 // MARK: - Action handlers
 
-extension QuizCellSetup: ErrorCellDelegate, QuizHeaderCellDelegate, ButtonCellDelegate,
+extension PublicQuizCellSetup: ErrorCellDelegate, QuizHeaderCellDelegate, ButtonCellDelegate,
     ProfileCellDelegate
 {
     func buttonClicked(index: Int) {
