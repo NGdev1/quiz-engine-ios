@@ -153,6 +153,8 @@ internal enum Text {
     internal static func answeredCount(_ p1: Int) -> String {
       return Text.tr("Localizable", "QuizPassing.AnsweredCount", p1)
     }
+    /// Завершить
+    internal static let finish = Text.tr("Localizable", "QuizPassing.Finish")
     /// Ответ дан
     internal static let hasAnswer = Text.tr("Localizable", "QuizPassing.HasAnswer")
     /// Ответ не дан

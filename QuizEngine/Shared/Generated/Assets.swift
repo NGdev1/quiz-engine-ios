@@ -38,6 +38,7 @@ internal enum Assets {
   internal static let radiobuttonOff = ImageAsset(name: "RadiobuttonOff")
   internal static let radiobuttonOn = ImageAsset(name: "RadiobuttonOn")
   internal static let tabBarIconAdd = ImageAsset(name: "TabBarIconAdd")
+  internal static let tabBarIconHistory = ImageAsset(name: "TabBarIconHistory")
   internal static let tabBarIconHome = ImageAsset(name: "TabBarIconHome")
   internal static let tabBarIconProfile = ImageAsset(name: "TabBarIconProfile")
   internal static let tabBarIconQuizList = ImageAsset(name: "TabBarIconQuizList")

@@ -11,6 +11,8 @@ import Storable
 enum QuizPassingApi {
     case create(quizId: String)
     case giveAnswer(quizId: String, passingId: Int, answer: QuestionAnswer)
+    case finish(quizId: String, passingId: Int)
+    case get(quizId: String, passingId: Int)
 }
 
 extension QuizPassingApi: TargetType {
@@ -24,13 +26,19 @@ extension QuizPassingApi: TargetType {
             return "/quiz/\(quizId)/passing"
         case let .giveAnswer(quizId, passingId, _):
             return "/quiz/\(quizId)/passing/\(passingId)/answer"
+        case let .finish(quizId, passingId):
+            return "/quiz/\(quizId)/passing/\(passingId)/finish"
+        case let .get(quizId, passingId):
+            return "/quiz/\(quizId)/passing/\(passingId)"
         }
     }
 
     var method: Moya.Method {
         switch self {
-        case .create, .giveAnswer:
+        case .create, .giveAnswer, .finish:
             return .post
+        case .get:
+            return .get
         }
     }
 
@@ -44,6 +52,10 @@ extension QuizPassingApi: TargetType {
             return .requestPlain
         case let .giveAnswer(_, _, answer):
             return .requestJSONEncodable(answer)
+        case .finish:
+            return .requestPlain
+        case .get:
+            return .requestPlain
         }
     }
 

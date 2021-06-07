@@ -75,6 +75,7 @@ QuizPassing.AnsweredCount = "Отвечено: %d";
 QuizPassing.Questions = "Вопросы";
 QuizPassing.HasAnswer = "Ответ дан";
 QuizPassing.HasNoAnswer = "Ответ не дан";
+QuizPassing.Finish = "Завершить";
 
 Alert.Error = "Ошибка";
 Alert.Cancel = "Отмена";

@@ -9,6 +9,7 @@ import MDFoundation
 
 protocol QuizPassingControllerLogic: AnyObject {
     func didFinishCreatingPassing(_ quizPassing: QuizPassing)
+    func didFinishEndingPassing(_ quizPassing: QuizPassing)
     func presentError(message: String)
 }
 
@@ -45,7 +46,8 @@ class QuizPassingController: UIViewController, QuizPassingControllerLogic {
         super.viewDidLoad()
         setup()
         setupAppearance()
-        loadQuiz()
+        createQuizPassing()
+        addActionHandlers()
     }
 
     private func setup() {
@@ -65,9 +67,25 @@ class QuizPassingController: UIViewController, QuizPassingControllerLogic {
         questionController?.delegate = self
     }
 
+    // MARK: - Action handlers
+
+    private func addActionHandlers() {
+        navigationItem.rightBarButtonItem = UIBarButtonItem(
+            title: Text.QuizPassing.finish, style: .plain,
+            target: self, action: #selector(finish)
+        )
+    }
+
+    @objc
+    private func finish() {
+        guard let passingId = quizPassing?.id else { return }
+        customView.showLoading()
+        interactor?.finish(quizId: quizId, passingId: passingId)
+    }
+
     // MARK: - Network requests
 
-    private func loadQuiz() {
+    private func createQuizPassing() {
         customView.showLoading()
         interactor?.createPassing(quizId: quizId)
     }
@@ -78,6 +96,11 @@ class QuizPassingController: UIViewController, QuizPassingControllerLogic {
         self.quizPassing = quizPassing
         customView.updateAppearance(with: quizPassing)
         initQuestionController()
+    }
+
+    func didFinishEndingPassing(_ quizPassing: QuizPassing) {
+        dismiss(animated: true, completion: nil)
+        NotificationCenter.default.post(name: .userFinishedQuiz, object: nil)
     }
 
     func presentError(message: String) {
@@ -96,7 +119,8 @@ extension QuizPassingController: QuizPassingCellSetupDelegate {
     }
 
     func reloadAction() {
-        loadQuiz()
+        guard let quizPassing = quizPassing else { return }
+        customView.updateAppearance(with: quizPassing)
     }
 }
 

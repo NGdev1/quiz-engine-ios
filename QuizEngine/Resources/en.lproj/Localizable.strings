@@ -75,6 +75,7 @@ QuizPassing.AnsweredCount = "Answered: %d";
 QuizPassing.Questions = "Questions";
 QuizPassing.HasAnswer = "Has answer";
 QuizPassing.HasNoAnswer = "Has no answer";
+QuizPassing.Finish = "Finish";
 
 Alert.Error = "Error";
 Alert.Cancel = "Cancel";
