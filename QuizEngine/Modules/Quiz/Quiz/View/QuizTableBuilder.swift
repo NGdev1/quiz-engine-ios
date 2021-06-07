@@ -1,13 +1,13 @@
 //
-//  PublicQuizTableBuilder.swift
+//  QuizTableBuilder.swift
 //  QuizEngine
 //
-//  Created by Admin on 02.06.2021.
+//  Created by Admin on 07.06.2021.
 //
 
 import UIKit
 
-final class PublicQuizTableBuilder {
+final class QuizTableBuilder {
     typealias Row = GenericTableViewRowModel
 
     // MARK: - Properties
@@ -17,7 +17,7 @@ final class PublicQuizTableBuilder {
     private var genericTableViewDelegate: GenericTableViewDelegate?
     private var dataStorage: GenericTableViewDataStorage = GenericTableViewDataStorage()
     private var tableView: UITableView
-    private var cellsSetup: PublicQuizCellSetup
+    private var cellsSetup: QuizCellSetup
     private var entity: Quiz?
 
     // MARK: - Init
@@ -29,18 +29,16 @@ final class PublicQuizTableBuilder {
         self.genericTableViewDelegate = GenericTableViewDelegate(with: dataStorage)
         tableView.dataSource = genericDataSource
         tableView.delegate = genericTableViewDelegate
-        self.cellsSetup = PublicQuizCellSetup(entity: entity, tableView: tableView)
+        self.cellsSetup = QuizCellSetup(entity: entity, tableView: tableView)
     }
 
     // MARK: - Internal methods
 
-    func setDelegate(_ delegate: PublicQuizCellSetupDelegate) {
+    func setDelegate(_ delegate: QuizCellSetupDelegate) {
         cellsSetup.delegate = delegate
     }
 
-    func showLoading(entity: Quiz) {
-        self.entity = entity
-        cellsSetup.updateQuiz(entity)
+    func showLoading() {
         buildLoadingTableStructure()
         reloadData(animated: true)
     }
@@ -88,7 +86,6 @@ final class PublicQuizTableBuilder {
 
     private func buildLoadingTableStructure() {
         let rowsSequence: [Row] = [
-            Row(cellsSetup.quizHeaderCell(_:for:), fromNib: true, bundle: resourcesBundle),
             Row(LoadingCell.loadingCell(_:for:)),
         ]
         setRowsSequenceToDataStorage(rowsSequence: rowsSequence)
@@ -97,9 +94,7 @@ final class PublicQuizTableBuilder {
     private func buildFullTableStructure() {
         var rowsSequence: [Row] = [
             Row(cellsSetup.quizHeaderCell(_:for:), fromNib: true, bundle: resourcesBundle),
-            Row(cellsSetup.startCell(_:for:), fromNib: true, bundle: resourcesBundle),
-            Row(cellsSetup.authorHeaderCell(_:for:), fromNib: true, bundle: resourcesBundle),
-            Row(cellsSetup.authorCell(_:for:), fromNib: true, bundle: resourcesBundle),
+            Row(cellsSetup.editCell(_:for:), fromNib: true, bundle: resourcesBundle),
             Row(cellsSetup.participantsHeaderCell(_:for:), fromNib: true, bundle: resourcesBundle),
         ]
         cellsSetup.firstParticipantIndex = rowsSequence.count

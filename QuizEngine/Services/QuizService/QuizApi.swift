@@ -10,6 +10,7 @@ import Storable
 
 enum QuizApi {
     case get(id: String)
+    case getFull(id: String)
     /// Список собственных викторин
     case ownList
     case publicList
@@ -27,6 +28,8 @@ extension QuizApi: TargetType {
         switch self {
         case let .get(id):
             return "/quiz/\(id)"
+        case let .getFull(id):
+            return "/quiz/\(id)/full"
         case .ownList:
             return "/quiz/own-list"
         case .publicList:
@@ -42,7 +45,7 @@ extension QuizApi: TargetType {
 
     var method: Moya.Method {
         switch self {
-        case .get, .ownList, .publicList:
+        case .get, .ownList, .publicList, .getFull:
             return .get
         case .create:
             return .post
@@ -60,6 +63,8 @@ extension QuizApi: TargetType {
     var task: Task {
         switch self {
         case .get:
+            return .requestPlain
+        case .getFull:
             return .requestPlain
         case .ownList:
             return .requestPlain

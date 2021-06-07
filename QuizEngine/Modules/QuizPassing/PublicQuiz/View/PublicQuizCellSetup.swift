@@ -20,6 +20,8 @@ final class PublicQuizCellSetup {
     private var tableView: UITableView
     private let startButtonIndex: Int = 1
 
+    var firstParticipantIndex: Int = 0
+
     // MARK: - Init
 
     init(entity: Quiz?, tableView: UITableView) {
@@ -51,6 +53,19 @@ final class PublicQuizCellSetup {
     func authorCell(_ cell: ProfileCell, for indexPath: IndexPath) {
         guard let author = entity?.author else { return }
         cell.configure(delegate: self, profile: author)
+    }
+
+    func participantsHeaderCell(_ cell: HeaderCell, for indexPath: IndexPath) {
+        cell.configure(title: Text.Quiz.participants)
+    }
+
+    func noParticipantsCell(_ cell: NoContentCell, for indexPath: IndexPath) {
+        cell.configure(text: Text.Quiz.noParticipants, height: 20)
+    }
+
+    func participantCell(_ cell: ProfileCell, for indexPath: IndexPath) {
+        guard let user = entity?.participants[indexPath.row - firstParticipantIndex].user else { return }
+        cell.configure(delegate: self, profile: user)
     }
 
     func errorCell(_ cell: ErrorCell, for indexPath: IndexPath) {

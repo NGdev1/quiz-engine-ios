@@ -16,7 +16,7 @@ class EditQuizInteractor: EditQuizBusinessLogic {
     let service: QuizServiceProtocol = ServiceFactory.quizService
 
     func loadItem(id: String) {
-        service.get(id: id) { [weak self] response, error in
+        service.getFull(id: id) { [weak self] response, error in
             guard let self = self else { return }
             if let error = error {
                 self.controller?.presentError(message: error.localizedDescription)

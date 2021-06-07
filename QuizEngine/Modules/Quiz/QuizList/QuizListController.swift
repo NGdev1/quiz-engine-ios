@@ -115,7 +115,8 @@ extension QuizListController: QuizDataSourceDelegate {
     }
 
     func didSelectQuiz(_ item: Quiz) {
-        navigationController?.pushViewController(EditQuizController(quiz: item))
+        guard let quizId = item.id else { return }
+        navigationController?.pushViewController(QuizController(id: quizId, quiz: item))
     }
 
     func actionButtonTapped() {

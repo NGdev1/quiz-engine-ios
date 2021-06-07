@@ -129,6 +129,14 @@
 		849E000A2662977C004EA4DB /* QuestionOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849E00092662977C004EA4DB /* QuestionOption.swift */; };
 		849E000D2662992D004EA4DB /* TitleValueCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849E000B2662992D004EA4DB /* TitleValueCell.swift */; };
 		849E000E2662992D004EA4DB /* TitleValueCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 849E000C2662992D004EA4DB /* TitleValueCell.xib */; };
+		84A32595266E98E20028B4DB /* QuizCellSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A32590266E98E20028B4DB /* QuizCellSetup.swift */; };
+		84A32596266E98E20028B4DB /* QuizTableBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A32591266E98E20028B4DB /* QuizTableBuilder.swift */; };
+		84A32597266E98E20028B4DB /* QuizController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A32592266E98E20028B4DB /* QuizController.swift */; };
+		84A32598266E98E20028B4DB /* QuizInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A32593266E98E20028B4DB /* QuizInteractor.swift */; };
+		84A32599266E98E20028B4DB /* QuizView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A32594266E98E20028B4DB /* QuizView.swift */; };
+		84A3259C266EBBE70028B4DB /* Participant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A3259B266EBBE70028B4DB /* Participant.swift */; };
+		84A325A0266EBCFF0028B4DB /* ParticipantCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A3259E266EBCFF0028B4DB /* ParticipantCell.swift */; };
+		84A325A1266EBCFF0028B4DB /* ParticipantCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84A3259F266EBCFF0028B4DB /* ParticipantCell.xib */; };
 		84C1ACCE26603C8700412B31 /* AuthApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C1ACCD26603C8700412B31 /* AuthApi.swift */; };
 		84C1ACD026603D4F00412B31 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C1ACCF26603D4F00412B31 /* AuthService.swift */; };
 		84C1ACD326603DC500412B31 /* GeneralErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C1ACD226603DC500412B31 /* GeneralErrors.swift */; };
@@ -287,6 +295,14 @@
 		849E00092662977C004EA4DB /* QuestionOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionOption.swift; sourceTree = "<group>"; };
 		849E000B2662992D004EA4DB /* TitleValueCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleValueCell.swift; sourceTree = "<group>"; };
 		849E000C2662992D004EA4DB /* TitleValueCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TitleValueCell.xib; sourceTree = "<group>"; };
+		84A32590266E98E20028B4DB /* QuizCellSetup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizCellSetup.swift; sourceTree = "<group>"; };
+		84A32591266E98E20028B4DB /* QuizTableBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizTableBuilder.swift; sourceTree = "<group>"; };
+		84A32592266E98E20028B4DB /* QuizController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizController.swift; sourceTree = "<group>"; };
+		84A32593266E98E20028B4DB /* QuizInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizInteractor.swift; sourceTree = "<group>"; };
+		84A32594266E98E20028B4DB /* QuizView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizView.swift; sourceTree = "<group>"; };
+		84A3259B266EBBE70028B4DB /* Participant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Participant.swift; sourceTree = "<group>"; };
+		84A3259E266EBCFF0028B4DB /* ParticipantCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticipantCell.swift; sourceTree = "<group>"; };
+		84A3259F266EBCFF0028B4DB /* ParticipantCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ParticipantCell.xib; sourceTree = "<group>"; };
 		84C1ACCD26603C8700412B31 /* AuthApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthApi.swift; sourceTree = "<group>"; };
 		84C1ACCF26603D4F00412B31 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		84C1ACD226603DC500412B31 /* GeneralErrors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeneralErrors.swift; sourceTree = "<group>"; };
@@ -501,8 +517,8 @@
 		843B8C3F2660F47A00E6A999 /* Quiz */ = {
 			isa = PBXGroup;
 			children = (
-				84EDF693266E7EC6009F2049 /* Quiz */,
 				843B8C402660F48300E6A999 /* QuizList */,
+				84EDF693266E7EC6009F2049 /* Quiz */,
 				842970E4266178530093305D /* EditQuiz */,
 				84D755702662CAD900428E70 /* EditQuestion */,
 				84D7555F2662C9C700428E70 /* EditQuestionOption */,
@@ -982,6 +998,26 @@
 			path = TitleValueCell;
 			sourceTree = "<group>";
 		};
+		84A3259A266E98E50028B4DB /* View */ = {
+			isa = PBXGroup;
+			children = (
+				84A32590266E98E20028B4DB /* QuizCellSetup.swift */,
+				84A32591266E98E20028B4DB /* QuizTableBuilder.swift */,
+				84A32594266E98E20028B4DB /* QuizView.swift */,
+				84A3259D266EBCE80028B4DB /* ParticipantCell */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		84A3259D266EBCE80028B4DB /* ParticipantCell */ = {
+			isa = PBXGroup;
+			children = (
+				84A3259E266EBCFF0028B4DB /* ParticipantCell.swift */,
+				84A3259F266EBCFF0028B4DB /* ParticipantCell.xib */,
+			);
+			path = ParticipantCell;
+			sourceTree = "<group>";
+		};
 		84C1ACD126603DA200412B31 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -994,6 +1030,7 @@
 				849E00092662977C004EA4DB /* QuestionOption.swift */,
 				846028312669261300A01F33 /* QuizPassing.swift */,
 				846028332669274600A01F33 /* QuestionAnswer.swift */,
+				84A3259B266EBBE70028B4DB /* Participant.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1124,6 +1161,9 @@
 		84EDF693266E7EC6009F2049 /* Quiz */ = {
 			isa = PBXGroup;
 			children = (
+				84A32592266E98E20028B4DB /* QuizController.swift */,
+				84A32593266E98E20028B4DB /* QuizInteractor.swift */,
+				84A3259A266E98E50028B4DB /* View */,
 			);
 			path = Quiz;
 			sourceTree = "<group>";
@@ -1212,6 +1252,7 @@
 				8471F480265F992D007A7876 /* Localizable.strings in Resources */,
 				842970E326616D700093305D /* ProfileHeaderCell.xib in Resources */,
 				84D8B7D4266ADDBE002C9CF4 /* OptionRadioCell.xib in Resources */,
+				84A325A1266EBCFF0028B4DB /* ParticipantCell.xib in Resources */,
 				84414D7326629472006F2DAF /* HeaderCell.xib in Resources */,
 				84414D6126625698006F2DAF /* SwitchCell.xib in Resources */,
 				8460281F266822F200A01F33 /* ProfileCell.xib in Resources */,
@@ -1328,6 +1369,7 @@
 				84D7555D2662C06100428E70 /* AddItemCell.swift in Sources */,
 				8471F4CD265FF235007A7876 /* FixedBottomView.swift in Sources */,
 				846028292668CC1800A01F33 /* QuizPassingInteractor.swift in Sources */,
+				84A32599266E98E20028B4DB /* QuizView.swift in Sources */,
 				8471F4CA265FB789007A7876 /* AuthModels.swift in Sources */,
 				843B8C4A2660F4B900E6A999 /* QuizListView.swift in Sources */,
 				846028342669274600A01F33 /* QuestionAnswer.swift in Sources */,
@@ -1371,12 +1413,15 @@
 				8471F4B9265FB685007A7876 /* SignInController.swift in Sources */,
 				8460282A2668CC1800A01F33 /* QuizPassingView.swift in Sources */,
 				8471F4BA265FB685007A7876 /* SignInInteractor.swift in Sources */,
+				84A32597266E98E20028B4DB /* QuizController.swift in Sources */,
 				8471F47A265F95E5007A7876 /* OnboardingView.swift in Sources */,
 				8471F4BB265FB685007A7876 /* SignInView.swift in Sources */,
 				8471F4D6265FF90B007A7876 /* SignUpView.swift in Sources */,
 				84414D6226625698006F2DAF /* SwitchCell.swift in Sources */,
 				84D8B7D6266B78C1002C9CF4 /* QuestionContentView.swift in Sources */,
+				84A3259C266EBBE70028B4DB /* Participant.swift in Sources */,
 				842970C3266140530093305D /* ProfileApi.swift in Sources */,
+				84A32598266E98E20028B4DB /* QuizInteractor.swift in Sources */,
 				8483D29C266E0B3400CAC84C /* HistoryItemCell.swift in Sources */,
 				846028002668162F00A01F33 /* MainInteractor.swift in Sources */,
 				84D7556F2662C9C700428E70 /* EditQuestionOptionCellSetup.swift in Sources */,
@@ -1389,6 +1434,7 @@
 				8471F4B0265FA0BD007A7876 /* MDTextArea.swift in Sources */,
 				843B8C482660F4B900E6A999 /* QuizListController.swift in Sources */,
 				8483D297266E015100CAC84C /* HistoryView.swift in Sources */,
+				84A32595266E98E20028B4DB /* QuizCellSetup.swift in Sources */,
 				843B8C582660F87A00E6A999 /* QuizCell.swift in Sources */,
 				849E000D2662992D004EA4DB /* TitleValueCell.swift in Sources */,
 				84D8B7D3266ADDBE002C9CF4 /* OptionRadioCell.swift in Sources */,
@@ -1405,6 +1451,7 @@
 				843B8C652660F8D400E6A999 /* ErrorCell.swift in Sources */,
 				842970DE266168290093305D /* GenericTableViewSectionModel.swift in Sources */,
 				843B8C3E2660F23C00E6A999 /* TabBarController.swift in Sources */,
+				84A325A0266EBCFF0028B4DB /* ParticipantCell.swift in Sources */,
 				8471F4A7265F9FAB007A7876 /* ExtensionUIView.swift in Sources */,
 				8460285D266AAE8200A01F33 /* QuizPassingApi.swift in Sources */,
 				849E0008266296D2004EA4DB /* Question.swift in Sources */,
@@ -1421,6 +1468,7 @@
 				842970EB266179CB0093305D /* EditQuizTableBuilder.swift in Sources */,
 				84EDEF9D26642DC8008B6054 /* NotificationNames.swift in Sources */,
 				84414D6326625698006F2DAF /* TextAreaCell.swift in Sources */,
+				84A32596266E98E20028B4DB /* QuizTableBuilder.swift in Sources */,
 				84D755692662C9C700428E70 /* EditQuestionOptionController.swift in Sources */,
 				8460282F2668FF2400A01F33 /* PassingHeaderCell.swift in Sources */,
 				842970C5266142FB0093305D /* QuizApi.swift in Sources */,

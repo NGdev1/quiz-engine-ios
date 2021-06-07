@@ -78,9 +78,13 @@ QuizList.NoContent = "No quiz created";
 Main.Title = "Public";
 
 Quiz.Title = "Test";
+Quiz.Edit = "Edit";
 Quiz.QuestionsCount = "Number of questions: %d";
 Quiz.Start = "Start";
 Quiz.Author = "Author";
+Quiz.Participants = "Participants";
+Quiz.ParticipantDescription = "%@, number of attempts: %d";
+Quiz.NoParticipants = "No participants";
 
 QuizPassing.Title = "Execution";
 QuizPassing.AnsweredCount = "Answered: %d";

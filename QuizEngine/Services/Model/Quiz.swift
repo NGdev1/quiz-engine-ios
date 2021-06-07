@@ -17,6 +17,7 @@ class Quiz: Codable {
         self.isAnyOrder = true
         self.isPublic = true
         self.questions = []
+        self.results = []
         self.participants = []
     }
 
@@ -28,7 +29,8 @@ class Quiz: Codable {
     var isAnyOrder: Bool?
     var isPublic: Bool?
     var questions: [Question]
-    var participants: [Profile]
+    let results: [QuizPassing]
+    let participants: [Participant]
 
     required init(from decoder: Decoder) throws {
         let map = try decoder.container(keyedBy: CodingKeys.self)
@@ -39,11 +41,12 @@ class Quiz: Codable {
         self.isAnyOrder = try? map.decode(Bool.self, forKey: .isAnyOrder)
         self.isPublic = try? map.decode(Bool.self, forKey: .isPublic)
         self.questions = (try? map.decode([Question].self, forKey: .questions)) ?? []
-        self.participants = (try? map.decode([Profile].self, forKey: .participants)) ?? []
+        self.results = (try? map.decode([QuizPassing].self, forKey: .results)) ?? []
         if let startDateString = try? map.decode(String.self, forKey: .startDate) {
             let formatter = DateFormatter()
             formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZZZ"
             self.startDate = formatter.date(from: startDateString)
         }
+        self.participants = Participant.getParticipants(results: results)
     }
 }

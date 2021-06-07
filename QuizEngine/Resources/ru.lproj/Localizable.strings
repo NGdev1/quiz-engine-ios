@@ -78,9 +78,13 @@ QuizList.NoContent = "Ни одного теста не создано";
 Main.Title = "Главная";
 
 Quiz.Title = "Тест";
+Quiz.Edit = "Редактировать";
 Quiz.QuestionsCount = "Кол-во вопросов: %d";
 Quiz.Start = "Начать";
 Quiz.Author = "Автор";
+Quiz.Participants = "Участники";
+Quiz.ParticipantDescription = "%@, кол-во попыток: %d";
+Quiz.NoParticipants = "Нет участников";
 
 QuizPassing.Title = "Выполнение";
 QuizPassing.AnsweredCount = "Отвечено: %d";
