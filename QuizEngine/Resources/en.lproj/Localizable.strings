@@ -43,6 +43,9 @@ SignUp.PasswordsNotMatch = "Passwords not match";
 Profile.Title = "Profile";
 Profile.Edit = "Edit";
 Profile.LogOut = "Log out";
+Profile.RegistrationDate = "Registraion date";
+Profile.QuizCount = "Tests count";
+Profile.QuizPassed = "Tests passed";
 
 EditQuiz.CreateTitle = "New test";
 EditQuiz.EditTitle = "Editing";
@@ -91,10 +94,10 @@ History.ItemResult = "Result: %d%%";
 History.NoContent = "No test passed yet";
 
 QuizResult.Title = "Result";
-QuizResult.Date = "Date:";
-QuizResult.QuestionsCount = "Questions count:";
-QuizResult.CorrectCount = "Correct count:";
-QuizResult.Percent = "Percent:";
+QuizResult.Date = "Date";
+QuizResult.QuestionsCount = "Questions count";
+QuizResult.CorrectCount = "Correct count";
+QuizResult.Percent = "Percent";
 QuizResult.AnswersHeader = "Answers";
 QuizResult.AnswerCorrect = "Correct";
 QuizResult.AnswerIncorrect = "Correct answer: %@";

@@ -43,6 +43,9 @@ SignUp.PasswordsNotMatch = "Пароли не совпадают";
 Profile.Title = "Профиль";
 Profile.Edit = "Редактировать";
 Profile.LogOut = "Выйти";
+Profile.RegistrationDate = "Дата регистрации";
+Profile.QuizCount = "Создано тестов";
+Profile.QuizPassed = "Пройдено тестов";
 
 EditQuiz.CreateTitle = "Новый тест";
 EditQuiz.EditTitle = "Редактирование";
@@ -91,10 +94,10 @@ History.ItemResult = "Результат: %d%%";
 History.NoContent = "Ни одного теста еще не пройдено";
 
 QuizResult.Title = "Результат";
-QuizResult.Date = "Дата прохождения:";
-QuizResult.QuestionsCount = "Всего вопросов:";
-QuizResult.CorrectCount = "Верных ответов:";
-QuizResult.Percent = "Процент:";
+QuizResult.Date = "Дата прохождения";
+QuizResult.QuestionsCount = "Всего вопросов";
+QuizResult.CorrectCount = "Верных ответов";
+QuizResult.Percent = "Процент";
 QuizResult.AnswersHeader = "Данные ответы";
 QuizResult.AnswerCorrect = "Верно";
 QuizResult.AnswerIncorrect = "Верный ответ: %@";

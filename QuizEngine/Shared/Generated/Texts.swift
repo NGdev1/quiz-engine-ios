@@ -142,6 +142,12 @@ internal enum Text {
     internal static let edit = Text.tr("Localizable", "Profile.Edit")
     /// Выйти
     internal static let logOut = Text.tr("Localizable", "Profile.LogOut")
+    /// Создано тестов
+    internal static let quizCount = Text.tr("Localizable", "Profile.QuizCount")
+    /// Пройдено тестов
+    internal static let quizPassed = Text.tr("Localizable", "Profile.QuizPassed")
+    /// Дата регистрации
+    internal static let registrationDate = Text.tr("Localizable", "Profile.RegistrationDate")
     /// Профиль
     internal static let title = Text.tr("Localizable", "Profile.Title")
   }
@@ -212,13 +218,13 @@ internal enum Text {
     internal static let answerIsNotGiven = Text.tr("Localizable", "QuizResult.AnswerIsNotGiven")
     /// Данные ответы
     internal static let answersHeader = Text.tr("Localizable", "QuizResult.AnswersHeader")
-    /// Верных ответов:
+    /// Верных ответов
     internal static let correctCount = Text.tr("Localizable", "QuizResult.CorrectCount")
-    /// Дата прохождения:
+    /// Дата прохождения
     internal static let date = Text.tr("Localizable", "QuizResult.Date")
-    /// Процент:
+    /// Процент
     internal static let percent = Text.tr("Localizable", "QuizResult.Percent")
-    /// Всего вопросов:
+    /// Всего вопросов
     internal static let questionsCount = Text.tr("Localizable", "QuizResult.QuestionsCount")
     /// Результат
     internal static let title = Text.tr("Localizable", "QuizResult.Title")

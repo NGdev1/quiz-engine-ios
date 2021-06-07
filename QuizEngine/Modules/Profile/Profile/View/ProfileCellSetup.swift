@@ -48,6 +48,27 @@ final class ProfileCellSetup {
         )
     }
 
+    func registrationDateCell(_ cell: TitleValueCell, for indexPath: IndexPath) {
+        cell.configure(
+            title: Text.Profile.registrationDate,
+            value: entity?.registrationDate?.getStringDescription()
+        )
+    }
+
+    func quizzesCountCell(_ cell: TitleValueCell, for indexPath: IndexPath) {
+        cell.configure(
+            title: Text.Profile.quizCount,
+            value: "\(entity?.quizzesCount ?? 0)"
+        )
+    }
+
+    func quizzesPassedCell(_ cell: TitleValueCell, for indexPath: IndexPath) {
+        cell.configure(
+            title: Text.Profile.quizPassed,
+            value: "\(entity?.quizzesPassedCount ?? 0)"
+        )
+    }
+
     func errorCell(_ cell: ErrorCell, for indexPath: IndexPath) {
         cell.configure(with: messageAboutError)
         cell.delegate = self
