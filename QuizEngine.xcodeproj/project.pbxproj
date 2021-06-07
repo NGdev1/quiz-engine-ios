@@ -640,7 +640,6 @@
 			children = (
 				8460280526681AA000A01F33 /* PublicQuiz */,
 				846028202668CA1D00A01F33 /* QuizPassing */,
-				8483D280266D1F7500CAC84C /* QuizResult */,
 				846027F72668161E00A01F33 /* Main */,
 				84D8B7C4266AD89D002C9CF4 /* Question */,
 			);
@@ -940,6 +939,7 @@
 			isa = PBXGroup;
 			children = (
 				8483D28D266E005100CAC84C /* History */,
+				8483D280266D1F7500CAC84C /* QuizResult */,
 			);
 			path = History;
 			sourceTree = "<group>";
