@@ -13,6 +13,8 @@ class QuizPassing: Codable {
     var quiz: Quiz?
     var questions: [Question]
     var answers: [QuestionAnswer]
+    var startDate: Date?
+    var result: Float?
 
     required init(from decoder: Decoder) throws {
         let map = try decoder.container(keyedBy: CodingKeys.self)
@@ -21,5 +23,11 @@ class QuizPassing: Codable {
         self.quiz = try? map.decode(Quiz.self, forKey: .quiz)
         self.questions = (try? map.decode([Question].self, forKey: .questions)) ?? []
         self.answers = (try? map.decode([QuestionAnswer].self, forKey: .answers)) ?? []
+        self.result = try? map.decode(Float.self, forKey: .result)
+        if let startDateString = try? map.decode(String.self, forKey: .startDate) {
+            let formatter = DateFormatter()
+            formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZZZ"
+            self.startDate = formatter.date(from: startDateString)
+        }
     }
 }

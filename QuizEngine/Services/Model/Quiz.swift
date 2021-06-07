@@ -13,7 +13,7 @@ class Quiz: Codable {
         self.title = .empty
         self.author = nil
         self.description = .empty
-        // self.startDate = nil
+        self.startDate = nil
         self.isAnyOrder = true
         self.isPublic = true
         self.questions = []
@@ -24,7 +24,7 @@ class Quiz: Codable {
     var title: String?
     var author: Profile?
     var description: String?
-    // var startDate: Date?
+    var startDate: Date?
     var isAnyOrder: Bool?
     var isPublic: Bool?
     var questions: [Question]
@@ -40,5 +40,10 @@ class Quiz: Codable {
         self.isPublic = try? map.decode(Bool.self, forKey: .isPublic)
         self.questions = (try? map.decode([Question].self, forKey: .questions)) ?? []
         self.participants = (try? map.decode([Profile].self, forKey: .participants)) ?? []
+        if let startDateString = try? map.decode(String.self, forKey: .startDate) {
+            let formatter = DateFormatter()
+            formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZZZ"
+            self.startDate = formatter.date(from: startDateString)
+        }
     }
 }

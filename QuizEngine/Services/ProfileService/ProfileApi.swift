@@ -10,6 +10,7 @@ import Storable
 
 enum ProfileApi {
     case get
+    case history
 }
 
 extension ProfileApi: TargetType {
@@ -21,12 +22,14 @@ extension ProfileApi: TargetType {
         switch self {
         case .get:
             return "/user"
+        case .history:
+            return "/user/history"
         }
     }
 
     var method: Moya.Method {
         switch self {
-        case .get:
+        case .get, .history:
             return .get
         }
     }
@@ -38,6 +41,8 @@ extension ProfileApi: TargetType {
     var task: Task {
         switch self {
         case .get:
+            return .requestPlain
+        case .history:
             return .requestPlain
         }
     }

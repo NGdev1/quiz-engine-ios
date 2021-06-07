@@ -8,15 +8,20 @@
 import UIKit
 
 class TabBarController: UITabBarController {
-    static let createTabIndex: Int = 1
-    static let quizListTabIndex: Int = 2
-    static let profileTabIndex: Int = 3
+    static let homeTabIndex: Int = 0
+    static let historyTabIndex: Int = 1
+    static let createTabIndex: Int = 2
+    static let quizListTabIndex: Int = 3
+    static let profileTabIndex: Int = 4
 
     init() {
         super.init(nibName: nil, bundle: nil)
         let home = UINavigationController(rootViewController: MainController())
         home.tabBarItem.image = Assets.tabBarIconHome.image
         home.tabBarItem.title = Text.Main.title
+        let history = UINavigationController(rootViewController: HistoryController())
+        history.tabBarItem.image = Assets.tabBarIconHistory.image
+        history.tabBarItem.title = Text.History.title
         let create = UINavigationController(rootViewController: EditQuizController(quiz: Quiz()))
         create.tabBarItem.image = Assets.tabBarIconAdd.image
         create.tabBarItem.title = Text.EditQuiz.tabBarTitle
@@ -26,7 +31,7 @@ class TabBarController: UITabBarController {
         let profile = UINavigationController(rootViewController: ProfileController())
         profile.tabBarItem.image = Assets.tabBarIconProfile.image
         profile.tabBarItem.title = Text.Profile.title
-        viewControllers = [home, create, quizList, profile]
+        viewControllers = [home, history, create, quizList, profile]
     }
 
     @available(*, unavailable)

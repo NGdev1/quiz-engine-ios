@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" rowHeight="116" id="KGk-i7-Jjw" customClass="HistoryItemCell" customModule="QuizEngine" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="402" height="116"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="372.5" height="116"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jTF-Ds-4nl">
+                        <rect key="frame" x="16" y="12" width="340.5" height="17"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <color key="textColor" name="Subtitle"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Test name" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XFD-8p-c4J">
+                        <rect key="frame" x="16" y="36" width="340.5" height="35"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Result" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S1v-Dm-5p6">
+                        <rect key="frame" x="16" y="83" width="340.5" height="17"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="S1v-Dm-5p6" secondAttribute="bottom" constant="16" id="1FH-jC-Grd"/>
+                    <constraint firstItem="S1v-Dm-5p6" firstAttribute="top" secondItem="XFD-8p-c4J" secondAttribute="bottom" constant="12" id="Nbd-Cl-q2U"/>
+                    <constraint firstItem="XFD-8p-c4J" firstAttribute="leading" secondItem="jTF-Ds-4nl" secondAttribute="leading" id="SRQ-iJ-EuW"/>
+                    <constraint firstItem="jTF-Ds-4nl" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="12" id="Xfr-c1-7Ds"/>
+                    <constraint firstItem="S1v-Dm-5p6" firstAttribute="trailing" secondItem="XFD-8p-c4J" secondAttribute="trailing" id="bl1-6E-pq2"/>
+                    <constraint firstAttribute="trailing" secondItem="jTF-Ds-4nl" secondAttribute="trailing" constant="16" id="d0w-aQ-s7g"/>
+                    <constraint firstItem="S1v-Dm-5p6" firstAttribute="leading" secondItem="XFD-8p-c4J" secondAttribute="leading" id="fbc-fh-9U3"/>
+                    <constraint firstItem="XFD-8p-c4J" firstAttribute="trailing" secondItem="jTF-Ds-4nl" secondAttribute="trailing" id="foL-eI-X3O"/>
+                    <constraint firstItem="XFD-8p-c4J" firstAttribute="top" secondItem="jTF-Ds-4nl" secondAttribute="bottom" constant="7" id="ubb-jr-uAb"/>
+                    <constraint firstItem="jTF-Ds-4nl" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="w4O-wk-BcY"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="dateLabel" destination="jTF-Ds-4nl" id="0dy-Tv-NFZ"/>
+                <outlet property="quizNameLabel" destination="XFD-8p-c4J" id="yDw-dj-akN"/>
+                <outlet property="resultLabel" destination="S1v-Dm-5p6" id="erX-O4-tQD"/>
+            </connections>
+            <point key="canvasLocation" x="105.79710144927537" y="152.67857142857142"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <namedColor name="Subtitle">
+            <color red="0.50196078431372548" green="0.50196078431372548" blue="0.50196078431372548" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

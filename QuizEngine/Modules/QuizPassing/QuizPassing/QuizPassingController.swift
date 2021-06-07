@@ -99,8 +99,8 @@ class QuizPassingController: UIViewController, QuizPassingControllerLogic {
     }
 
     func didFinishEndingPassing(_ quizPassing: QuizPassing) {
+        NotificationCenter.default.post(name: .userFinishedQuiz, object: quizPassing)
         dismiss(animated: true, completion: nil)
-        NotificationCenter.default.post(name: .userFinishedQuiz, object: nil)
     }
 
     func presentError(message: String) {

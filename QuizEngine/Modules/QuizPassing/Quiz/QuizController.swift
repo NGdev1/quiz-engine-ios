@@ -24,6 +24,10 @@ class QuizController: UIViewController, QuizControllerLogic {
 
     // MARK: - Init
 
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
+
     init(id: String, quiz: Quiz) {
         self.id = id
         self.quiz = quiz
@@ -46,6 +50,7 @@ class QuizController: UIViewController, QuizControllerLogic {
         setup()
         setupAppearance()
         loadQuiz()
+        addActionHandlers()
     }
 
     private func setup() {
@@ -57,6 +62,24 @@ class QuizController: UIViewController, QuizControllerLogic {
         extendedLayoutIncludesOpaqueBars = true
         title = Text.Quiz.title
         customView.setDelegate(self)
+    }
+
+    // MARK: - Action handlers
+
+    private func addActionHandlers() {
+        NotificationCenter.default.addObserver(
+            self, selector: #selector(userPassedQuiz(notification:)),
+            name: .userFinishedQuiz, object: nil
+        )
+    }
+
+    @objc
+    private func userPassedQuiz(notification: NSNotification) {
+        guard
+            let quizPassing = notification.object as? QuizPassing,
+            quizPassing.quiz?.id == id
+        else { return }
+        loadQuiz()
     }
 
     // MARK: - Network requests

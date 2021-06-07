@@ -118,6 +118,13 @@
 		8483D288266D249300CAC84C /* QuizResultController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8483D283266D249300CAC84C /* QuizResultController.swift */; };
 		8483D289266D249300CAC84C /* QuizResultInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8483D284266D249300CAC84C /* QuizResultInteractor.swift */; };
 		8483D28A266D249300CAC84C /* QuizResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8483D285266D249300CAC84C /* QuizResultView.swift */; };
+		8483D294266E015100CAC84C /* HistoryDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8483D28F266E015100CAC84C /* HistoryDataSource.swift */; };
+		8483D295266E015100CAC84C /* HistoryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8483D290266E015100CAC84C /* HistoryController.swift */; };
+		8483D296266E015100CAC84C /* HistoryInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8483D291266E015100CAC84C /* HistoryInteractor.swift */; };
+		8483D297266E015100CAC84C /* HistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8483D292266E015100CAC84C /* HistoryView.swift */; };
+		8483D29C266E0B3400CAC84C /* HistoryItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8483D29A266E0B3400CAC84C /* HistoryItemCell.swift */; };
+		8483D29D266E0B3400CAC84C /* HistoryItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8483D29B266E0B3400CAC84C /* HistoryItemCell.xib */; };
+		8483D29F266E0EEC00CAC84C /* Date+ToString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8483D29E266E0EEB00CAC84C /* Date+ToString.swift */; };
 		849E0008266296D2004EA4DB /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849E0007266296D2004EA4DB /* Question.swift */; };
 		849E000A2662977C004EA4DB /* QuestionOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849E00092662977C004EA4DB /* QuestionOption.swift */; };
 		849E000D2662992D004EA4DB /* TitleValueCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849E000B2662992D004EA4DB /* TitleValueCell.swift */; };
@@ -267,6 +274,13 @@
 		8483D283266D249300CAC84C /* QuizResultController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizResultController.swift; sourceTree = "<group>"; };
 		8483D284266D249300CAC84C /* QuizResultInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizResultInteractor.swift; sourceTree = "<group>"; };
 		8483D285266D249300CAC84C /* QuizResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizResultView.swift; sourceTree = "<group>"; };
+		8483D28F266E015100CAC84C /* HistoryDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryDataSource.swift; sourceTree = "<group>"; };
+		8483D290266E015100CAC84C /* HistoryController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryController.swift; sourceTree = "<group>"; };
+		8483D291266E015100CAC84C /* HistoryInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryInteractor.swift; sourceTree = "<group>"; };
+		8483D292266E015100CAC84C /* HistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryView.swift; sourceTree = "<group>"; };
+		8483D29A266E0B3400CAC84C /* HistoryItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryItemCell.swift; sourceTree = "<group>"; };
+		8483D29B266E0B3400CAC84C /* HistoryItemCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HistoryItemCell.xib; sourceTree = "<group>"; };
+		8483D29E266E0EEB00CAC84C /* Date+ToString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date+ToString.swift"; sourceTree = "<group>"; };
 		849E0007266296D2004EA4DB /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 		849E00092662977C004EA4DB /* QuestionOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionOption.swift; sourceTree = "<group>"; };
 		849E000B2662992D004EA4DB /* TitleValueCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleValueCell.swift; sourceTree = "<group>"; };
@@ -374,6 +388,7 @@
 				843B8C3C2660F22D00E6A999 /* TabBar */,
 				843B8C3F2660F47A00E6A999 /* Quiz */,
 				846027F62668161100A01F33 /* QuizPassing */,
+				8483D28C266E001500CAC84C /* History */,
 				84C1ACD42660C67500412B31 /* Auth */,
 				84C1ACD52660C68800412B31 /* Profile */,
 			);
@@ -791,6 +806,7 @@
 		8471F494265F9FAB007A7876 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				8483D29E266E0EEB00CAC84C /* Date+ToString.swift */,
 				8471F495265F9FAB007A7876 /* ExtensionFloat.swift */,
 				8471F497265F9FAB007A7876 /* ExtensionUIView.swift */,
 				8471F498265F9FAB007A7876 /* ExtensionUIImage.swift */,
@@ -912,6 +928,43 @@
 				8483D285266D249300CAC84C /* QuizResultView.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		8483D28C266E001500CAC84C /* History */ = {
+			isa = PBXGroup;
+			children = (
+				8483D28D266E005100CAC84C /* History */,
+			);
+			path = History;
+			sourceTree = "<group>";
+		};
+		8483D28D266E005100CAC84C /* History */ = {
+			isa = PBXGroup;
+			children = (
+				8483D290266E015100CAC84C /* HistoryController.swift */,
+				8483D291266E015100CAC84C /* HistoryInteractor.swift */,
+				8483D298266E018300CAC84C /* View */,
+			);
+			path = History;
+			sourceTree = "<group>";
+		};
+		8483D298266E018300CAC84C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				8483D28F266E015100CAC84C /* HistoryDataSource.swift */,
+				8483D292266E015100CAC84C /* HistoryView.swift */,
+				8483D299266E0B1700CAC84C /* HistoryItemCell */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		8483D299266E0B1700CAC84C /* HistoryItemCell */ = {
+			isa = PBXGroup;
+			children = (
+				8483D29A266E0B3400CAC84C /* HistoryItemCell.swift */,
+				8483D29B266E0B3400CAC84C /* HistoryItemCell.xib */,
+			);
+			path = HistoryItemCell;
 			sourceTree = "<group>";
 		};
 		849E00062662969C004EA4DB /* TitleValueCell */ = {
@@ -1128,6 +1181,7 @@
 				8471F4D7265FF90B007A7876 /* SignUpView.xib in Resources */,
 				841E4DC826629C99006EA814 /* QuestionCell.xib in Resources */,
 				84D8B7C3266AC830002C9CF4 /* QuestionPassingCell.xib in Resources */,
+				8483D29D266E0B3400CAC84C /* HistoryItemCell.xib in Resources */,
 				6B1755A02624A7E300DA7E84 /* LaunchScreen.storyboard in Resources */,
 				849E000E2662992D004EA4DB /* TitleValueCell.xib in Resources */,
 				84D7555E2662C06100428E70 /* AddItemCell.xib in Resources */,
@@ -1245,6 +1299,7 @@
 				84D7557C2662CAD900428E70 /* EditQuestionTableBuilder.swift in Sources */,
 				8483D286266D249300CAC84C /* QuizResultCellSetup.swift in Sources */,
 				846027FF2668162F00A01F33 /* MainController.swift in Sources */,
+				8483D294266E015100CAC84C /* HistoryDataSource.swift in Sources */,
 				842970EE266179CB0093305D /* EditQuizView.swift in Sources */,
 				843B8C352660C84F00E6A999 /* ServiceFactory.swift in Sources */,
 				84D7555D2662C06100428E70 /* AddItemCell.swift in Sources */,
@@ -1282,6 +1337,7 @@
 				843B8C542660F6D000E6A999 /* QuizServiceProtocol.swift in Sources */,
 				842970C726614A430093305D /* QuizService.swift in Sources */,
 				84C1ACD026603D4F00412B31 /* AuthService.swift in Sources */,
+				8483D296266E015100CAC84C /* HistoryInteractor.swift in Sources */,
 				84D8B7CB266AD8EF002C9CF4 /* QuestionOptionsDataSource.swift in Sources */,
 				842970DD266168290093305D /* GenericTableViewDataSource.swift in Sources */,
 				8483D289266D249300CAC84C /* QuizResultInteractor.swift in Sources */,
@@ -1298,6 +1354,7 @@
 				84414D6226625698006F2DAF /* SwitchCell.swift in Sources */,
 				84D8B7D6266B78C1002C9CF4 /* QuestionContentView.swift in Sources */,
 				842970C3266140530093305D /* ProfileApi.swift in Sources */,
+				8483D29C266E0B3400CAC84C /* HistoryItemCell.swift in Sources */,
 				846028002668162F00A01F33 /* MainInteractor.swift in Sources */,
 				84D7556F2662C9C700428E70 /* EditQuestionOptionCellSetup.swift in Sources */,
 				84C1ACD326603DC500412B31 /* GeneralErrors.swift in Sources */,
@@ -1307,6 +1364,7 @@
 				8471F4A4265F9FAB007A7876 /* Texts.swift in Sources */,
 				8471F4B0265FA0BD007A7876 /* MDTextArea.swift in Sources */,
 				843B8C482660F4B900E6A999 /* QuizListController.swift in Sources */,
+				8483D297266E015100CAC84C /* HistoryView.swift in Sources */,
 				843B8C582660F87A00E6A999 /* QuizCell.swift in Sources */,
 				849E000D2662992D004EA4DB /* TitleValueCell.swift in Sources */,
 				84D8B7D3266ADDBE002C9CF4 /* OptionRadioCell.swift in Sources */,
@@ -1317,6 +1375,7 @@
 				842970CE266166E70093305D /* ProfileCellSetup.swift in Sources */,
 				8483D287266D249300CAC84C /* QuizResultTableBuilder.swift in Sources */,
 				8460281426681F0E00A01F33 /* QuizHeaderCell.swift in Sources */,
+				8483D295266E015100CAC84C /* HistoryController.swift in Sources */,
 				842970D0266166E70093305D /* ProfileController.swift in Sources */,
 				84D8B7CE266AD8EF002C9CF4 /* QuestionView.swift in Sources */,
 				843B8C652660F8D400E6A999 /* ErrorCell.swift in Sources */,
@@ -1342,6 +1401,7 @@
 				8460282F2668FF2400A01F33 /* PassingHeaderCell.swift in Sources */,
 				842970C5266142FB0093305D /* QuizApi.swift in Sources */,
 				8460280E26681B0800A01F33 /* QuizInteractor.swift in Sources */,
+				8483D29F266E0EEC00CAC84C /* Date+ToString.swift in Sources */,
 				84D7556B2662C9C700428E70 /* EditQuestionOptionTableBuilder.swift in Sources */,
 				84414D6026625698006F2DAF /* TextFieldCell.swift in Sources */,
 				842970DC266168290093305D /* GenericTableViewDelegate.swift in Sources */,

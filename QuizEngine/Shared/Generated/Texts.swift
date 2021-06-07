@@ -31,6 +31,31 @@ internal enum Text {
     internal static let save = Text.tr("Localizable", "Common.Save")
   }
 
+  internal enum Date {
+    /// час назад
+    internal static let hourAgo = Text.tr("Localizable", "Date.HourAgo")
+    /// %d часа назад
+    internal static func hoursAgo2to5(_ p1: Int) -> String {
+      return Text.tr("Localizable", "Date.HoursAgo2to5", p1)
+    }
+    /// %d часов назад
+    internal static func hoursAgoFrom5(_ p1: Int) -> String {
+      return Text.tr("Localizable", "Date.HoursAgoFrom5", p1)
+    }
+    /// %d минут назад
+    internal static func nMinutesAgo(_ p1: Int) -> String {
+      return Text.tr("Localizable", "Date.NMinutesAgo", p1)
+    }
+    /// сейчас
+    internal static let now = Text.tr("Localizable", "Date.Now")
+    /// недавно
+    internal static let recently = Text.tr("Localizable", "Date.Recently")
+    /// завтра
+    internal static let tomorrow = Text.tr("Localizable", "Date.Tomorrow")
+    /// вчера
+    internal static let yesterday = Text.tr("Localizable", "Date.Yesterday")
+  }
+
   internal enum EditQuestion {
     /// Добавить вариант
     internal static let addOption = Text.tr("Localizable", "EditQuestion.AddOption")
@@ -85,6 +110,17 @@ internal enum Text {
     internal static let tryAgain = Text.tr("Localizable", "Errors.TryAgain")
     /// Неизвестная ошибка
     internal static let unknownError = Text.tr("Localizable", "Errors.UnknownError")
+  }
+
+  internal enum History {
+    /// Результат: %d%%
+    internal static func itemResult(_ p1: Int) -> String {
+      return Text.tr("Localizable", "History.ItemResult", p1)
+    }
+    /// Ни одного теста еще не пройдено
+    internal static let noContent = Text.tr("Localizable", "History.NoContent")
+    /// История
+    internal static let title = Text.tr("Localizable", "History.Title")
   }
 
   internal enum Main {

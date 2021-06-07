@@ -12,6 +12,15 @@ Common.Save = "Save";
 Common.Next = "Next";
 Common.FillInTheFields = "Fill in the fields";
 
+Date.Yesterday = "yesterday";
+Date.Tomorrow = "tomorrow";
+Date.Now = "now";
+Date.Recently = "recently";
+Date.NMinutesAgo = "%d minutes ago";
+Date.HourAgo = "hour ago";
+Date.HoursAgo2to5 = "%d hours ago";
+Date.HoursAgoFrom5 = "%d hours ago";
+
 Onboarding.Description = "Creating and passing tests or quizzes.";
 Onboarding.ContinueWithEmail = "Continue with Email";
 Onboarding.Registration = "Registration";
@@ -76,6 +85,10 @@ QuizPassing.Questions = "Questions";
 QuizPassing.HasAnswer = "Has answer";
 QuizPassing.HasNoAnswer = "Has no answer";
 QuizPassing.Finish = "Finish";
+
+History.Title = "History";
+History.ItemResult = "Result: %d%%";
+History.NoContent = "No test passed yet";
 
 Alert.Error = "Error";
 Alert.Cancel = "Cancel";

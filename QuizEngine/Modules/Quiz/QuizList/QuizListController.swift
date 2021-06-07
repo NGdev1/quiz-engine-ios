@@ -84,6 +84,7 @@ class QuizListController: UIViewController, QuizListControllerLogic {
 
     @objc
     private func userChangedQuizList(notification: NSNotification) {
+        customView.showLoading()
         loadQuizList()
     }
 

@@ -12,6 +12,15 @@ Common.Save = "Сохранить";
 Common.Next = "Далее";
 Common.FillInTheFields = "Заполните поля";
 
+Date.Yesterday = "вчера";
+Date.Tomorrow = "завтра";
+Date.Now = "сейчас";
+Date.Recently = "недавно";
+Date.NMinutesAgo = "%d минут назад";
+Date.HourAgo = "час назад";
+Date.HoursAgo2to5 = "%d часа назад";
+Date.HoursAgoFrom5 = "%d часов назад";
+
 Onboarding.Description = "Создание и прохождения тестов или викторин.";
 Onboarding.ContinueWithEmail = "Продолжить с Email";
 Onboarding.Registration = "Регистрация";
@@ -76,6 +85,10 @@ QuizPassing.Questions = "Вопросы";
 QuizPassing.HasAnswer = "Ответ дан";
 QuizPassing.HasNoAnswer = "Ответ не дан";
 QuizPassing.Finish = "Завершить";
+
+History.Title = "История";
+History.ItemResult = "Результат: %d%%";
+History.NoContent = "Ни одного теста еще не пройдено";
 
 Alert.Error = "Ошибка";
 Alert.Cancel = "Отмена";

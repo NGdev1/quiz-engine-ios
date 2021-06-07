@@ -7,4 +7,5 @@
 
 protocol ProfileServiceProtocol {
     func get(completion: @escaping (Profile?, Error?) -> Void)
+    func history(completion: @escaping ([QuizPassing]?, Error?) -> Void)
 }
