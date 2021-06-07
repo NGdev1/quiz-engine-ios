@@ -20,8 +20,8 @@ class QuestionInteractor: QuestionBusinessLogic {
                 self.controller?.presentError(message: error.localizedDescription)
                 return
             }
-            if let response = response {
-                self.controller?.didFinishAnswering(response)
+            if let response = response, response {
+                self.controller?.didFinishAnswering(answer)
             } else {
                 self.controller?.presentError(message: Text.Errors.requestError)
             }

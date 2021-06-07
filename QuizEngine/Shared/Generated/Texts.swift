@@ -201,6 +201,29 @@ internal enum Text {
     internal static let title = Text.tr("Localizable", "QuizPassing.Title")
   }
 
+  internal enum QuizResult {
+    /// Верно
+    internal static let answerCorrect = Text.tr("Localizable", "QuizResult.AnswerCorrect")
+    /// Верный ответ: %@
+    internal static func answerIncorrect(_ p1: Any) -> String {
+      return Text.tr("Localizable", "QuizResult.AnswerIncorrect", String(describing: p1))
+    }
+    /// Ответ не дан
+    internal static let answerIsNotGiven = Text.tr("Localizable", "QuizResult.AnswerIsNotGiven")
+    /// Данные ответы
+    internal static let answersHeader = Text.tr("Localizable", "QuizResult.AnswersHeader")
+    /// Верных ответов:
+    internal static let correctCount = Text.tr("Localizable", "QuizResult.CorrectCount")
+    /// Дата прохождения:
+    internal static let date = Text.tr("Localizable", "QuizResult.Date")
+    /// Процент:
+    internal static let percent = Text.tr("Localizable", "QuizResult.Percent")
+    /// Всего вопросов:
+    internal static let questionsCount = Text.tr("Localizable", "QuizResult.QuestionsCount")
+    /// Результат
+    internal static let title = Text.tr("Localizable", "QuizResult.Title")
+  }
+
   internal enum SignIn {
     /// Email
     internal static let email = Text.tr("Localizable", "SignIn.Email")

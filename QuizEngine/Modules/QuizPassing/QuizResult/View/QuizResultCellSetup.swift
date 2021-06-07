@@ -18,6 +18,8 @@ final class QuizResultCellSetup {
 
     private var tableView: UITableView
 
+    var firstQuestionIndex: Int = 0
+
     // MARK: - Init
 
     init(entity: QuizPassing?, tableView: UITableView) {
@@ -33,14 +35,32 @@ final class QuizResultCellSetup {
 
     // MARK: - Cells setup
 
-    func someCell(_ cell: UITableViewCell, for indexPath: IndexPath) {
-        cell.accessoryType = .disclosureIndicator
-        cell.textLabel?.text = "Some cell"
+    func dateCell(_ cell: TitleValueCell, for indexPath: IndexPath) {
+        cell.configure(title: Text.QuizResult.date, value: entity?.startDate?.getStringDescription())
     }
 
-    func otherCell(_ cell: UITableViewCell, for indexPath: IndexPath) {
-        cell.accessoryType = .disclosureIndicator
-        cell.textLabel?.text = "Other cell"
+    func questionsCountCell(_ cell: TitleValueCell, for indexPath: IndexPath) {
+        cell.configure(title: Text.QuizResult.questionsCount, value: "\(entity?.questions.count ?? 0)")
+    }
+
+    func correctCountCell(_ cell: TitleValueCell, for indexPath: IndexPath) {
+        let correctCount: Int = (entity?.answers ?? []).filter { $0.option?.isCorrect ?? false }.count
+        cell.configure(title: Text.QuizResult.correctCount, value: "\(correctCount)")
+    }
+
+    func percentCell(_ cell: TitleValueCell, for indexPath: IndexPath) {
+        cell.configure(title: Text.QuizResult.percent, value: "\(Int((entity?.result ?? 0.0) * 100))%")
+    }
+
+    func answersHeaderCell(_ cell: HeaderCell, for indexPath: IndexPath) {
+        cell.configure(title: Text.QuizResult.answersHeader)
+    }
+
+    func answerCell(_ cell: AnswerCell, for indexPath: IndexPath) {
+        guard let entity = entity else { return }
+        let question: Question = entity.questions[indexPath.row - firstQuestionIndex]
+        let answer: QuestionAnswer? = entity.answers.first { $0.question?.id == question.id }
+        cell.configure(question: question, answer: answer, delegate: self)
     }
 
     func errorCell(_ cell: ErrorCell, for indexPath: IndexPath) {
@@ -51,7 +71,7 @@ final class QuizResultCellSetup {
 
 // MARK: - Action handlers
 
-extension QuizResultCellSetup: ErrorCellDelegate {
+extension QuizResultCellSetup: ErrorCellDelegate, AnswerCellDelegate {
     func reloadData() {
         delegate?.reloadAction()
     }

@@ -154,6 +154,8 @@
 		84D8B7D4266ADDBE002C9CF4 /* OptionRadioCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84D8B7D2266ADDBE002C9CF4 /* OptionRadioCell.xib */; };
 		84D8B7D6266B78C1002C9CF4 /* QuestionContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D8B7D5266B78C1002C9CF4 /* QuestionContentView.swift */; };
 		84EDEF9D26642DC8008B6054 /* NotificationNames.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EDEF9C26642DC8008B6054 /* NotificationNames.swift */; };
+		84EDF691266E2B9D009F2049 /* AnswerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EDF68F266E2B9D009F2049 /* AnswerCell.swift */; };
+		84EDF692266E2B9D009F2049 /* AnswerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84EDF690266E2B9D009F2049 /* AnswerCell.xib */; };
 		9F1CEE51664DBCBFF0663BB3 /* Pods_QuizEngine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 297D1F10F2E6BB1D95805BF8 /* Pods_QuizEngine.framework */; };
 /* End PBXBuildFile section */
 
@@ -310,6 +312,8 @@
 		84D8B7D2266ADDBE002C9CF4 /* OptionRadioCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OptionRadioCell.xib; sourceTree = "<group>"; };
 		84D8B7D5266B78C1002C9CF4 /* QuestionContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionContentView.swift; sourceTree = "<group>"; };
 		84EDEF9C26642DC8008B6054 /* NotificationNames.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationNames.swift; sourceTree = "<group>"; };
+		84EDF68F266E2B9D009F2049 /* AnswerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerCell.swift; sourceTree = "<group>"; };
+		84EDF690266E2B9D009F2049 /* AnswerCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AnswerCell.xib; sourceTree = "<group>"; };
 		BDAEF4AAC22F56F1A80725AC /* Pods-QuizEngine.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QuizEngine.release.xcconfig"; path = "Target Support Files/Pods-QuizEngine/Pods-QuizEngine.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -926,6 +930,7 @@
 				8483D281266D249300CAC84C /* QuizResultCellSetup.swift */,
 				8483D282266D249300CAC84C /* QuizResultTableBuilder.swift */,
 				8483D285266D249300CAC84C /* QuizResultView.swift */,
+				84EDF68E266E2B8F009F2049 /* AnswerCell */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1106,6 +1111,15 @@
 			path = OptionRadioCell;
 			sourceTree = "<group>";
 		};
+		84EDF68E266E2B8F009F2049 /* AnswerCell */ = {
+			isa = PBXGroup;
+			children = (
+				84EDF68F266E2B9D009F2049 /* AnswerCell.swift */,
+				84EDF690266E2B9D009F2049 /* AnswerCell.xib */,
+			);
+			path = AnswerCell;
+			sourceTree = "<group>";
+		};
 		92ED8E02F8BCD69A96E6B040 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -1184,6 +1198,7 @@
 				8483D29D266E0B3400CAC84C /* HistoryItemCell.xib in Resources */,
 				6B1755A02624A7E300DA7E84 /* LaunchScreen.storyboard in Resources */,
 				849E000E2662992D004EA4DB /* TitleValueCell.xib in Resources */,
+				84EDF692266E2B9D009F2049 /* AnswerCell.xib in Resources */,
 				84D7555E2662C06100428E70 /* AddItemCell.xib in Resources */,
 				8460281526681F0E00A01F33 /* QuizHeaderCell.xib in Resources */,
 				8471F480265F992D007A7876 /* Localizable.strings in Resources */,
@@ -1357,6 +1372,7 @@
 				8483D29C266E0B3400CAC84C /* HistoryItemCell.swift in Sources */,
 				846028002668162F00A01F33 /* MainInteractor.swift in Sources */,
 				84D7556F2662C9C700428E70 /* EditQuestionOptionCellSetup.swift in Sources */,
+				84EDF691266E2B9D009F2049 /* AnswerCell.swift in Sources */,
 				84C1ACD326603DC500412B31 /* GeneralErrors.swift in Sources */,
 				8460285A266AAE2100A01F33 /* QuizPassingService.swift in Sources */,
 				8471F4B4265FB3F6007A7876 /* MDScrollView.swift in Sources */,

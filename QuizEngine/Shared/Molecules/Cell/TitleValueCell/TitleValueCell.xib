@@ -10,37 +10,46 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" rowHeight="96" id="KGk-i7-Jjw" customClass="TitleValueCell" customModule="QuizEngine" customModuleProvider="target">
+        <tableViewCell contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="default" indentationWidth="10" rowHeight="96" id="KGk-i7-Jjw" customClass="TitleValueCell" customModule="QuizEngine" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="402" height="96"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="372.5" height="96"/>
+                <rect key="frame" x="0.0" y="0.0" width="402" height="96"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zP1-D7-SG0">
-                        <rect key="frame" x="16" y="16" width="340.5" height="22"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                        <nil key="textColor"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zP1-D7-SG0">
+                        <rect key="frame" x="16" y="39.5" width="30" height="17"/>
+                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
+                        <color key="textColor" name="Gray"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dGr-No-Phx">
-                        <rect key="frame" x="20" y="46" width="340.5" height="22"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="value" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dGr-No-Phx">
+                        <rect key="frame" x="52" y="14" width="334" height="68"/>
+                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
                         <color key="textColor" name="Subtitle"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="trailing" secondItem="zP1-D7-SG0" secondAttribute="trailing" constant="16" id="8E6-9J-lHI"/>
+                    <constraint firstAttribute="bottom" secondItem="dGr-No-Phx" secondAttribute="bottom" constant="14" id="43d-aM-Acs"/>
+                    <constraint firstItem="dGr-No-Phx" firstAttribute="leading" secondItem="zP1-D7-SG0" secondAttribute="trailing" constant="6" id="BQ2-VX-6mV"/>
                     <constraint firstItem="zP1-D7-SG0" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="DA7-2s-phD"/>
-                    <constraint firstItem="zP1-D7-SG0" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="16" id="ySU-aR-Q04"/>
+                    <constraint firstItem="dGr-No-Phx" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="14" id="Ebu-5G-S7a"/>
+                    <constraint firstAttribute="trailing" secondItem="dGr-No-Phx" secondAttribute="trailing" constant="16" id="N8k-rz-25v"/>
+                    <constraint firstItem="zP1-D7-SG0" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="moP-7W-aR0"/>
                 </constraints>
             </tableViewCellContentView>
-            <point key="canvasLocation" x="123" y="146"/>
+            <connections>
+                <outlet property="titleLabel" destination="zP1-D7-SG0" id="bhk-Ct-Ll1"/>
+                <outlet property="valueLabel" destination="dGr-No-Phx" id="4Cr-vE-a1K"/>
+            </connections>
+            <point key="canvasLocation" x="121.73913043478262" y="145.98214285714286"/>
         </tableViewCell>
     </objects>
     <resources>
+        <namedColor name="Gray">
+            <color red="0.70196078431372544" green="0.70196078431372544" blue="0.70196078431372544" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="Subtitle">
             <color red="0.50196078431372548" green="0.50196078431372548" blue="0.50196078431372548" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

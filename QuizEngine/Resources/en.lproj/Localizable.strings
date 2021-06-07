@@ -90,6 +90,16 @@ History.Title = "History";
 History.ItemResult = "Result: %d%%";
 History.NoContent = "No test passed yet";
 
+QuizResult.Title = "Result";
+QuizResult.Date = "Date:";
+QuizResult.QuestionsCount = "Questions count:";
+QuizResult.CorrectCount = "Correct count:";
+QuizResult.Percent = "Percent:";
+QuizResult.AnswersHeader = "Answers";
+QuizResult.AnswerCorrect = "Correct";
+QuizResult.AnswerIncorrect = "Correct answer: %@";
+QuizResult.AnswerIsNotGiven = "Answer is not given";
+
 Alert.Error = "Error";
 Alert.Cancel = "Cancel";
 

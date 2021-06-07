@@ -90,6 +90,16 @@ History.Title = "История";
 History.ItemResult = "Результат: %d%%";
 History.NoContent = "Ни одного теста еще не пройдено";
 
+QuizResult.Title = "Результат";
+QuizResult.Date = "Дата прохождения:";
+QuizResult.QuestionsCount = "Всего вопросов:";
+QuizResult.CorrectCount = "Верных ответов:";
+QuizResult.Percent = "Процент:";
+QuizResult.AnswersHeader = "Данные ответы";
+QuizResult.AnswerCorrect = "Верно";
+QuizResult.AnswerIncorrect = "Верный ответ: %@";
+QuizResult.AnswerIsNotGiven = "Ответ не дан";
+
 Alert.Error = "Ошибка";
 Alert.Cancel = "Отмена";
 

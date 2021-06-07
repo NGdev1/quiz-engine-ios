@@ -92,10 +92,19 @@ final class QuizResultTableBuilder {
     }
 
     private func buildFullTableStructure() {
-        let rowsSequence: [Row] = [
-            Row(cellsSetup.someCell(_:for:)),
-            Row(cellsSetup.otherCell(_:for:)),
+        var rowsSequence: [Row] = [
+            Row(cellsSetup.dateCell(_:for:), fromNib: true, bundle: resourcesBundle),
+            Row(cellsSetup.questionsCountCell(_:for:), fromNib: true, bundle: resourcesBundle),
+            Row(cellsSetup.correctCountCell(_:for:), fromNib: true, bundle: resourcesBundle),
+            Row(cellsSetup.percentCell(_:for:), fromNib: true, bundle: resourcesBundle),
+            Row(cellsSetup.answersHeaderCell(_:for:), fromNib: true, bundle: resourcesBundle),
         ]
+        cellsSetup.firstQuestionIndex = rowsSequence.count
+        for _ in entity?.questions ?? [] {
+            rowsSequence.append(
+                Row(cellsSetup.answerCell(_:for:), fromNib: true, bundle: resourcesBundle)
+            )
+        }
         setRowsSequenceToDataStorage(rowsSequence: rowsSequence)
     }
 

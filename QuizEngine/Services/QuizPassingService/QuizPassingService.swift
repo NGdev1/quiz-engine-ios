@@ -44,7 +44,7 @@ class QuizPassingService: QuizPassingServiceProtocol {
 
     func giveAnswer(
         quizId: String, passingId: Int, answer: QuestionAnswer,
-        completion: @escaping (QuestionAnswer?, Error?) -> Void
+        completion: @escaping (Bool?, Error?) -> Void
     ) {
         dataProvider.request(.giveAnswer(quizId: quizId, passingId: passingId, answer: answer)) { result in
             switch result {
@@ -62,12 +62,7 @@ class QuizPassingService: QuizPassingServiceProtocol {
                     }
                     return
                 }
-                do {
-                    let response = try moyaResponse.map(QuestionAnswer.self)
-                    completion(response, nil)
-                } catch {
-                    completion(nil, error)
-                }
+                completion(true, nil)
             case let .failure(error):
                 completion(nil, error)
             }

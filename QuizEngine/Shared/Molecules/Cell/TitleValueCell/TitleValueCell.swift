@@ -7,12 +7,11 @@
 
 import UIKit
 
-protocol TitleValueCellDelegate: AnyObject {}
-
 final class TitleValueCell: UITableViewCell {
     // MARK: - Properties
 
-    weak var delegate: TitleValueCellDelegate?
+    @IBOutlet var titleLabel: UILabel!
+    @IBOutlet var valueLabel: UILabel!
 
     // MARK: - Xib init
 
@@ -30,10 +29,8 @@ final class TitleValueCell: UITableViewCell {
 
     // MARK: - Internal methods
 
-    func configure(
-        delegate: TitleValueCellDelegate,
-        title: String, value: String
-    ) {
-        self.delegate = delegate
+    func configure(title: String?, value: String?) {
+        titleLabel.text = title
+        valueLabel.text = value
     }
 }
