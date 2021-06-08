@@ -20,7 +20,7 @@ class QuizController: UIViewController, QuizControllerLogic {
 
     let generator = UINotificationFeedbackGenerator()
     let id: String
-    let quiz: Quiz
+    var quiz: Quiz
 
     // MARK: - Init
 
@@ -49,7 +49,9 @@ class QuizController: UIViewController, QuizControllerLogic {
         super.viewDidLoad()
         setup()
         setupAppearance()
+        customView.showLoading()
         loadQuiz()
+        addActionHandlers()
     }
 
     private func setup() {
@@ -63,20 +65,59 @@ class QuizController: UIViewController, QuizControllerLogic {
         customView.setDelegate(self)
     }
 
+    // MARK: - Action handlers
+
+    private func addActionHandlers() {
+        NotificationCenter.default.addObserver(
+            self, selector: #selector(userPassedQuiz(notification:)),
+            name: .userFinishedQuiz, object: nil
+        )
+        NotificationCenter.default.addObserver(
+            self, selector: #selector(userChangedQuiz(notification:)),
+            name: .userChangedQuiz, object: nil
+        )
+        customView.tableView.refreshControl?.addTarget(
+            self,
+            action: #selector(loadQuiz),
+            for: .valueChanged
+        )
+    }
+
+    @objc
+    private func userPassedQuiz(notification: NSNotification) {
+        guard
+            let quizPassing = notification.object as? QuizPassing,
+            quizPassing.quiz?.id == id
+        else { return }
+        customView.showLoading()
+        loadQuiz()
+    }
+
+    @objc
+    private func userChangedQuiz(notification: NSNotification) {
+        guard let quiz = notification.object as? Quiz, quiz.id == id
+        else { return }
+        self.quiz = quiz
+        customView.showLoading()
+        loadQuiz()
+    }
+
     // MARK: - Network requests
 
+    @objc
     private func loadQuiz() {
-        customView.showLoading()
         interactor?.loadQuiz(id: id)
     }
 
     // MARK: - QuizControllerLogic
 
     func presentQuiz(_ entity: Quiz) {
+        customView.tableView.refreshControl?.endRefreshing()
         customView.updateAppearance(with: entity)
     }
 
     func presentError(message: String) {
+        customView.tableView.refreshControl?.endRefreshing()
         generator.notificationOccurred(.error)
         customView.showError(message: message)
     }
@@ -92,6 +133,7 @@ extension QuizController: QuizCellSetupDelegate {
     }
 
     func reloadAction() {
+        customView.showLoading()
         loadQuiz()
     }
 }

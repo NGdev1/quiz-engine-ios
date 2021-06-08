@@ -10,7 +10,7 @@ import MDFoundation
 final class QuizView: UIView {
     // MARK: - Properties
 
-    private var tableView: UITableView = {
+    var tableView: UITableView = {
         let tableView = UITableView(frame: UIScreen.main.bounds)
         tableView.tableFooterView = UIView()
         tableView.allowsSelection = false
@@ -44,6 +44,7 @@ final class QuizView: UIView {
     }
 
     private func setupStyle() {
+        tableView.refreshControl = UIRefreshControl()
         tableView.backgroundColor = Assets.background1.color
     }
 

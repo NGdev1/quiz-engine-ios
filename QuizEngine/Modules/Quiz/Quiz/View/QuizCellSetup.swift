@@ -43,6 +43,10 @@ final class QuizCellSetup {
         cell.configure(quiz: quiz, delegate: self)
     }
 
+    func editingNotAvaliableCell(_ cell: SimpleTextCell, for indexPath: IndexPath) {
+        cell.configure(text: Text.Quiz.editingNotAvaliable, topAndBottomInsets: 8)
+    }
+
     func editCell(_ cell: ButtonCell, for indexPath: IndexPath) {
         cell.configure(text: Text.Quiz.edit, index: editButtonIndex, isEnabled: true, delegate: self)
     }

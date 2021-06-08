@@ -80,6 +80,7 @@ Main.NoContent = "Нет доступних публичных тестов";
 
 Quiz.Title = "Тест";
 Quiz.Edit = "Редактировать";
+Quiz.EditingNotAvaliable = "Редактирование недоступно т. к. имеются участники";
 Quiz.QuestionsCount = "Кол-во вопросов: %d";
 Quiz.Start = "Начать";
 Quiz.Author = "Автор";

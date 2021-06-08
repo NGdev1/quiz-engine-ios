@@ -101,7 +101,8 @@ class EditQuizController: UIViewController, EditQuizControllerLogic {
     }
 
     func didFinishSavingQuiz(_ quiz: Quiz) {
-        NotificationCenter.default.post(name: .userChangedQuizList, object: quiz)
+        NotificationCenter.default.post(name: .userChangedQuizList, object: nil)
+        NotificationCenter.default.post(name: .userChangedQuiz, object: quiz)
         self.quiz = Quiz()
         customView.updateAppearance(with: self.quiz)
         tabBarController?.selectedIndex = TabBarController.quizListTabIndex
@@ -109,7 +110,8 @@ class EditQuizController: UIViewController, EditQuizControllerLogic {
     }
 
     func didFinishUpdatingQuiz(_ quiz: Quiz) {
-        NotificationCenter.default.post(name: .userChangedQuizList, object: quiz)
+        NotificationCenter.default.post(name: .userChangedQuizList, object: nil)
+        NotificationCenter.default.post(name: .userChangedQuiz, object: quiz)
         self.quiz = Quiz()
         customView.updateAppearance(with: self.quiz)
         tabBarController?.selectedIndex = TabBarController.quizListTabIndex

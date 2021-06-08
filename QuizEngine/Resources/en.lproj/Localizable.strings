@@ -80,6 +80,7 @@ Main.NoContent = "No public avaliable tests";
 
 Quiz.Title = "Test";
 Quiz.Edit = "Edit";
+Quiz.EditingNotAvaliable = "Editing is not avaliable";
 Quiz.QuestionsCount = "Number of questions: %d";
 Quiz.Start = "Start";
 Quiz.Author = "Author";

@@ -177,6 +177,8 @@ internal enum Text {
     internal static let author = Text.tr("Localizable", "Quiz.Author")
     /// Редактировать
     internal static let edit = Text.tr("Localizable", "Quiz.Edit")
+    /// Редактирование недоступно т. к. имеются участники
+    internal static let editingNotAvaliable = Text.tr("Localizable", "Quiz.EditingNotAvaliable")
     /// Нет участников
     internal static let noParticipants = Text.tr("Localizable", "Quiz.NoParticipants")
     /// %@, кол-во попыток: %d

@@ -92,13 +92,24 @@ final class QuizTableBuilder {
     }
 
     private func buildFullTableStructure() {
+        let participants: [Participant] = entity?.participants ?? []
         var rowsSequence: [Row] = [
             Row(cellsSetup.quizHeaderCell(_:for:), fromNib: true, bundle: resourcesBundle),
-            Row(cellsSetup.editCell(_:for:), fromNib: true, bundle: resourcesBundle),
-            Row(cellsSetup.participantsHeaderCell(_:for:), fromNib: true, bundle: resourcesBundle),
         ]
+        if participants.isEmpty {
+            rowsSequence.append(
+                Row(cellsSetup.editCell(_:for:), fromNib: true, bundle: resourcesBundle)
+            )
+        } else {
+            rowsSequence.append(
+                Row(cellsSetup.editingNotAvaliableCell(_:for:))
+            )
+        }
+        rowsSequence.append(
+            Row(cellsSetup.participantsHeaderCell(_:for:), fromNib: true, bundle: resourcesBundle)
+        )
+
         cellsSetup.firstParticipantIndex = rowsSequence.count
-        let participants: [Participant] = entity?.participants ?? []
         if participants.isEmpty {
             rowsSequence.append(
                 Row(cellsSetup.noParticipantsCell(_:for:))
