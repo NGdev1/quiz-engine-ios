@@ -92,10 +92,18 @@ final class ParticipantTableBuilder {
     }
 
     private func buildFullTableStructure() {
-        let rowsSequence: [Row] = [
-            Row(cellsSetup.someCell(_:for:)),
-            Row(cellsSetup.otherCell(_:for:)),
+        var rowsSequence: [Row] = [
+            Row(cellsSetup.profileHeaderCell(_:for:), fromNib: true, bundle: resourcesBundle),
+            Row(cellsSetup.pirsonValueCell(_:for:)),
+            Row(cellsSetup.spirmenBrownCell(_:for:)),
+            Row(cellsSetup.resultsHeaderCell(_:for:), fromNib: true, bundle: resourcesBundle),
         ]
+        cellsSetup.firstIndexPath = rowsSequence.count
+        for _ in entity?.results ?? [] {
+            rowsSequence.append(
+                Row(cellsSetup.quizPassingCell(_:for:), fromNib: true, bundle: resourcesBundle)
+            )
+        }
         setRowsSequenceToDataStorage(rowsSequence: rowsSequence)
     }
 

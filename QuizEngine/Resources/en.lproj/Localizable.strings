@@ -110,6 +110,8 @@ QuizResult.AnswerIncorrect = "Correct answer: %@";
 QuizResult.AnswerIsNotGiven = "Answer is not given";
 
 ParticipantResults.Title = "Participant";
+ParticipantResults.PassingsHeader = "Results";
+ParticipantResults.CorrectAnswersCount = "Correct answers count: %@";
 
 Alert.Error = "Error";
 Alert.Cancel = "Cancel";

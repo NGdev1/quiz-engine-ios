@@ -82,6 +82,10 @@ class ParticipantController: UIViewController, ParticipantControllerLogic {
 // MARK: - ParticipantCellSetupDelegate
 
 extension ParticipantController: ParticipantCellSetupDelegate {
+    func didSelectQuizPasing(_ passing: QuizPassing) {
+        navigationController?.pushViewController(QuizResultController(quizId: quizId, passingId: passing.id))
+    }
+
     func reloadAction() {
         loadParticipant()
     }

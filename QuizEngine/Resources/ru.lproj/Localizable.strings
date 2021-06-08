@@ -110,6 +110,8 @@ QuizResult.AnswerIncorrect = "Верный ответ: %@";
 QuizResult.AnswerIsNotGiven = "Ответ не дан";
 
 ParticipantResults.Title = "Участник";
+ParticipantResults.PassingsHeader = "Прохождения теста";
+ParticipantResults.CorrectAnswersCount = "Верных ответов: %@";
 
 Alert.Error = "Ошибка";
 Alert.Cancel = "Отмена";

@@ -140,6 +140,12 @@ internal enum Text {
   }
 
   internal enum ParticipantResults {
+    /// Верных ответов: %@
+    internal static func correctAnswersCount(_ p1: Any) -> String {
+      return Text.tr("Localizable", "ParticipantResults.CorrectAnswersCount", String(describing: p1))
+    }
+    /// Прохождения теста
+    internal static let passingsHeader = Text.tr("Localizable", "ParticipantResults.PassingsHeader")
     /// Участник
     internal static let title = Text.tr("Localizable", "ParticipantResults.Title")
   }

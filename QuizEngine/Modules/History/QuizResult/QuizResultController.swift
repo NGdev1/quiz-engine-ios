@@ -55,7 +55,7 @@ class QuizResultController: UIViewController, QuizResultControllerLogic {
 
     private func setupAppearance() {
         extendedLayoutIncludesOpaqueBars = true
-        title = Text.QuizPassing.title
+        title = Text.QuizResult.title
         customView.setDelegate(self)
     }
 

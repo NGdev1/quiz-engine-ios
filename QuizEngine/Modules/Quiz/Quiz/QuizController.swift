@@ -126,7 +126,10 @@ class QuizController: UIViewController, QuizControllerLogic {
 // MARK: - QuizCellSetupDelegate
 
 extension QuizController: QuizCellSetupDelegate {
-    func showAllAttemptsOf(user: Profile) {}
+    func showAllAttemptsOf(user: Profile) {
+        guard let quizId = quiz.id else { return }
+        navigationController?.pushViewController(ParticipantController(quizId: quizId, participantId: user.id))
+    }
 
     func editQuiz() {
         navigationController?.pushViewController(EditQuizController(quiz: quiz))

@@ -64,6 +64,8 @@
 		84414D7226629472006F2DAF /* HeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84414D7026629472006F2DAF /* HeaderCell.swift */; };
 		84414D7326629472006F2DAF /* HeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84414D7126629472006F2DAF /* HeaderCell.xib */; };
 		8443F3D0266FD30200504C10 /* PublicQuizModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8443F3CF266FD30200504C10 /* PublicQuizModels.swift */; };
+		8443F3D5266FE31A00504C10 /* QuizPassingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8443F3D3266FE31A00504C10 /* QuizPassingCell.swift */; };
+		8443F3D6266FE31A00504C10 /* QuizPassingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8443F3D4266FE31A00504C10 /* QuizPassingCell.xib */; };
 		846027FF2668162F00A01F33 /* MainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846027FA2668162F00A01F33 /* MainController.swift */; };
 		846028002668162F00A01F33 /* MainInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846027FB2668162F00A01F33 /* MainInteractor.swift */; };
 		846028012668162F00A01F33 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846027FC2668162F00A01F33 /* MainView.swift */; };
@@ -235,6 +237,8 @@
 		84414D7026629472006F2DAF /* HeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderCell.swift; sourceTree = "<group>"; };
 		84414D7126629472006F2DAF /* HeaderCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeaderCell.xib; sourceTree = "<group>"; };
 		8443F3CF266FD30200504C10 /* PublicQuizModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublicQuizModels.swift; sourceTree = "<group>"; };
+		8443F3D3266FE31A00504C10 /* QuizPassingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizPassingCell.swift; sourceTree = "<group>"; };
+		8443F3D4266FE31A00504C10 /* QuizPassingCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QuizPassingCell.xib; sourceTree = "<group>"; };
 		846027FA2668162F00A01F33 /* MainController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainController.swift; sourceTree = "<group>"; };
 		846027FB2668162F00A01F33 /* MainInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainInteractor.swift; sourceTree = "<group>"; };
 		846027FC2668162F00A01F33 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
@@ -452,6 +456,7 @@
 				841BBDDE266F8AB000AB9252 /* ParticipantCellSetup.swift */,
 				841BBDDF266F8AB000AB9252 /* ParticipantTableBuilder.swift */,
 				841BBDE2266F8AB000AB9252 /* ParticipantView.swift */,
+				8443F3D2266FE2E500504C10 /* QuizPassingCell */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -682,6 +687,15 @@
 				84414D7126629472006F2DAF /* HeaderCell.xib */,
 			);
 			path = HeaderCell;
+			sourceTree = "<group>";
+		};
+		8443F3D2266FE2E500504C10 /* QuizPassingCell */ = {
+			isa = PBXGroup;
+			children = (
+				8443F3D3266FE31A00504C10 /* QuizPassingCell.swift */,
+				8443F3D4266FE31A00504C10 /* QuizPassingCell.xib */,
+			);
+			path = QuizPassingCell;
 			sourceTree = "<group>";
 		};
 		846027F62668161100A01F33 /* QuizPassing */ = {
@@ -1283,6 +1297,7 @@
 				84EDF692266E2B9D009F2049 /* AnswerCell.xib in Resources */,
 				84D7555E2662C06100428E70 /* AddItemCell.xib in Resources */,
 				8460281526681F0E00A01F33 /* QuizHeaderCell.xib in Resources */,
+				8443F3D6266FE31A00504C10 /* QuizPassingCell.xib in Resources */,
 				8471F480265F992D007A7876 /* Localizable.strings in Resources */,
 				842970E326616D700093305D /* ProfileHeaderCell.xib in Resources */,
 				84D8B7D4266ADDBE002C9CF4 /* OptionRadioCell.xib in Resources */,
@@ -1420,6 +1435,7 @@
 				8471F4A5265F9FAB007A7876 /* ExtensionFloat.swift in Sources */,
 				8460280B26681B0800A01F33 /* PublicQuizCellSetup.swift in Sources */,
 				8471F478265F95E5007A7876 /* OnboardingController.swift in Sources */,
+				8443F3D5266FE31A00504C10 /* QuizPassingCell.swift in Sources */,
 				843B8C492660F4B900E6A999 /* QuizListInteractor.swift in Sources */,
 				8460285B266AAE2100A01F33 /* QuizPassingServiceProtocol.swift in Sources */,
 				846028272668CC1800A01F33 /* QuizPassingTableBuilder.swift in Sources */,
