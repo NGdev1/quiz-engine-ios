@@ -47,8 +47,8 @@ final class HistoryDataSource: NSObject {
             forCellReuseIdentifier: ErrorCell.identifier
         )
         tableView.register(
-            NoContentCell.self,
-            forCellReuseIdentifier: NoContentCell.identifier
+            SimpleTextCell.self,
+            forCellReuseIdentifier: SimpleTextCell.identifier
         )
         tableView.register(
             LoadingCell.self,
@@ -111,9 +111,9 @@ extension HistoryDataSource: UITableViewDataSource {
             return cell ?? UITableViewCell()
         case .noContent:
             let cell = tableView.dequeueReusableCell(
-                withIdentifier: NoContentCell.identifier,
+                withIdentifier: SimpleTextCell.identifier,
                 for: indexPath
-            ) as? NoContentCell
+            ) as? SimpleTextCell
             cell?.configure(text: Text.History.noContent)
             return cell ?? UITableViewCell()
         case .presentingList:

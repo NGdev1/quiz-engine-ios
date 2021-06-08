@@ -59,8 +59,8 @@ final class PublicQuizCellSetup {
         cell.configure(title: Text.Quiz.participants)
     }
 
-    func noParticipantsCell(_ cell: NoContentCell, for indexPath: IndexPath) {
-        cell.configure(text: Text.Quiz.noParticipants, height: 20)
+    func noParticipantsCell(_ cell: SimpleTextCell, for indexPath: IndexPath) {
+        cell.configure(text: Text.Quiz.noParticipants, topAndBottomInsets: 8)
     }
 
     func participantCell(_ cell: ProfileCell, for indexPath: IndexPath) {

@@ -46,7 +46,7 @@
 		843B8C542660F6D000E6A999 /* QuizServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843B8C512660F6D000E6A999 /* QuizServiceProtocol.swift */; };
 		843B8C582660F87A00E6A999 /* QuizCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843B8C562660F87A00E6A999 /* QuizCell.swift */; };
 		843B8C592660F87A00E6A999 /* QuizCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 843B8C572660F87A00E6A999 /* QuizCell.xib */; };
-		843B8C622660F8D400E6A999 /* NoContentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843B8C5C2660F8D400E6A999 /* NoContentCell.swift */; };
+		843B8C622660F8D400E6A999 /* SimpleTextCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843B8C5C2660F8D400E6A999 /* SimpleTextCell.swift */; };
 		843B8C632660F8D400E6A999 /* LoadingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843B8C5E2660F8D400E6A999 /* LoadingCell.swift */; };
 		843B8C642660F8D400E6A999 /* ErrorCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 843B8C602660F8D400E6A999 /* ErrorCell.xib */; };
 		843B8C652660F8D400E6A999 /* ErrorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843B8C612660F8D400E6A999 /* ErrorCell.swift */; };
@@ -211,7 +211,7 @@
 		843B8C512660F6D000E6A999 /* QuizServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizServiceProtocol.swift; sourceTree = "<group>"; };
 		843B8C562660F87A00E6A999 /* QuizCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizCell.swift; sourceTree = "<group>"; };
 		843B8C572660F87A00E6A999 /* QuizCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QuizCell.xib; sourceTree = "<group>"; };
-		843B8C5C2660F8D400E6A999 /* NoContentCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoContentCell.swift; sourceTree = "<group>"; };
+		843B8C5C2660F8D400E6A999 /* SimpleTextCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimpleTextCell.swift; sourceTree = "<group>"; };
 		843B8C5E2660F8D400E6A999 /* LoadingCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingCell.swift; sourceTree = "<group>"; };
 		843B8C602660F8D400E6A999 /* ErrorCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ErrorCell.xib; sourceTree = "<group>"; };
 		843B8C612660F8D400E6A999 /* ErrorCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorCell.swift; sourceTree = "<group>"; };
@@ -576,19 +576,19 @@
 				84414D5926625698006F2DAF /* SwitchCell */,
 				84414D5C26625698006F2DAF /* TextAreaCell */,
 				84414D5726625697006F2DAF /* TextFieldCell */,
-				843B8C5B2660F8D400E6A999 /* NoContentCell */,
+				843B8C5B2660F8D400E6A999 /* SimpleTextCell */,
 				843B8C5D2660F8D400E6A999 /* LoadingCell */,
 				843B8C5F2660F8D400E6A999 /* ErrorCell */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
 		};
-		843B8C5B2660F8D400E6A999 /* NoContentCell */ = {
+		843B8C5B2660F8D400E6A999 /* SimpleTextCell */ = {
 			isa = PBXGroup;
 			children = (
-				843B8C5C2660F8D400E6A999 /* NoContentCell.swift */,
+				843B8C5C2660F8D400E6A999 /* SimpleTextCell.swift */,
 			);
-			path = NoContentCell;
+			path = SimpleTextCell;
 			sourceTree = "<group>";
 		};
 		843B8C5D2660F8D400E6A999 /* LoadingCell */ = {
@@ -654,9 +654,9 @@
 		846027F62668161100A01F33 /* QuizPassing */ = {
 			isa = PBXGroup;
 			children = (
+				846027F72668161E00A01F33 /* Main */,
 				8460280526681AA000A01F33 /* PublicQuiz */,
 				846028202668CA1D00A01F33 /* QuizPassing */,
-				846027F72668161E00A01F33 /* Main */,
 				84D8B7C4266AD89D002C9CF4 /* Question */,
 			);
 			path = QuizPassing;
@@ -1456,7 +1456,7 @@
 				8460285D266AAE8200A01F33 /* QuizPassingApi.swift in Sources */,
 				849E0008266296D2004EA4DB /* Question.swift in Sources */,
 				8471F4A3265F9FAB007A7876 /* Fonts.swift in Sources */,
-				843B8C622660F8D400E6A999 /* NoContentCell.swift in Sources */,
+				843B8C622660F8D400E6A999 /* SimpleTextCell.swift in Sources */,
 				84414D7226629472006F2DAF /* HeaderCell.swift in Sources */,
 				8483D28A266D249300CAC84C /* QuizResultView.swift in Sources */,
 				846028012668162F00A01F33 /* MainView.swift in Sources */,

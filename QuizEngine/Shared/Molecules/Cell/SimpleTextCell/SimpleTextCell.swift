@@ -1,5 +1,5 @@
 //
-//  NoContentCell.swift
+//  SimpleTextCell.swift
 //  General
 //
 //  Created by Михаил Андреичев on 06.03.2020.
@@ -8,10 +8,10 @@
 import MDFoundation
 import SnapKit
 
-final class NoContentCell: UITableViewCell {
+final class SimpleTextCell: UITableViewCell {
     // MARK: - Init
 
-    lazy var noContentLabel: UILabel = {
+    lazy var messageLabel: UILabel = {
         let label = UILabel()
         label.font = Fonts.SFUIDisplay.bold.font(size: 18)
         label.textColor = Assets.gray.color
@@ -48,23 +48,23 @@ final class NoContentCell: UITableViewCell {
     }
 
     private func addSubviews() {
-        contentView.addSubview(noContentLabel)
+        contentView.addSubview(messageLabel)
     }
 
     private func makeConstraints() {
-        noContentLabel.snp.makeConstraints { make in
-            make.edges.equalToSuperview().inset(28)
-            make.height.equalTo(120)
+        messageLabel.snp.makeConstraints { make in
+            make.leading.trailing.equalToSuperview().inset(16)
+            make.top.bottom.equalToSuperview().inset(100)
         }
     }
 
     // MARK: - Public methods
 
-    func configure(text: String, height: CGFloat? = nil) {
-        noContentLabel.text = text
-        if let height = height {
-            noContentLabel.snp.updateConstraints { make in
-                make.height.equalTo(height)
+    func configure(text: String, topAndBottomInsets: CGFloat? = nil) {
+        messageLabel.text = text
+        if let insets = topAndBottomInsets {
+            messageLabel.snp.updateConstraints { make in
+                make.top.bottom.equalToSuperview().inset(insets)
             }
         }
     }

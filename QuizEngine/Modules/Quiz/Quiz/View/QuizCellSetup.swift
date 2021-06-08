@@ -57,8 +57,8 @@ final class QuizCellSetup {
         cell.configure(delegate: self, participant: participant)
     }
 
-    func noParticipantsCell(_ cell: NoContentCell, for indexPath: IndexPath) {
-        cell.configure(text: Text.Quiz.noParticipants, height: 20)
+    func noParticipantsCell(_ cell: SimpleTextCell, for indexPath: IndexPath) {
+        cell.configure(text: Text.Quiz.noParticipants, topAndBottomInsets: 8)
     }
 
     func errorCell(_ cell: ErrorCell, for indexPath: IndexPath) {

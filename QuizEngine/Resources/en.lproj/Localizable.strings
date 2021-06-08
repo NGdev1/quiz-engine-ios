@@ -76,6 +76,7 @@ QuizList.Title = "My tests";
 QuizList.NoContent = "No quiz created";
 
 Main.Title = "Public";
+Main.NoContent = "No public avaliable tests";
 
 Quiz.Title = "Test";
 Quiz.Edit = "Edit";

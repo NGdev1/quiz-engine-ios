@@ -76,6 +76,7 @@ QuizList.Title = "Мои тесты";
 QuizList.NoContent = "Ни одного теста не создано";
 
 Main.Title = "Главная";
+Main.NoContent = "Нет доступних публичных тестов";
 
 Quiz.Title = "Тест";
 Quiz.Edit = "Редактировать";

@@ -124,6 +124,8 @@ internal enum Text {
   }
 
   internal enum Main {
+    /// Нет доступних публичных тестов
+    internal static let noContent = Text.tr("Localizable", "Main.NoContent")
     /// Главная
     internal static let title = Text.tr("Localizable", "Main.Title")
   }

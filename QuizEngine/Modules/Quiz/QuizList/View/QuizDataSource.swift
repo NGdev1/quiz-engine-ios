@@ -48,8 +48,8 @@ final class QuizDataSource: NSObject {
             forCellReuseIdentifier: ErrorCell.identifier
         )
         tableView.register(
-            NoContentCell.self,
-            forCellReuseIdentifier: NoContentCell.identifier
+            SimpleTextCell.self,
+            forCellReuseIdentifier: SimpleTextCell.identifier
         )
         tableView.register(
             LoadingCell.self,
@@ -121,29 +121,19 @@ extension QuizDataSource: UITableViewDataSource {
             return cell ?? UITableViewCell()
         case .noContent:
             let cell = tableView.dequeueReusableCell(
-                withIdentifier: NoContentCell.identifier,
+                withIdentifier: SimpleTextCell.identifier,
                 for: indexPath
-            ) as? NoContentCell
+            ) as? SimpleTextCell
             cell?.configure(text: Text.QuizList.noContent)
             return cell ?? UITableViewCell()
         case .presentingList:
-            if indexPath.row < data.count {
-                let cell = tableView.dequeueReusableCell(
-                    withIdentifier: QuizCell.identifier,
-                    for: indexPath
-                ) as? QuizCell
-                let item = data[indexPath.row]
-                cell?.configure(item)
-                return cell ?? UITableViewCell()
-            } else {
-                let cell = tableView.dequeueReusableCell(
-                    withIdentifier: LoadingCell.identifier,
-                    for: indexPath
-                ) as? LoadingCell
-
-                cell?.configure(height: 50)
-                return cell ?? UITableViewCell()
-            }
+            let cell = tableView.dequeueReusableCell(
+                withIdentifier: QuizCell.identifier,
+                for: indexPath
+            ) as? QuizCell
+            let item = data[indexPath.row]
+            cell?.configure(item)
+            return cell ?? UITableViewCell()
         }
     }
 }
