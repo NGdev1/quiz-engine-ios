@@ -41,13 +41,13 @@ final class ParticipantCellSetup {
     }
 
     func pirsonValueCell(_ cell: UITableViewCell, for indexPath: IndexPath) {
-        cell.textLabel?.text = "Коэффицент корреляции Пирсона: 0.9"
+        cell.textLabel?.text = Text.ParticipantResults.pirsonValue(0.9)
         cell.textLabel?.numberOfLines = 0
         cell.textLabel?.font = Fonts.SFUIDisplay.semibold.font(size: 14)
     }
 
     func spirmenBrownCell(_ cell: UITableViewCell, for indexPath: IndexPath) {
-        cell.textLabel?.text = "Надежность теста по Спирмену Брауну: 0.87"
+        cell.textLabel?.text = Text.ParticipantResults.spirmenBrownValue(0.87)
         cell.textLabel?.numberOfLines = 0
         cell.textLabel?.font = Fonts.SFUIDisplay.semibold.font(size: 14)
     }

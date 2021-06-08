@@ -66,6 +66,13 @@
 		8443F3D0266FD30200504C10 /* PublicQuizModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8443F3CF266FD30200504C10 /* PublicQuizModels.swift */; };
 		8443F3D5266FE31A00504C10 /* QuizPassingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8443F3D3266FE31A00504C10 /* QuizPassingCell.swift */; };
 		8443F3D6266FE31A00504C10 /* QuizPassingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8443F3D4266FE31A00504C10 /* QuizPassingCell.xib */; };
+		8443F3DD266FFF9500504C10 /* SelectMethodModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8443F3D8266FFF9500504C10 /* SelectMethodModels.swift */; };
+		8443F3DE266FFF9500504C10 /* QuestionCreatingMethodsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8443F3D9266FFF9500504C10 /* QuestionCreatingMethodsDataSource.swift */; };
+		8443F3DF266FFF9500504C10 /* SelectMethodController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8443F3DA266FFF9500504C10 /* SelectMethodController.swift */; };
+		8443F3E1266FFF9500504C10 /* SelectMethodView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8443F3DC266FFF9500504C10 /* SelectMethodView.swift */; };
+		8443F3E8267019D100504C10 /* EntitySearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8443F3E5267019D100504C10 /* EntitySearchController.swift */; };
+		8443F3E9267019D100504C10 /* EntitySearchInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8443F3E6267019D100504C10 /* EntitySearchInteractor.swift */; };
+		8443F3EA267019D100504C10 /* EntitySearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8443F3E7267019D100504C10 /* EntitySearchView.swift */; };
 		846027FF2668162F00A01F33 /* MainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846027FA2668162F00A01F33 /* MainController.swift */; };
 		846028002668162F00A01F33 /* MainInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846027FB2668162F00A01F33 /* MainInteractor.swift */; };
 		846028012668162F00A01F33 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846027FC2668162F00A01F33 /* MainView.swift */; };
@@ -239,6 +246,13 @@
 		8443F3CF266FD30200504C10 /* PublicQuizModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublicQuizModels.swift; sourceTree = "<group>"; };
 		8443F3D3266FE31A00504C10 /* QuizPassingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizPassingCell.swift; sourceTree = "<group>"; };
 		8443F3D4266FE31A00504C10 /* QuizPassingCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QuizPassingCell.xib; sourceTree = "<group>"; };
+		8443F3D8266FFF9500504C10 /* SelectMethodModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectMethodModels.swift; sourceTree = "<group>"; };
+		8443F3D9266FFF9500504C10 /* QuestionCreatingMethodsDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionCreatingMethodsDataSource.swift; sourceTree = "<group>"; };
+		8443F3DA266FFF9500504C10 /* SelectMethodController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectMethodController.swift; sourceTree = "<group>"; };
+		8443F3DC266FFF9500504C10 /* SelectMethodView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectMethodView.swift; sourceTree = "<group>"; };
+		8443F3E5267019D100504C10 /* EntitySearchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntitySearchController.swift; sourceTree = "<group>"; };
+		8443F3E6267019D100504C10 /* EntitySearchInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntitySearchInteractor.swift; sourceTree = "<group>"; };
+		8443F3E7267019D100504C10 /* EntitySearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntitySearchView.swift; sourceTree = "<group>"; };
 		846027FA2668162F00A01F33 /* MainController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainController.swift; sourceTree = "<group>"; };
 		846027FB2668162F00A01F33 /* MainInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainInteractor.swift; sourceTree = "<group>"; };
 		846027FC2668162F00A01F33 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
@@ -422,6 +436,7 @@
 			isa = PBXGroup;
 			children = (
 				843B8C3C2660F22D00E6A999 /* TabBar */,
+				8443F3E32670199500504C10 /* Semantic */,
 				843B8C3F2660F47A00E6A999 /* Quiz */,
 				846027F62668161100A01F33 /* QuizPassing */,
 				8483D28C266E001500CAC84C /* History */,
@@ -557,6 +572,7 @@
 				841BBDDD266F887D00AB9252 /* Participant */,
 				843B8C402660F48300E6A999 /* QuizList */,
 				84EDF693266E7EC6009F2049 /* Quiz */,
+				8443F3D7266FFA4F00504C10 /* SelectMethod */,
 				842970E4266178530093305D /* EditQuiz */,
 				84D755702662CAD900428E70 /* EditQuestion */,
 				84D7555F2662C9C700428E70 /* EditQuestionOption */,
@@ -696,6 +712,51 @@
 				8443F3D4266FE31A00504C10 /* QuizPassingCell.xib */,
 			);
 			path = QuizPassingCell;
+			sourceTree = "<group>";
+		};
+		8443F3D7266FFA4F00504C10 /* SelectMethod */ = {
+			isa = PBXGroup;
+			children = (
+				8443F3DA266FFF9500504C10 /* SelectMethodController.swift */,
+				8443F3D8266FFF9500504C10 /* SelectMethodModels.swift */,
+				8443F3E2266FFF9900504C10 /* View */,
+			);
+			path = SelectMethod;
+			sourceTree = "<group>";
+		};
+		8443F3E2266FFF9900504C10 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				8443F3D9266FFF9500504C10 /* QuestionCreatingMethodsDataSource.swift */,
+				8443F3DC266FFF9500504C10 /* SelectMethodView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		8443F3E32670199500504C10 /* Semantic */ = {
+			isa = PBXGroup;
+			children = (
+				8443F3E4267019BB00504C10 /* EntitySearch */,
+			);
+			path = Semantic;
+			sourceTree = "<group>";
+		};
+		8443F3E4267019BB00504C10 /* EntitySearch */ = {
+			isa = PBXGroup;
+			children = (
+				8443F3E5267019D100504C10 /* EntitySearchController.swift */,
+				8443F3E6267019D100504C10 /* EntitySearchInteractor.swift */,
+				8443F3EB267019D400504C10 /* View */,
+			);
+			path = EntitySearch;
+			sourceTree = "<group>";
+		};
+		8443F3EB267019D400504C10 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				8443F3E7267019D100504C10 /* EntitySearchView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		846027F62668161100A01F33 /* QuizPassing */ = {
@@ -1447,7 +1508,9 @@
 				8471F4A9265F9FAB007A7876 /* UIView+LoadingView.swift in Sources */,
 				846028322669261300A01F33 /* QuizPassing.swift in Sources */,
 				8460281E266822F200A01F33 /* ProfileCell.swift in Sources */,
+				8443F3E8267019D100504C10 /* EntitySearchController.swift in Sources */,
 				843B8C4D2660F54800E6A999 /* Quiz.swift in Sources */,
+				8443F3E9267019D100504C10 /* EntitySearchInteractor.swift in Sources */,
 				846028262668CC1800A01F33 /* QuizPassingCellSetup.swift in Sources */,
 				842970EC266179CB0093305D /* EditQuizController.swift in Sources */,
 				843B8C542660F6D000E6A999 /* QuizServiceProtocol.swift in Sources */,
@@ -1460,6 +1523,7 @@
 				843B8C392660C8A800E6A999 /* Profile.swift in Sources */,
 				841BBDE6266F8AB000AB9252 /* ParticipantInteractor.swift in Sources */,
 				8471F49B265F9FAB007A7876 /* DataManager.swift in Sources */,
+				8443F3EA267019D100504C10 /* EntitySearchView.swift in Sources */,
 				84C1ACCE26603C8700412B31 /* AuthApi.swift in Sources */,
 				846028282668CC1800A01F33 /* QuizPassingController.swift in Sources */,
 				8471F4B9265FB685007A7876 /* SignInController.swift in Sources */,
@@ -1483,6 +1547,7 @@
 				8460285A266AAE2100A01F33 /* QuizPassingService.swift in Sources */,
 				8471F4B4265FB3F6007A7876 /* MDScrollView.swift in Sources */,
 				8471F4C4265FB6E5007A7876 /* AuthServiceProtocol.swift in Sources */,
+				8443F3DF266FFF9500504C10 /* SelectMethodController.swift in Sources */,
 				8471F4A4265F9FAB007A7876 /* Texts.swift in Sources */,
 				8471F4B0265FA0BD007A7876 /* MDTextArea.swift in Sources */,
 				841BBDE7266F8AB000AB9252 /* ParticipantView.swift in Sources */,
@@ -1494,6 +1559,7 @@
 				84D8B7D3266ADDBE002C9CF4 /* OptionRadioCell.swift in Sources */,
 				84D7557B2662CAD900428E70 /* EditQuestionController.swift in Sources */,
 				842970D2266166E70093305D /* ProfileView.swift in Sources */,
+				8443F3DE266FFF9500504C10 /* QuestionCreatingMethodsDataSource.swift in Sources */,
 				842970EA266179CB0093305D /* EditQuizCellSetup.swift in Sources */,
 				842970CF266166E70093305D /* ProfileTableBuilder.swift in Sources */,
 				842970CE266166E70093305D /* ProfileCellSetup.swift in Sources */,
@@ -1501,6 +1567,7 @@
 				8483D287266D249300CAC84C /* QuizResultTableBuilder.swift in Sources */,
 				8460281426681F0E00A01F33 /* QuizHeaderCell.swift in Sources */,
 				8483D295266E015100CAC84C /* HistoryController.swift in Sources */,
+				8443F3DD266FFF9500504C10 /* SelectMethodModels.swift in Sources */,
 				842970D0266166E70093305D /* ProfileController.swift in Sources */,
 				84D8B7CE266AD8EF002C9CF4 /* QuestionView.swift in Sources */,
 				843B8C652660F8D400E6A999 /* ErrorCell.swift in Sources */,
@@ -1538,6 +1605,7 @@
 				8460280C26681B0800A01F33 /* PublicQuizTableBuilder.swift in Sources */,
 				84D8B7CD266AD8EF002C9CF4 /* QuestionInteractor.swift in Sources */,
 				8483D288266D249300CAC84C /* QuizResultController.swift in Sources */,
+				8443F3E1266FFF9500504C10 /* SelectMethodView.swift in Sources */,
 				8460281A2668213C00A01F33 /* PrimaryButtonCell.swift in Sources */,
 				8471F4A8265F9FAB007A7876 /* ExtensionUIImage.swift in Sources */,
 			);

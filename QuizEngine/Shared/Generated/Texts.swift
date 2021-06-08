@@ -146,6 +146,14 @@ internal enum Text {
     }
     /// Прохождения теста
     internal static let passingsHeader = Text.tr("Localizable", "ParticipantResults.PassingsHeader")
+    /// Коэффициент корреляции Пирсона: %.2f
+    internal static func pirsonValue(_ p1: Float) -> String {
+      return Text.tr("Localizable", "ParticipantResults.PirsonValue", p1)
+    }
+    /// Надежность теста по Спирмену Брауну: %.2f
+    internal static func spirmenBrownValue(_ p1: Float) -> String {
+      return Text.tr("Localizable", "ParticipantResults.SpirmenBrownValue", p1)
+    }
     /// Участник
     internal static let title = Text.tr("Localizable", "ParticipantResults.Title")
   }
@@ -253,6 +261,11 @@ internal enum Text {
     internal static let questionsCount = Text.tr("Localizable", "QuizResult.QuestionsCount")
     /// Результат
     internal static let title = Text.tr("Localizable", "QuizResult.Title")
+  }
+
+  internal enum SelectMethod {
+    /// Выберите способ
+    internal static let title = Text.tr("Localizable", "SelectMethod.Title")
   }
 
   internal enum SignIn {

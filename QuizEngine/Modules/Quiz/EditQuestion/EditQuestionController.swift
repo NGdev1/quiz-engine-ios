@@ -70,7 +70,8 @@ class EditQuestionController: UIViewController {
             return
         }
         delegate?.didFinishEditingQuestion(question)
-        navigationController?.popViewController()
+        guard let viewController = delegate as? UIViewController else { return }
+        navigationController?.popToViewController(viewController, animated: true)
     }
 
     // MARK: - Private methods

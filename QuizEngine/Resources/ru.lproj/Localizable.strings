@@ -112,6 +112,10 @@ QuizResult.AnswerIsNotGiven = "Ответ не дан";
 ParticipantResults.Title = "Участник";
 ParticipantResults.PassingsHeader = "Прохождения теста";
 ParticipantResults.CorrectAnswersCount = "Верных ответов: %@";
+ParticipantResults.PirsonValue = "Коэффициент корреляции Пирсона: %.2f";
+ParticipantResults.SpirmenBrownValue = "Надежность теста по Спирмену Брауну: %.2f";
+
+SelectMethod.Title = "Выберите способ";
 
 Alert.Error = "Ошибка";
 Alert.Cancel = "Отмена";

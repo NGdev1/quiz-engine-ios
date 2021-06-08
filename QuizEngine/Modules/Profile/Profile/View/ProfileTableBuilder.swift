@@ -94,7 +94,7 @@ final class ProfileTableBuilder {
     private func buildFullTableStructure() {
         let rowsSequence: [Row] = [
             Row(cellsSetup.profileHeaderCell(_:for:), fromNib: true, bundle: resourcesBundle),
-            Row(cellsSetup.editCell(_:for:), fromNib: true, bundle: resourcesBundle),
+            // Row(cellsSetup.editCell(_:for:), fromNib: true, bundle: resourcesBundle),
             Row(cellsSetup.registrationDateCell(_:for:), fromNib: true, bundle: resourcesBundle),
             Row(cellsSetup.quizzesCountCell(_:for:), fromNib: true, bundle: resourcesBundle),
             Row(cellsSetup.quizzesPassedCell(_:for:), fromNib: true, bundle: resourcesBundle),

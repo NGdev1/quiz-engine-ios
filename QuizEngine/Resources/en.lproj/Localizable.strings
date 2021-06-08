@@ -112,6 +112,10 @@ QuizResult.AnswerIsNotGiven = "Answer is not given";
 ParticipantResults.Title = "Participant";
 ParticipantResults.PassingsHeader = "Results";
 ParticipantResults.CorrectAnswersCount = "Correct answers count: %@";
+ParticipantResults.PirsonValue = "Pearson's correlation coefficient: %.2f";
+ParticipantResults.SpirmenBrownValue = "Reliability of the Spearman Brown test: %.2f";
+
+SelectMethod.Title = "Select method";
 
 Alert.Error = "Error";
 Alert.Cancel = "Cancel";

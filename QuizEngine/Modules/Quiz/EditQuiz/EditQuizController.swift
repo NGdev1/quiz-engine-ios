@@ -157,7 +157,7 @@ extension EditQuizController: EditQuizCellSetupDelegate {
     func addQuestion() {
         customView.endEditing(true)
         navigationController?.pushViewController(
-            EditQuestionController(quizId: quiz.id, delegate: self, question: Question())
+            SelectMethodController(quizId: quiz.id, editQuizController: self)
         )
     }
 
