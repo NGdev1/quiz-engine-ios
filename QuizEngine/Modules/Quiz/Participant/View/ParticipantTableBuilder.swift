@@ -1,13 +1,13 @@
 //
-//  PublicQuizTableBuilder.swift
+//  ParticipantTableBuilder.swift
 //  QuizEngine
 //
-//  Created by Admin on 02.06.2021.
+//  Created by Admin on 08.06.2021.
 //
 
 import UIKit
 
-final class PublicQuizTableBuilder {
+final class ParticipantTableBuilder {
     typealias Row = GenericTableViewRowModel
 
     // MARK: - Properties
@@ -17,30 +17,28 @@ final class PublicQuizTableBuilder {
     private var genericTableViewDelegate: GenericTableViewDelegate?
     private var dataStorage: GenericTableViewDataStorage = GenericTableViewDataStorage()
     private var tableView: UITableView
-    private var cellsSetup: PublicQuizCellSetup
-    private var entity: Quiz?
+    private var cellsSetup: ParticipantCellSetup
+    private var entity: ParticipantResults?
 
     // MARK: - Init
 
-    init(tableView: UITableView, entity: Quiz?) {
+    init(tableView: UITableView, entity: ParticipantResults?) {
         self.entity = entity
         self.tableView = tableView
         self.genericDataSource = GenericTableViewDataSource(with: dataStorage)
         self.genericTableViewDelegate = GenericTableViewDelegate(with: dataStorage)
         tableView.dataSource = genericDataSource
         tableView.delegate = genericTableViewDelegate
-        self.cellsSetup = PublicQuizCellSetup(entity: entity, tableView: tableView)
+        self.cellsSetup = ParticipantCellSetup(entity: entity, tableView: tableView)
     }
 
     // MARK: - Internal methods
 
-    func setDelegate(_ delegate: PublicQuizCellSetupDelegate) {
+    func setDelegate(_ delegate: ParticipantCellSetupDelegate) {
         cellsSetup.delegate = delegate
     }
 
-    func showLoading(entity: Quiz) {
-        self.entity = entity
-        cellsSetup.updateQuiz(entity)
+    func showLoading() {
         buildLoadingTableStructure()
         reloadData(animated: true)
     }
@@ -51,9 +49,9 @@ final class PublicQuizTableBuilder {
         reloadData(animated: false)
     }
 
-    func updateQuiz(_ entity: Quiz, animated: Bool) {
+    func updateParticipant(_ entity: ParticipantResults, animated: Bool) {
         self.entity = entity
-        cellsSetup.updateQuiz(entity)
+        cellsSetup.updateParticipant(entity)
         buildFullTableStructure()
         reloadData(animated: animated)
     }
@@ -88,33 +86,16 @@ final class PublicQuizTableBuilder {
 
     private func buildLoadingTableStructure() {
         let rowsSequence: [Row] = [
-            Row(cellsSetup.quizHeaderCell(_:for:), fromNib: true, bundle: resourcesBundle),
             Row(LoadingCell.loadingCell(_:for:)),
         ]
         setRowsSequenceToDataStorage(rowsSequence: rowsSequence)
     }
 
     private func buildFullTableStructure() {
-        var rowsSequence: [Row] = [
-            Row(cellsSetup.quizHeaderCell(_:for:), fromNib: true, bundle: resourcesBundle),
-            Row(cellsSetup.startCell(_:for:), fromNib: true, bundle: resourcesBundle),
-            Row(cellsSetup.authorHeaderCell(_:for:), fromNib: true, bundle: resourcesBundle),
-            Row(cellsSetup.authorCell(_:for:), fromNib: true, bundle: resourcesBundle),
-            Row(cellsSetup.participantsHeaderCell(_:for:), fromNib: true, bundle: resourcesBundle),
+        let rowsSequence: [Row] = [
+            Row(cellsSetup.someCell(_:for:)),
+            Row(cellsSetup.otherCell(_:for:)),
         ]
-        cellsSetup.firstParticipantIndex = rowsSequence.count
-        let participants: [QuizParticipantViewModel] = cellsSetup.participants
-        if participants.isEmpty {
-            rowsSequence.append(
-                Row(cellsSetup.noParticipantsCell(_:for:))
-            )
-        } else {
-            for _ in participants {
-                rowsSequence.append(
-                    Row(cellsSetup.participantCell(_:for:), fromNib: true, bundle: resourcesBundle)
-                )
-            }
-        }
         setRowsSequenceToDataStorage(rowsSequence: rowsSequence)
     }
 

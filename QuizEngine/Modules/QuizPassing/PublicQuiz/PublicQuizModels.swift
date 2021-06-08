@@ -1,18 +1,18 @@
 //
-//  Participant.swift
+//  PublicQuizModels.swift
 //  QuizEngine
 //
-//  Created by Admin on 07.06.2021.
+//  Created by Admin on 08.06.2021.
 //
 
 import Foundation
 
-struct Participant: Codable {
+struct QuizParticipantViewModel {
     let user: Profile
     let lastAttemptDate: Date
     let attemptsCount: Int
 
-    static func getParticipants(results: [QuizPassing]) -> [Participant] {
+    static func getParticipants(from results: [QuizPassing]) -> [QuizParticipantViewModel] {
         let grouped: [Profile?: [QuizPassing]] = Dictionary(grouping: results, by: { result in
             result.user
         })
@@ -23,7 +23,7 @@ struct Participant: Codable {
                       return lDate < rDate
                   }).last?.startDate
             else { return nil }
-            return Participant(user: user, lastAttemptDate: lastDate, attemptsCount: value.count)
+            return QuizParticipantViewModel(user: user, lastAttemptDate: lastDate, attemptsCount: value.count)
         }
     }
 }

@@ -47,7 +47,7 @@ final class ParticipantCell: UITableViewCell {
 
     // MARK: - Internal methods
 
-    func configure(delegate: ParticipantCellDelegate, participant: Participant) {
+    func configure(delegate: ParticipantCellDelegate, participant: QuizParticipantViewModel) {
         self.delegate = delegate
         user = participant.user
         avatarImageView.kf.setImage(with: participant.user.avatar?.url, placeholder: Assets.noPhoto.image)

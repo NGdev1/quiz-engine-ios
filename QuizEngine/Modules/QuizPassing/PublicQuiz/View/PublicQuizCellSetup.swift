@@ -14,6 +14,7 @@ protocol PublicQuizCellSetupDelegate: AnyObject {
 
 final class PublicQuizCellSetup {
     private var entity: Quiz?
+    var participants: [QuizParticipantViewModel] = []
     var messageAboutError: String = .empty
     weak var delegate: PublicQuizCellSetupDelegate?
 
@@ -33,6 +34,7 @@ final class PublicQuizCellSetup {
 
     func updateQuiz(_ entity: Quiz) {
         self.entity = entity
+        participants = QuizParticipantViewModel.getParticipants(from: entity.results)
     }
 
     // MARK: - Cells setup
@@ -64,7 +66,7 @@ final class PublicQuizCellSetup {
     }
 
     func participantCell(_ cell: ProfileCell, for indexPath: IndexPath) {
-        guard let user = entity?.participants[indexPath.row - firstParticipantIndex].user else { return }
+        let user = participants[indexPath.row - firstParticipantIndex].user
         cell.configure(delegate: self, profile: user)
     }
 

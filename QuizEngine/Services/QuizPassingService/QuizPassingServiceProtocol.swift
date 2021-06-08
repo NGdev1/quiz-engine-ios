@@ -13,4 +13,5 @@ protocol QuizPassingServiceProtocol {
     )
     func finish(quizId: String, passingId: Int, completion: @escaping (QuizPassing?, Error?) -> Void)
     func get(quizId: String, passingId: Int, completion: @escaping (QuizPassing?, Error?) -> Void)
+    func userResults(quizId: String, userId: Int, completion: @escaping (ParticipantResults?, Error?) -> Void)
 }

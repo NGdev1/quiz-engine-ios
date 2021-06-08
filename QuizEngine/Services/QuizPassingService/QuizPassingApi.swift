@@ -13,6 +13,7 @@ enum QuizPassingApi {
     case giveAnswer(quizId: String, passingId: Int, answer: QuestionAnswer)
     case finish(quizId: String, passingId: Int)
     case get(quizId: String, passingId: Int)
+    case userResults(quizId: String, uesrId: Int)
 }
 
 extension QuizPassingApi: TargetType {
@@ -30,6 +31,8 @@ extension QuizPassingApi: TargetType {
             return "/quiz/\(quizId)/passing/\(passingId)/finish"
         case let .get(quizId, passingId):
             return "/quiz/\(quizId)/passing/\(passingId)"
+        case let .userResults(quizId, userId):
+            return "/quiz/\(quizId)/passing/user/\(userId)/results"
         }
     }
 
@@ -37,7 +40,7 @@ extension QuizPassingApi: TargetType {
         switch self {
         case .create, .giveAnswer, .finish:
             return .post
-        case .get:
+        case .get, .userResults:
             return .get
         }
     }
@@ -55,6 +58,8 @@ extension QuizPassingApi: TargetType {
         case .finish:
             return .requestPlain
         case .get:
+            return .requestPlain
+        case .userResults:
             return .requestPlain
         }
     }

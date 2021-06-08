@@ -18,7 +18,6 @@ class Quiz: Codable {
         self.isPublic = true
         self.questions = []
         self.results = []
-        self.participants = []
     }
 
     var id: String?
@@ -30,7 +29,6 @@ class Quiz: Codable {
     var isPublic: Bool?
     var questions: [Question]
     let results: [QuizPassing]
-    let participants: [Participant]
 
     required init(from decoder: Decoder) throws {
         let map = try decoder.container(keyedBy: CodingKeys.self)
@@ -47,6 +45,5 @@ class Quiz: Codable {
             formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZZZ"
             self.startDate = formatter.date(from: startDateString)
         }
-        self.participants = Participant.getParticipants(results: results)
     }
 }

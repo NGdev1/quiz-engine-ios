@@ -92,7 +92,7 @@ final class QuizTableBuilder {
     }
 
     private func buildFullTableStructure() {
-        let participants: [Participant] = entity?.participants ?? []
+        let participants: [QuizParticipantViewModel] = cellsSetup.participants
         var rowsSequence: [Row] = [
             Row(cellsSetup.quizHeaderCell(_:for:), fromNib: true, bundle: resourcesBundle),
         ]

@@ -109,6 +109,8 @@ QuizResult.AnswerCorrect = "Correct";
 QuizResult.AnswerIncorrect = "Correct answer: %@";
 QuizResult.AnswerIsNotGiven = "Answer is not given";
 
+ParticipantResults.Title = "Participant";
+
 Alert.Error = "Error";
 Alert.Cancel = "Cancel";
 

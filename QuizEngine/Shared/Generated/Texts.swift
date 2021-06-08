@@ -139,6 +139,11 @@ internal enum Text {
     internal static let registration = Text.tr("Localizable", "Onboarding.Registration")
   }
 
+  internal enum ParticipantResults {
+    /// Участник
+    internal static let title = Text.tr("Localizable", "ParticipantResults.Title")
+  }
+
   internal enum Profile {
     /// Редактировать
     internal static let edit = Text.tr("Localizable", "Profile.Edit")

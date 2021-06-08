@@ -109,6 +109,8 @@ QuizResult.AnswerCorrect = "Верно";
 QuizResult.AnswerIncorrect = "Верный ответ: %@";
 QuizResult.AnswerIsNotGiven = "Ответ не дан";
 
+ParticipantResults.Title = "Участник";
+
 Alert.Error = "Ошибка";
 Alert.Cancel = "Отмена";
 
