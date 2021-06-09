@@ -12,6 +12,22 @@ class EntitySearchController: UIViewController {
 
     lazy var customView = EntitySearchView()
 
+    let quizId: String?
+    let editQuizController: EditQuestionControllerDelegate
+
+    // MARK: - Init
+
+    init(quizId: String?, editQuizController: EditQuestionControllerDelegate) {
+        self.quizId = quizId
+        self.editQuizController = editQuizController
+        super.init(nibName: nil, bundle: nil)
+    }
+
+    @available(*, unavailable)
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+
     // MARK: - Life cycle
 
     override func loadView() {
@@ -47,7 +63,7 @@ class EntitySearchController: UIViewController {
         }
         customView.endEditing(true)
         navigationController?.pushViewController(
-            SelectEntityController(query: query)
+            SelectEntityController(query: query, quizId: quizId, editQuizController: editQuizController)
         )
     }
 }

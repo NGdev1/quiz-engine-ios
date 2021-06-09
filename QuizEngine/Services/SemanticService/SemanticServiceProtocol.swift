@@ -7,4 +7,5 @@
 
 protocol SemanticServiceProtocol {
     func search(query: String, completion: @escaping ([Entity]?, Error?) -> Void)
+    func getQuestions(entityUri: String, completion: @escaping ([Triple]?, Error?) -> Void)
 }

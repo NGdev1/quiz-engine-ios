@@ -1,5 +1,5 @@
 //
-//  SelectEntityView.swift
+//  SelectQuestionView.swift
 //  QuizEngine
 //
 //  Created by Admin on 09.06.2021.
@@ -7,10 +7,10 @@
 
 import MDFoundation
 
-final class SelectEntityView: UITableView {
+final class SelectQuestionView: UITableView {
     // MARK: - Properties
 
-    private var customDataSource: EntitiesDataSource = EntitiesDataSource()
+    private var customDataSource: TriplesDataSource = TriplesDataSource()
 
     // MARK: - Init
 
@@ -36,7 +36,7 @@ final class SelectEntityView: UITableView {
 
     // MARK: - Internal methods
 
-    func setDelegate(_ delegate: EntitiesDataSourceDelegate) {
+    func setDelegate(_ delegate: TriplesDataSourceDelegate) {
         customDataSource.delegate = delegate
     }
 
@@ -49,7 +49,7 @@ final class SelectEntityView: UITableView {
         customDataSource.state = .loading
     }
 
-    func updateEntitys(_ data: [Entity]) {
+    func updateTriples(_ data: [Triple]) {
         customDataSource.updateData(data)
     }
 }

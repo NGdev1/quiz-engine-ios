@@ -148,6 +148,12 @@
 		849A24E32670CA590016A1A3 /* SelectEntityInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849A24DE2670CA590016A1A3 /* SelectEntityInteractor.swift */; };
 		849A24E42670CA590016A1A3 /* SelectEntityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849A24DF2670CA590016A1A3 /* SelectEntityView.swift */; };
 		849A24E72670CF2C0016A1A3 /* SemanticServiceApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849A24E62670CF2C0016A1A3 /* SemanticServiceApi.swift */; };
+		849A24EF2670DBC70016A1A3 /* SelectQuestionsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849A24EA2670DBC70016A1A3 /* SelectQuestionsDataSource.swift */; };
+		849A24F02670DBC70016A1A3 /* SelectQuestionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849A24EB2670DBC70016A1A3 /* SelectQuestionController.swift */; };
+		849A24F12670DBC70016A1A3 /* SelectQuestionInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849A24EC2670DBC70016A1A3 /* SelectQuestionInteractor.swift */; };
+		849A24F22670DBC70016A1A3 /* SelectQuestionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849A24ED2670DBC70016A1A3 /* SelectQuestionView.swift */; };
+		849A24F72670DC290016A1A3 /* TripleQuestionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849A24F52670DC290016A1A3 /* TripleQuestionCell.swift */; };
+		849A24F82670DC290016A1A3 /* TripleQuestionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 849A24F62670DC290016A1A3 /* TripleQuestionCell.xib */; };
 		849E0008266296D2004EA4DB /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849E0007266296D2004EA4DB /* Question.swift */; };
 		849E000A2662977C004EA4DB /* QuestionOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849E00092662977C004EA4DB /* QuestionOption.swift */; };
 		849E000D2662992D004EA4DB /* TitleValueCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849E000B2662992D004EA4DB /* TitleValueCell.swift */; };
@@ -337,6 +343,12 @@
 		849A24DE2670CA590016A1A3 /* SelectEntityInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectEntityInteractor.swift; sourceTree = "<group>"; };
 		849A24DF2670CA590016A1A3 /* SelectEntityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectEntityView.swift; sourceTree = "<group>"; };
 		849A24E62670CF2C0016A1A3 /* SemanticServiceApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SemanticServiceApi.swift; sourceTree = "<group>"; };
+		849A24EA2670DBC70016A1A3 /* SelectQuestionsDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectQuestionsDataSource.swift; sourceTree = "<group>"; };
+		849A24EB2670DBC70016A1A3 /* SelectQuestionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectQuestionController.swift; sourceTree = "<group>"; };
+		849A24EC2670DBC70016A1A3 /* SelectQuestionInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectQuestionInteractor.swift; sourceTree = "<group>"; };
+		849A24ED2670DBC70016A1A3 /* SelectQuestionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectQuestionView.swift; sourceTree = "<group>"; };
+		849A24F52670DC290016A1A3 /* TripleQuestionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripleQuestionCell.swift; sourceTree = "<group>"; };
+		849A24F62670DC290016A1A3 /* TripleQuestionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TripleQuestionCell.xib; sourceTree = "<group>"; };
 		849E0007266296D2004EA4DB /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 		849E00092662977C004EA4DB /* QuestionOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionOption.swift; sourceTree = "<group>"; };
 		849E000B2662992D004EA4DB /* TitleValueCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleValueCell.swift; sourceTree = "<group>"; };
@@ -752,6 +764,7 @@
 		8443F3E32670199500504C10 /* Semantic */ = {
 			isa = PBXGroup;
 			children = (
+				849A24E82670DAEC0016A1A3 /* SelectQuestion */,
 				849A24DA2670CA370016A1A3 /* SelectEntity */,
 				8443F3E4267019BB00504C10 /* EntitySearch */,
 			);
@@ -1153,6 +1166,35 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		849A24E82670DAEC0016A1A3 /* SelectQuestion */ = {
+			isa = PBXGroup;
+			children = (
+				849A24EB2670DBC70016A1A3 /* SelectQuestionController.swift */,
+				849A24EC2670DBC70016A1A3 /* SelectQuestionInteractor.swift */,
+				849A24F32670DBCC0016A1A3 /* View */,
+			);
+			path = SelectQuestion;
+			sourceTree = "<group>";
+		};
+		849A24F32670DBCC0016A1A3 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				849A24ED2670DBC70016A1A3 /* SelectQuestionView.swift */,
+				849A24EA2670DBC70016A1A3 /* SelectQuestionsDataSource.swift */,
+				849A24F42670DC110016A1A3 /* TripleQuestionCell */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		849A24F42670DC110016A1A3 /* TripleQuestionCell */ = {
+			isa = PBXGroup;
+			children = (
+				849A24F52670DC290016A1A3 /* TripleQuestionCell.swift */,
+				849A24F62670DC290016A1A3 /* TripleQuestionCell.xib */,
+			);
+			path = TripleQuestionCell;
+			sourceTree = "<group>";
+		};
 		849E00062662969C004EA4DB /* TitleValueCell */ = {
 			isa = PBXGroup;
 			children = (
@@ -1416,6 +1458,7 @@
 				8460281526681F0E00A01F33 /* QuizHeaderCell.xib in Resources */,
 				8443F3D6266FE31A00504C10 /* QuizPassingCell.xib in Resources */,
 				8471F480265F992D007A7876 /* Localizable.strings in Resources */,
+				849A24F82670DC290016A1A3 /* TripleQuestionCell.xib in Resources */,
 				842970E326616D700093305D /* ProfileHeaderCell.xib in Resources */,
 				84D8B7D4266ADDBE002C9CF4 /* OptionRadioCell.xib in Resources */,
 				84A325A1266EBCFF0028B4DB /* ParticipantCell.xib in Resources */,
@@ -1554,6 +1597,7 @@
 				843B8C372660C84F00E6A999 /* ProfileServiceProtocol.swift in Sources */,
 				84D7557E2662CAD900428E70 /* QuestionOptionCell.swift in Sources */,
 				8471F4A5265F9FAB007A7876 /* ExtensionFloat.swift in Sources */,
+				849A24F22670DBC70016A1A3 /* SelectQuestionView.swift in Sources */,
 				8460280B26681B0800A01F33 /* PublicQuizCellSetup.swift in Sources */,
 				8471F478265F95E5007A7876 /* OnboardingController.swift in Sources */,
 				8443F3D5266FE31A00504C10 /* QuizPassingCell.swift in Sources */,
@@ -1600,12 +1644,15 @@
 				84A3259C266EBBE70028B4DB /* ParticipantResults.swift in Sources */,
 				849A24E42670CA590016A1A3 /* SelectEntityView.swift in Sources */,
 				842970C3266140530093305D /* ProfileApi.swift in Sources */,
+				849A24F02670DBC70016A1A3 /* SelectQuestionController.swift in Sources */,
 				841BBDE3266F8AB000AB9252 /* ParticipantCellSetup.swift in Sources */,
 				84A32598266E98E20028B4DB /* QuizInteractor.swift in Sources */,
 				8483D29C266E0B3400CAC84C /* HistoryItemCell.swift in Sources */,
+				849A24F72670DC290016A1A3 /* TripleQuestionCell.swift in Sources */,
 				846028002668162F00A01F33 /* MainInteractor.swift in Sources */,
 				84D7556F2662C9C700428E70 /* EditQuestionOptionCellSetup.swift in Sources */,
 				84EDF691266E2B9D009F2049 /* AnswerCell.swift in Sources */,
+				849A24EF2670DBC70016A1A3 /* SelectQuestionsDataSource.swift in Sources */,
 				84C1ACD326603DC500412B31 /* GeneralErrors.swift in Sources */,
 				8460285A266AAE2100A01F33 /* QuizPassingService.swift in Sources */,
 				8471F4B4265FB3F6007A7876 /* MDScrollView.swift in Sources */,
@@ -1665,6 +1712,7 @@
 				84414D6026625698006F2DAF /* TextFieldCell.swift in Sources */,
 				842970DC266168290093305D /* GenericTableViewDelegate.swift in Sources */,
 				6B1755942624A7E000DA7E84 /* AppDelegate.swift in Sources */,
+				849A24F12670DBC70016A1A3 /* SelectQuestionInteractor.swift in Sources */,
 				843B8C2D2660C82F00E6A999 /* ProfileInteractor.swift in Sources */,
 				8460280C26681B0800A01F33 /* PublicQuizTableBuilder.swift in Sources */,
 				84D8B7CD266AD8EF002C9CF4 /* QuestionInteractor.swift in Sources */,
@@ -1750,7 +1798,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -1806,7 +1854,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;

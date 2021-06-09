@@ -10,6 +10,7 @@ import Storable
 
 enum SemanticServiceApi {
     case getEntities(query: String)
+    case getQuestions(entityUri: String)
 }
 
 extension SemanticServiceApi: TargetType {
@@ -21,12 +22,14 @@ extension SemanticServiceApi: TargetType {
         switch self {
         case .getEntities:
             return "/semantic/search"
+        case .getQuestions:
+            return "/semantic/questions"
         }
     }
 
     var method: Moya.Method {
         switch self {
-        case .getEntities:
+        case .getEntities, .getQuestions:
             return .get
         }
     }
@@ -39,6 +42,8 @@ extension SemanticServiceApi: TargetType {
         switch self {
         case let .getEntities(query):
             return .requestParameters(parameters: ["query": query], encoding: URLEncoding())
+        case let .getQuestions(entityUri):
+            return .requestParameters(parameters: ["entityUri": entityUri], encoding: URLEncoding())
         }
     }
 

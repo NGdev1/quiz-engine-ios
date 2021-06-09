@@ -19,12 +19,17 @@ class SelectEntityController: UIViewController, SelectEntityControllerLogic {
 
     lazy var customView = SelectEntityView()
     lazy var notificationFeedbackGenerator = UINotificationFeedbackGenerator()
+
     let query: String
+    let quizId: String?
+    let editQuizController: EditQuestionControllerDelegate
 
     // MARK: - Init
 
-    init(query: String) {
+    init(query: String, quizId: String?, editQuizController: EditQuestionControllerDelegate) {
         self.query = query
+        self.quizId = quizId
+        self.editQuizController = editQuizController
         super.init(nibName: nil, bundle: nil)
     }
 
@@ -87,7 +92,9 @@ class SelectEntityController: UIViewController, SelectEntityControllerLogic {
 
 extension SelectEntityController: EntitiesDataSourceDelegate {
     func didSelectEntity(_ item: Entity) {
-        // router?.trigger(.openItem(delegate: self, item: item))
+        navigationController?.pushViewController(
+            SelectQuestionController(entity: item, quizId: quizId, editQuizController: editQuizController)
+        )
     }
 
     func actionButtonTapped() {

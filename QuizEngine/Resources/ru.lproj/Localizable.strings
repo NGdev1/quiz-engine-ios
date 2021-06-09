@@ -126,6 +126,10 @@ EntitySearch.Search = "Поиск";
 SelectEntity.Title = "Выбор сущности";
 SelectEntity.NoContent = "Ничего не найдено";
 
+SelectQuestion.Title = "Выбор вопроса";
+SelectQuestion.NoContent = "Ничего не найдено";
+SelectQuestion.QuestionText = "Укажите %@ %@";
+
 Alert.Error = "Ошибка";
 Alert.Cancel = "Отмена";
 

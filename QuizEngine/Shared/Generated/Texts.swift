@@ -291,6 +291,17 @@ internal enum Text {
     internal static let title = Text.tr("Localizable", "SelectMethod.Title")
   }
 
+  internal enum SelectQuestion {
+    /// Ничего не найдено
+    internal static let noContent = Text.tr("Localizable", "SelectQuestion.NoContent")
+    /// Укажите %@ %@
+    internal static func questionText(_ p1: Any, _ p2: Any) -> String {
+      return Text.tr("Localizable", "SelectQuestion.QuestionText", String(describing: p1), String(describing: p2))
+    }
+    /// Выбор вопроса
+    internal static let title = Text.tr("Localizable", "SelectQuestion.Title")
+  }
+
   internal enum SignIn {
     /// Email
     internal static let email = Text.tr("Localizable", "SignIn.Email")

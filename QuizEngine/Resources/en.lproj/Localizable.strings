@@ -126,6 +126,10 @@ EntitySearch.Search = "Search";
 SelectEntity.Title = "Select entity";
 SelectEntity.NoContent = "Nothing found";
 
+SelectQuestion.Title = "Select question";
+SelectQuestion.NoContent = "Nothing found";
+SelectQuestion.QuestionText = "Select %@ %@";
+
 Alert.Error = "Error";
 Alert.Cancel = "Cancel";
 
