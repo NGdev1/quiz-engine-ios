@@ -71,7 +71,6 @@
 		8443F3DF266FFF9500504C10 /* SelectMethodController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8443F3DA266FFF9500504C10 /* SelectMethodController.swift */; };
 		8443F3E1266FFF9500504C10 /* SelectMethodView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8443F3DC266FFF9500504C10 /* SelectMethodView.swift */; };
 		8443F3E8267019D100504C10 /* EntitySearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8443F3E5267019D100504C10 /* EntitySearchController.swift */; };
-		8443F3E9267019D100504C10 /* EntitySearchInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8443F3E6267019D100504C10 /* EntitySearchInteractor.swift */; };
 		8443F3EA267019D100504C10 /* EntitySearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8443F3E7267019D100504C10 /* EntitySearchView.swift */; };
 		846027FF2668162F00A01F33 /* MainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846027FA2668162F00A01F33 /* MainController.swift */; };
 		846028002668162F00A01F33 /* MainInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846027FB2668162F00A01F33 /* MainInteractor.swift */; };
@@ -144,6 +143,11 @@
 		849A24D22670B8650016A1A3 /* Triple.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849A24D12670B8650016A1A3 /* Triple.swift */; };
 		849A24D82670B8B90016A1A3 /* SemanticService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849A24D52670B8B90016A1A3 /* SemanticService.swift */; };
 		849A24D92670B8B90016A1A3 /* SemanticServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849A24D62670B8B90016A1A3 /* SemanticServiceProtocol.swift */; };
+		849A24E12670CA590016A1A3 /* EntitiesDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849A24DC2670CA590016A1A3 /* EntitiesDataSource.swift */; };
+		849A24E22670CA590016A1A3 /* SelectEntityController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849A24DD2670CA590016A1A3 /* SelectEntityController.swift */; };
+		849A24E32670CA590016A1A3 /* SelectEntityInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849A24DE2670CA590016A1A3 /* SelectEntityInteractor.swift */; };
+		849A24E42670CA590016A1A3 /* SelectEntityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849A24DF2670CA590016A1A3 /* SelectEntityView.swift */; };
+		849A24E72670CF2C0016A1A3 /* SemanticServiceApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849A24E62670CF2C0016A1A3 /* SemanticServiceApi.swift */; };
 		849E0008266296D2004EA4DB /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849E0007266296D2004EA4DB /* Question.swift */; };
 		849E000A2662977C004EA4DB /* QuestionOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849E00092662977C004EA4DB /* QuestionOption.swift */; };
 		849E000D2662992D004EA4DB /* TitleValueCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849E000B2662992D004EA4DB /* TitleValueCell.swift */; };
@@ -255,7 +259,6 @@
 		8443F3DA266FFF9500504C10 /* SelectMethodController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectMethodController.swift; sourceTree = "<group>"; };
 		8443F3DC266FFF9500504C10 /* SelectMethodView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectMethodView.swift; sourceTree = "<group>"; };
 		8443F3E5267019D100504C10 /* EntitySearchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntitySearchController.swift; sourceTree = "<group>"; };
-		8443F3E6267019D100504C10 /* EntitySearchInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntitySearchInteractor.swift; sourceTree = "<group>"; };
 		8443F3E7267019D100504C10 /* EntitySearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntitySearchView.swift; sourceTree = "<group>"; };
 		846027FA2668162F00A01F33 /* MainController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainController.swift; sourceTree = "<group>"; };
 		846027FB2668162F00A01F33 /* MainInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainInteractor.swift; sourceTree = "<group>"; };
@@ -329,6 +332,11 @@
 		849A24D12670B8650016A1A3 /* Triple.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Triple.swift; sourceTree = "<group>"; };
 		849A24D52670B8B90016A1A3 /* SemanticService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SemanticService.swift; sourceTree = "<group>"; };
 		849A24D62670B8B90016A1A3 /* SemanticServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SemanticServiceProtocol.swift; sourceTree = "<group>"; };
+		849A24DC2670CA590016A1A3 /* EntitiesDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntitiesDataSource.swift; sourceTree = "<group>"; };
+		849A24DD2670CA590016A1A3 /* SelectEntityController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectEntityController.swift; sourceTree = "<group>"; };
+		849A24DE2670CA590016A1A3 /* SelectEntityInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectEntityInteractor.swift; sourceTree = "<group>"; };
+		849A24DF2670CA590016A1A3 /* SelectEntityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectEntityView.swift; sourceTree = "<group>"; };
+		849A24E62670CF2C0016A1A3 /* SemanticServiceApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SemanticServiceApi.swift; sourceTree = "<group>"; };
 		849E0007266296D2004EA4DB /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 		849E00092662977C004EA4DB /* QuestionOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionOption.swift; sourceTree = "<group>"; };
 		849E000B2662992D004EA4DB /* TitleValueCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleValueCell.swift; sourceTree = "<group>"; };
@@ -744,6 +752,7 @@
 		8443F3E32670199500504C10 /* Semantic */ = {
 			isa = PBXGroup;
 			children = (
+				849A24DA2670CA370016A1A3 /* SelectEntity */,
 				8443F3E4267019BB00504C10 /* EntitySearch */,
 			);
 			path = Semantic;
@@ -753,7 +762,6 @@
 			isa = PBXGroup;
 			children = (
 				8443F3E5267019D100504C10 /* EntitySearchController.swift */,
-				8443F3E6267019D100504C10 /* EntitySearchInteractor.swift */,
 				8443F3EB267019D400504C10 /* View */,
 			);
 			path = EntitySearch;
@@ -1119,10 +1127,30 @@
 		849A24D32670B8A30016A1A3 /* SemanticService */ = {
 			isa = PBXGroup;
 			children = (
+				849A24E62670CF2C0016A1A3 /* SemanticServiceApi.swift */,
 				849A24D52670B8B90016A1A3 /* SemanticService.swift */,
 				849A24D62670B8B90016A1A3 /* SemanticServiceProtocol.swift */,
 			);
 			path = SemanticService;
+			sourceTree = "<group>";
+		};
+		849A24DA2670CA370016A1A3 /* SelectEntity */ = {
+			isa = PBXGroup;
+			children = (
+				849A24DD2670CA590016A1A3 /* SelectEntityController.swift */,
+				849A24DE2670CA590016A1A3 /* SelectEntityInteractor.swift */,
+				849A24E52670CA670016A1A3 /* View */,
+			);
+			path = SelectEntity;
+			sourceTree = "<group>";
+		};
+		849A24E52670CA670016A1A3 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				849A24DC2670CA590016A1A3 /* EntitiesDataSource.swift */,
+				849A24DF2670CA590016A1A3 /* SelectEntityView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		849E00062662969C004EA4DB /* TitleValueCell */ = {
@@ -1498,6 +1526,7 @@
 				8471F4D4265FF90B007A7876 /* SignUpController.swift in Sources */,
 				842970ED266179CB0093305D /* EditQuizInteractor.swift in Sources */,
 				849E000A2662977C004EA4DB /* QuestionOption.swift in Sources */,
+				849A24E72670CF2C0016A1A3 /* SemanticServiceApi.swift in Sources */,
 				842970E226616D700093305D /* ProfileHeaderCell.swift in Sources */,
 				84D7557C2662CAD900428E70 /* EditQuestionTableBuilder.swift in Sources */,
 				8483D286266D249300CAC84C /* QuizResultCellSetup.swift in Sources */,
@@ -1510,7 +1539,9 @@
 				846028292668CC1800A01F33 /* QuizPassingInteractor.swift in Sources */,
 				84A32599266E98E20028B4DB /* QuizView.swift in Sources */,
 				841BBDE4266F8AB000AB9252 /* ParticipantTableBuilder.swift in Sources */,
+				849A24E22670CA590016A1A3 /* SelectEntityController.swift in Sources */,
 				8471F4CA265FB789007A7876 /* AuthModels.swift in Sources */,
+				849A24E32670CA590016A1A3 /* SelectEntityInteractor.swift in Sources */,
 				843B8C4A2660F4B900E6A999 /* QuizListView.swift in Sources */,
 				846028342669274600A01F33 /* QuestionAnswer.swift in Sources */,
 				843B8C472660F4B900E6A999 /* QuizDataSource.swift in Sources */,
@@ -1540,7 +1571,7 @@
 				8460281E266822F200A01F33 /* ProfileCell.swift in Sources */,
 				8443F3E8267019D100504C10 /* EntitySearchController.swift in Sources */,
 				843B8C4D2660F54800E6A999 /* Quiz.swift in Sources */,
-				8443F3E9267019D100504C10 /* EntitySearchInteractor.swift in Sources */,
+				849A24E12670CA590016A1A3 /* EntitiesDataSource.swift in Sources */,
 				846028262668CC1800A01F33 /* QuizPassingCellSetup.swift in Sources */,
 				842970EC266179CB0093305D /* EditQuizController.swift in Sources */,
 				843B8C542660F6D000E6A999 /* QuizServiceProtocol.swift in Sources */,
@@ -1567,6 +1598,7 @@
 				84414D6226625698006F2DAF /* SwitchCell.swift in Sources */,
 				84D8B7D6266B78C1002C9CF4 /* QuestionContentView.swift in Sources */,
 				84A3259C266EBBE70028B4DB /* ParticipantResults.swift in Sources */,
+				849A24E42670CA590016A1A3 /* SelectEntityView.swift in Sources */,
 				842970C3266140530093305D /* ProfileApi.swift in Sources */,
 				841BBDE3266F8AB000AB9252 /* ParticipantCellSetup.swift in Sources */,
 				84A32598266E98E20028B4DB /* QuizInteractor.swift in Sources */,

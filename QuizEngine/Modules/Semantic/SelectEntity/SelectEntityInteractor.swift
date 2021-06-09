@@ -1,16 +1,16 @@
 //
-//  EntitySearchInteractor.swift
+//  SelectEntityInteractor.swift
 //  QuizEngine
 //
 //  Created by Admin on 09.06.2021.
 //
 
-protocol EntitySearchBusinessLogic: AnyObject {
+protocol SelectEntityBusinessLogic: AnyObject {
     func search(query: String)
 }
 
-class EntitySearchInteractor: EntitySearchBusinessLogic {
-    weak var controller: EntitySearchControllerLogic?
+class SelectEntityInteractor: SelectEntityBusinessLogic {
+    weak var controller: SelectEntityControllerLogic?
     let service: SemanticServiceProtocol = ServiceFactory.semanticService
 
     func search(query: String) {

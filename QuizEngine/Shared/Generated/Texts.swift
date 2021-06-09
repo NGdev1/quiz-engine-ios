@@ -279,6 +279,13 @@ internal enum Text {
     internal static let title = Text.tr("Localizable", "QuizResult.Title")
   }
 
+  internal enum SelectEntity {
+    /// Ничего не найдено
+    internal static let noContent = Text.tr("Localizable", "SelectEntity.NoContent")
+    /// Выбор сущности
+    internal static let title = Text.tr("Localizable", "SelectEntity.Title")
+  }
+
   internal enum SelectMethod {
     /// Выберите способ
     internal static let title = Text.tr("Localizable", "SelectMethod.Title")

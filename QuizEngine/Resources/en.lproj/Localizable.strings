@@ -123,6 +123,9 @@ EntitySearch.Title = "Query";
 EntitySearch.QueryTextFieldPlaceholder = "Text";
 EntitySearch.Search = "Search";
 
+SelectEntity.Title = "Select entity";
+SelectEntity.NoContent = "Nothing found";
+
 Alert.Error = "Error";
 Alert.Cancel = "Cancel";
 

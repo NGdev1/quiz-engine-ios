@@ -7,15 +7,8 @@
 
 import MDFoundation
 
-protocol EntitySearchControllerLogic: AnyObject {
-    func didFinishSearching(result: [Entity])
-    func presentError(message: String)
-}
-
-class EntitySearchController: UIViewController, EntitySearchControllerLogic {
+class EntitySearchController: UIViewController {
     // MARK: - Properties
-
-    var interactor: EntitySearchInteractor?
 
     lazy var customView = EntitySearchView()
 
@@ -27,14 +20,8 @@ class EntitySearchController: UIViewController, EntitySearchControllerLogic {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        setup()
         setupAppearance()
         addActionHandlers()
-    }
-
-    private func setup() {
-        interactor = EntitySearchInteractor()
-        interactor?.controller = self
     }
 
     private func setupAppearance() {
@@ -59,26 +46,9 @@ class EntitySearchController: UIViewController, EntitySearchControllerLogic {
             return
         }
         customView.endEditing(true)
-        customView.startShowingActivityIndicator(needToDimBackground: true)
-        interactor?.search(query: query)
-    }
-
-    // MARK: - EntitySearchControllerLogic
-
-    func didFinishSearching(result: [Entity]) {
-        customView.stopShowingActivityIndicator()
-    }
-
-    func presentError(message: String) {
-        customView.stopShowingActivityIndicator()
-        guard message != .empty else { return }
-        let alert = AlertsFactory.plain(
-            title: Text.Alert.error,
-            message: message,
-            tintColor: Assets.baseTint1.color,
-            cancelText: Text.Alert.cancel
+        navigationController?.pushViewController(
+            SelectEntityController(query: query)
         )
-        present(alert, animated: true, completion: nil)
     }
 }
 
