@@ -95,6 +95,15 @@ internal enum Text {
     internal static let tabBarTitle = Text.tr("Localizable", "EditQuiz.TabBarTitle")
   }
 
+  internal enum EntitySearch {
+    /// Текст
+    internal static let queryTextFieldPlaceholder = Text.tr("Localizable", "EntitySearch.QueryTextFieldPlaceholder")
+    /// Поиск
+    internal static let search = Text.tr("Localizable", "EntitySearch.Search")
+    /// Запроос
+    internal static let title = Text.tr("Localizable", "EntitySearch.Title")
+  }
+
   internal enum Errors {
     /// Доступ запрещен
     internal static let authError = Text.tr("Localizable", "Errors.AuthError")
@@ -128,6 +137,13 @@ internal enum Text {
     internal static let noContent = Text.tr("Localizable", "Main.NoContent")
     /// Главная
     internal static let title = Text.tr("Localizable", "Main.Title")
+  }
+
+  internal enum Methods {
+    /// Поиск в графе знаний
+    internal static let bySearch = Text.tr("Localizable", "Methods.bySearch")
+    /// Вручную
+    internal static let manually = Text.tr("Localizable", "Methods.Manually")
   }
 
   internal enum Onboarding {

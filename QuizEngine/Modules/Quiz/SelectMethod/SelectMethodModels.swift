@@ -5,9 +5,18 @@
 //  Created by Admin on 08.06.2021.
 //
 
-enum QuestionCreatingMethod: String {
-    case bySearch = "Поиск"
-    case manually = "Вручную"
+enum QuestionCreatingMethod {
+    case bySearch
+    case manually
+
+    var title: String {
+        switch self {
+        case .bySearch:
+            return Text.Methods.bySearch
+        case .manually:
+            return Text.Methods.manually
+        }
+    }
 
     static let all: [QuestionCreatingMethod] = [.bySearch, .manually]
 }

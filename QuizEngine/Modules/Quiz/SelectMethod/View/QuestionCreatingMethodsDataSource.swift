@@ -45,7 +45,7 @@ extension QuestionCreatingMethodsDataSource: UITableViewDataSource {
             withIdentifier: "QuestionCreatingMethodCell",
             for: indexPath
         )
-        cell.textLabel?.text = data[indexPath.row].rawValue
+        cell.textLabel?.text = data[indexPath.row].title
         return cell
     }
 }

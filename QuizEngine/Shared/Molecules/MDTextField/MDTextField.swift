@@ -82,6 +82,11 @@ final class MDTextField: UIView {
         set { textField.autocapitalizationType = newValue }
     }
 
+    var returnKeyType: UIReturnKeyType {
+        get { textField.returnKeyType }
+        set { textField.returnKeyType = newValue }
+    }
+
     var upperPlaceholderColor: UIColor = Assets.gray.color {
         didSet {
             guard isUpper else { return }
@@ -212,33 +217,21 @@ final class MDTextField: UIView {
     // MARK: - Overriden methods
 
     override func becomeFirstResponder() -> Bool {
-        textField.becomeFirstResponder()
-        if automaticallyResetError {
-            resetError()
-        } else {
-            updateFirstResponderAppearance()
-        }
-        return true
+        return textField.becomeFirstResponder()
     }
 
-    @discardableResult
     override func resignFirstResponder() -> Bool {
-        textField.resignFirstResponder()
-        if automaticallyResetError {
-            resetError()
-        } else {
-            updateFirstResponderAppearance()
-        }
-        return true
+        return textField.resignFirstResponder()
     }
 
     // MARK: - Action handlers
 
-    func addActionHandlers() {
+    private func addActionHandlers() {
         textField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
     }
 
-    @objc func textFieldDidChange(_ textField: UITextField) {
+    @objc
+    private func textFieldDidChange(_ textField: UITextField) {
         delegate?.textDidChange(self, text: text)
         if automaticallyResetError {
             resetError()
@@ -251,7 +244,7 @@ final class MDTextField: UIView {
     private func updateFirstResponderAppearance() {
         if isErrorShowing {
             lineView.backgroundColor = Assets.error.color
-        } else if isFirstResponder {
+        } else if textField.isFirstResponder {
             lineView.backgroundColor = Assets.baseTint1.color
         } else {
             lineView.backgroundColor = Assets.divider.color
@@ -306,6 +299,18 @@ final class MDTextField: UIView {
 // MARK: - UITextFieldDelegate
 
 extension MDTextField: UITextFieldDelegate {
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        if automaticallyResetError {
+            resetError()
+        } else {
+            updateFirstResponderAppearance()
+        }
+    }
+
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        updateFirstResponderAppearance()
+    }
+
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         delegate?.textFieldShouldReturn(self) ?? true
     }

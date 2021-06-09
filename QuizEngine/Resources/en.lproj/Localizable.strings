@@ -116,6 +116,12 @@ ParticipantResults.PirsonValue = "Pearson's correlation coefficient: %.2f";
 ParticipantResults.SpirmenBrownValue = "Reliability of the Spearman Brown test: %.2f";
 
 SelectMethod.Title = "Select method";
+Methods.Manually = "Manually";
+Methods.bySearch = "By entity search in linked data";
+
+EntitySearch.Title = "Query";
+EntitySearch.QueryTextFieldPlaceholder = "Text";
+EntitySearch.Search = "Search";
 
 Alert.Error = "Error";
 Alert.Cancel = "Cancel";

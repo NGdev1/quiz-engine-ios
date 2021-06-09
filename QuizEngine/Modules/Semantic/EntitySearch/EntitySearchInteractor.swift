@@ -6,22 +6,22 @@
 //
 
 protocol EntitySearchBusinessLogic: AnyObject {
-    func loadSomething()
+    func search(query: String)
 }
 
 class EntitySearchInteractor: EntitySearchBusinessLogic {
     weak var controller: EntitySearchControllerLogic?
-    let service: SomeServiceProtocol = SomeServiceFactory.someService
+    let service: SemanticServiceProtocol = ServiceFactory.semanticService
 
-    func loadSomething() {
-        service.doRequest() { [weak self] response, error in
+    func search(query: String) {
+        service.search(query: query) { [weak self] response, error in
             guard let self = self else { return }
             if let error = error {
                 self.controller?.presentError(message: error.localizedDescription)
                 return
             }
             if let response = response {
-                self.controller?.didFinishRequest()
+                self.controller?.didFinishSearching(result: response)
             } else {
                 self.controller?.presentError(message: Text.Errors.requestError)
             }

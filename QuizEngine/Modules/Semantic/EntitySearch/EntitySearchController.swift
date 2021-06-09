@@ -8,7 +8,7 @@
 import MDFoundation
 
 protocol EntitySearchControllerLogic: AnyObject {
-    func didFinishRequest()
+    func didFinishSearching(result: [Entity])
     func presentError(message: String)
 }
 
@@ -38,18 +38,35 @@ class EntitySearchController: UIViewController, EntitySearchControllerLogic {
     }
 
     private func setupAppearance() {
-        // title = Text.EntitySearch.title
+        title = Text.EntitySearch.title
     }
 
     // MARK: - Action handlers
 
-    private func addActionHandlers() {}
+    private func addActionHandlers() {
+        customView.queryTextField.delegate = self
+        navigationItem.rightBarButtonItem = UIBarButtonItem(
+            title: Text.EntitySearch.search, style: .plain,
+            target: self, action: #selector(searchAction)
+        )
+    }
+
+    @objc
+    private func searchAction() {
+        guard let query = customView.queryTextField.text, query.isEmpty == false else {
+            customView.queryTextField.showError(Text.Errors.fillInTheField)
+            customView.queryTextField.shake()
+            return
+        }
+        customView.endEditing(true)
+        customView.startShowingActivityIndicator(needToDimBackground: true)
+        interactor?.search(query: query)
+    }
 
     // MARK: - EntitySearchControllerLogic
 
-    func didFinishRequest() {
+    func didFinishSearching(result: [Entity]) {
         customView.stopShowingActivityIndicator()
-        // customView.display(viewModel: viewModel)
     }
 
     func presentError(message: String) {
@@ -62,5 +79,16 @@ class EntitySearchController: UIViewController, EntitySearchControllerLogic {
             cancelText: Text.Alert.cancel
         )
         present(alert, animated: true, completion: nil)
+    }
+}
+
+// MARK: -
+
+extension EntitySearchController: MDTextFieldDelegate {
+    func textDidChange(_ textField: MDTextField, text: String?) {}
+
+    func textFieldShouldReturn(_ textField: MDTextField) -> Bool {
+        searchAction()
+        return true
     }
 }

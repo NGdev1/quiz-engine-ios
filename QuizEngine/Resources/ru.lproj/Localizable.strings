@@ -116,6 +116,12 @@ ParticipantResults.PirsonValue = "Коэффициент корреляции П
 ParticipantResults.SpirmenBrownValue = "Надежность теста по Спирмену Брауну: %.2f";
 
 SelectMethod.Title = "Выберите способ";
+Methods.Manually = "Вручную";
+Methods.bySearch = "Поиск в графе знаний";
+
+EntitySearch.Title = "Запроос";
+EntitySearch.QueryTextFieldPlaceholder = "Текст";
+EntitySearch.Search = "Поиск";
 
 Alert.Error = "Ошибка";
 Alert.Cancel = "Отмена";

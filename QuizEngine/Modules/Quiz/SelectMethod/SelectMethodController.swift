@@ -54,7 +54,7 @@ extension SelectMethodController: QuestionCreatingMethodsDataSourceDelegate {
         selectionFeedbackGenerator.selectionChanged()
         switch item {
         case .bySearch:
-            print("Search")
+            navigationController?.pushViewController(EntitySearchController())
         case .manually:
             navigationController?.pushViewController(
                 EditQuestionController(quizId: quizId, delegate: editQuizController, question: Question())

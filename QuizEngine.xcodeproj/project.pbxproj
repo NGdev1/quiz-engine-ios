@@ -140,6 +140,10 @@
 		8483D29C266E0B3400CAC84C /* HistoryItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8483D29A266E0B3400CAC84C /* HistoryItemCell.swift */; };
 		8483D29D266E0B3400CAC84C /* HistoryItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8483D29B266E0B3400CAC84C /* HistoryItemCell.xib */; };
 		8483D29F266E0EEC00CAC84C /* Date+ToString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8483D29E266E0EEB00CAC84C /* Date+ToString.swift */; };
+		849A24CF2670B8230016A1A3 /* Entity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849A24CE2670B8230016A1A3 /* Entity.swift */; };
+		849A24D22670B8650016A1A3 /* Triple.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849A24D12670B8650016A1A3 /* Triple.swift */; };
+		849A24D82670B8B90016A1A3 /* SemanticService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849A24D52670B8B90016A1A3 /* SemanticService.swift */; };
+		849A24D92670B8B90016A1A3 /* SemanticServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849A24D62670B8B90016A1A3 /* SemanticServiceProtocol.swift */; };
 		849E0008266296D2004EA4DB /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849E0007266296D2004EA4DB /* Question.swift */; };
 		849E000A2662977C004EA4DB /* QuestionOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849E00092662977C004EA4DB /* QuestionOption.swift */; };
 		849E000D2662992D004EA4DB /* TitleValueCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849E000B2662992D004EA4DB /* TitleValueCell.swift */; };
@@ -321,6 +325,10 @@
 		8483D29A266E0B3400CAC84C /* HistoryItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryItemCell.swift; sourceTree = "<group>"; };
 		8483D29B266E0B3400CAC84C /* HistoryItemCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HistoryItemCell.xib; sourceTree = "<group>"; };
 		8483D29E266E0EEB00CAC84C /* Date+ToString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date+ToString.swift"; sourceTree = "<group>"; };
+		849A24CE2670B8230016A1A3 /* Entity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entity.swift; sourceTree = "<group>"; };
+		849A24D12670B8650016A1A3 /* Triple.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Triple.swift; sourceTree = "<group>"; };
+		849A24D52670B8B90016A1A3 /* SemanticService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SemanticService.swift; sourceTree = "<group>"; };
+		849A24D62670B8B90016A1A3 /* SemanticServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SemanticServiceProtocol.swift; sourceTree = "<group>"; };
 		849E0007266296D2004EA4DB /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 		849E00092662977C004EA4DB /* QuestionOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionOption.swift; sourceTree = "<group>"; };
 		849E000B2662992D004EA4DB /* TitleValueCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleValueCell.swift; sourceTree = "<group>"; };
@@ -998,6 +1006,7 @@
 				843B8C312660C84100E6A999 /* ProfileService */,
 				843B8C4E2660F6C000E6A999 /* QuizService */,
 				84602855266AAE0C00A01F33 /* QuizPassingService */,
+				849A24D32670B8A30016A1A3 /* SemanticService */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -1098,6 +1107,24 @@
 			path = HistoryItemCell;
 			sourceTree = "<group>";
 		};
+		849A24D02670B8570016A1A3 /* Semantic */ = {
+			isa = PBXGroup;
+			children = (
+				849A24CE2670B8230016A1A3 /* Entity.swift */,
+				849A24D12670B8650016A1A3 /* Triple.swift */,
+			);
+			path = Semantic;
+			sourceTree = "<group>";
+		};
+		849A24D32670B8A30016A1A3 /* SemanticService */ = {
+			isa = PBXGroup;
+			children = (
+				849A24D52670B8B90016A1A3 /* SemanticService.swift */,
+				849A24D62670B8B90016A1A3 /* SemanticServiceProtocol.swift */,
+			);
+			path = SemanticService;
+			sourceTree = "<group>";
+		};
 		849E00062662969C004EA4DB /* TitleValueCell */ = {
 			isa = PBXGroup;
 			children = (
@@ -1130,6 +1157,7 @@
 		84C1ACD126603DA200412B31 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				849A24D02670B8570016A1A3 /* Semantic */,
 				84C1ACD226603DC500412B31 /* GeneralErrors.swift */,
 				8471F4C9265FB789007A7876 /* AuthModels.swift */,
 				843B8C382660C8A800E6A999 /* Profile.swift */,
@@ -1463,6 +1491,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8471F4D5265FF90B007A7876 /* SignUpInteractor.swift in Sources */,
+				849A24D92670B8B90016A1A3 /* SemanticServiceProtocol.swift in Sources */,
 				84D7557D2662CAD900428E70 /* EditQuestionCellSetup.swift in Sources */,
 				8460280D26681B0800A01F33 /* PublicQuizController.swift in Sources */,
 				84D755802662CAD900428E70 /* EditQuestionView.swift in Sources */,
@@ -1506,6 +1535,7 @@
 				8471F4AB265FA03D007A7876 /* ResourcesBundle.swift in Sources */,
 				841E4DC726629C99006EA814 /* QuestionCell.swift in Sources */,
 				8471F4A9265F9FAB007A7876 /* UIView+LoadingView.swift in Sources */,
+				849A24CF2670B8230016A1A3 /* Entity.swift in Sources */,
 				846028322669261300A01F33 /* QuizPassing.swift in Sources */,
 				8460281E266822F200A01F33 /* ProfileCell.swift in Sources */,
 				8443F3E8267019D100504C10 /* EntitySearchController.swift in Sources */,
@@ -1531,6 +1561,7 @@
 				8471F4BA265FB685007A7876 /* SignInInteractor.swift in Sources */,
 				84A32597266E98E20028B4DB /* QuizController.swift in Sources */,
 				8471F47A265F95E5007A7876 /* OnboardingView.swift in Sources */,
+				849A24D82670B8B90016A1A3 /* SemanticService.swift in Sources */,
 				8471F4BB265FB685007A7876 /* SignInView.swift in Sources */,
 				8471F4D6265FF90B007A7876 /* SignUpView.swift in Sources */,
 				84414D6226625698006F2DAF /* SwitchCell.swift in Sources */,
@@ -1568,6 +1599,7 @@
 				8460281426681F0E00A01F33 /* QuizHeaderCell.swift in Sources */,
 				8483D295266E015100CAC84C /* HistoryController.swift in Sources */,
 				8443F3DD266FFF9500504C10 /* SelectMethodModels.swift in Sources */,
+				849A24D22670B8650016A1A3 /* Triple.swift in Sources */,
 				842970D0266166E70093305D /* ProfileController.swift in Sources */,
 				84D8B7CE266AD8EF002C9CF4 /* QuestionView.swift in Sources */,
 				843B8C652660F8D400E6A999 /* ErrorCell.swift in Sources */,

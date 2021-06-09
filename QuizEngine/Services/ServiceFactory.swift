@@ -10,4 +10,5 @@ internal enum ServiceFactory {
     static let profileService: ProfileServiceProtocol = ProfileService()
     static let authService: AuthServiceProtocol = AuthService()
     static let quizPassingService: QuizPassingServiceProtocol = QuizPassingService()
+    static let semanticService: SemanticServiceProtocol = SemanticService()
 }
