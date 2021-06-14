@@ -21,6 +21,12 @@ class ProfileController: UIViewController, ProfileControllerLogic {
 
     let generator = UINotificationFeedbackGenerator()
 
+    // MARK: - Init
+
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
+
     // MARK: - Life cycle
 
     override func loadView() {
@@ -60,12 +66,21 @@ class ProfileController: UIViewController, ProfileControllerLogic {
             title: Text.Profile.logOut, style: .plain,
             target: self, action: #selector(logOut)
         )
+        NotificationCenter.default.addObserver(
+            self, selector: #selector(userPassedQuiz(notification:)),
+            name: .userFinishedQuiz, object: nil
+        )
     }
 
     @objc
     private func logOut() {
         AppService.shared.app.accessToken = nil
         view.window?.rootViewController = UINavigationController(rootViewController: OnboardingController())
+    }
+
+    @objc
+    private func userPassedQuiz(notification: NSNotification) {
+        loadProfile()
     }
 
     // MARK: - ProfileControllerLogic

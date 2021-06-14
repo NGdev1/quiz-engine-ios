@@ -11,6 +11,7 @@ Common.Hide = "Hide";
 Common.Save = "Save";
 Common.Next = "Next";
 Common.FillInTheFields = "Fill in the fields";
+Common.Cancel = "Cancel";
 
 Date.Yesterday = "yesterday";
 Date.Tomorrow = "tomorrow";
@@ -117,7 +118,9 @@ ParticipantResults.SpirmenBrownValue = "Reliability of the Spearman Brown test: 
 
 SelectMethod.Title = "Select method";
 Methods.Manually = "Manually";
-Methods.bySearch = "By entity search in linked data";
+Methods.bySearch = "By search";
+Methods.byMap = "By map";
+Methods.byRandomEntity = "By random resource";
 
 EntitySearch.Title = "Query";
 EntitySearch.QueryTextFieldPlaceholder = "Text";
@@ -125,6 +128,9 @@ EntitySearch.Search = "Search";
 
 SelectEntity.Title = "Select entity";
 SelectEntity.NoContent = "Nothing found";
+
+SelectRegion.Title = "Select region";
+SelectRegion.Search = "Search";
 
 SelectQuestion.Title = "Select question";
 SelectQuestion.NoContent = "Nothing found";
@@ -140,3 +146,5 @@ Errors.RemoteError = "Remote Server error";
 Errors.UnknownError = "Unknown error";
 Errors.NetworkError = "Network error";
 Errors.AuthError = "Authentication required again";
+Errors.UserLocationDenied = "Allow access to your location in the device settings";
+Errors.OpenSettingsAction = "Open Settings";

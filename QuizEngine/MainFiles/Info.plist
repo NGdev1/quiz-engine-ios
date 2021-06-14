@@ -2,6 +2,12 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Приложение QuizEngine запрашивает доступ к фото. Вы сможете выбрать фотографии из галереи, если разрешите приложению доступ.</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Для отображения вашего местоположения на карте</string>
+	<key>NSCameraUsageDescription</key>
+	<string>Чтобы Вы могли делать снимки и ставить аватар, нужен доступ к камере</string>
 	<key>NSAppTransportSecurity</key>
 	<dict>
 		<key>NSAllowsArbitraryLoads</key>

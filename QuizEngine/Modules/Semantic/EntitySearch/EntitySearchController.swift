@@ -63,7 +63,10 @@ class EntitySearchController: UIViewController {
         }
         customView.endEditing(true)
         navigationController?.pushViewController(
-            SelectEntityController(query: query, quizId: quizId, editQuizController: editQuizController)
+            SelectEntityController(
+                method: .query(text: query), quizId: quizId,
+                editQuizController: editQuizController
+            )
         )
     }
 }

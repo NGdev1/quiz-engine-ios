@@ -119,7 +119,7 @@ extension EditQuizCellSetup: ErrorCellDelegate, MDTextFieldDelegate,
         if let nextField = tableView.viewWithTag(textField.tag + 1) {
             nextField.becomeFirstResponder()
         } else {
-            textField.resignFirstResponder()
+            _ = textField.resignFirstResponder()
         }
         return true
     }

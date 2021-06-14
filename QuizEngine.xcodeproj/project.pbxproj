@@ -139,6 +139,9 @@
 		8483D29C266E0B3400CAC84C /* HistoryItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8483D29A266E0B3400CAC84C /* HistoryItemCell.swift */; };
 		8483D29D266E0B3400CAC84C /* HistoryItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8483D29B266E0B3400CAC84C /* HistoryItemCell.xib */; };
 		8483D29F266E0EEC00CAC84C /* Date+ToString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8483D29E266E0EEB00CAC84C /* Date+ToString.swift */; };
+		848578F42677E06F0097B9E5 /* SelectRegionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848578F12677E06F0097B9E5 /* SelectRegionController.swift */; };
+		848578F62677E06F0097B9E5 /* SelectRegionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848578F32677E06F0097B9E5 /* SelectRegionView.swift */; };
+		848764CB2677F42000ED007F /* SelectEntityMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848764CA2677F42000ED007F /* SelectEntityMethod.swift */; };
 		849A24CF2670B8230016A1A3 /* Entity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849A24CE2670B8230016A1A3 /* Entity.swift */; };
 		849A24D22670B8650016A1A3 /* Triple.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849A24D12670B8650016A1A3 /* Triple.swift */; };
 		849A24D82670B8B90016A1A3 /* SemanticService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849A24D52670B8B90016A1A3 /* SemanticService.swift */; };
@@ -334,6 +337,9 @@
 		8483D29A266E0B3400CAC84C /* HistoryItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryItemCell.swift; sourceTree = "<group>"; };
 		8483D29B266E0B3400CAC84C /* HistoryItemCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HistoryItemCell.xib; sourceTree = "<group>"; };
 		8483D29E266E0EEB00CAC84C /* Date+ToString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date+ToString.swift"; sourceTree = "<group>"; };
+		848578F12677E06F0097B9E5 /* SelectRegionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectRegionController.swift; sourceTree = "<group>"; };
+		848578F32677E06F0097B9E5 /* SelectRegionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectRegionView.swift; sourceTree = "<group>"; };
+		848764CA2677F42000ED007F /* SelectEntityMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectEntityMethod.swift; sourceTree = "<group>"; };
 		849A24CE2670B8230016A1A3 /* Entity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entity.swift; sourceTree = "<group>"; };
 		849A24D12670B8650016A1A3 /* Triple.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Triple.swift; sourceTree = "<group>"; };
 		849A24D52670B8B90016A1A3 /* SemanticService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SemanticService.swift; sourceTree = "<group>"; };
@@ -764,6 +770,7 @@
 		8443F3E32670199500504C10 /* Semantic */ = {
 			isa = PBXGroup;
 			children = (
+				848578F02677E0590097B9E5 /* SelectRegion */,
 				849A24E82670DAEC0016A1A3 /* SelectQuestion */,
 				849A24DA2670CA370016A1A3 /* SelectEntity */,
 				8443F3E4267019BB00504C10 /* EntitySearch */,
@@ -1128,6 +1135,23 @@
 			path = HistoryItemCell;
 			sourceTree = "<group>";
 		};
+		848578F02677E0590097B9E5 /* SelectRegion */ = {
+			isa = PBXGroup;
+			children = (
+				848578F12677E06F0097B9E5 /* SelectRegionController.swift */,
+				848578F72677E0EB0097B9E5 /* View */,
+			);
+			path = SelectRegion;
+			sourceTree = "<group>";
+		};
+		848578F72677E0EB0097B9E5 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				848578F32677E06F0097B9E5 /* SelectRegionView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		849A24D02670B8570016A1A3 /* Semantic */ = {
 			isa = PBXGroup;
 			children = (
@@ -1151,6 +1175,7 @@
 			isa = PBXGroup;
 			children = (
 				849A24DD2670CA590016A1A3 /* SelectEntityController.swift */,
+				848764CA2677F42000ED007F /* SelectEntityMethod.swift */,
 				849A24DE2670CA590016A1A3 /* SelectEntityInteractor.swift */,
 				849A24E52670CA670016A1A3 /* View */,
 			);
@@ -1398,6 +1423,7 @@
 				6B17558D2624A7E000DA7E84 /* Frameworks */,
 				6B17558E2624A7E000DA7E84 /* Resources */,
 				F1CF0286B59F6BA5F4E17EF3 /* [CP] Embed Pods Frameworks */,
+				54C4CB5446B5236F20684897 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -1479,6 +1505,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		54C4CB5446B5236F20684897 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-QuizEngine/Pods-QuizEngine-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-QuizEngine/Pods-QuizEngine-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-QuizEngine/Pods-QuizEngine-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		84CA803F265F78D7001F95F3 /* Swiftformat */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1586,6 +1629,7 @@
 				8471F4CA265FB789007A7876 /* AuthModels.swift in Sources */,
 				849A24E32670CA590016A1A3 /* SelectEntityInteractor.swift in Sources */,
 				843B8C4A2660F4B900E6A999 /* QuizListView.swift in Sources */,
+				848764CB2677F42000ED007F /* SelectEntityMethod.swift in Sources */,
 				846028342669274600A01F33 /* QuestionAnswer.swift in Sources */,
 				843B8C472660F4B900E6A999 /* QuizDataSource.swift in Sources */,
 				84414D5F26625698006F2DAF /* ButtonCell.swift in Sources */,
@@ -1655,6 +1699,7 @@
 				849A24EF2670DBC70016A1A3 /* SelectQuestionsDataSource.swift in Sources */,
 				84C1ACD326603DC500412B31 /* GeneralErrors.swift in Sources */,
 				8460285A266AAE2100A01F33 /* QuizPassingService.swift in Sources */,
+				848578F62677E06F0097B9E5 /* SelectRegionView.swift in Sources */,
 				8471F4B4265FB3F6007A7876 /* MDScrollView.swift in Sources */,
 				8471F4C4265FB6E5007A7876 /* AuthServiceProtocol.swift in Sources */,
 				8443F3DF266FFF9500504C10 /* SelectMethodController.swift in Sources */,
@@ -1666,6 +1711,7 @@
 				84A32595266E98E20028B4DB /* QuizCellSetup.swift in Sources */,
 				843B8C582660F87A00E6A999 /* QuizCell.swift in Sources */,
 				849E000D2662992D004EA4DB /* TitleValueCell.swift in Sources */,
+				848578F42677E06F0097B9E5 /* SelectRegionController.swift in Sources */,
 				84D8B7D3266ADDBE002C9CF4 /* OptionRadioCell.swift in Sources */,
 				84D7557B2662CAD900428E70 /* EditQuestionController.swift in Sources */,
 				842970D2266166E70093305D /* ProfileView.swift in Sources */,

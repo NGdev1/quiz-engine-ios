@@ -21,30 +21,8 @@ internal typealias AssetImageTypeAlias = ImageAsset.Image
 
 // swiftlint:disable identifier_name line_length nesting type_body_length type_name
 internal enum Assets {
-  internal static let accentColor = ColorAsset(name: "AccentColor")
-  internal static let background1 = ColorAsset(name: "Background1")
-  internal static let background3 = ColorAsset(name: "Background3")
   internal static let baseTint1 = ColorAsset(name: "BaseTint1")
-  internal static let correct = ColorAsset(name: "Correct")
-  internal static let divider = ColorAsset(name: "Divider")
-  internal static let error = ColorAsset(name: "Error")
-  internal static let gray = ColorAsset(name: "Gray")
-  internal static let incorrect = ColorAsset(name: "Incorrect")
-  internal static let shadow = ColorAsset(name: "Shadow")
-  internal static let subtitle = ColorAsset(name: "Subtitle")
-  internal static let text = ColorAsset(name: "Text")
-  internal static let addIcon = ImageAsset(name: "AddIcon")
-  internal static let buttonUserLocation = ImageAsset(name: "ButtonUserLocation")
-  internal static let checkmark = ImageAsset(name: "Checkmark")
-  internal static let logo = ImageAsset(name: "Logo")
-  internal static let noPhoto = ImageAsset(name: "NoPhoto")
-  internal static let radiobuttonOff = ImageAsset(name: "RadiobuttonOff")
-  internal static let radiobuttonOn = ImageAsset(name: "RadiobuttonOn")
-  internal static let tabBarIconAdd = ImageAsset(name: "TabBarIconAdd")
-  internal static let tabBarIconHistory = ImageAsset(name: "TabBarIconHistory")
-  internal static let tabBarIconHome = ImageAsset(name: "TabBarIconHome")
-  internal static let tabBarIconProfile = ImageAsset(name: "TabBarIconProfile")
-  internal static let tabBarIconQuizList = ImageAsset(name: "TabBarIconQuizList")
+  internal static let userPin = ImageAsset(name: "UserPin")
 }
 // swiftlint:enable identifier_name line_length nesting type_body_length type_name
 

@@ -1,0 +1,24 @@
+#strings:
+#  inputs: ./Resources/ru.lproj/Localizable.strings
+#  outputs:
+#    templatePath: ../../scripts/strings.stencil
+#    output: ./Source/Atoms/Texts.swift
+#    params:
+#      publicAccess: true
+#      enumName: Text
+#      bundle: resourcesBundle
+xcassets:
+    inputs: ./Resources/Assets.xcassets
+    outputs:
+        templatePath: ../../scripts/xcassets.stencil
+        output: ./Source/Atoms/Assets.swift
+        params:
+          enumName: Assets
+#fonts:
+#  inputs: ./Resources/Fonts
+#  outputs:
+#    templatePath: ../../scripts/fonts.stencil
+#    output: ./Source/Atoms/Fonts.swift
+#    params:
+#      enumName: Fonts
+#      publicAccess: true

@@ -11,6 +11,7 @@ Common.Hide = "Скрыть";
 Common.Save = "Сохранить";
 Common.Next = "Далее";
 Common.FillInTheFields = "Заполните поля";
+Common.Cancel = "Отмена";
 
 Date.Yesterday = "вчера";
 Date.Tomorrow = "завтра";
@@ -117,14 +118,19 @@ ParticipantResults.SpirmenBrownValue = "Надежность теста по С�
 
 SelectMethod.Title = "Выберите способ";
 Methods.Manually = "Вручную";
-Methods.bySearch = "Поиск в графе знаний";
+Methods.bySearch = "Поиск в графе знаний по тексту";
+Methods.byMap = "Поиск в графе знаний по карте";
+Methods.byRandomEntity = "По случайному ресурсу";
 
 EntitySearch.Title = "Запроос";
 EntitySearch.QueryTextFieldPlaceholder = "Текст";
 EntitySearch.Search = "Поиск";
 
-SelectEntity.Title = "Выбор сущности";
+SelectEntity.Title = "Выбор ресурса";
 SelectEntity.NoContent = "Ничего не найдено";
+
+SelectRegion.Title = "Выбор региона";
+SelectRegion.Search = "Поиск";
 
 SelectQuestion.Title = "Выбор вопроса";
 SelectQuestion.NoContent = "Ничего не найдено";
@@ -140,3 +146,5 @@ Errors.RemoteError = "Ошибка сервера";
 Errors.UnknownError = "Неизвестная ошибка";
 Errors.NetworkError = "Ошибка сети";
 Errors.AuthError = "Доступ запрещен";
+Errors.UserLocationDenied = "Разрешите доступ к Вашей геопозиции в настройках устройства";
+Errors.OpenSettingsAction = "Открыть настройки";

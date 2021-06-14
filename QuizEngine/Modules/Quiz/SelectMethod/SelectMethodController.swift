@@ -57,6 +57,10 @@ extension SelectMethodController: QuestionCreatingMethodsDataSourceDelegate {
             navigationController?.pushViewController(
                 EntitySearchController(quizId: quizId, editQuizController: editQuizController)
             )
+        case .byMap:
+            navigationController?.pushViewController(
+                SelectRegionController(quizId: quizId, editQuizController: editQuizController)
+            )
         case .manually:
             navigationController?.pushViewController(
                 EditQuestionController(quizId: quizId, delegate: editQuizController, question: Question())

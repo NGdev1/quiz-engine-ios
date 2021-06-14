@@ -5,6 +5,7 @@
 //  Created by Михаил Андреичев on 12.04.2021.
 //
 
+import Map
 import Storable
 import UIKit
 
@@ -41,6 +42,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     private func setupConfiguration() {
+        MapFactory.shared.apiKeyManager.setApiKey()
         // AppService.shared.app.baseURL = URL(string: "http://192.168.1.14:8080")!
         // AppService.shared.app.baseURL = URL(string: "http://10.17.33.131:8080")!
         AppService.shared.app.baseURL = URL(string: "http://192.168.0.186:8080")!

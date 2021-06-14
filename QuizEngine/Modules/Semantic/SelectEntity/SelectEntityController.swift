@@ -20,14 +20,14 @@ class SelectEntityController: UIViewController, SelectEntityControllerLogic {
     lazy var customView = SelectEntityView()
     lazy var notificationFeedbackGenerator = UINotificationFeedbackGenerator()
 
-    let query: String
+    let method: SelectEntityMethod
     let quizId: String?
     let editQuizController: EditQuestionControllerDelegate
 
     // MARK: - Init
 
-    init(query: String, quizId: String?, editQuizController: EditQuestionControllerDelegate) {
-        self.query = query
+    init(method: SelectEntityMethod, quizId: String?, editQuizController: EditQuestionControllerDelegate) {
+        self.method = method
         self.quizId = quizId
         self.editQuizController = editQuizController
         super.init(nibName: nil, bundle: nil)
@@ -67,7 +67,12 @@ class SelectEntityController: UIViewController, SelectEntityControllerLogic {
 
     @objc
     private func makeSearchRequest() {
-        interactor?.search(query: query)
+        switch method {
+        case let .map(region):
+            print(region)
+        case let .query(text):
+            interactor?.search(query: text)
+        }
     }
 
     // MARK: - Action handlers

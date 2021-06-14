@@ -4,6 +4,11 @@ PODS:
   - Kingfisher (5.15.0):
     - Kingfisher/Core (= 5.15.0)
   - Kingfisher/Core (5.15.0)
+  - Map (1.0):
+    - Map/Source (= 1.0)
+    - YandexMapsMobile (= 4.0.0-lite)
+  - Map/Source (1.0):
+    - YandexMapsMobile (= 4.0.0-lite)
   - MDFoundation (1.0.0):
     - MDFoundation/Source (= 1.0.0)
   - MDFoundation/Source (1.0.0)
@@ -22,13 +27,15 @@ PODS:
     - KeychainAccess (= 4.2.2)
     - SwiftyUserDefaults (= 5.3.0)
   - SwiftyUserDefaults (5.3.0)
+  - YandexMapsMobile (4.0.0-lite)
 
 DEPENDENCIES:
   - Kingfisher (= 5.15.0)
+  - Map (from `./Modules/Map`)
   - MDFoundation (from `https://github.com/NGdev1/MDFoundation.git`, tag `v1.0.0`)
   - Moya (= 13.0.1)
   - SnapKit (= 5.0.1)
-  - Storable (from `./Storable`)
+  - Storable (from `./Modules/Storable`)
 
 SPEC REPOS:
   trunk:
@@ -39,13 +46,16 @@ SPEC REPOS:
     - Result
     - SnapKit
     - SwiftyUserDefaults
+    - YandexMapsMobile
 
 EXTERNAL SOURCES:
+  Map:
+    :path: "./Modules/Map"
   MDFoundation:
     :git: https://github.com/NGdev1/MDFoundation.git
     :tag: v1.0.0
   Storable:
-    :path: "./Storable"
+    :path: "./Modules/Storable"
 
 CHECKOUT OPTIONS:
   MDFoundation:
@@ -56,13 +66,15 @@ SPEC CHECKSUMS:
   Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
   KeychainAccess: c0c4f7f38f6fc7bbe58f5702e25f7bd2f65abf51
   Kingfisher: 1acb67597a520c2d0310677e66d6e0af455ef757
+  Map: 37b9372c42d8c0dcaaf938cc86bee601063a038c
   MDFoundation: b86ead9f37bc74ee278063ed2127b6cdb10a823e
   Moya: f4a4b80ff2f8a4ffc208dfb31cd91636622fee6e
   Result: bd966fac789cc6c1563440b348ab2598cc24d5c7
   SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
   Storable: 2bd804d291230d8c620cb4026233b5b8a341d5da
   SwiftyUserDefaults: 63f80248cf5bfb3458825d9a78f2eb7e1293a040
+  YandexMapsMobile: d7d7f3b452209b4c2787beb53bb2dfcea259c70c
 
-PODFILE CHECKSUM: 82b4bc8335fad30068ccd85b3d68f687bf8c4ce3
+PODFILE CHECKSUM: a6a623a8878a8909a5428d6738547a93aaed569b
 
 COCOAPODS: 1.10.1

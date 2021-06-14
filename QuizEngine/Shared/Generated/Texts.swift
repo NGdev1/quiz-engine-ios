@@ -19,6 +19,8 @@ internal enum Text {
   }
 
   internal enum Common {
+    /// Отмена
+    internal static let cancel = Text.tr("Localizable", "Common.Cancel")
     /// Готово
     internal static let done = Text.tr("Localizable", "Common.Done")
     /// Заполните поля
@@ -111,6 +113,8 @@ internal enum Text {
     internal static let fillInTheField = Text.tr("Localizable", "Errors.FillInTheField")
     /// Ошибка сети
     internal static let networkError = Text.tr("Localizable", "Errors.NetworkError")
+    /// Открыть настройки
+    internal static let openSettingsAction = Text.tr("Localizable", "Errors.OpenSettingsAction")
     /// Ошибка сервера
     internal static let remoteError = Text.tr("Localizable", "Errors.RemoteError")
     /// Ошибка запроса
@@ -119,6 +123,8 @@ internal enum Text {
     internal static let tryAgain = Text.tr("Localizable", "Errors.TryAgain")
     /// Неизвестная ошибка
     internal static let unknownError = Text.tr("Localizable", "Errors.UnknownError")
+    /// Разрешите доступ к Вашей геопозиции в настройках устройства
+    internal static let userLocationDenied = Text.tr("Localizable", "Errors.UserLocationDenied")
   }
 
   internal enum History {
@@ -140,7 +146,11 @@ internal enum Text {
   }
 
   internal enum Methods {
-    /// Поиск в графе знаний
+    /// Поиск в графе знаний по карте
+    internal static let byMap = Text.tr("Localizable", "Methods.byMap")
+    /// По случайному ресурсу
+    internal static let byRandomEntity = Text.tr("Localizable", "Methods.byRandomEntity")
+    /// Поиск в графе знаний по тексту
     internal static let bySearch = Text.tr("Localizable", "Methods.bySearch")
     /// Вручную
     internal static let manually = Text.tr("Localizable", "Methods.Manually")
@@ -282,7 +292,7 @@ internal enum Text {
   internal enum SelectEntity {
     /// Ничего не найдено
     internal static let noContent = Text.tr("Localizable", "SelectEntity.NoContent")
-    /// Выбор сущности
+    /// Выбор ресурса
     internal static let title = Text.tr("Localizable", "SelectEntity.Title")
   }
 
@@ -300,6 +310,13 @@ internal enum Text {
     }
     /// Выбор вопроса
     internal static let title = Text.tr("Localizable", "SelectQuestion.Title")
+  }
+
+  internal enum SelectRegion {
+    /// Поиск
+    internal static let search = Text.tr("Localizable", "SelectRegion.Search")
+    /// Выбор региона
+    internal static let title = Text.tr("Localizable", "SelectRegion.Title")
   }
 
   internal enum SignIn {
