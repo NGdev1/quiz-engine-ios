@@ -23,13 +23,20 @@ class SelectEntityController: UIViewController, SelectEntityControllerLogic {
     let method: SelectEntityMethod
     let quizId: String?
     let editQuizController: EditQuestionControllerDelegate
+    let graphType: GraphType
 
     // MARK: - Init
 
-    init(method: SelectEntityMethod, quizId: String?, editQuizController: EditQuestionControllerDelegate) {
+    init(
+        method: SelectEntityMethod,
+        quizId: String?,
+        editQuizController: EditQuestionControllerDelegate,
+        graphType: GraphType
+    ) {
         self.method = method
         self.quizId = quizId
         self.editQuizController = editQuizController
+        self.graphType = graphType
         super.init(nibName: nil, bundle: nil)
     }
 
@@ -69,7 +76,7 @@ class SelectEntityController: UIViewController, SelectEntityControllerLogic {
     private func makeSearchRequest() {
         switch method {
         case let .map(region):
-            print(region)
+            interactor?.search(region: region)
         case let .query(text):
             interactor?.search(query: text)
         }
@@ -98,7 +105,7 @@ class SelectEntityController: UIViewController, SelectEntityControllerLogic {
 extension SelectEntityController: EntitiesDataSourceDelegate {
     func didSelectEntity(_ item: Entity) {
         navigationController?.pushViewController(
-            SelectQuestionController(entity: item, quizId: quizId, editQuizController: editQuizController)
+            SelectQuestionController(entity: item, quizId: quizId, editQuizController: editQuizController, graphType: graphType)
         )
     }
 

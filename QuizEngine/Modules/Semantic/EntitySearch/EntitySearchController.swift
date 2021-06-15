@@ -65,7 +65,7 @@ class EntitySearchController: UIViewController {
         navigationController?.pushViewController(
             SelectEntityController(
                 method: .query(text: query), quizId: quizId,
-                editQuizController: editQuizController
+                editQuizController: editQuizController, graphType: .wikidata
             )
         )
     }

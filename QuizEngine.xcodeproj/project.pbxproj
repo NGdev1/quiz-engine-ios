@@ -142,6 +142,7 @@
 		848578F42677E06F0097B9E5 /* SelectRegionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848578F12677E06F0097B9E5 /* SelectRegionController.swift */; };
 		848578F62677E06F0097B9E5 /* SelectRegionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848578F32677E06F0097B9E5 /* SelectRegionView.swift */; };
 		848764CB2677F42000ED007F /* SelectEntityMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848764CA2677F42000ED007F /* SelectEntityMethod.swift */; };
+		848764CD2678210E00ED007F /* SemanticServiceModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848764CC2678210E00ED007F /* SemanticServiceModels.swift */; };
 		849A24CF2670B8230016A1A3 /* Entity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849A24CE2670B8230016A1A3 /* Entity.swift */; };
 		849A24D22670B8650016A1A3 /* Triple.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849A24D12670B8650016A1A3 /* Triple.swift */; };
 		849A24D82670B8B90016A1A3 /* SemanticService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849A24D52670B8B90016A1A3 /* SemanticService.swift */; };
@@ -340,6 +341,7 @@
 		848578F12677E06F0097B9E5 /* SelectRegionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectRegionController.swift; sourceTree = "<group>"; };
 		848578F32677E06F0097B9E5 /* SelectRegionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectRegionView.swift; sourceTree = "<group>"; };
 		848764CA2677F42000ED007F /* SelectEntityMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectEntityMethod.swift; sourceTree = "<group>"; };
+		848764CC2678210E00ED007F /* SemanticServiceModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SemanticServiceModels.swift; sourceTree = "<group>"; };
 		849A24CE2670B8230016A1A3 /* Entity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entity.swift; sourceTree = "<group>"; };
 		849A24D12670B8650016A1A3 /* Triple.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Triple.swift; sourceTree = "<group>"; };
 		849A24D52670B8B90016A1A3 /* SemanticService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SemanticService.swift; sourceTree = "<group>"; };
@@ -1165,6 +1167,7 @@
 			isa = PBXGroup;
 			children = (
 				849A24E62670CF2C0016A1A3 /* SemanticServiceApi.swift */,
+				848764CC2678210E00ED007F /* SemanticServiceModels.swift */,
 				849A24D52670B8B90016A1A3 /* SemanticService.swift */,
 				849A24D62670B8B90016A1A3 /* SemanticServiceProtocol.swift */,
 			);
@@ -1175,8 +1178,8 @@
 			isa = PBXGroup;
 			children = (
 				849A24DD2670CA590016A1A3 /* SelectEntityController.swift */,
-				848764CA2677F42000ED007F /* SelectEntityMethod.swift */,
 				849A24DE2670CA590016A1A3 /* SelectEntityInteractor.swift */,
+				848764CA2677F42000ED007F /* SelectEntityMethod.swift */,
 				849A24E52670CA670016A1A3 /* View */,
 			);
 			path = SelectEntity;
@@ -1729,6 +1732,7 @@
 				84D8B7CE266AD8EF002C9CF4 /* QuestionView.swift in Sources */,
 				843B8C652660F8D400E6A999 /* ErrorCell.swift in Sources */,
 				842970DE266168290093305D /* GenericTableViewSectionModel.swift in Sources */,
+				848764CD2678210E00ED007F /* SemanticServiceModels.swift in Sources */,
 				843B8C3E2660F23C00E6A999 /* TabBarController.swift in Sources */,
 				84A325A0266EBCFF0028B4DB /* ParticipantCell.swift in Sources */,
 				8471F4A7265F9FAB007A7876 /* ExtensionUIView.swift in Sources */,

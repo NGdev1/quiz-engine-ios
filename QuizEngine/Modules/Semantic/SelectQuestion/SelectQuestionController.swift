@@ -23,13 +23,19 @@ class SelectQuestionController: UIViewController, SelectQuestionControllerLogic 
     let entity: Entity
     let quizId: String?
     let editQuizController: EditQuestionControllerDelegate
+    let graphType: GraphType
 
     // MARK: - Init
 
-    init(entity: Entity, quizId: String?, editQuizController: EditQuestionControllerDelegate) {
+    init(entity: Entity,
+         quizId: String?,
+         editQuizController: EditQuestionControllerDelegate,
+         graphType: GraphType)
+    {
         self.entity = entity
         self.quizId = quizId
         self.editQuizController = editQuizController
+        self.graphType = graphType
         super.init(nibName: nil, bundle: nil)
     }
 
@@ -70,7 +76,7 @@ class SelectQuestionController: UIViewController, SelectQuestionControllerLogic 
 
     @objc
     private func loadTriples() {
-        interactor?.getSuitableTriples(for: entity)
+        interactor?.getSuitableTriples(for: entity, graphType: graphType)
     }
 
     // MARK: - Action handlers

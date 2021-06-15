@@ -5,7 +5,7 @@
 //  Created by Михаил Андреичев on 26.11.2019.
 //
 
-public struct MapRegion {
+public struct MapRegion: Encodable {
     public init(
         topLeft: Location,
         bottomRight: Location

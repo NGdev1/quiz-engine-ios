@@ -67,7 +67,7 @@ class SelectRegionController: UIViewController {
         navigationController?.pushViewController(
             SelectEntityController(
                 method: .map(region: customView.mapView.region), quizId: quizId,
-                editQuizController: editQuizController
+                editQuizController: editQuizController, graphType: .dbpedia
             )
         )
     }

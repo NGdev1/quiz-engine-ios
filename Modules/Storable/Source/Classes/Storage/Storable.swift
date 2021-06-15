@@ -9,13 +9,13 @@ struct Storable<Object: Stored, Storage: StorageConfiguration>: ExpressibleByStr
     }
 
     var value: Object? {
-        set {
-            store.set(newValue?.toPrimitive(), for: key, config: Storage.config)
-        }
         get {
             guard let primitive = store.getValue(for: key, config: Storage.config) as? Object.Primitive
             else { return nil }
             return Object.from(primitive: primitive)
+        }
+        set {
+            store.set(newValue?.toPrimitive(), for: key, config: Storage.config)
         }
     }
 }

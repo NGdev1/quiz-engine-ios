@@ -5,12 +5,14 @@
 //  Created by Admin on 09.06.2021.
 //
 
+import Map
 import Moya
 import Storable
 
 enum SemanticServiceApi {
-    case getEntities(query: String)
-    case getQuestions(entityUri: String)
+    case getEntities(query: String, graphType: GraphType)
+    case getEntitiesFromRegion(region: MapRegion, graphType: GraphType)
+    case getQuestions(entityUri: String, graphType: GraphType)
 }
 
 extension SemanticServiceApi: TargetType {
@@ -22,6 +24,8 @@ extension SemanticServiceApi: TargetType {
         switch self {
         case .getEntities:
             return "/semantic/search"
+        case .getEntitiesFromRegion:
+            return "/semantic/map"
         case .getQuestions:
             return "/semantic/questions"
         }
@@ -29,8 +33,8 @@ extension SemanticServiceApi: TargetType {
 
     var method: Moya.Method {
         switch self {
-        case .getEntities, .getQuestions:
-            return .get
+        case .getEntities, .getQuestions, .getEntitiesFromRegion:
+            return .post
         }
     }
 
@@ -40,10 +44,21 @@ extension SemanticServiceApi: TargetType {
 
     var task: Task {
         switch self {
-        case let .getEntities(query):
-            return .requestParameters(parameters: ["query": query], encoding: URLEncoding())
-        case let .getQuestions(entityUri):
-            return .requestParameters(parameters: ["entityUri": entityUri], encoding: URLEncoding())
+        case let .getEntities(query, graphType):
+            return .requestCompositeData(
+                bodyData: Data(),
+                urlParameters: ["query": query, "graphType": graphType.rawValue]
+            )
+        case let .getEntitiesFromRegion(region, graphType):
+            return .requestCompositeData(
+                bodyData: (try? JSONEncoder().encode(region)) ?? Data(),
+                urlParameters: ["graphType": graphType.rawValue]
+            )
+        case let .getQuestions(entityUri, graphType):
+            return .requestCompositeData(
+                bodyData: Data(),
+                urlParameters: ["entityUri": entityUri, "graphType": graphType.rawValue]
+            )
         }
     }
 

@@ -6,15 +6,15 @@
 //
 
 protocol SelectQuestionBusinessLogic: AnyObject {
-    func getSuitableTriples(for entity: Entity)
+    func getSuitableTriples(for entity: Entity, graphType: GraphType)
 }
 
 class SelectQuestionInteractor: SelectQuestionBusinessLogic {
     weak var controller: SelectQuestionControllerLogic?
     let service: SemanticServiceProtocol = ServiceFactory.semanticService
 
-    func getSuitableTriples(for entity: Entity) {
-        service.getQuestions(entityUri: entity.uri) { [weak self] response, error in
+    func getSuitableTriples(for entity: Entity, graphType: GraphType) {
+        service.getQuestions(entityUri: entity.uri, graphType: graphType) { [weak self] response, error in
             guard let self = self else { return }
             if let error = error {
                 self.controller?.presentError(message: error.localizedDescription)
